@@ -885,7 +885,7 @@ section.caps { padding: 120px 0 80px; border-top: 1px solid var(--line); positio
   color: var(--ink-on-dark);
   border-color: transparent;
 }
-.cap--dark p { color: var(--ink-dim-on-dark); }
+.cap--dark p { color: rgba(245, 248, 250, 0.88); }
 .cap--dark .tag { color: var(--ink-dim-on-dark); }
 .cap--dark .cap-outcome { border-top-color: var(--line-on-dark); }
 .cap--dark .cap-outcome-text { color: var(--ink-on-dark); }
@@ -925,6 +925,7 @@ section.caps { padding: 120px 0 80px; border-top: 1px solid var(--line); positio
   font-family: var(--keyob-sans);
 }
 .cap h3 em { font-family: var(--keyob-serif); font-style: italic; font-weight: 400; color: var(--keyob-blue); }
+.cap--dark h3 { color: var(--ink-on-dark); }
 .cap--dark h3 em { color: var(--keyob-cyan); }
 .cap p { font-size: 15px; color: var(--ink-dim); line-height: 1.5; margin: 0; flex: 1; }
 .cap .glyph {

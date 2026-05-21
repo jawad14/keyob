@@ -14,7 +14,7 @@ import { MarqueeBand } from '@/components/blocks/MarqueeBand';
 import { ContactSection } from '@/components/blocks/ContactSection';
 import { Footer } from '@/components/blocks/Footer';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { siteConfig } from '@/config/site.config';
+import { allSchemas } from '@/config/seo-schemas';
 
 export default function HomePage() {
   return (
@@ -36,21 +36,7 @@ export default function HomePage() {
         <ContactSection />
       </main>
       <Footer />
-      <JsonLd
-        data={{
-          '@context': 'https://schema.org',
-          '@type': 'Organization',
-          name: 'KEYOB',
-          url: siteConfig.url,
-          description: siteConfig.description,
-          address: {
-            '@type': 'PostalAddress',
-            streetAddress: '333 Ann Street',
-            addressLocality: 'Brisbane',
-            addressCountry: 'AU',
-          },
-        }}
-      />
+      <JsonLd data={allSchemas()} />
     </>
   );
 }

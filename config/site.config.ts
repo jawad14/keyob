@@ -35,10 +35,10 @@ export type SiteConfig = {
 };
 
 export const siteConfig: SiteConfig = {
-  name: 'KEYOB — AI Consulting Services & Solutions',
+  name: 'KEYOB — AI Consulting for Australian Businesses',
   shortName: 'KEYOB',
   description:
-    "Australia's leading enterprise AI consultancy. We move businesses from AI experimentation to scalable execution — through agentic development, legacy modernisation, and rigorous AI governance.",
+    'We help Australian business owners create more freedom by using AI in the right places. Save time, reduce costs, and support growth. Book a free AI assessment today.',
   url: 'https://keyob.com.au',
   ogImage: '/opengraph-image',
   locale: 'en_AU',
@@ -75,22 +75,67 @@ export const siteConfig: SiteConfig = {
 
 export const defaultMetadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
-  title: { default: siteConfig.name, template: `%s · KEYOB` },
+  title: {
+    default: 'KEYOB — AI Consulting for Australian Businesses | Free AI Assessment',
+    template: '%s · KEYOB',
+  },
   description: siteConfig.description,
+  keywords: [
+    'AI consulting Australia',
+    'AI automation for business',
+    'business process automation Brisbane',
+    'free AI assessment',
+    'AI implementation Australia',
+    'workflow automation consultancy',
+    'digital transformation Australia',
+    'AI for professional services',
+    'CRM integration Brisbane',
+    'operational intelligence',
+    'AI for small business Australia',
+    'reduce business costs with AI',
+    'KEYOB',
+  ],
   applicationName: 'KEYOB',
   authors: [{ name: siteConfig.author.name, url: siteConfig.author.url }],
+  creator: 'KEYOB',
+  publisher: 'KEYOB',
+  category: 'Technology Consulting',
   openGraph: {
     type: 'website',
     siteName: 'KEYOB',
-    title: siteConfig.name,
-    description: siteConfig.description,
+    title: 'KEYOB — AI Consulting for Australian Businesses | Free AI Assessment',
+    description:
+      'We help Australian business owners create more freedom by using AI in the right places. Book a free AI assessment — no obligation.',
     url: siteConfig.url,
     locale: siteConfig.locale,
+    images: [
+      {
+        url: '/opengraph-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'KEYOB — AI Consulting for Australian Businesses',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: siteConfig.name,
-    description: siteConfig.description,
+    title: 'KEYOB — AI Consulting for Australian Businesses',
+    description:
+      'We help Australian business owners create more freedom by using AI in the right places.',
+    images: ['/opengraph-image.png'],
   },
-  robots: { index: true, follow: true },
+  alternates: {
+    canonical: siteConfig.url,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };

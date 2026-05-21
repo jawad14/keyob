@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Instrument_Serif, Manrope } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
 import { ThemeProvider } from '@/components/providers/theme-provider';
 import { defaultMetadata } from '@/config/site.config';
 import './globals.css';
@@ -39,7 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="en-AU"
       suppressHydrationWarning
       className={`${fontSans.variable} ${fontSerif.variable} ${fontMono.variable} h-full antialiased`}
     >
@@ -52,6 +53,7 @@ export default function RootLayout({
         >
           {children}
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
