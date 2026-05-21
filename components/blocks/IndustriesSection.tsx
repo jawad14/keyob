@@ -17,7 +17,7 @@ export function IndustriesSection() {
               Where we go to work
             </span>
             <H2>
-              Where KEYOB <em>operates.</em>
+              What industries do <em>we serve?</em>
             </H2>
             <Text
               variant="lead"

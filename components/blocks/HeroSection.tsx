@@ -1,7 +1,5 @@
 import Link from 'next/link';
 import { Heading, Text } from '@/components/ui/typography';
-import { heroWords } from '@/config/keyob-data';
-import { WordRotator } from './WordRotator';
 
 export function HeroSection() {
   return (
@@ -13,12 +11,9 @@ export function HeroSection() {
         </div>
 
         <Heading level={1} className="display">
-          A decade of{' '}
-          <WordRotator words={heroWords} />
+          We use AI to help businesses build
           <br />
-          enterprise AI
-          <br />
-          solutions.
+          <em>smarter, more profitable systems.</em>
         </Heading>
 
         <div className="hero-foot">
