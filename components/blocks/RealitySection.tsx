@@ -3,11 +3,11 @@ import { Section } from '@/components/ui/layout';
 import { H2, Heading, Text } from '@/components/ui/typography';
 
 const reasons = [
-  'Fragmented workflows consume staff capacity on coordination that should be automated, not managed.',
-  "Disconnected systems force manual data transfer between platforms that were never designed to communicate.",
-  "Lagging visibility means decisions are made on last week's data, assembled manually by someone who should be doing something else.",
-  'Automation in isolation creates efficiency in one area while creating bottlenecks in three others.',
-  'Growth without architecture means every new tool adds complexity, not capacity.',
+  "You're spending too much time on tasks that could be automated — time that should be going toward growing your business.",
+  "Your team is bogged down in manual processes, and the frustration is starting to affect how people work together.",
+  "You've tried a tool or two, but nothing has really stuck — because AI without a clear strategy doesn't deliver consistent results.",
+  "You're not sure where to invest, and the risk of wasting money on the wrong thing is stopping you from moving forward.",
+  'Growth feels harder than it should, because your systems weren\'t built to scale with you.',
 ];
 
 export function RealitySection() {
@@ -20,14 +20,14 @@ export function RealitySection() {
               The honest picture
             </span>
             <H2>
-              Your tools are not the problem. <em>The architecture is.</em>
+              You know AI could help. <em>You just need the right approach.</em>
             </H2>
             <Text variant="lead" className="!text-[17px] !leading-[1.6] mt-6 max-w-[44ch]">
-              Most organizations are not failing because of their people or their strategy. They are
-              failing because the systems connecting people to strategy were never designed together.
+              Most business owners are already interested in AI — but between the hype, the cost,
+              and the complexity, it&apos;s hard to know where to start. That&apos;s where we come in.
             </Text>
-            <Link href="#methodology" className="cta-mini">
-              See how we fix it
+            <Link href="#contact" className="cta-mini">
+              Book a free AI assessment
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M7 17L17 7M9 7h8v8" />
               </svg>

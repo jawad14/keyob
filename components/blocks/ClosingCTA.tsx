@@ -8,20 +8,19 @@ export function ClosingCTA() {
       <div className="wrap">
         <div className="card">
           <div>
-            <span className="eyebrow">Begin the Conversation</span>
+            <span className="eyebrow">Free AI Assessment</span>
             <H2>
-              If the systems beneath your business need a strategic look —{' '}
-              <em>we&apos;d be glad to begin.</em>
+              Let&apos;s explore where AI could{' '}
+              <em>create the next opportunity</em> in your business.
             </H2>
             <Text as="p">
-              We work with leaders ready to do the hard work — to see clearly, decide quickly, and
-              move with conviction. The first step is a focused discovery conversation — not a sales
-              pitch, not a vendor demo. A structured discussion about where you are, and where you
-              want to be.
+              We&apos;ll help you identify simple, practical ways to save time, reduce costs,
+              improve performance, and support growth. No obligation — just a focused conversation
+              about where you are and what&apos;s possible.
             </Text>
             <div className="wp-ctas">
               <Link href="#contact" className="btn-primary">
-                Request a strategic assessment
+                Book your free AI assessment
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
                   <path d="M5 12h14M13 5l7 7-7 7" />
                 </svg>
@@ -32,11 +31,13 @@ export function ClosingCTA() {
             </div>
           </div>
           <div className="pdf-mock">
-            <span className="pdf-tag">KEYOB · 2026</span>
+            <span className="pdf-tag">KEYOB · Free Assessment</span>
             <span className="pdf-title">
-              The Business
+              Your AI
               <br />
-              Visibility Maturity Model.
+              Opportunity
+              <br />
+              Report.
             </span>
             <div className="pdf-lines">
               <span />

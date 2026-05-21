@@ -8,29 +8,29 @@ export function WhatWeDoSection() {
         <div className="wkd-grid">
           <div>
             <span className="eyebrow" style={{ display: 'inline-block', marginBottom: 18 }}>
-              What KEYOB Does
+              What we do
             </span>
             <H2>
-              We build the <em>backbone</em> that makes growth feel inevitable.
+              We put AI to work <em>in the right places.</em>
             </H2>
           </div>
           <div className="wkd-body">
             <Text as="p">
-              KEYOB does not add more software to your stack. We redesign the architecture that
-              determines how your business actually runs — connecting people, data, processes, and
-              decisions into a single, coherent operating system.
+              KEYOB doesn&apos;t add AI for the sake of it. We look at how your business actually
+              runs — where time is being lost, where costs are creeping up, where your team is
+              spending energy on things that could be automated — and we build practical solutions
+              that make a real difference.
             </Text>
             <Text as="p" className="secondary">
-              We sit at the intersection of strategic consulting and intelligent technology: we think
-              in systems, design for outcomes, and build with precision. Every engagement begins with
-              understanding how your organization actually operates before we recommend or build
-              anything.
+              Our focus is always on outcomes you can measure: more time back for you and your
+              team, lower operating costs, and stronger performance across the business. We start
+              with a free assessment so we understand your situation before we recommend anything.
             </Text>
             <div className="wkd-distinction">
-              <span className="eyebrow">The KEYOB Distinction</span>
+              <span className="eyebrow">The KEYOB Approach</span>
               <blockquote>
-                &ldquo;Most organizations have the tools they need. What they lack is the
-                architecture that connects them. KEYOB builds that architecture.&rdquo;
+                &ldquo;Most business owners know AI could help them. What they&apos;re missing is
+                someone who can show them exactly where — and then build it properly.&rdquo;
               </blockquote>
             </div>
           </div>

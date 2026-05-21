@@ -37,15 +37,15 @@ export function ContactSection() {
         <div className="grid">
           <div>
             <span className="eyebrow" style={{ display: 'inline-block', marginBottom: 18 }}>
-              Strategic Inquiry
+              Book Your Free Assessment
             </span>
             <H2>
-              Begin a <em>conversation.</em>
+              Let&apos;s find <em>your AI opportunity.</em>
             </H2>
             <Text as="p" className="lede">
-              We work with leaders for whom this matters as a real strategic priority — not buyers
-              looking for a vendor. Tell us about the challenge you&apos;re working through. We&apos;ll
-              respond within one business day with a perspective worth your time.
+              Book a free AI assessment with us. We&apos;ll explore where AI could create the next
+              opportunity in your business — simple, practical ways to save time, reduce costs, and
+              support growth. No obligation, just a real conversation.
             </Text>
             <div className="info">
               <div className="row">
@@ -58,11 +58,11 @@ export function ContactSection() {
               </div>
               <div className="row">
                 <strong>First conversation</strong>
-                <span>Strategic discovery — not a sales call</span>
+                <span>Free AI assessment — no obligation</span>
               </div>
               <div className="row">
                 <strong>No obligation</strong>
-                <span>Assessment before engagement</span>
+                <span>We assess before we recommend anything</span>
               </div>
             </div>
           </div>
@@ -99,16 +99,16 @@ export function ContactSection() {
               <input id="cf-email" name="email" type="email" placeholder="name@company.com" required />
             </div>
             <div className="full">
-              <label htmlFor="cf-challenge">The challenge you&apos;re working through</label>
+              <label htmlFor="cf-challenge">Where would you most like AI to help in your business?</label>
               <textarea
                 id="cf-challenge"
                 name="challenge"
-                placeholder="A few sentences describing what you are working through."
+                placeholder="A few sentences about your business and what you're hoping AI could help with."
                 required
               />
             </div>
             <button type="submit">
-              {submitted ? 'Sent — thank you ✓' : 'Submit inquiry'}
+              {submitted ? 'Sent — thank you ✓' : 'Book your free assessment'}
               {!submitted && (
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
                   <path d="M5 12h14M13 5l7 7-7 7" />
@@ -116,8 +116,7 @@ export function ContactSection() {
               )}
             </button>
             <Text as="p" className={`cf-success${submitted ? ' is-visible' : ''}`}>
-              Thank you. We have received your inquiry and will respond within one business day with
-              a considered perspective on how to proceed.
+              Thank you. We&apos;ll be in touch within one business day to set up your free AI assessment.
             </Text>
           </form>
         </div>

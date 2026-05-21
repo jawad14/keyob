@@ -8,9 +8,9 @@ export function FounderQuote() {
           <div className="avatar" aria-hidden="true">JS</div>
           <div>
             <blockquote>
-              &ldquo;Most organizations are not failing because of their people or their strategy.
-              They are failing because the systems connecting people to strategy were never designed
-              together. KEYOB exists to design them together — and then to build them.&rdquo;
+              &ldquo;Most business owners have more on their plate than they should. AI, used in
+              the right places, gives you back your time — and gives your team the tools to do
+              their best work. That&apos;s what KEYOB is here to do.&rdquo;
             </blockquote>
             <div className="who">
               <strong>Jawad Siddique</strong> Founder — KEYOB
