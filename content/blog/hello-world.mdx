@@ -1,0 +1,17 @@
+---
+title: Hello, world
+description: An example blog post demonstrating the MDX content pipeline. Replace or delete me.
+date: 2026-05-11
+draft: false
+tags:
+  - example
+  - getting-started
+---
+
+# Hello, world
+
+This is an example MDX blog post. The frontmatter above is validated by Zod at load time — required fields are `title`, `description`, `date`. Optional fields include `draft`, `tags`, and `cover`.
+
+The blog routes (`/blog`, `/blog/[slug]`) are scaffolded but **omitted from the default nav** in `config/site.config.ts`. A fork enables the blog by adding a nav entry and setting `features.blog: true`.
+
+Currently the post body renders as raw text. To render full MDX, add `next-mdx-remote` and update `app/blog/[slug]/page.tsx`.
