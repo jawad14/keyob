@@ -33,8 +33,13 @@
   --line-on-dark-2:   rgba(245, 248, 250, 0.18);
 
   /* Font aliases — resolved from next/font variables set on <html> */
-  --keyob-serif: var(--font-serif, "Instrument Serif", "Times New Roman", serif);
-  --keyob-sans:  var(--font-sans, "Manrope", system-ui, -apple-system, sans-serif);
+  --keyob-serif:  var(--font-serif, "Instrument Serif", "Times New Roman", serif);
+  --keyob-sans:   var(--font-sans, "Manrope", system-ui, -apple-system, sans-serif);
+
+  /* Shorthand aliases matching the design file convention */
+  --serif:        var(--keyob-serif);
+  --sans:         var(--keyob-sans);
+  --font-display: var(--keyob-serif);
 
   /* ===== shadcn Tokens — mapped to KEYOB palette ===== */
   --background:            oklch(0.974 0.007 247);   /* ~#F5F8FA */
