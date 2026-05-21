@@ -1,16 +1,16 @@
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 
-const headingVariants = cva('text-foreground tracking-tight', {
+const headingVariants = cva('text-foreground', {
   variants: {
     variant: {
-      display: 'text-5xl font-semibold sm:text-6xl',
-      h1: 'text-4xl font-semibold',
-      h2: 'text-3xl font-semibold',
-      h3: 'text-2xl font-medium',
-      h4: 'text-xl font-medium',
-      h5: 'text-lg font-medium',
-      h6: 'text-base font-medium',
+      display: 'font-light tracking-[-0.035em] leading-[0.95]',
+      h1:      'font-light tracking-[-0.03em]',
+      h2:      'font-light tracking-[-0.03em]',
+      h3:      'font-medium tracking-[-0.02em]',
+      h4:      'font-medium',
+      h5:      'font-semibold tracking-[0.14em]',
+      h6:      'font-medium',
     },
   },
   defaultVariants: { variant: 'h1' },
