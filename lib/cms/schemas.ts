@@ -17,6 +17,14 @@ export const postFrontmatterSchema = z.object({
       alt: z.string().min(1, 'alt text is required'),
     })
     .optional(),
+  cta: z
+    .object({
+      heading: z.string().min(1),
+      body: z.string().min(1),
+      label: z.string().min(1),
+      href: z.string().default('/#contact'),
+    })
+    .optional(),
 });
 
 export type PostFrontmatter = z.infer<typeof postFrontmatterSchema>;

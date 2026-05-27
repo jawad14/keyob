@@ -1118,7 +1118,7 @@ section.cases { padding: 110px 0; border-top: 1px solid var(--line); }
   place-items: center;
   box-shadow: 0 6px 16px rgba(25, 198, 232, .45);
 }
-.case-body { padding: 20px 22px 24px; }
+.case-body { padding: 20px 22px 24px; display: flex; flex-direction: column; }
 .case-body .industry {
   font-size: 12px;
   color: var(--keyob-blue);
@@ -1131,9 +1131,20 @@ section.cases { padding: 110px 0; border-top: 1px solid var(--line); }
   font-size: 15px;
   line-height: 1.55;
   color: var(--ink-dim);
-  margin: 0;
+  margin: 0 0 16px;
   font-family: var(--keyob-sans);
 }
+.case-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--keyob-blue);
+  letter-spacing: .01em;
+  transition: gap .15s;
+}
+.case-card:hover .case-cta { gap: 10px; }
 
 /* ----- INSIGHTS ----- */
 section.insights { padding: 110px 0; border-top: 1px solid var(--line); }
@@ -1569,4 +1580,127 @@ footer.keyob-footer .brand-desc { color: var(--ink-dim-on-dark); max-width: 40ch
   .hero h1 { font-size: clamp(42px, 10vw, 80px); }
   .case-grid { grid-template-columns: 1fr; }
   .insights-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ----- ARTICLE PAGE ----- */
+.article-page { background: var(--bg); }
+.article-hero {
+  padding: 100px 0 80px;
+  border-bottom: 1px solid var(--line);
+  background:
+    radial-gradient(800px 400px at 80% 0%, rgba(37, 99, 217, .06), transparent 60%),
+    var(--bg);
+}
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+.article-date {
+  font-size: 13px;
+  color: var(--ink-mute);
+}
+.article-title {
+  font-family: var(--keyob-sans);
+  font-size: clamp(32px, 4.5vw, 62px);
+  font-weight: 300;
+  letter-spacing: -.03em;
+  line-height: 1.05;
+  color: var(--ink);
+  max-width: 22ch;
+  margin: 0 0 28px;
+  text-wrap: balance;
+}
+.article-desc {
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--ink-dim);
+  max-width: 58ch;
+  margin: 0 0 36px;
+}
+.article-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-dim);
+  transition: color .15s, gap .15s;
+  text-decoration: none;
+}
+.article-back:hover { color: var(--keyob-blue); gap: 12px; }
+.article-body { padding: 80px 0 120px; }
+.prose-keyob {
+  max-width: 70ch;
+}
+.prose-keyob h2 {
+  font-size: clamp(24px, 2.8vw, 36px);
+  font-weight: 300;
+  letter-spacing: -.03em;
+  line-height: 1.1;
+  color: var(--ink);
+  font-family: var(--keyob-sans);
+  margin: 56px 0 20px;
+  padding-top: 56px;
+  border-top: 1px solid var(--line);
+}
+.prose-keyob h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+.prose-keyob h3 {
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -.02em;
+  color: var(--ink);
+  font-family: var(--keyob-sans);
+  margin: 40px 0 12px;
+}
+.prose-keyob p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--ink-dim);
+  margin: 0 0 20px;
+}
+.prose-keyob ul, .prose-keyob ol {
+  padding-left: 20px;
+  margin: 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.prose-keyob li {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink-dim);
+}
+.prose-keyob ul li::marker { color: var(--keyob-blue); }
+.prose-keyob ol li::marker { color: var(--keyob-blue); font-weight: 600; }
+.prose-keyob strong { color: var(--ink); font-weight: 600; }
+.prose-keyob hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 48px 0;
+}
+.article-cta {
+  margin-top: 80px;
+  padding: 48px 56px;
+  border-radius: 20px;
+  max-width: 70ch;
+  background:
+    radial-gradient(900px 400px at 90% 0%, rgba(25, 198, 232, .18), transparent 55%),
+    radial-gradient(700px 400px at 0% 100%, rgba(37, 99, 217, .18), transparent 60%),
+    linear-gradient(135deg, #07101E 0%, #123C8C 100%);
+  color: var(--ink-on-dark);
+}
+.article-cta .eyebrow { color: var(--keyob-cyan); margin-bottom: 16px; display: block; }
+.article-cta p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink-dim-on-dark);
+  margin: 0 0 28px;
+  max-width: 52ch;
+}
+@media (max-width: 768px) {
+  .article-hero { padding: 80px 0 60px; }
+  .article-body { padding: 60px 0 80px; }
+  .article-cta { padding: 36px 28px; }
 }

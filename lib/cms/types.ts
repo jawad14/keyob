@@ -6,6 +6,7 @@ export type Post = {
   draft: boolean;
   tags: string[];
   cover?: { src: string; alt: string };
+  cta?: { heading: string; body: string; label: string; href: string };
   content: string;
 };
 

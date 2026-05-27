@@ -7,20 +7,24 @@ const insights = [
     kind: 'Framework',
     title: 'The Business Visibility Maturity Model: where does your organization sit?',
     excerpt:
-      "Most leaders believe they see what's happening in their business. The evidence says otherwise. A framework defining five levels of business visibility maturity — and the difference each level makes.",
+      'Most leaders believe they see what is happening in their business. The evidence often says otherwise. This framework defines five levels of business visibility maturity — and the difference each level makes.',
     readTime: '15 min read',
+    href: '/blog/business-visibility-maturity-model',
     featured: true,
   },
   {
     kind: 'Transformation Perspective',
     title: 'Why most digital transformations fail before they begin.',
+    excerpt: 'Technology projects often fail before development starts. The real problem is usually unclear business logic, weak process discovery, poor ownership, and a rush to buy tools before defining how the business should work.',
     readTime: '9 min read',
+    href: '/blog/why-digital-transformations-fail',
     featured: false,
   },
   {
     kind: 'Problem Diagnosis',
     title: 'The hidden cost of fragmented systems: a framework for quantification.',
     readTime: '11 min read',
+    href: '#',
     featured: false,
   },
 ];
@@ -42,7 +46,7 @@ export function InsightsSection() {
         </div>
         <div className="insights-grid">
           {insights.map((item) => (
-            <article key={item.title} className={`insight${item.featured ? ' feat' : ''}`}>
+            <Link key={item.title} href={item.href} className={`insight${item.featured ? ' feat' : ''}`}>
               <div className="ithumb" />
               <div className="ibody">
                 <span className="ikind">{item.kind}</span>
@@ -50,10 +54,10 @@ export function InsightsSection() {
                 {item.excerpt && <Text as="p" className="iexcerpt">{item.excerpt}</Text>}
                 <div className="ifoot">
                   <span>{item.readTime}</span>
-                  <span className="read">{item.featured ? 'Read the framework →' : 'Read →'}</span>
+                  <span className="read">View story →</span>
                 </div>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </div>

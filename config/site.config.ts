@@ -67,7 +67,7 @@ export const siteConfig: SiteConfig = {
     search: 'pagefind',
   },
   features: {
-    blog: false,
+    blog: true,
     darkMode: false,
     newsletter: false,
   },

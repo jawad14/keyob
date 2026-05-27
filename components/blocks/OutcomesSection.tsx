@@ -13,8 +13,9 @@ export function OutcomesSection() {
           variant="lead"
           className="!text-[17px] !leading-[1.6] max-w-[60ch] !mt-[-12px] !mb-11"
         >
-          What this work creates for the organizations we partner with. Measurable. Durable.
-          Designed against business outcomes — not technical convenience.
+          Behind every system we build is a business problem that needed to become clearer, faster,
+          and easier to manage. These stories show how better software, connected data, and practical
+          automation create measurable operational impact.
         </Text>
 
         <div className="case-grid">
@@ -38,6 +39,12 @@ export function OutcomesSection() {
                 <div className="case-body">
                   <div className="industry">{o.industry}</div>
                   <Text as="p" className="story">{o.story}</Text>
+                  <span className="case-cta">
+                    View story
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                      <path d="M5 12h14M13 5l7 7-7 7" />
+                    </svg>
+                  </span>
                 </div>
               </article>
             );
