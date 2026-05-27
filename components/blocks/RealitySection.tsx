@@ -3,11 +3,26 @@ import { Section } from '@/components/ui/layout';
 import { H2, Heading, Text } from '@/components/ui/typography';
 
 const reasons = [
-  "You're spending too much time on tasks that could be automated — time that should be going toward growing your business.",
-  "Your team is bogged down in manual processes, and the frustration is starting to affect how people work together.",
-  "You've tried a tool or two, but nothing has really stuck — because AI without a clear strategy doesn't deliver consistent results.",
-  "You're not sure where to invest, and the risk of wasting money on the wrong thing is stopping you from moving forward.",
-  'Growth feels harder than it should, because your systems weren\'t built to scale with you.',
+  {
+    headline: "You're spending too much time on tasks that could be automated.",
+    body: "Time that should be going toward growing your business.",
+  },
+  {
+    headline: "Your team is bogged down in manual processes.",
+    body: "The frustration is starting to affect how people work together.",
+  },
+  {
+    headline: "You've tried a tool or two, but nothing has really stuck.",
+    body: "AI without a clear strategy doesn't deliver consistent results.",
+  },
+  {
+    headline: "You're not sure where to invest.",
+    body: "The risk of wasting money on the wrong thing is stopping you from moving forward.",
+  },
+  {
+    headline: "Growth feels harder than it should.",
+    body: "Your systems weren't built to scale with you.",
+  },
 ];
 
 export function RealitySection() {
@@ -34,11 +49,13 @@ export function RealitySection() {
             </Link>
           </div>
           <div className="reasons">
-            {reasons.map((text, i) => (
+            {reasons.map((item, i) => (
               <div key={i} className="reason">
                 <span className="num" />
-                <Heading level={4}>{text}</Heading>
-                <span className="plus">+</span>
+                <div>
+                  <Heading level={4}>{item.headline}</Heading>
+                  <Text as="p" className="reason-body">{item.body}</Text>
+                </div>
               </div>
             ))}
           </div>

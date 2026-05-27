@@ -113,8 +113,8 @@ export function Nav() {
             </div>
           </li>
 
-          <li>Who we are <span className="caret">▾</span></li>
-          <li>Careers</li>
+          <li><Link href="/about" style={{ color: 'inherit', textDecoration: 'none' }}>About us</Link></li>
+          <li><Link href="/careers" style={{ color: 'inherit', textDecoration: 'none' }}>Careers</Link></li>
 
           <li className="has-menu" data-menu="contact">
             Contact us <span className="caret">▾</span>

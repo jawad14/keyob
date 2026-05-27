@@ -49,11 +49,10 @@ export function InsightsSection() {
             <Link key={item.title} href={item.href} className={`insight${item.featured ? ' feat' : ''}`}>
               <div className="ithumb" />
               <div className="ibody">
-                <span className="ikind">{item.kind}</span>
+                <span className="ikind">{item.kind} · {item.readTime}</span>
                 <Heading level={4}>{item.title}</Heading>
                 {item.excerpt && <Text as="p" className="iexcerpt">{item.excerpt}</Text>}
                 <div className="ifoot">
-                  <span>{item.readTime}</span>
                   <span className="read">View story →</span>
                 </div>
               </div>

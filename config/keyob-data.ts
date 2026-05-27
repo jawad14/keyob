@@ -100,7 +100,7 @@ export const valueCards: ValueCard[] = [
     svgPaths: '<rect x="18" y="20" width="34" height="20" rx="3"/><rect x="18" y="54" width="22" height="18" rx="3"/><circle cx="66" cy="63" r="9"/><path d="M52 30 L78 30 L78 54"/><path d="M40 63 L57 63"/><rect x="50" y="88" width="76" height="30" rx="3"/><path d="M58 98 L66 98 M72 98 L80 98 M86 98 L94 98 M100 98 L108 98 M114 98 L122 98"/><path d="M58 108 L66 108 M72 108 L100 108 M106 108 L122 108"/>',
   },
   {
-    tag: 'Operations & Efficiency',
+    tag: 'Workflow Intelligence',
     heading: 'Automate to work smarter.',
     body: 'Optimise manual business processes through the power of AI and workflow intelligence.',
     href: '#capabilities',
