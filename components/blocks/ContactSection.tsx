@@ -50,7 +50,7 @@ export function ContactSection() {
             <div className="info">
               <div className="row">
                 <strong>Office</strong>
-                <span>333 Ann Street, Brisbane, Australia</span>
+                <span>Level 1, 67 Springwood Road, Springwood QLD 4127</span>
               </div>
               <div className="row">
                 <strong>Response time</strong>

@@ -279,7 +279,7 @@ export default function AboutPage() {
                   Based in Brisbane. <em>Working across Australia.</em>
                 </h2>
                 <p className="about-p" style={{ marginTop: 20, maxWidth: '44ch' }}>
-                  Our headquarters are at 333 Ann Street, Brisbane. We work with businesses
+                  Our office is at Level 1, 67 Springwood Road, Springwood. We work with businesses
                   across Australia and New Zealand — in-person where it matters, remote where it works.
                 </p>
               </div>
@@ -287,7 +287,7 @@ export default function AboutPage() {
                 <div className="about-location">
                   <span className="about-location-badge">HQ</span>
                   <h4 className="about-location-city">Brisbane</h4>
-                  <p className="about-location-addr">333 Ann Street<br />Brisbane, QLD 4000<br />Australia</p>
+                  <p className="about-location-addr">Level 1, 67 Springwood Road<br />Springwood, QLD 4127<br />Australia</p>
                 </div>
                 <div className="about-location">
                   <span className="about-location-badge">Operations</span>
@@ -352,10 +352,10 @@ export default function AboutPage() {
             foundingDate: '2020',
             address: {
               '@type': 'PostalAddress',
-              streetAddress: '333 Ann Street',
-              addressLocality: 'Brisbane',
+              streetAddress: 'Level 1, 67 Springwood Road',
+              addressLocality: 'Springwood',
               addressRegion: 'QLD',
-              postalCode: '4000',
+              postalCode: '4127',
               addressCountry: 'AU',
             },
           },

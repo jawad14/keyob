@@ -56,7 +56,7 @@ export const siteConfig: SiteConfig = {
   contact: {
     email: 'hello@keyob.com.au',
     phone: '+61 7 3000 0000',
-    address: '333 Ann Street, Brisbane, Australia',
+    address: 'Level 1, 67 Springwood Road, Springwood, QLD 4127, Australia',
   },
   providers: {
     logger: 'console',

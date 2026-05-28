@@ -165,8 +165,8 @@ export function Nav() {
                   </svg>
                 </span>
                 <span className="col">
-                  <strong>333 Ann Street, Brisbane</strong>
-                  <span>Australia · By appointment</span>
+                  <strong>67 Springwood Road, Springwood</strong>
+                  <span>QLD 4127 · By appointment</span>
                 </span>
                 <span className="arr">{arrowSvg}</span>
               </Link>

@@ -19,10 +19,10 @@ export function organizationSchema() {
     ],
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '333 Ann Street',
-      addressLocality: 'Brisbane',
+      streetAddress: 'Level 1, 67 Springwood Road',
+      addressLocality: 'Springwood',
       addressRegion: 'QLD',
-      postalCode: '4000',
+      postalCode: '4127',
       addressCountry: 'AU',
     },
     contactPoint: {
@@ -130,7 +130,7 @@ export function faqSchema() {
     },
     {
       q: 'Where is KEYOB based?',
-      a: 'KEYOB is headquartered at 333 Ann Street, Brisbane, Queensland, Australia, and works with businesses across Australia and New Zealand.',
+      a: 'KEYOB is headquartered at Level 1, 67 Springwood Road, Springwood, Queensland, Australia, and works with businesses across Australia and New Zealand.',
     },
     {
       q: 'What AI tools and platforms does KEYOB work with?',
