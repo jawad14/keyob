@@ -145,15 +145,27 @@ export function Nav() {
                 </span>
                 <span className="arr">{arrowSvg}</span>
               </Link>
-              <Link href="tel:+61730000000" role="menuitem">
+              <Link href="tel:+61433278992" role="menuitem">
                 <span className="ic">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
                     <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" />
                   </svg>
                 </span>
                 <span className="col">
-                  <strong>+61 7 3000 0000</strong>
-                  <span>Brisbane HQ · Mon–Fri</span>
+                  <strong>+61 433 278 992</strong>
+                  <span>Springwood · Mon–Fri</span>
+                </span>
+                <span className="arr">{arrowSvg}</span>
+              </Link>
+              <Link href="tel:+61415373506" role="menuitem">
+                <span className="ic">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" />
+                  </svg>
+                </span>
+                <span className="col">
+                  <strong>+61 415 373 506</strong>
+                  <span>Springwood · Mon–Fri</span>
                 </span>
                 <span className="arr">{arrowSvg}</span>
               </Link>

@@ -53,6 +53,14 @@ export function ContactSection() {
                 <span>Level 1, 67 Springwood Road, Springwood QLD 4127</span>
               </div>
               <div className="row">
+                <strong>Phone</strong>
+                <span>
+                  <a href="tel:+61433278992">+61 433 278 992</a>
+                  {' · '}
+                  <a href="tel:+61415373506">+61 415 373 506</a>
+                </span>
+              </div>
+              <div className="row">
                 <strong>Response time</strong>
                 <span>Within one business day</span>
               </div>

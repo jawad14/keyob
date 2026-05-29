@@ -16,7 +16,7 @@ export type SiteConfig = {
   social: SocialLink[];
   contact: {
     email: string;
-    phone: string;
+    phones: string[];
     address: string;
   };
   providers: {
@@ -55,7 +55,7 @@ export const siteConfig: SiteConfig = {
   ],
   contact: {
     email: 'hello@keyob.com.au',
-    phone: '+61 7 3000 0000',
+    phones: ['+61 433 278 992', '+61 415 373 506'],
     address: 'Level 1, 67 Springwood Road, Springwood, QLD 4127, Australia',
   },
   providers: {
