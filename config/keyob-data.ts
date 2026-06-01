@@ -120,10 +120,10 @@ export const valueCards: ValueCard[] = [
 export const capabilities: Domain[] = [
   {
     n: '01 / 07',
-    titleHtml: 'Workflow Architecture & <em>Automation</em>',
+    titleHtml: 'Architecture & <em>Automation</em>',
     tag: 'Workflow',
     problem: 'Manual, disconnected, or duplicated workflows that consume staff capacity and introduce operational variance at scale.',
-    outcome: 'Teams focus on judgment, not administration. Operational capacity increases measurably.',
+    outcome: 'Teams focus on judgment, not administration. Operational capacity increases measurably. Without added headcount.',
     iconPath: '<path d="M3 6h13M3 12h18M3 18h10"/><circle cx="20" cy="6" r="2"/><circle cx="14" cy="18" r="2"/>',
   },
   {
@@ -136,7 +136,7 @@ export const capabilities: Domain[] = [
   },
   {
     n: '03 / 07',
-    titleHtml: 'Operational <em>Visibility & Reporting</em>',
+    titleHtml: 'Operational <em>Reporting</em>',
     tag: 'Visibility',
     problem: 'Decisions based on lagging reports assembled manually from multiple sources, often days after the relevant events.',
     outcome: 'Decision-makers see what is happening now. Operational risks become visible before they become failures.',
@@ -176,7 +176,7 @@ export const capabilities: Domain[] = [
   },
 ];
 
-export const capabilityGridSpans = [5, 4, 3, 4, 8, 7, 5];
+export const capabilityGridSpans = [4, 4, 4, 4, 8, 7, 5];
 
 export const phases: Phase[] = [
   {
