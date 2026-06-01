@@ -1199,6 +1199,8 @@ section.insights { padding: 110px 0; border-top: 1px solid var(--line); }
   box-shadow: 0 20px 40px rgba(7, 16, 30, .08);
 }
 .insight .ithumb {
+  position: relative;
+  overflow: hidden;
   aspect-ratio: 16 / 10;
   background:
     radial-gradient(80% 100% at 30% 20%, rgba(25, 198, 232, .45), transparent 60%),

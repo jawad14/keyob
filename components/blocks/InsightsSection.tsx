@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { Section } from '@/components/ui/layout';
 import { H2, Heading, Text } from '@/components/ui/typography';
@@ -11,6 +12,7 @@ const insights = [
     readTime: '15 min read',
     href: '/blog/business-visibility-maturity-model',
     featured: true,
+    image: '/business_visibility.jpg',
   },
   {
     kind: 'Transformation Perspective',
@@ -19,6 +21,7 @@ const insights = [
     readTime: '9 min read',
     href: '/blog/why-digital-transformations-fail',
     featured: false,
+    image: '/transformation_perspective.jpg',
   },
   {
     kind: 'Problem Diagnosis',
@@ -26,6 +29,7 @@ const insights = [
     readTime: '11 min read',
     href: '#',
     featured: false,
+    image: '/fragmented_systems.jpg',
   },
 ];
 
@@ -47,7 +51,11 @@ export function InsightsSection() {
         <div className="insights-grid">
           {insights.map((item) => (
             <Link key={item.title} href={item.href} className={`insight${item.featured ? ' feat' : ''}`}>
-              <div className="ithumb" />
+              <div className="ithumb">
+                {item.image && (
+                  <Image src={item.image} alt="" fill style={{ objectFit: 'cover' }} />
+                )}
+              </div>
               <div className="ibody">
                 <span className="ikind">{item.kind} · {item.readTime}</span>
                 <Heading level={4}>{item.title}</Heading>
