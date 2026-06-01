@@ -442,15 +442,20 @@ nav.top li.has-menu[data-menu="contact"].is-open .menu {
   max-width: 56ch;
   font-weight: 400;
 }
-.hero-foot .meta { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+.hero-foot .meta { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
 .hero-foot .meta .row {
   display: flex;
-  gap: 18px;
+  gap: 12px;
   align-items: center;
-  font-size: 17px;
+  font-size: 16px;
   color: var(--ink-dim-on-dark);
 }
-.hero-foot .meta .row strong { color: var(--ink-on-dark); font-weight: 600; }
+.hero-foot .meta .row-check {
+  flex-shrink: 0;
+  color: var(--keyob-cyan);
+  opacity: .9;
+}
+.hero-foot .meta .row strong { color: var(--keyob-cyan); font-weight: 600; }
 .scroll-cue {
   display: inline-flex;
   align-items: center;

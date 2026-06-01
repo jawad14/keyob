@@ -24,13 +24,16 @@ export function HeroSection() {
           </Text>
           <div className="meta">
             <div className="row">
-              <strong>Save time</strong> on manual, repetitive work
+              <svg className="row-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg>
+              <span><strong>Save time</strong> on manual, repetitive work</span>
             </div>
             <div className="row">
-              <strong>Reduce costs</strong> through smart automation
+              <svg className="row-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg>
+              <span><strong>Reduce costs</strong> through smart automation</span>
             </div>
             <div className="row">
-              <strong>Grow</strong> with confidence and clarity
+              <svg className="row-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg>
+              <span><strong>Grow</strong> with confidence and clarity</span>
             </div>
             <Link href="#contact" className="scroll-cue">
               Book a free AI assessment
