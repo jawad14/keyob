@@ -27,7 +27,7 @@ export default function HomePage() {
         <WhatWeDoSection />
         <MethodologySection />
         <CapabilitiesSection />
-        <IndustriesSection />
+        {/* <IndustriesSection /> */}
         <OutcomesSection />
         <InsightsSection />
         <FounderQuote />

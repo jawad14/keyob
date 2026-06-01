@@ -2,6 +2,17 @@
 
 import { useCallback, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { industries } from '@/config/keyob-data';
+
+const industryIcons: Record<string, string> = {
+  'Professional Services': '<rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 4 0v2M12 7v0M16 7V5a2 2 0 0 0-4 0"/>',
+  'Healthcare Operations': '<path d="M12 21s-7-7-7-12a7 7 0 1 1 14 0c0 5-7 12-7 12Z"/><path d="M9 12h6M12 9v6"/>',
+  'Financial Services': '<path d="M3 17l6-6 4 4 8-9"/><path d="M14 6h7v7"/>',
+  'Logistics & Distribution': '<rect x="1" y="9" width="15" height="11" rx="1"/><path d="M16 12h3l4 5v3h-7"/><circle cx="5.5" cy="20" r="1.5"/><circle cx="18.5" cy="20" r="1.5"/>',
+  'Technology Businesses': '<rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 12h8M12 8v8"/>',
+  'Education Administration': '<path d="M22 9L12 5 2 9l10 4 10-4Z"/><path d="M6 11v5c0 2 2.7 4 6 4s6-2 6-4v-5"/>',
+  'Manufacturing & Operations': '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>',
+};
 
 const newsItems = [
   {
@@ -87,7 +98,30 @@ export function Nav() {
 
         <ul>
           <li>What We Do <span className="caret">▾</span></li>
-          {/* <li>Latest thinking <span className="caret">▾</span></li> */}
+
+          <li className="has-menu" data-menu="industries">
+            Industries <span className="caret">▾</span>
+            <div className="menu" role="menu">
+              <span className="mhead">Industries we serve</span>
+              {industries.map((industry) => (
+                <Link key={industry.title} href="#industries" role="menuitem">
+                  <span className="ic">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" dangerouslySetInnerHTML={{ __html: industryIcons[industry.title] ?? '' }} />
+                  </span>
+                  <span className="col">
+                    <strong>{industry.title}</strong>
+                    <span>{industry.subtitle}</span>
+                  </span>
+                  <span className="arr">{arrowSvg}</span>
+                </Link>
+              ))}
+              <div className="sep" />
+              <div className="foot">
+                <span> </span>
+                <Link href="#industries">View all industries →</Link>
+              </div>
+            </div>
+          </li>
 
           <li className="has-menu" data-menu="news">
             News <span className="caret">▾</span>
