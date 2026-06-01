@@ -92,7 +92,7 @@ export function CapabilitiesGrid() {
                 </span>
                 <span className="tag cap-num">{d.n}</span>
                 <Heading level={3} dangerouslySetInnerHTML={{ __html: d.titleHtml }} />
-                <Text as="p">{d.problem}</Text>
+                <Text as="p" className={i === 4 ? '!text-white' : undefined}>{d.problem}</Text>
                 <div className="cap-outcome">
                   <span className="eyebrow cap-outcome-label">Outcome</span>
                   <span className="cap-outcome-text">{d.outcome}</span>
