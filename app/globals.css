@@ -1247,20 +1247,13 @@ section.insights { padding: 110px 0; border-top: 1px solid var(--line); }
 section.quote { padding: 100px 0 120px; border-top: 1px solid var(--line); }
 .quote-card { display: grid; grid-template-columns: auto 1fr; gap: 56px; align-items: center; }
 .avatar {
+  position: relative;
   width: 220px;
   height: 220px;
   border-radius: 50%;
-  background:
-    radial-gradient(circle at 30% 30%, rgba(25, 198, 232, .35), transparent 60%),
-    linear-gradient(135deg, #07101E 0%, #123C8C 100%);
   border: 1px solid var(--line-2);
-  display: grid;
-  place-items: center;
-  color: var(--keyob-cyan);
-  font-family: var(--keyob-serif);
-  font-style: italic;
-  font-size: 96px;
   flex: 0 0 220px;
+  overflow: hidden;
   box-shadow: 0 30px 60px rgba(7, 16, 30, .18), inset 0 0 0 1px rgba(255, 255, 255, .08);
 }
 .quote-card blockquote {
