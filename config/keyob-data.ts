@@ -154,8 +154,8 @@ export const capabilities: Domain[] = [
     n: '05 / 07',
     titleHtml: 'AI-Powered <em>Operational Intelligence</em>',
     tag: 'AI Intelligence',
-    problem: 'Enormous operational data volumes without the infrastructure to derive insight at the speed required for real decisions.',
-    outcome: 'Proactive operational management. Faster, better-informed decisions. Intelligence that acts within defined parameters.',
+    problem: 'Enormous operational data volumes without the infrastructure to derive insight at the speed required for real decisions. What should be an organizational asset becomes a liability — reports that describe what happened days after the window to act has already closed.',
+    outcome: 'Proactive operational management. Faster, better-informed decisions. Intelligence that acts within defined parameters. What once required a team of analysts and three days of consolidation happens continuously, automatically, and in time to change the outcome.',
     iconPath: '<path d="M12 2a5 5 0 0 0-5 5v2a5 5 0 0 0-3 4.6V14a5 5 0 0 0 4 4.9V21h8v-2.1a5 5 0 0 0 4-4.9v-.4a5 5 0 0 0-3-4.6V7a5 5 0 0 0-5-5z"/>',
   },
   {
