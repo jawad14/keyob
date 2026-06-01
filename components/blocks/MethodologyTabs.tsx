@@ -18,7 +18,7 @@ export function MethodologyTabs() {
             className={`tab${active === i ? ' is-active' : ''}`}
             onClick={() => setActive(i)}
           >
-            {`0${i + 1} · ${p.tag.split(' ')[1] ?? p.tag}`}
+            {`Phase ${i + 1}`}
           </button>
         ))}
       </div>

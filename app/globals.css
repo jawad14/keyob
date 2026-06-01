@@ -704,7 +704,7 @@ section.deep {
 }
 .deep h2 {
   font-size: clamp(40px, 5vw, 70px);
-  margin: 0 0 44px;
+  margin: 0;
   letter-spacing: -.03em;
   font-weight: 300;
   max-width: 18ch;
@@ -712,6 +712,21 @@ section.deep {
   font-family: var(--keyob-sans);
 }
 .deep h2 em { font-family: var(--keyob-serif); font-style: italic; color: var(--keyob-blue); }
+.deep-header {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 80px;
+  align-items: start;
+  margin-bottom: 44px;
+}
+.deep-header .sub {
+  color: var(--ink-dim);
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 52ch;
+  margin: 0;
+  padding-top: 8px;
+}
 .deep .sub {
   color: var(--ink-dim);
   font-size: 18px;
@@ -723,6 +738,7 @@ section.deep {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
+  justify-content: center;
   margin-bottom: 56px;
   padding-bottom: 28px;
   border-bottom: 1px solid var(--line);
@@ -1558,6 +1574,7 @@ footer.keyob-footer .brand-desc { color: var(--ink-dim-on-dark); max-width: 40ch
   .hero-foot { grid-template-columns: 1fr !important; gap: 32px !important; }
 
   .wkd-grid,
+  .deep-header,
   .caps .header,
   .panel,
   .insights-grid,
