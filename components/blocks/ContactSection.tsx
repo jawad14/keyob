@@ -49,28 +49,52 @@ export function ContactSection() {
             </Text>
             <div className="info">
               <div className="row">
-                <strong>Office</strong>
-                <span>Level 1, 67 Springwood Road, Springwood QLD 4127</span>
-              </div>
-              <div className="row">
-                <strong>Phone</strong>
-                <span>
-                  <a href="tel:+61433278992">+61 433 278 992</a>
-                  {' · '}
-                  <a href="tel:+61415373506">+61 415 373 506</a>
+                <span className="row-ic">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <path d="M12 21s-7-7-7-12a7 7 0 1 1 14 0c0 5-7 12-7 12Z"/><circle cx="12" cy="9" r="2.5"/>
+                  </svg>
+                </span>
+                <span className="row-col">
+                  <span className="row-label">Office</span>
+                  <span>Level 1, 67 Springwood Road, Springwood QLD 4127</span>
                 </span>
               </div>
               <div className="row">
-                <strong>Response time</strong>
-                <span>Within one business day</span>
+                <span className="row-ic">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/>
+                  </svg>
+                </span>
+                <span className="row-col">
+                  <span className="row-label">Phone</span>
+                  <span>
+                    <a href="tel:+61433278992">+61 433 278 992</a>
+                    {' / '}
+                    <a href="tel:+61415373506">+61 415 373 506</a>
+                  </span>
+                </span>
               </div>
               <div className="row">
-                <strong>First conversation</strong>
-                <span>Free AI assessment — no obligation</span>
+                <span className="row-ic">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>
+                  </svg>
+                </span>
+                <span className="row-col">
+                  <span className="row-label">Response time</span>
+                  <span>Within one business day</span>
+                </span>
               </div>
               <div className="row">
-                <strong>No obligation</strong>
-                <span>We assess before we recommend anything</span>
+                <span className="row-ic">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z"/>
+                  </svg>
+                </span>
+                <span className="row-col">
+                  <span className="row-label">No obligation</span>
+                  <span>Free assessment — we evaluate before we recommend</span>
+                </span>
               </div>
             </div>
           </div>

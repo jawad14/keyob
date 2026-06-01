@@ -1397,9 +1397,15 @@ section.contact { padding: 120px 0; border-top: 1px solid var(--line); backgroun
 }
 .contact h2 em { font-family: var(--keyob-serif); font-style: italic; color: var(--keyob-blue); }
 .contact p.lede { font-size: 17px; color: var(--ink-dim); line-height: 1.55; margin: 24px 0 32px; max-width: 50ch; }
-.contact .info { display: flex; flex-direction: column; gap: 14px; border-top: 1px solid var(--line); padding-top: 24px; }
-.contact .info .row { display: flex; gap: 16px; font-size: 14px; color: var(--ink-dim); align-items: center; }
-.contact .info .row strong { color: var(--ink); font-weight: 600; min-width: 110px; }
+.contact .info { display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--line); }
+.contact .info .row { display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.contact .info .row:last-child { border-bottom: none; }
+.contact .info .row-ic { flex-shrink: 0; width: 32px; height: 32px; border-radius: 8px; background: rgba(37,99,217,.07); border: 1px solid rgba(37,99,217,.10); display: flex; align-items: center; justify-content: center; color: var(--keyob-blue); margin-top: 1px; }
+.contact .info .row-col { display: flex; flex-direction: column; gap: 5px; }
+.contact .info .row-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-mute); }
+.contact .info .row-col > span:last-child { font-size: 14px; color: var(--ink); line-height: 1.5; }
+.contact .info .row-col a { color: var(--ink); text-decoration: none; }
+.contact .info .row-col a:hover { color: var(--keyob-blue); }
 form.cf {
   background: #FFFFFF;
   border: 1px solid var(--keyob-steel);
@@ -1433,6 +1439,14 @@ form.cf select {
   font-size: 16px;
   transition: border-color .15s, background .15s, box-shadow .15s;
   outline: none;
+}
+form.cf select {
+  appearance: none;
+  padding-right: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  cursor: pointer;
 }
 form.cf input::placeholder,
 form.cf textarea::placeholder { color: var(--ink-mute); }
