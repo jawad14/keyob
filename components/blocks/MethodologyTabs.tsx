@@ -25,7 +25,7 @@ export function MethodologyTabs() {
 
       <div className="panel">
         <div className="panel-left">
-          <span className="tag-pill">{phase.tag}</span>
+          {/* <span className="tag-pill">{phase.tag}</span> */}
           <Heading level={3} dangerouslySetInnerHTML={{ __html: phase.titleHtml }} />
           <Text as="p" className="summary">{phase.summary}</Text>
           <Heading level={5}>What you&apos;ll know</Heading>

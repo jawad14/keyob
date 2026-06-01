@@ -725,7 +725,7 @@ section.deep {
   line-height: 1.6;
   max-width: 52ch;
   margin: 0;
-  padding-top: 8px;
+  padding-top: clamp(16px, 2.5vw, 40px);
 }
 .deep .sub {
   color: var(--ink-dim);
