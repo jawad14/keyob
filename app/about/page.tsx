@@ -115,7 +115,7 @@ export default function AboutPage() {
           </div>
           <div className="about-hero-image">
             <Image
-              src="/aboutus.png"
+              src="/aboutus_v2.png"
               alt="KEYOB team — delivering practical AI transformation for Australian businesses"
               width={1625}
               height={360}

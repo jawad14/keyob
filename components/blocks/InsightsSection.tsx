@@ -12,7 +12,7 @@ const insights = [
     readTime: '15 min read',
     href: '/blog/business-visibility-maturity-model',
     featured: true,
-    image: '/business_visibility.jpg',
+    image: '/business_visibility.png',
   },
   {
     kind: 'Transformation Perspective',
