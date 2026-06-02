@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import { Section } from '@/components/ui/layout';
 import { H2, Text } from '@/components/ui/typography';
 import { outcomes, palettes, getThumbBg } from '@/config/keyob-data';
@@ -24,6 +26,13 @@ export function OutcomesSection() {
             return (
               <article key={idx} className="case-card">
                 <div className="case-thumb">
+                  <Image
+                    src={o.image}
+                    alt={o.imageAlt}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    className="case-photo"
+                  />
                   <div className="grad" style={{ background: getThumbBg(palette) }} />
                   <span className="label">{o.tag}</span>
                   <div className="stat-display">

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Instrument_Serif, Inter } from 'next/font/google';
+import { Fraunces, Instrument_Serif, Inter } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import { ThemeProvider } from '@/components/providers/theme-provider';
 import { defaultMetadata } from '@/config/site.config';
@@ -16,6 +16,14 @@ const fontSerif = Instrument_Serif({
   variable: '--font-serif',
   subsets: ['latin'],
   weight: ['400'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+});
+
+const fontFraunces = Fraunces({
+  variable: '--font-fraunces',
+  subsets: ['latin'],
+  weight: ['300', '400', '500'],
   style: ['normal', 'italic'],
   display: 'swap',
 });
@@ -42,7 +50,7 @@ export default function RootLayout({
     <html
       lang="en-AU"
       suppressHydrationWarning
-      className={`${fontSans.variable} ${fontSerif.variable} ${fontMono.variable} h-full antialiased`}
+      className={`${fontSans.variable} ${fontSerif.variable} ${fontFraunces.variable} ${fontMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col overflow-x-hidden">
         <ThemeProvider

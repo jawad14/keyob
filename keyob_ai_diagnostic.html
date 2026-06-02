@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KEYOB AI Diagnostic Map</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  .wrapper {
+    width: 100%;
+    max-width: 900px;
+    padding: 40px 24px;
+  }
+  svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  @keyframes flowDot {
+    0%   { offset-distance: 0%;   opacity: 0; }
+    5%   { opacity: 1; }
+    80%  { opacity: 1; }
+    100% { offset-distance: 100%; opacity: 0; }
+  }
+  @keyframes aiPulse {
+    0%, 100% { opacity: 0.18; }
+    50%       { opacity: 0.38; }
+  }
+  @keyframes nodePing {
+    0%        { r: 7;  opacity: 0.6; }
+    60%       { r: 14; opacity: 0;  }
+    100%      { r: 14; opacity: 0;  }
+  }
+  @keyframes outcomeGrow {
+    0%, 100% { opacity: 0.25; }
+    50%       { opacity: 0.55; }
+  }
+
+  .flow-dot {
+    offset-rotate: 0deg;
+    animation: flowDot 4.5s ease-in-out infinite;
+  }
+  .ai-glow    { animation: aiPulse 3s ease-in-out infinite; }
+  .ping       { animation: nodePing 2.8s ease-out infinite; }
+  .outcome-glow { animation: outcomeGrow 3.2s ease-in-out infinite; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .flow-dot, .ai-glow, .ping, .outcome-glow { animation: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+<svg viewBox="0 0 680 560" xmlns="http://www.w3.org/2000/svg">
+
+  <title>KEYOB AI Diagnostic Map</title>
+  <desc>An abstract business workflow showing AI analyzing process nodes, identifying inefficiencies, and routing improvements toward measurable outcomes.</desc>
+
+  <!-- ───── Background circuit texture ───── -->
+  <g opacity="0.06" fill="#0A1F4B">
+    <circle cx="40" cy="40" r="1.5"/><circle cx="120" cy="40" r="1.5"/><circle cx="200" cy="40" r="1.5"/>
+    <circle cx="280" cy="40" r="1.5"/><circle cx="360" cy="40" r="1.5"/><circle cx="440" cy="40" r="1.5"/>
+    <circle cx="520" cy="40" r="1.5"/><circle cx="600" cy="40" r="1.5"/>
+    <circle cx="40" cy="520" r="1.5"/><circle cx="120" cy="520" r="1.5"/><circle cx="200" cy="520" r="1.5"/>
+    <circle cx="280" cy="520" r="1.5"/><circle cx="360" cy="520" r="1.5"/><circle cx="440" cy="520" r="1.5"/>
+    <circle cx="520" cy="520" r="1.5"/><circle cx="600" cy="520" r="1.5"/>
+  </g>
+
+  <!-- Faint horizontal trace lines -->
+  <g stroke="#0D2B6B" stroke-width="0.3" opacity="0.07" fill="none">
+    <line x1="20" y1="112" x2="660" y2="112"/>
+    <line x1="20" y1="200" x2="660" y2="200"/>
+    <line x1="20" y1="288" x2="660" y2="288"/>
+    <line x1="20" y1="380" x2="660" y2="380"/>
+    <line x1="20" y1="460" x2="660" y2="460"/>
+  </g>
+  <g stroke="#0D2B6B" stroke-width="0.3" opacity="0.07" fill="none">
+    <line x1="130" y1="60" x2="130" y2="500"/>
+    <line x1="260" y1="60" x2="260" y2="500"/>
+    <line x1="440" y1="60" x2="440" y2="500"/>
+    <line x1="550" y1="60" x2="550" y2="500"/>
+  </g>
+
+  <!-- Section label -->
+  <text font-family="sans-serif" font-size="10" font-weight="500" letter-spacing="2.5"
+        fill="#0D2B6B" opacity="0.28" x="340" y="32" text-anchor="middle" dominant-baseline="central">
+    BUSINESS DIAGNOSTIC SCAN
+  </text>
+
+  <!-- ═══ LAYER 1 — INTAKE NODES ═══ -->
+  <circle cx="166" cy="140" r="7" fill="none" stroke="#0D2B6B" stroke-width="0.6" opacity="0.5" class="ping" style="animation-delay:0s"/>
+  <circle cx="166" cy="200" r="7" fill="none" stroke="#0D2B6B" stroke-width="0.6" opacity="0.5" class="ping" style="animation-delay:1s"/>
+  <circle cx="166" cy="260" r="7" fill="none" stroke="#0D2B6B" stroke-width="0.6" opacity="0.5" class="ping" style="animation-delay:2s"/>
+
+  <rect x="130" y="118" width="72" height="44" rx="6" fill="none" stroke="#0D2B6B" stroke-width="0.8" opacity="0.22"/>
+  <rect x="130" y="178" width="72" height="44" rx="6" fill="none" stroke="#0D2B6B" stroke-width="0.8" opacity="0.22"/>
+  <rect x="130" y="238" width="72" height="44" rx="6" fill="none" stroke="#0D2B6B" stroke-width="0.8" opacity="0.22"/>
+
+  <text font-family="sans-serif" font-size="9.5" fill="#0D2B6B" opacity="0.65" x="166" y="135" text-anchor="middle" dominant-baseline="central" font-weight="500">OPERATIONS</text>
+  <text font-family="sans-serif" font-size="9.5" fill="#0D2B6B" opacity="0.65" x="166" y="145.5" text-anchor="middle" dominant-baseline="central" font-weight="500">INTAKE</text>
+  <text font-family="sans-serif" font-size="9.5" fill="#0D2B6B" opacity="0.65" x="166" y="195" text-anchor="middle" dominant-baseline="central" font-weight="500">FINANCE</text>
+  <text font-family="sans-serif" font-size="9.5" fill="#0D2B6B" opacity="0.65" x="166" y="205.5" text-anchor="middle" dominant-baseline="central" font-weight="500">FLOW</text>
+  <text font-family="sans-serif" font-size="9.5" fill="#0D2B6B" opacity="0.65" x="166" y="255" text-anchor="middle" dominant-baseline="central" font-weight="500">PEOPLE</text>
+  <text font-family="sans-serif" font-size="9.5" fill="#0D2B6B" opacity="0.65" x="166" y="265.5" text-anchor="middle" dominant-baseline="central" font-weight="500">PROCESS</text>
+
+  <line x1="20" y1="140" x2="130" y2="140" stroke="#0D2B6B" stroke-width="0.6" opacity="0.18"/>
+  <line x1="20" y1="200" x2="130" y2="200" stroke="#0D2B6B" stroke-width="0.6" opacity="0.18"/>
+  <line x1="20" y1="260" x2="130" y2="260" stroke="#0D2B6B" stroke-width="0.6" opacity="0.18"/>
+
+  <path d="M 124 137 L 130 140 L 124 143" fill="none" stroke="#0D2B6B" stroke-width="0.7" opacity="0.3" stroke-linecap="round"/>
+  <path d="M 124 197 L 130 200 L 124 203" fill="none" stroke="#0D2B6B" stroke-width="0.7" opacity="0.3" stroke-linecap="round"/>
+  <path d="M 124 257 L 130 260 L 124 263" fill="none" stroke="#0D2B6B" stroke-width="0.7" opacity="0.3" stroke-linecap="round"/>
+
+  <!-- ═══ LAYER 2 — ANALYSIS / PAIN POINTS ═══ -->
+  <path d="M 202 140 C 230 140, 248 168, 260 178" fill="none" stroke="#0D2B6B" stroke-width="0.6" opacity="0.2"/>
+  <path d="M 202 200 L 260 200" fill="none" stroke="#0D2B6B" stroke-width="0.6" opacity="0.2"/>
+  <path d="M 202 260 C 230 260, 248 232, 260 222" fill="none" stroke="#0D2B6B" stroke-width="0.6" opacity="0.2"/>
+
+  <rect x="260" y="160" width="70" height="36" rx="5" fill="#FFF0EE" stroke="#C0442A" stroke-width="0.7" opacity="0.55"/>
+  <text font-family="sans-serif" font-size="9" fill="#7A2210" opacity="0.9" x="295" y="176" text-anchor="middle" dominant-baseline="central" font-weight="500">TIME LOSS</text>
+  <text font-family="sans-serif" font-size="8" fill="#7A2210" opacity="0.65" x="295" y="186" text-anchor="middle" dominant-baseline="central">detected</text>
+
+  <rect x="260" y="182" width="70" height="36" rx="5" fill="#FFF8ED" stroke="#B8680C" stroke-width="0.7" opacity="0.55"/>
+  <text font-family="sans-serif" font-size="9" fill="#6B3A06" opacity="0.9" x="295" y="198" text-anchor="middle" dominant-baseline="central" font-weight="500">COST LEAK</text>
+  <text font-family="sans-serif" font-size="8" fill="#6B3A06" opacity="0.65" x="295" y="208" text-anchor="middle" dominant-baseline="central">flagged</text>
+
+  <rect x="260" y="204" width="70" height="36" rx="5" fill="#EDF4FF" stroke="#185FA5" stroke-width="0.7" opacity="0.55"/>
+  <text font-family="sans-serif" font-size="9" fill="#0C2D5A" opacity="0.9" x="295" y="220" text-anchor="middle" dominant-baseline="central" font-weight="500">MANUAL WK</text>
+  <text font-family="sans-serif" font-size="8" fill="#0C2D5A" opacity="0.65" x="295" y="230" text-anchor="middle" dominant-baseline="central">mapped</text>
+
+  <path d="M 256 155 L 250 155 L 250 245 L 256 245" fill="none" stroke="#185FA5" stroke-width="0.8" opacity="0.3" stroke-linecap="round"/>
+  <text font-family="sans-serif" font-size="8.5" fill="#185FA5" opacity="0.38" x="244" y="200" text-anchor="middle" dominant-baseline="central" transform="rotate(-90, 244, 200)" letter-spacing="1.2">DIAGNOSTICS</text>
+
+  <!-- ═══ LAYER 3 — AI CUBE ═══ -->
+  <ellipse cx="440" cy="200" rx="52" ry="52" fill="#00C5E8" opacity="0.06" class="ai-glow"/>
+  <ellipse cx="440" cy="200" rx="38" ry="38" fill="#00C5E8" opacity="0.08" class="ai-glow" style="animation-delay:1.5s"/>
+
+  <path d="M 330 178 C 355 170, 370 185, 390 190" fill="none" stroke="#185FA5" stroke-width="0.8" opacity="0.25" stroke-dasharray="4 3"/>
+  <path d="M 330 200 L 390 200" fill="none" stroke="#185FA5" stroke-width="0.8" opacity="0.25" stroke-dasharray="4 3"/>
+  <path d="M 330 222 C 355 230, 370 215, 390 210" fill="none" stroke="#185FA5" stroke-width="0.8" opacity="0.25" stroke-dasharray="4 3"/>
+
+  <!-- Cube top face -->
+  <polygon points="440,162 472,178 440,194 408,178" fill="#E8F8FC" stroke="#00C5E8" stroke-width="1" opacity="0.85"/>
+  <!-- Cube left face -->
+  <polygon points="408,178 440,194 440,230 408,214" fill="#CBF0F8" stroke="#00C5E8" stroke-width="1" opacity="0.7"/>
+  <!-- Cube right face -->
+  <polygon points="440,194 472,178 472,214 440,230" fill="#B0E8F5" stroke="#00C5E8" stroke-width="1" opacity="0.7"/>
+
+  <line x1="430" y1="175" x2="450" y2="185" stroke="#00C5E8" stroke-width="0.5" opacity="0.55"/>
+  <line x1="435" y1="182" x2="445" y2="177" stroke="#00C5E8" stroke-width="0.5" opacity="0.45"/>
+  <circle cx="440" cy="180" r="2.5" fill="#00C5E8" opacity="0.7"/>
+  <circle cx="430" cy="174" r="1.5" fill="#00C5E8" opacity="0.5"/>
+  <circle cx="450" cy="186" r="1.5" fill="#00C5E8" opacity="0.5"/>
+
+  <text font-family="sans-serif" font-size="9" fill="#00C5E8" opacity="0.85" x="440" y="152" text-anchor="middle" dominant-baseline="central" font-weight="600" letter-spacing="1.5">AI ENGINE</text>
+  <text font-family="sans-serif" font-size="8" fill="#0D2B6B" opacity="0.4" x="440" y="162" text-anchor="middle" dominant-baseline="central" letter-spacing="0.8">KEYOB INTELLIGENCE</text>
+
+  <!-- ═══ LAYER 4 — OUTCOMES ═══ -->
+  <path d="M 472 187 C 498 180, 518 155, 550 152" fill="none" stroke="#00C5E8" stroke-width="0.9" opacity="0.3" stroke-dasharray="4 3"/>
+  <path d="M 472 196 C 498 196, 520 200, 550 200" fill="none" stroke="#00C5E8" stroke-width="0.9" opacity="0.3" stroke-dasharray="4 3"/>
+  <path d="M 472 213 C 498 220, 518 245, 550 248" fill="none" stroke="#00C5E8" stroke-width="0.9" opacity="0.3" stroke-dasharray="4 3"/>
+
+  <circle cx="586" cy="152" r="22" fill="#00C5E8" opacity="0.07" class="outcome-glow" style="animation-delay:0.5s"/>
+  <circle cx="586" cy="200" r="22" fill="#00C5E8" opacity="0.07" class="outcome-glow" style="animation-delay:1.4s"/>
+  <circle cx="586" cy="248" r="22" fill="#00C5E8" opacity="0.07" class="outcome-glow" style="animation-delay:2.3s"/>
+
+  <rect x="550" y="132" width="80" height="40" rx="7" fill="none" stroke="#00C5E8" stroke-width="0.9" opacity="0.55"/>
+  <text font-family="sans-serif" font-size="9.5" fill="#0D2B6B" opacity="0.8" x="590" y="149" text-anchor="middle" dominant-baseline="central" font-weight="600">TIME SAVED</text>
+  <text font-family="sans-serif" font-size="8.5" fill="#00C5E8" opacity="0.85" x="590" y="161" text-anchor="middle" dominant-baseline="central">↑ capacity</text>
+
+  <rect x="550" y="180" width="80" height="40" rx="7" fill="none" stroke="#00C5E8" stroke-width="0.9" opacity="0.55"/>
+  <text font-family="sans-serif" font-size="9.5" fill="#0D2B6B" opacity="0.8" x="590" y="197" text-anchor="middle" dominant-baseline="central" font-weight="600">LOWER COST</text>
+  <text font-family="sans-serif" font-size="8.5" fill="#00C5E8" opacity="0.85" x="590" y="209" text-anchor="middle" dominant-baseline="central">↓ leakage</text>
+
+  <rect x="550" y="228" width="80" height="40" rx="7" fill="none" stroke="#00C5E8" stroke-width="0.9" opacity="0.55"/>
+  <text font-family="sans-serif" font-size="9.5" fill="#0D2B6B" opacity="0.8" x="590" y="245" text-anchor="middle" dominant-baseline="central" font-weight="600">PERFORMANCE</text>
+  <text font-family="sans-serif" font-size="8.5" fill="#00C5E8" opacity="0.85" x="590" y="257" text-anchor="middle" dominant-baseline="central">↑ output</text>
+
+  <path d="M 634 127 L 640 127 L 640 273 L 634 273" fill="none" stroke="#00C5E8" stroke-width="0.8" opacity="0.3" stroke-linecap="round"/>
+  <text font-family="sans-serif" font-size="8.5" fill="#00C5E8" opacity="0.38" x="648" y="200" text-anchor="middle" dominant-baseline="central" transform="rotate(90, 648, 200)" letter-spacing="1.2">OUTCOMES</text>
+
+  <!-- ═══ ANIMATED FLOW DOTS ═══ -->
+  <!-- Intake -->
+  <circle r="3" fill="#185FA5" opacity="0.75" class="flow-dot" style="offset-path: path('M 20 140 L 130 140'); animation-delay:0s; animation-duration:3.2s"/>
+  <circle r="3" fill="#185FA5" opacity="0.75" class="flow-dot" style="offset-path: path('M 20 200 L 130 200'); animation-delay:1s; animation-duration:3.2s"/>
+  <circle r="3" fill="#185FA5" opacity="0.75" class="flow-dot" style="offset-path: path('M 20 260 L 130 260'); animation-delay:2s; animation-duration:3.2s"/>
+
+  <!-- To analysis -->
+  <circle r="2.5" fill="#185FA5" opacity="0.65" class="flow-dot" style="offset-path: path('M 202 140 C 230 140, 248 168, 260 178'); animation-delay:0.8s; animation-duration:3.6s"/>
+  <circle r="2.5" fill="#185FA5" opacity="0.65" class="flow-dot" style="offset-path: path('M 202 200 L 260 200'); animation-delay:1.6s; animation-duration:3.6s"/>
+  <circle r="2.5" fill="#185FA5" opacity="0.65" class="flow-dot" style="offset-path: path('M 202 260 C 230 260, 248 232, 260 222'); animation-delay:2.4s; animation-duration:3.6s"/>
+
+  <!-- Analysis to AI -->
+  <circle r="3.5" fill="#00C5E8" opacity="0.9" class="flow-dot" style="offset-path: path('M 330 178 C 355 170, 370 185, 390 190'); animation-delay:1.2s; animation-duration:5s"/>
+  <circle r="3.5" fill="#00C5E8" opacity="0.9" class="flow-dot" style="offset-path: path('M 330 200 L 390 200'); animation-delay:2.2s; animation-duration:5s"/>
+  <circle r="3.5" fill="#00C5E8" opacity="0.9" class="flow-dot" style="offset-path: path('M 330 222 C 355 230, 370 215, 390 210'); animation-delay:3.2s; animation-duration:5s"/>
+
+  <!-- AI to outcomes -->
+  <circle r="3" fill="#00C5E8" opacity="0.85" class="flow-dot" style="offset-path: path('M 472 187 C 498 180, 518 155, 550 152'); animation-delay:2s; animation-duration:4.2s"/>
+  <circle r="3" fill="#00C5E8" opacity="0.85" class="flow-dot" style="offset-path: path('M 472 196 C 498 196, 520 200, 550 200'); animation-delay:3s; animation-duration:4.2s"/>
+  <circle r="3" fill="#00C5E8" opacity="0.85" class="flow-dot" style="offset-path: path('M 472 213 C 498 220, 518 245, 550 248'); animation-delay:4s; animation-duration:4.2s"/>
+
+  <!-- ═══ BOTTOM SECTION ═══ -->
+  <line x1="60" y1="340" x2="620" y2="340" stroke="#0D2B6B" stroke-width="0.4" opacity="0.1"/>
+
+  <!-- Automation nodes -->
+  <g opacity="0.35">
+    <rect x="130" y="360" width="60" height="28" rx="4" fill="none" stroke="#0D2B6B" stroke-width="0.6"/>
+    <text font-family="sans-serif" font-size="8" fill="#0D2B6B" x="160" y="372" text-anchor="middle" dominant-baseline="central" font-weight="500">REPORTING</text>
+    <text font-family="sans-serif" font-size="7.5" fill="#0D2B6B" x="160" y="381" text-anchor="middle" dominant-baseline="central">auto ↗</text>
+
+    <rect x="220" y="360" width="60" height="28" rx="4" fill="none" stroke="#0D2B6B" stroke-width="0.6"/>
+    <text font-family="sans-serif" font-size="8" fill="#0D2B6B" x="250" y="372" text-anchor="middle" dominant-baseline="central" font-weight="500">SCHEDULING</text>
+    <text font-family="sans-serif" font-size="7.5" fill="#0D2B6B" x="250" y="381" text-anchor="middle" dominant-baseline="central">auto ↗</text>
+
+    <rect x="310" y="360" width="60" height="28" rx="4" fill="none" stroke="#0D2B6B" stroke-width="0.6"/>
+    <text font-family="sans-serif" font-size="8" fill="#0D2B6B" x="340" y="372" text-anchor="middle" dominant-baseline="central" font-weight="500">DATA ENTRY</text>
+    <text font-family="sans-serif" font-size="7.5" fill="#0D2B6B" x="340" y="381" text-anchor="middle" dominant-baseline="central">auto ↗</text>
+
+    <rect x="400" y="360" width="60" height="28" rx="4" fill="none" stroke="#0D2B6B" stroke-width="0.6"/>
+    <text font-family="sans-serif" font-size="8" fill="#0D2B6B" x="430" y="372" text-anchor="middle" dominant-baseline="central" font-weight="500">APPROVALS</text>
+    <text font-family="sans-serif" font-size="7.5" fill="#0D2B6B" x="430" y="381" text-anchor="middle" dominant-baseline="central">auto ↗</text>
+
+    <rect x="490" y="360" width="60" height="28" rx="4" fill="none" stroke="#0D2B6B" stroke-width="0.6"/>
+    <text font-family="sans-serif" font-size="8" fill="#0D2B6B" x="520" y="372" text-anchor="middle" dominant-baseline="central" font-weight="500">COMMS</text>
+    <text font-family="sans-serif" font-size="7.5" fill="#0D2B6B" x="520" y="381" text-anchor="middle" dominant-baseline="central">auto ↗</text>
+  </g>
+
+  <!-- Lines from AI to bottom row -->
+  <g opacity="0.12" stroke="#00C5E8" stroke-width="0.5" fill="none">
+    <line x1="440" y1="230" x2="160" y2="360"/>
+    <line x1="440" y1="230" x2="250" y2="360"/>
+    <line x1="440" y1="230" x2="340" y2="360"/>
+    <line x1="440" y1="230" x2="430" y2="360"/>
+    <line x1="440" y1="230" x2="520" y2="360"/>
+  </g>
+
+  <text font-family="sans-serif" font-size="9" fill="#0D2B6B" opacity="0.22" x="340" y="408" text-anchor="middle" dominant-baseline="central" letter-spacing="2" font-weight="500">AUTOMATION OPPORTUNITY MAP</text>
+
+  <!-- Metric bars left -->
+  <g opacity="0.22" font-family="sans-serif" font-size="7.5" fill="#0D2B6B">
+    <text x="22" y="430" font-weight="500">efficiency</text>
+    <rect x="22" y="436" width="40" height="3" rx="1.5" fill="#0D2B6B" opacity="0.4"/>
+    <rect x="22" y="436" width="28" height="3" rx="1.5" fill="#185FA5" opacity="0.7"/>
+    <text x="22" y="450" font-weight="500">cost index</text>
+    <rect x="22" y="456" width="40" height="3" rx="1.5" fill="#0D2B6B" opacity="0.4"/>
+    <rect x="22" y="456" width="18" height="3" rx="1.5" fill="#185FA5" opacity="0.7"/>
+    <text x="22" y="470" font-weight="500">throughput</text>
+    <rect x="22" y="476" width="40" height="3" rx="1.5" fill="#0D2B6B" opacity="0.4"/>
+    <rect x="22" y="476" width="34" height="3" rx="1.5" fill="#00C5E8" opacity="0.7"/>
+  </g>
+
+  <!-- Metric bars right -->
+  <g opacity="0.22" font-family="sans-serif" font-size="7.5" fill="#0D2B6B">
+    <text x="618" y="430" font-weight="500" text-anchor="start">scan depth</text>
+    <rect x="618" y="436" width="40" height="3" rx="1.5" fill="#0D2B6B" opacity="0.4"/>
+    <rect x="618" y="436" width="36" height="3" rx="1.5" fill="#00C5E8" opacity="0.7"/>
+    <text x="618" y="450" font-weight="500" text-anchor="start">nodes active</text>
+    <rect x="618" y="456" width="40" height="3" rx="1.5" fill="#0D2B6B" opacity="0.4"/>
+    <rect x="618" y="456" width="30" height="3" rx="1.5" fill="#185FA5" opacity="0.7"/>
+  </g>
+
+  <!-- Corner circuit decorations -->
+  <g fill="none" stroke="#0D2B6B" stroke-width="0.5" opacity="0.12">
+    <path d="M 20 80 L 20 60 L 40 60"/>
+    <path d="M 660 80 L 660 60 L 640 60"/>
+    <path d="M 20 500 L 20 520 L 40 520"/>
+    <path d="M 660 500 L 660 520 L 640 520"/>
+  </g>
+
+</svg>
+</div>
+</body>
+</html>

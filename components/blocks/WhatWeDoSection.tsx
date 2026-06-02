@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import { Section } from '@/components/ui/layout';
 import { H2, Text } from '@/components/ui/typography';
 
@@ -13,6 +15,14 @@ export function WhatWeDoSection() {
             <H2>
               We put AI to work <em>in the right places.</em>
             </H2>
+            <Image
+              src="/keyob_ai_diagnostic_v3.svg"
+              alt="KEYOB AI diagnostic map: business workflow nodes feeding through pain-point diagnostics into an AI intelligence layer, then out to measurable outcomes — time saved, lower cost, and better performance."
+              width={680}
+              height={560}
+              className="wkd-diagram"
+              unoptimized
+            />
           </div>
           <div className="wkd-body">
             <Text as="p">
