@@ -21,7 +21,7 @@ const insights = [
     readTime: '9 min read',
     href: '/blog/why-digital-transformations-fail',
     featured: false,
-    image: '/transformation_perspective.jpg',
+    image: '/transformation_perspective.webp',
   },
   {
     kind: 'Problem Diagnosis',
@@ -29,7 +29,7 @@ const insights = [
     readTime: '11 min read',
     href: '#',
     featured: false,
-    image: '/fragmented_systems.jpg',
+    image: '/fragmented_systems.webp',
   },
 ];
 

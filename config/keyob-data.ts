@@ -331,7 +331,7 @@ export const outcomes: Outcome[] = [
     statSub: 'reduction in manual reporting time',
     story: 'By unifying project management, time tracking, and billing into a single operational system, KEYOB helped a regional consulting firm eliminate manual weekly report assembly — reclaiming senior staff time every week.',
     paletteIndex: 0,
-    image: '/cases/professional-services.jpg',
+    image: '/cases/professional-services.webp',
     imageAlt: 'Professional services team reviewing operational reports in a modern office',
   },
   {
@@ -341,7 +341,7 @@ export const outcomes: Outcome[] = [
     statSub: 'faster client onboarding lifecycle',
     story: 'A boutique investment firm was onboarding clients across five disconnected platforms. KEYOB designed a unified onboarding architecture — reducing a fourteen-day process to under five.',
     paletteIndex: 1,
-    image: '/cases/investment-markets.jpg',
+    image: '/cases/investment-markets.webp',
     imageAlt: 'Financial market charts and trading dashboards',
   },
   {
@@ -351,7 +351,7 @@ export const outcomes: Outcome[] = [
     statSub: 'stock visibility across 12 warehouses',
     story: 'A national parts distributor needed clearer inventory visibility across warehouses, transfers, sales, and demand. KEYOB built the integration and reporting layer that turned delayed updates into real-time operational control.',
     paletteIndex: 2,
-    image: '/cases/automotive-distribution.jpg',
+    image: '/cases/automotive-distribution.webp',
     imageAlt: 'Warehouse aisles with stacked inventory and distribution logistics',
   },
   {
@@ -361,7 +361,7 @@ export const outcomes: Outcome[] = [
     statSub: 'increase in service handling capacity',
     story: 'By centralising requests, automating routing, and giving teams a live view of pending work, KEYOB helped a service business handle more customer requests without adding unnecessary management overhead.',
     paletteIndex: 3,
-    image: '/cases/customer-operations.jpg',
+    image: '/cases/customer-operations.webp',
     imageAlt: 'Customer service team working at desks with multi-screen dashboards',
   },
   {
@@ -371,7 +371,7 @@ export const outcomes: Outcome[] = [
     statSub: 'consolidated into one operating view',
     story: 'Sales, tasks, approvals, reporting, and customer records were scattered across separate tools. KEYOB connected the workflow into one clearer operating layer for leadership and teams.',
     paletteIndex: 4,
-    image: '/cases/multi-department.jpg',
+    image: '/cases/multi-department.webp',
     imageAlt: 'Cross-functional team collaborating around a unified operations dashboard',
   },
   {
@@ -381,7 +381,7 @@ export const outcomes: Outcome[] = [
     statSub: 'reduction in repetitive admin work',
     story: 'KEYOB automated routine admin tasks, approval follow-ups, document checks, and status updates — giving the operations team more time to focus on work that actually needed human judgment.',
     paletteIndex: 5,
-    image: '/cases/back-office.jpg',
+    image: '/cases/back-office.webp',
     imageAlt: 'Back-office finance operations with documents, laptops, and approval workflows',
   },
 ];

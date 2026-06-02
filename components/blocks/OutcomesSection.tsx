@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 import { Section } from '@/components/ui/layout';
 import { H2, Text } from '@/components/ui/typography';
-import { outcomes, palettes, getThumbBg } from '@/config/keyob-data';
+import { outcomes } from '@/config/keyob-data';
 
 export function OutcomesSection() {
   return (
@@ -22,7 +22,6 @@ export function OutcomesSection() {
 
         <div className="case-grid">
           {outcomes.map((o, idx) => {
-            const palette = palettes[o.paletteIndex % palettes.length];
             return (
               <article key={idx} className="case-card">
                 <div className="case-thumb">
@@ -33,7 +32,6 @@ export function OutcomesSection() {
                     sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     className="case-photo"
                   />
-                  <div className="grad" style={{ background: getThumbBg(palette) }} />
                   <span className="label">{o.tag}</span>
                   <div className="stat-display">
                     <div className="stat-num">{o.stat}</div>

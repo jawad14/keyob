@@ -1320,21 +1320,6 @@ section.cases { padding: 110px 0; border-top: 1px solid var(--line); }
 }
 .case-thumb { aspect-ratio: 4 / 2.6; background: var(--keyob-deep); position: relative; overflow: hidden; }
 .case-thumb .case-photo { object-fit: cover; object-position: center; z-index: 0; }
-.case-thumb .grad {
-  position: absolute;
-  inset: 0;
-  mix-blend-mode: multiply;
-  opacity: 0.85;
-  z-index: 1;
-}
-.case-thumb::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(7,16,30,0) 30%, rgba(7,16,30,0.55) 100%);
-  pointer-events: none;
-  z-index: 2;
-}
 .case-thumb .label,
 .case-thumb .stat-display,
 .case-thumb .badge { z-index: 3; }
