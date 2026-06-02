@@ -34,7 +34,7 @@
 
   /* Font aliases — resolved from next/font variables set on <html> */
   --keyob-serif:  var(--font-serif, "Instrument Serif", "Times New Roman", serif);
-  --keyob-sans:   var(--font-sans, "Manrope", system-ui, -apple-system, sans-serif);
+  --keyob-sans:   var(--font-sans, "Inter", system-ui, -apple-system, sans-serif);
 
   /* Shorthand aliases matching the design file convention */
   --serif:        var(--keyob-serif);

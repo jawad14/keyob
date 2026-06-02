@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { Heading, Text } from '@/components/ui/typography';
 
@@ -32,8 +33,18 @@ export function Footer() {
       <div className="wrap">
         <div className="top">
           <div>
+            <div className="footer-logo-row">
+              <Image
+                src="/keyob-mark-white.png"
+                alt=""
+                width={85}
+                height={76}
+                className="footer-logo"
+              />
+              <span className="footer-logo-mark">KEYOB</span>
+            </div>
             <div className="footer-bigmark">
-              <span>KEYOB.</span> <em>the operating layer.</em>
+              <em>the operating layer.</em>
             </div>
             <Text as="p" className="brand-desc">
               The backbone modern businesses run on. We design, integrate, and activate the systems

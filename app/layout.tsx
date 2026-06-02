@@ -1,11 +1,11 @@
 import type { Metadata, Viewport } from 'next';
-import { Instrument_Serif, Manrope } from 'next/font/google';
+import { Instrument_Serif, Inter } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import { ThemeProvider } from '@/components/providers/theme-provider';
 import { defaultMetadata } from '@/config/site.config';
 import './globals.css';
 
-const fontSans = Manrope({
+const fontSans = Inter({
   variable: '--font-sans',
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700', '800'],
@@ -20,7 +20,7 @@ const fontSerif = Instrument_Serif({
   display: 'swap',
 });
 
-const fontMono = Manrope({
+const fontMono = Inter({
   variable: '--font-mono',
   subsets: ['latin'],
   weight: ['400', '500'],

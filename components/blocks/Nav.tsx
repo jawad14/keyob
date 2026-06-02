@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useRef } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { industries } from '@/config/keyob-data';
 
@@ -86,14 +87,16 @@ export function Nav() {
   return (
     <nav className="top">
       <div className="wrap inner">
-        <Link href="/" className="logo">
-          <span className="logo-mark">K</span>
-          <span>
-            KEYOB
-            <span style={{ color: 'var(--ink-mute)', marginLeft: 6, fontWeight: 400 }}>
-              | Evolve your business
-            </span>
-          </span>
+        <Link href="/" className="logo" aria-label="KEYOB — home">
+          <Image
+            src="/keyob-mark.png"
+            alt=""
+            width={85}
+            height={76}
+            priority
+            className="logo-img"
+          />
+          <span className="logo-wordmark">KEYOB</span>
         </Link>
 
         <ul>
@@ -227,7 +230,7 @@ export function Nav() {
 
         <Link href="#contact" className="nav-cta">
           <span className="dot" />
-          Let&apos;s talk
+          Free AI assessment
         </Link>
       </div>
     </nav>
