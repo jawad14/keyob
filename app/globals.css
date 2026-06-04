@@ -996,23 +996,23 @@ section.method {
 }
 .phase-flow .flowline {
   right: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(245, 248, 250, .18) 0%,
-    rgba(245, 248, 250, .18) 45%,
-    var(--keyob-cyan) 45%,
-    var(--keyob-cyan) 55%,
-    rgba(245, 248, 250, .18) 55%,
-    rgba(245, 248, 250, .18) 100%
-  );
-  background-size: 250% 100%;
-  animation: line-race 4.5s linear infinite;
+  background: rgba(245, 248, 250, .18);
 }
-@keyframes line-race {
-  0%   { background-position: 150% 0; }
-  100% { background-position: -150% 0; }
+.phase-flow .flowline-fill {
+  display: block;
+  width: 0;
+  background: var(--keyob-cyan);
+  box-shadow: 0 0 10px rgba(94, 231, 255, .55);
+  animation: line-fill 16s linear infinite;
 }
-.phase-flow .flowline-fill { display: none; }
+@keyframes line-fill {
+  0%       { width: 0; opacity: 0; }
+  3%       { opacity: 1; }
+  75%      { width: 100%; opacity: 1; }
+  88%      { width: 100%; opacity: 1; }
+  95%      { width: 100%; opacity: 0; }
+  96%, 100%{ width: 0; opacity: 0; }
+}
 .phase-flow .flow-dots {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -1035,9 +1035,39 @@ section.method {
   font-family: var(--keyob-sans);
   font-size: 11px;
   color: var(--keyob-cyan);
+  animation-duration: 16s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.phase-flow .flow-dots > div:nth-child(1) .flow-dot { animation-name: dot-pass-1; }
+.phase-flow .flow-dots > div:nth-child(2) .flow-dot { animation-name: dot-pass-2; }
+.phase-flow .flow-dots > div:nth-child(3) .flow-dot { animation-name: dot-pass-3; }
+.phase-flow .flow-dots > div:nth-child(4) .flow-dot { animation-name: dot-pass-4; }
+.phase-flow .flow-dots > div:nth-child(5) .flow-dot { animation-name: dot-pass-5; }
+@keyframes dot-pass-1 {
+  0%, 5%, 96%, 100% { border-color: rgba(245, 248, 250, .3); box-shadow: none; color: var(--keyob-cyan); transform: scale(1); }
+  8%, 94%           { border-color: var(--keyob-cyan); box-shadow: 0 0 16px rgba(94, 231, 255, .7); color: #fff; transform: scale(1.15); }
+}
+@keyframes dot-pass-2 {
+  0%, 20%, 96%, 100% { border-color: rgba(245, 248, 250, .3); box-shadow: none; color: var(--keyob-cyan); transform: scale(1); }
+  23%, 94%           { border-color: var(--keyob-cyan); box-shadow: 0 0 16px rgba(94, 231, 255, .7); color: #fff; transform: scale(1.15); }
+}
+@keyframes dot-pass-3 {
+  0%, 35%, 96%, 100% { border-color: rgba(245, 248, 250, .3); box-shadow: none; color: var(--keyob-cyan); transform: scale(1); }
+  38%, 94%           { border-color: var(--keyob-cyan); box-shadow: 0 0 16px rgba(94, 231, 255, .7); color: #fff; transform: scale(1.15); }
+}
+@keyframes dot-pass-4 {
+  0%, 50%, 96%, 100% { border-color: rgba(245, 248, 250, .3); box-shadow: none; color: var(--keyob-cyan); transform: scale(1); }
+  53%, 94%           { border-color: var(--keyob-cyan); box-shadow: 0 0 16px rgba(94, 231, 255, .7); color: #fff; transform: scale(1.15); }
+}
+@keyframes dot-pass-5 {
+  0%, 65%, 96%, 100% { border-color: rgba(245, 248, 250, .3); box-shadow: none; color: var(--keyob-cyan); transform: scale(1); }
+  68%, 94%           { border-color: var(--keyob-cyan); box-shadow: 0 0 16px rgba(94, 231, 255, .7); color: #fff; transform: scale(1.15); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .phase-flow .flowline { animation: none; }
+  .phase-flow .flowline-fill,
+  .phase-flow .flow-dot { animation: none; }
+  .phase-flow .flowline-fill { opacity: 0; }
 }
 
 /* Phase grid */
