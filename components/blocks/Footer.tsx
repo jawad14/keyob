@@ -35,13 +35,12 @@ export function Footer() {
           <div>
             <div className="footer-logo-row">
               <Image
-                src="/keyob-mark-white.png"
+                src="/logo-white.png"
                 alt=""
-                width={85}
-                height={76}
+                width={672}
+                height={186}
                 className="footer-logo"
               />
-              <span className="footer-logo-mark">KEYOB</span>
             </div>
             <div className="footer-bigmark">
               <em>the operating layer.</em>
