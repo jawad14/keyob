@@ -332,7 +332,7 @@ export const outcomes: Outcome[] = [
     statSub: 'reduction in manual reporting time',
     story: 'By unifying project management, time tracking, and billing into a single operational system, KEYOB helped a regional consulting firm eliminate manual weekly report assembly — reclaiming senior staff time every week.',
     paletteIndex: 0,
-    image: '/cases/professional-services.webp',
+    image: '/cases/reclaiming-senior-hours.png',
     imageAlt: 'Professional services team reviewing operational reports in a modern office',
     slug: 'reclaiming-senior-hours',
   },
