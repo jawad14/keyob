@@ -99,6 +99,8 @@ export function Nav() {
         </Link>
 
         <ul>
+          <li><Link href="/about" style={{ color: 'inherit', textDecoration: 'none' }}>About Us</Link></li>
+
           <li>What We Do <span className="caret">▾</span></li>
 
           <li className="has-menu" data-menu="industries">
@@ -149,7 +151,6 @@ export function Nav() {
             </div>
           </li>
 
-          <li><Link href="/about" style={{ color: 'inherit', textDecoration: 'none' }}>About Us</Link></li>
           {/* <li><Link href="/careers" style={{ color: 'inherit', textDecoration: 'none' }}>Careers</Link></li> */}
 
           <li className="has-menu" data-menu="contact">
