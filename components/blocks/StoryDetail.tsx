@@ -23,8 +23,12 @@ export function StoryDetail({ story, related }: { story: Story; related: Story[]
             {story.tag}
           </div>
           <div className="story-tag">{story.categoryLabel}</div>
-          <h1>{story.story}</h1>
-          <p className="story-shero-lead">{story.statSub}</p>
+          <h1>
+            {story.headline.pre}
+            <em>{story.headline.em}</em>
+            {story.headline.post ?? ''}
+          </h1>
+          <p className="story-shero-lead">{story.story}</p>
         </div>
         <div className="wrap">
           <div className="story-facts">

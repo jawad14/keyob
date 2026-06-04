@@ -11,11 +11,13 @@ export type StoryCategory =
 export type StoryFact = { k: string; v: string };
 export type StoryOutcomeCard = { title: string; body: string };
 export type StoryFaqItem = { q: string; a: string };
+export type StoryHeadline = { pre: string; em: string; post?: string };
 
 export type Story = Outcome & {
   category: StoryCategory;
   categoryLabel: string;
   featured?: boolean;
+  headline: StoryHeadline;
   body: string[];
   keyOutcomes: string[];
   facts: StoryFact[];
@@ -59,6 +61,7 @@ const storyExtras: Record<string, Extra> = {
   'reclaiming-senior-hours': {
     category: 'professional',
     categoryLabel: 'Professional Services Firm · 200 Staff',
+    headline: { pre: 'Senior hours, reclaimed from ', em: 'manual reporting.' },
     body: [
       "Every Monday, senior staff spent the first part of the week pulling numbers from project management, time tracking and billing tools that didn't talk to each other, and stitching the result into a weekly report. The numbers were accurate — eventually — but the cost of producing them was paid in lost billable hours.",
       'We unified the existing project management, time tracking and billing systems into a single operational layer. Definitions for utilization, margin and pipeline are agreed once and applied everywhere; the weekly report now assembles itself overnight.',
@@ -115,6 +118,7 @@ const storyExtras: Record<string, Extra> = {
   'compressed-onboarding': {
     category: 'financial',
     categoryLabel: 'Investment Markets · Financial Services',
+    headline: { pre: 'Onboarding, ', em: 'compressed and connected.' },
     body: [
       'A new client meant fourteen days of paperwork moving between five disconnected platforms — CRM, KYC, custody, advice and reporting — each requesting some of the same information and none of them confident they had it all.',
       "We didn't replace the underlying tools. We built one unified onboarding architecture above them: structured intake captures every required field once, validates as it goes, and routes it to the right system in the right format. Compliance evidence is captured as part of the workflow, not assembled afterwards.",
@@ -172,6 +176,7 @@ const storyExtras: Record<string, Extra> = {
     category: 'distribution',
     categoryLabel: 'Automotive Parts · Distribution',
     featured: true,
+    headline: { pre: 'Real-time control across ', em: 'twelve warehouses.' },
     body: [
       'When the leadership team wanted to know what was in stock, where it was, and what was selling, they were waiting hours for answers. Each warehouse ran its own systems, transferred data on its own schedule, and reconciled on its own terms. Decisions were being made on yesterday.',
       'KEYOB built the integration and reporting layer that connects inventory, transfers, sales and demand into one event-driven backbone. Reporting now runs continuously instead of nightly, transfers reconcile in minutes instead of days, and demand signals reach the right warehouse without anyone having to call ahead.',
@@ -228,6 +233,7 @@ const storyExtras: Record<string, Extra> = {
   'customer-operations-capacity': {
     category: 'service',
     categoryLabel: 'Customer Operations · Service Business',
+    headline: { pre: 'More requests handled, ', em: 'without the overhead.' },
     body: [
       "Inbound requests were arriving in five different places — email, web form, phone notes, third-party platforms, and a shared inbox no one really owned. Senior staff spent more time triaging than resolving, and SLAs slipped quietly because nothing was measuring them in one place.",
       "We built a single intake and routing layer that takes every request, classifies it, routes it to the right person, and surfaces the whole queue on a live operational board. Routing rules now encode the business policies that used to live in someone's head; escalations happen automatically when an item ages past its target.",
@@ -284,6 +290,7 @@ const storyExtras: Record<string, Extra> = {
   'multi-tool-consolidation': {
     category: 'multi',
     categoryLabel: 'Growing Business · Multi-Department Operations',
+    headline: { pre: 'Four scattered tools, ', em: 'one operating view.' },
     body: [
       "Each department had picked the tool that suited it best — CRM here, project tracker there, an approval system bolted on, a separate reporting layer that pulled from all three. Each tool was fine in isolation. Together, they meant nobody had the whole picture.",
       "KEYOB connected the workflow into one clearer operating layer. Records, events and state changes that matter are now synchronised across all four tools — leadership sees one operating view, individual teams keep the tools they prefer.",
@@ -340,6 +347,7 @@ const storyExtras: Record<string, Extra> = {
   'back-office-automation': {
     category: 'backoffice',
     categoryLabel: 'Back Office · Finance & Operations',
+    headline: { pre: 'Routine admin, ', em: 'quietly automated.' },
     body: [
       "The back office had quietly become a queue of small, repetitive tasks: chasing approvals, validating documents, updating status fields, copying numbers from one system to another. Each task was trivial; together they consumed senior operational time the business couldn't afford to lose.",
       "KEYOB mapped every recurring task, ranked them by frequency and time cost, and automated the top tier. Approval follow-ups now happen on their own. Document checks run against a defined rule set. Status updates flow from the underlying systems instead of being typed in by hand.",
