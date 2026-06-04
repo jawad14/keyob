@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { Section } from '@/components/ui/layout';
 import { H2, Text } from '@/components/ui/typography';
@@ -23,7 +24,7 @@ export function OutcomesSection() {
         <div className="case-grid">
           {outcomes.map((o, idx) => {
             return (
-              <article key={idx} className="case-card">
+              <Link key={idx} href={`/stories/${o.slug}`} className="case-card">
                 <div className="case-thumb">
                   <Image
                     src={o.image}
@@ -53,7 +54,7 @@ export function OutcomesSection() {
                     </svg>
                   </span>
                 </div>
-              </article>
+              </Link>
             );
           })}
         </div>

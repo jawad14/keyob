@@ -34,6 +34,7 @@ export type Outcome = {
   paletteIndex: number;
   image: string;
   imageAlt: string;
+  slug: string;
 };
 
 export type ValueCard = {
@@ -333,6 +334,7 @@ export const outcomes: Outcome[] = [
     paletteIndex: 0,
     image: '/cases/professional-services.webp',
     imageAlt: 'Professional services team reviewing operational reports in a modern office',
+    slug: 'reclaiming-senior-hours',
   },
   {
     industry: 'Investment Markets · Financial Services',
@@ -343,6 +345,7 @@ export const outcomes: Outcome[] = [
     paletteIndex: 1,
     image: '/cases/investment-markets.webp',
     imageAlt: 'Financial market charts and trading dashboards',
+    slug: 'compressed-onboarding',
   },
   {
     industry: 'Automotive Parts · Distribution',
@@ -353,6 +356,7 @@ export const outcomes: Outcome[] = [
     paletteIndex: 2,
     image: '/cases/automotive-distribution.webp',
     imageAlt: 'Warehouse aisles with stacked inventory and distribution logistics',
+    slug: 'real-time-control-warehouses',
   },
   {
     industry: 'Customer Operations · Service Business',
@@ -363,6 +367,7 @@ export const outcomes: Outcome[] = [
     paletteIndex: 3,
     image: '/cases/customer-operations.webp',
     imageAlt: 'Customer service team working at desks with multi-screen dashboards',
+    slug: 'customer-operations-capacity',
   },
   {
     industry: 'Growing Business · Multi-Department Operations',
@@ -373,6 +378,7 @@ export const outcomes: Outcome[] = [
     paletteIndex: 4,
     image: '/cases/multi-department.webp',
     imageAlt: 'Cross-functional team collaborating around a unified operations dashboard',
+    slug: 'multi-tool-consolidation',
   },
   {
     industry: 'Back Office · Finance & Operations',
@@ -383,6 +389,7 @@ export const outcomes: Outcome[] = [
     paletteIndex: 5,
     image: '/cases/back-office.webp',
     imageAlt: 'Back-office finance operations with documents, laptops, and approval workflows',
+    slug: 'back-office-automation',
   },
 ];
 
