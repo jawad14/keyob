@@ -3,7 +3,6 @@
 import { useCallback, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { stories, type StoryCategory } from '@/config/keyob-stories';
 import { newsArticles } from '@/config/keyob-news';
 
@@ -42,8 +41,7 @@ export function Nav() {
     itemsRef.current?.forEach((el) => el.classList.remove('is-open'));
   }, []);
 
-  const pathname = usePathname();
-  const contactHref = pathname === '/' ? '#contact' : '/#contact';
+  const contactHref = '/contact';
 
   useEffect(() => {
     const items = document.querySelectorAll('nav.top li.has-menu');
@@ -152,7 +150,9 @@ export function Nav() {
           {/* <li><Link href="/careers" style={{ color: 'inherit', textDecoration: 'none' }}>Careers</Link></li> */}
 
           <li className="has-menu" data-menu="contact">
-            Contact Us <span className="caret">▾</span>
+            <Link href="/contact" className="has-menu-link">
+              Contact Us <span className="caret">▾</span>
+            </Link>
             <div className="menu" role="menu">
               <span className="mhead">Begin a conversation</span>
               <Link href={contactHref} role="menuitem">
