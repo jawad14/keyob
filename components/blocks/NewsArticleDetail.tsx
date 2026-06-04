@@ -30,7 +30,7 @@ export function NewsArticleDetail({ article }: { article: NewsArticle }) {
       {/* HERO */}
       <header className="news-ahero">
         <div className="news-ahero-mesh" aria-hidden="true" />
-        <div className="news-narrow news-ahero-in">
+        <div className="wrap news-ahero-in">
           <div className="news-crumb">
             <Link href="/">Home</Link>
             <span>/</span>

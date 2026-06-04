@@ -86,7 +86,7 @@ export function StoryDetail({ story, related }: { story: Story; related: Story[]
 
       {/* OUTCOMES — dark, 3 cards */}
       <section className="story-outcomes-section">
-        <div className="story-narrow story-narrow--wide">
+        <div className="wrap">
           <div className="story-kicker story-kicker--on-dark">The outcomes</div>
           <h2 className="story-h2--on-dark">
             What changed, in <em>practical terms.</em>
@@ -112,7 +112,7 @@ export function StoryDetail({ story, related }: { story: Story; related: Story[]
 
       {/* HUMAN SIDE */}
       <section className="story-human">
-        <div className="story-narrow story-narrow--wide">
+        <div className="wrap">
           <div className="story-kicker">The human side</div>
           <h2>
             Less firefighting, <em>more managing.</em>
@@ -143,7 +143,7 @@ export function StoryDetail({ story, related }: { story: Story; related: Story[]
 
       {/* METHOD RECAP */}
       <section className="story-method">
-        <div className="story-narrow story-narrow--wide">
+        <div className="wrap">
           <div className="story-kicker">How we worked</div>
           <h2>
             The KEYOB method, applied <em>to this business.</em>
@@ -162,7 +162,7 @@ export function StoryDetail({ story, related }: { story: Story; related: Story[]
 
       {/* FAQ */}
       <section className="story-faq">
-        <div className="story-narrow story-narrow--wide">
+        <div className="wrap">
           <div className="story-kicker">Common questions</div>
           <h2>
             What people <em>ask us</em> about this work.
@@ -174,7 +174,7 @@ export function StoryDetail({ story, related }: { story: Story; related: Story[]
       {/* RELATED */}
       {related.length > 0 && (
         <section className="story-related">
-          <div className="story-narrow story-narrow--wide">
+          <div className="wrap">
             <div className="story-kicker">Explore further</div>
             <h2>
               Related <em>capabilities &amp; stories.</em>
