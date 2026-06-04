@@ -748,7 +748,7 @@ section.wkd { padding: 100px 0 120px; background: var(--bg-2); }
 .wkd-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 80px; align-items: start; }
 .wkd h2 {
   font-size: clamp(36px, 4.5vw, 64px);
-  margin: 0;
+  margin: 0 0 32px;
   letter-spacing: -.03em;
   font-weight: 300;
   line-height: 1.05;
@@ -756,7 +756,7 @@ section.wkd { padding: 100px 0 120px; background: var(--bg-2); }
   color: var(--ink);
 }
 .wkd h2 em { font-family: var(--keyob-serif); font-style: italic; color: var(--keyob-blue); }
-.wkd-diagram { display: block; width: 100%; height: auto; margin-top: 32px; }
+.wkd-diagram { display: block; width: 100%; height: auto; align-self: center; }
 .wkd-body p {
   font-size: 18px;
   line-height: 1.65;

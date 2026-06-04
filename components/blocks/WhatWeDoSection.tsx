@@ -8,23 +8,13 @@ export function WhatWeDoSection() {
     <Section spacing="none" as="section" className="wkd" id="what-we-do">
       <div className="wrap">
         <div className="wkd-grid">
-          <div>
+          <div className="wkd-body">
             <span className="eyebrow" style={{ display: 'inline-block', marginBottom: 18 }}>
               What we do
             </span>
             <H2>
               We put AI to work <em>in the right places.</em>
             </H2>
-            <Image
-              src="/keyob_ai_diagnostic_v3.svg"
-              alt="KEYOB AI diagnostic map: business workflow nodes feeding through pain-point diagnostics into an AI intelligence layer, then out to measurable outcomes — time saved, lower cost, and better performance."
-              width={680}
-              height={560}
-              className="wkd-diagram"
-              unoptimized
-            />
-          </div>
-          <div className="wkd-body">
             <Text as="p">
               KEYOB doesn&apos;t add AI for the sake of it. We look at how your business actually
               runs — where time is being lost, where costs are creeping up, where your team is
@@ -44,6 +34,14 @@ export function WhatWeDoSection() {
               </blockquote>
             </div>
           </div>
+          <Image
+            src="/keyob_ai_diagnostic_v3.svg"
+            alt="KEYOB AI diagnostic map: business workflow nodes feeding through pain-point diagnostics into an AI intelligence layer, then out to measurable outcomes — time saved, lower cost, and better performance."
+            width={680}
+            height={560}
+            className="wkd-diagram"
+            unoptimized
+          />
         </div>
       </div>
     </Section>

@@ -7,7 +7,7 @@ export function FounderQuote() {
       <div className="wrap">
         <div className="quote-card">
           <div className="avatar">
-            <Image src="/jawad-ceo.webp" alt="Jawad Siddique, Founder of KEYOB" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} />
+            <Image src="/jawad-ceo.png" alt="Jawad Siddique, Founder of KEYOB" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} />
           </div>
           <div>
             <blockquote>
