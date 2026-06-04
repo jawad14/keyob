@@ -1045,7 +1045,6 @@ section.method {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 0;
-  border-top: 1px solid rgba(245, 248, 250, .14);
 }
 .method .phase {
   padding: 34px 22px 38px;
@@ -1062,17 +1061,18 @@ section.method {
 }
 .method .phase h4 {
   font-family: var(--keyob-serif);
-  font-weight: 400;
-  font-size: 22px;
-  margin: 18px 0 12px;
+  font-weight: 500;
+  font-size: 28px;
+  margin: 4px 0 18px;
   line-height: 1.1;
-  color: var(--ink-on-dark);
-  letter-spacing: -.01em;
+  color: var(--keyob-cyan);
+  letter-spacing: -.015em;
+  font-variation-settings: "opsz" 60;
 }
 .method .phase p {
-  font-size: 13.5px;
-  color: rgba(245, 248, 250, .62);
-  line-height: 1.6;
+  font-size: 16.5px;
+  color: var(--ink-on-dark);
+  line-height: 1.7;
   margin: 0;
 }
 
