@@ -3,7 +3,6 @@ import { notFound } from 'next/navigation';
 import { Nav } from '@/components/blocks/Nav';
 import { Footer } from '@/components/blocks/Footer';
 import { StoryDetail } from '@/components/blocks/StoryDetail';
-import { StoriesCTA } from '@/components/blocks/StoriesCTA';
 import { stories } from '@/config/keyob-stories';
 import { siteConfig } from '@/config/site.config';
 
@@ -47,7 +46,6 @@ export default async function StoryPage({
       <Nav />
       <main>
         <StoryDetail story={story} related={related} />
-        <StoriesCTA />
       </main>
       <Footer />
     </>

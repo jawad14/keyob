@@ -4,6 +4,16 @@ import { useCallback, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { industries } from '@/config/keyob-data';
+import { stories, type StoryCategory } from '@/config/keyob-stories';
+
+const storyCategoryIcons: Record<StoryCategory, string> = {
+  professional: '<rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 4 0v2M12 7v0M16 7V5a2 2 0 0 0-4 0"/>',
+  financial: '<path d="M3 17l6-6 4 4 8-9"/><path d="M14 6h7v7"/>',
+  distribution: '<rect x="1" y="9" width="15" height="11" rx="1"/><path d="M16 12h3l4 5v3h-7"/><circle cx="5.5" cy="20" r="1.5"/><circle cx="18.5" cy="20" r="1.5"/>',
+  service: '<path d="M3 11a9 9 0 0 1 18 0v5a2 2 0 0 1-2 2h-1v-7h3"/><path d="M3 11v5a2 2 0 0 0 2 2h1v-7H3"/>',
+  multi: '<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>',
+  backoffice: '<path d="M3 7h18M5 7v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7M9 4h6v3H9z"/>',
+};
 
 const industryIcons: Record<string, string> = {
   'Professional Services': '<rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 4 0v2M12 7v0M16 7V5a2 2 0 0 0-4 0"/>',
@@ -123,6 +133,30 @@ export function Nav() {
               <div className="foot">
                 <span> </span>
                 <Link href="#industries">View all industries →</Link>
+              </div>
+            </div>
+          </li>
+
+          <li className="has-menu" data-menu="stories">
+            Stories <span className="caret">▾</span>
+            <div className="menu" role="menu">
+              <span className="mhead">Client stories</span>
+              {stories.map((s) => (
+                <Link key={s.slug} href={`/stories/${s.slug}`} role="menuitem">
+                  <span className="ic">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" dangerouslySetInnerHTML={{ __html: storyCategoryIcons[s.category] ?? '' }} />
+                  </span>
+                  <span className="col">
+                    <strong>{s.industry}</strong>
+                    <span>{s.tag} · {s.stat}</span>
+                  </span>
+                  <span className="arr">{arrowSvg}</span>
+                </Link>
+              ))}
+              <div className="sep" />
+              <div className="foot">
+                <span>{stories.length} stories</span>
+                <Link href="/stories">View all stories →</Link>
               </div>
             </div>
           </li>
