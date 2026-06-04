@@ -11,6 +11,7 @@ import { AuJourney } from '@/components/blocks/AuJourney';
 import { AuPhilosophy } from '@/components/blocks/AuPhilosophy';
 import { AuRelationship } from '@/components/blocks/AuRelationship';
 import { AuDifferent } from '@/components/blocks/AuDifferent';
+import { GlobalPresence } from '@/components/blocks/GlobalPresence';
 import { AuFounder } from '@/components/blocks/AuFounder';
 import { AuFinalCta } from '@/components/blocks/AuFinalCta';
 import { AuFaq } from '@/components/blocks/AuFaq';
@@ -44,6 +45,7 @@ export default function AboutPage() {
         <AuPhilosophy />
         <AuRelationship />
         <AuDifferent />
+        <GlobalPresence />
         <AuFounder />
         <AuFinalCta />
         <AuFaq />
