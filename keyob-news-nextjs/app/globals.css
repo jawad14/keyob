@@ -1,0 +1,20 @@
+/* app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+body { @apply bg-paper text-ink font-sans font-light antialiased; }
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-3 rounded-full bg-accent px-7 py-4 font-mono text-[13px] tracking-wide text-paper transition hover:-translate-y-0.5 hover:bg-accent-soft;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-3 rounded-full border border-paper/50 px-7 py-4 font-mono text-[13px] tracking-wide text-paper transition hover:bg-paper/10;
+  }
+  .btn-ghost-dark {
+    @apply inline-flex items-center gap-3 rounded-full border border-line px-7 py-4 font-mono text-[13px] tracking-wide text-ink transition hover:border-ink;
+  }
+}

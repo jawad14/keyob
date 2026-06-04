@@ -1,10 +1,6 @@
 import Link from 'next/link';
 import { NewsMotif } from '@/components/blocks/NewsMotif';
-import {
-  newsArticles,
-  relatedSolutions,
-  type NewsArticle,
-} from '@/config/keyob-news';
+import { newsArticles, type NewsArticle } from '@/config/keyob-news';
 
 function isoToHuman(iso?: string) {
   if (!iso) return null;
@@ -13,17 +9,17 @@ function isoToHuman(iso?: string) {
 }
 
 export function NewsArticleDetail({ article }: { article: NewsArticle }) {
-  const related = newsArticles
-    .filter((a) => a.slug !== article.slug)
-    .filter((a) => a.category === article.category || a.featured)
-    .slice(0, 3);
-  const fallbackRelated =
-    related.length < 3
-      ? [
-          ...related,
-          ...newsArticles.filter((a) => a.slug !== article.slug && !related.includes(a)).slice(0, 3 - related.length),
-        ]
-      : related;
+  // Per-article related list (matches the template's data model).
+  // Fall back to category mates + featured if any slug is missing.
+  const pickFromSlugs = article.relatedArticles
+    .map((slug) => newsArticles.find((a) => a.slug === slug))
+    .filter((a): a is NewsArticle => Boolean(a));
+  const related = pickFromSlugs.length
+    ? pickFromSlugs
+    : newsArticles
+        .filter((a) => a.slug !== article.slug)
+        .filter((a) => a.category === article.category || a.featured)
+        .slice(0, 3);
 
   return (
     <>
@@ -58,12 +54,29 @@ export function NewsArticleDetail({ article }: { article: NewsArticle }) {
             if (block.kind === 'h2') return <h2 key={i}>{block.text}</h2>;
             if (block.kind === 'h3') return <h3 key={i}>{block.text}</h3>;
             if (block.kind === 'p') return <p key={i}>{block.text}</p>;
+            if (block.kind === 'list') {
+              return (
+                <ul key={i} className="news-list">
+                  {block.items.map((it) => (
+                    <li key={it}>{it}</li>
+                  ))}
+                </ul>
+              );
+            }
+            if (block.kind === 'quote') {
+              return (
+                <blockquote key={i} className="news-pullquote">
+                  <span>{block.text}</span>
+                  {block.cite ? <cite>— {block.cite}</cite> : null}
+                </blockquote>
+              );
+            }
+            // 'takeaway' inline blocks fall back to the styled takeaway box
             return (
-              <ul key={i} className="news-list">
-                {block.items.map((it) => (
-                  <li key={it}>{it}</li>
-                ))}
-              </ul>
+              <div key={i} className="news-takeaway">
+                <div className="news-takeaway-l">Key takeaway</div>
+                <p>{block.text}</p>
+              </div>
             );
           })}
 
@@ -80,9 +93,9 @@ export function NewsArticleDetail({ article }: { article: NewsArticle }) {
           <section className="news-solutions">
             <div className="news-takeaway-l">Related solutions</div>
             <div className="news-sol-grid">
-              {relatedSolutions.map((s) => (
-                <Link key={s.label} href={s.href}>
-                  {s.label} <span className="news-ar">→</span>
+              {article.relatedSolutions.map((label) => (
+                <Link key={label} href="/#capabilities">
+                  {label} <span className="news-ar">→</span>
                 </Link>
               ))}
             </div>
@@ -100,25 +113,27 @@ export function NewsArticleDetail({ article }: { article: NewsArticle }) {
       </article>
 
       {/* RELATED */}
-      <section className="news-related">
-        <div className="wrap">
-          <div className="news-takeaway-l">Related articles</div>
-          <h2>Keep exploring</h2>
-          <div className="news-rgrid">
-            {fallbackRelated.map((r, i) => (
-              <Link key={r.slug} href={`/news/${r.slug}`} className="news-rcard">
-                <div className="news-rcard-v">
-                  <NewsMotif kind={r.visual} gradientId={`news-related-${i}`} />
-                </div>
-                <div className="news-rcard-b">
-                  <div className="news-rcard-t">{r.category}</div>
-                  <h3>{r.title}</h3>
-                </div>
-              </Link>
-            ))}
+      {related.length > 0 && (
+        <section className="news-related">
+          <div className="wrap">
+            <div className="news-takeaway-l">Related articles</div>
+            <h2>Keep exploring</h2>
+            <div className="news-rgrid">
+              {related.map((r, i) => (
+                <Link key={r.slug} href={`/news/${r.slug}`} className="news-rcard">
+                  <div className="news-rcard-v">
+                    <NewsMotif kind={r.visual} gradientId={`news-related-${i}`} />
+                  </div>
+                  <div className="news-rcard-b">
+                    <div className="news-rcard-t">{r.category}</div>
+                    <h3>{r.title}</h3>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </>
   );
 }

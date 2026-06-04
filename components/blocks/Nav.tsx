@@ -32,8 +32,10 @@ const newsCategoryIcons: Record<string, string> = {
   'ERP Systems': '<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>',
   'Business Process Automation': '<path d="M3 12h18M12 3v18" opacity=".4"/><path d="M5 19l5-5 4 4 5-7"/>',
   'Systems Integration': '<circle cx="6" cy="12" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M8.5 10.5L15.5 7M8.5 13.5L15.5 17"/>',
+  'Operational Intelligence': '<path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-6"/>',
   'Industry Notes': '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 11h18"/>',
   'KEYOB Updates': '<path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4Z"/>',
+  'Case Story Notes': '<path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h4"/>',
 };
 const navNewsItems = newsArticles.slice(0, 4);
 

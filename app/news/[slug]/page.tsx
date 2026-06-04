@@ -19,12 +19,12 @@ export async function generateMetadata({
   const article = newsArticles.find((a) => a.slug === slug);
   if (!article) return {};
   return {
-    title: article.title,
-    description: article.excerpt,
+    title: article.seoTitle ?? article.title,
+    description: article.metaDescription ?? article.excerpt,
     alternates: { canonical: `${siteConfig.url}/news/${article.slug}` },
     openGraph: {
-      title: `${article.title} | KEYOB`,
-      description: article.excerpt,
+      title: article.seoTitle ?? `${article.title} | KEYOB`,
+      description: article.metaDescription ?? article.excerpt,
       url: `${siteConfig.url}/news/${article.slug}`,
       type: 'article',
     },
