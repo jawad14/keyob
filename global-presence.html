@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global Presence — KEYOB</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ===== KEYOB · Global Presence section =====
+   Self-contained. To embed: copy the <section class="kb-global">…</section>,
+   the `.kb-global` scoped styles, and the small script. Selectors are
+   namespaced kb- so they won't collide with the host page. */
+  :root{
+    --navy:#031536;--navy-2:#07213f;--azure:#01b0f4;--azure-soft:#4fc8f8;
+    --ice:#f4f8fb;--mute:rgba(255,255,255,.68);--hair:rgba(255,255,255,.12);
+    --glow:rgba(1,176,244,.35);
+    --serif:'Fraunces',Georgia,serif;--sans:'Space Grotesk',sans-serif;--mono:'JetBrains Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#020e26;font-family:var(--sans);-webkit-font-smoothing:antialiased}
+
+  .kb-global{position:relative;overflow:hidden;background:var(--navy);color:#fff;padding:clamp(70px,9vw,120px) 0;font-family:var(--sans);font-weight:300}
+  .kb-global *{box-sizing:border-box}
+  .kb-global .kb-mesh{position:absolute;inset:0;pointer-events:none;background:radial-gradient(80% 70% at 88% 18%,rgba(1,176,244,.16),transparent 55%),radial-gradient(70% 80% at 4% 95%,rgba(7,33,63,.9),transparent 55%)}
+  .kb-wrap{position:relative;z-index:2;max-width:1240px;margin:0 auto;padding:0 32px}
+  .kb-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(40px,5vw,80px);align-items:center}
+
+  /* left copy */
+  .kb-eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--azure-soft);display:flex;align-items:center;gap:12px;margin-bottom:26px}
+  .kb-eyebrow::before{content:"";width:30px;height:1px;background:var(--azure)}
+  .kb-global h2{font-family:var(--serif);font-weight:300;font-size:clamp(30px,3.8vw,52px);line-height:1.06;letter-spacing:-.02em;max-width:16ch}
+  .kb-global h2 em{font-style:italic;color:var(--azure-soft)}
+  .kb-body{margin-top:24px;font-size:16.5px;line-height:1.7;color:var(--mute);max-width:46ch}
+  .kb-body + .kb-body{margin-top:16px}
+  .kb-body .accent{color:#fff;font-family:var(--serif);font-style:italic}
+  .kb-points{list-style:none;margin-top:32px;display:grid;gap:14px}
+  .kb-points li{display:flex;align-items:center;gap:14px;font-size:15.5px;color:rgba(255,255,255,.9)}
+  .kb-points li .tick{flex-shrink:0;width:26px;height:26px;border-radius:50%;border:1px solid rgba(1,176,244,.4);display:flex;align-items:center;justify-content:center;background:rgba(1,176,244,.08)}
+  .kb-points li .tick svg{width:13px;height:13px;color:var(--azure-soft)}
+  .kb-tagline{margin-top:34px;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--azure-soft);opacity:.85}
+
+  /* dot network (no map) */
+  .kb-mapwrap{position:relative;width:100%}
+  .kb-map{display:block;width:100%;height:auto;overflow:visible}
+  /* connection links */
+  .kb-link{fill:none;stroke:var(--azure);stroke-width:1;opacity:.18;stroke-linecap:round}
+  .kb-link.hub{opacity:.32;stroke-width:1.2}
+  /* traveling transmission pulse */
+  .kb-pulse{fill:var(--azure-soft);filter:drop-shadow(0 0 5px var(--glow))}
+  .kb-pulse.dim{fill:var(--azure);opacity:.6;filter:none}
+  /* dots */
+  .kb-dot{cursor:pointer}
+  .kb-dot .core{fill:var(--azure);transition:r .3s}
+  .kb-dot .ping{fill:none;stroke:var(--azure);stroke-width:1.4;transform-origin:center;transform-box:fill-box;animation:kb-ping 3s ease-out infinite}
+  .kb-dot .ping2{fill:none;stroke:var(--azure);stroke-width:1.2;transform-origin:center;transform-box:fill-box;animation:kb-ping 3s ease-out infinite;animation-delay:1.5s}
+  .kb-dot:nth-of-type(2) .ping{animation-delay:.7s}.kb-dot:nth-of-type(2) .ping2{animation-delay:2.2s}
+  .kb-dot:nth-of-type(3) .ping{animation-delay:1.4s}.kb-dot:nth-of-type(3) .ping2{animation-delay:2.9s}
+  .kb-dot:nth-of-type(4) .ping{animation-delay:2.1s}.kb-dot:nth-of-type(4) .ping2{animation-delay:.6s}
+  @keyframes kb-ping{0%{opacity:.7;transform:scale(1)}80%,100%{opacity:0;transform:scale(3.2)}}
+  .kb-dot:hover .core,.kb-dot:focus-visible .core{r:7.5}
+  .kb-dot:focus-visible{outline:none}
+  .kb-dot .focusring{opacity:0;fill:none;stroke:#fff;stroke-width:1.5}
+  .kb-dot:focus-visible .focusring{opacity:.9}
+  .kb-mlabel{font-family:var(--mono);font-size:14px;fill:rgba(255,255,255,.95);letter-spacing:.04em;pointer-events:none;paint-order:stroke;stroke:var(--navy);stroke-width:4px;stroke-linejoin:round}
+  .kb-hqlabel{font-family:var(--mono);font-size:10px;fill:var(--azure-soft);letter-spacing:.2em;pointer-events:none;paint-order:stroke;stroke:var(--navy);stroke-width:4px;stroke-linejoin:round}
+  .kb-hqname{font-size:17px;fill:#fff;font-weight:500}
+  .kb-hq .core{fill:var(--azure-soft)}
+  .kb-hq .hqring{fill:none;stroke:var(--azure-soft);stroke-width:1.6;opacity:.5}
+  .kb-hq .hqping,.kb-hq .hqping2{fill:none;stroke:var(--azure-soft);stroke-width:1.6;transform-origin:center;transform-box:fill-box;animation:kb-ping 3.4s ease-out infinite}
+  .kb-hq .hqping2{animation-delay:1.7s}
+
+  /* tooltip */
+  .kb-tip{position:absolute;z-index:5;width:248px;pointer-events:none;background:rgba(7,33,63,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:18px 20px;box-shadow:0 20px 50px -20px rgba(0,0,0,.6);opacity:0;transform:translateY(6px) scale(.98);transition:opacity .28s ease,transform .28s ease}
+  .kb-tip.show{opacity:1;transform:translateY(0) scale(1)}
+  .kb-tip h4{font-family:var(--serif);font-weight:500;font-size:19px;color:#fff;display:flex;align-items:center;gap:9px}
+  .kb-tip h4::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--azure);box-shadow:0 0 8px var(--glow)}
+  .kb-tip .sub{font-family:var(--mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--azure-soft);margin-top:8px}
+  .kb-tip .desc{font-size:13.5px;line-height:1.55;color:rgba(255,255,255,.74);margin-top:10px}
+
+  /* ===== six-card location strip ===== */
+  .kb-strip{margin-top:clamp(48px,5vw,72px);display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .kb-card{position:relative;border:1px solid var(--hair);border-radius:18px;padding:30px 28px 28px;background:rgba(255,255,255,.03);overflow:hidden;transition:transform .4s cubic-bezier(.16,1,.3,1),border-color .4s,background .4s;outline:none}
+  .kb-card .kb-card-line{position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--azure);transform:scaleY(0);transform-origin:top;transition:transform .4s cubic-bezier(.16,1,.3,1)}
+  .kb-card:hover,.kb-card:focus-visible{transform:translateY(-6px);border-color:rgba(1,176,244,.4);background:rgba(1,176,244,.04)}
+  .kb-card:hover .kb-card-line,.kb-card:focus-visible .kb-card-line{transform:scaleY(1)}
+  .kb-card h4{font-family:var(--serif);font-weight:500;font-size:21px;color:#fff;display:flex;align-items:center;gap:10px;line-height:1.2}
+  .kb-card h4::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--azure);box-shadow:0 0 8px var(--glow);flex-shrink:0}
+  .kb-card .addr{font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:var(--azure-soft);margin-top:12px;display:flex;align-items:center;gap:7px}
+  .kb-card .addr::before{content:"";width:10px;height:1px;background:var(--azure-soft);opacity:.7}
+  .kb-card .role{font-size:14.5px;color:#fff;margin-top:14px;font-weight:400}
+  .kb-card .desc{font-size:13.5px;line-height:1.6;color:rgba(255,255,255,.66);margin-top:10px}
+  @media(max-width:920px){.kb-strip{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.kb-strip{grid-template-columns:1fr}}
+
+  @media(max-width:920px){
+    .kb-grid{grid-template-columns:1fr;gap:44px}
+    .kb-body,.kb-global h2{max-width:none}
+    .kb-tip{display:none!important}
+  }
+  @media(prefers-reduced-motion:reduce){.kb-link,.kb-dot .ping,.kb-dot .ping2,.kb-hq .hqping,.kb-hq .hqping2,.kb-pulse{animation:none}.kb-pulse{display:none}.kb-tip{transition:opacity .15s}}
+</style>
+</head>
+<body>
+
+<section class="kb-global" aria-labelledby="kb-global-heading">
+  <div class="kb-mesh"></div>
+  <div class="kb-wrap">
+    <div class="kb-grid">
+
+      <!-- LEFT -->
+      <div class="kb-copy">
+        <p class="kb-eyebrow">Global Presence</p>
+        <h2 id="kb-global-heading">Built close to clients. <em>Supported by a global team.</em></h2>
+        <p class="kb-body">KEYOB works through a connected team model across multiple regions — giving clients the confidence of clear communication, practical delivery capacity, and long-term support as their business grows.</p>
+        <p class="kb-body"><span class="accent">Our clients do not experience disconnected offices. They experience one KEYOB team.</span></p>
+        <ul class="kb-points">
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg></span>Local conversations</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg></span>Global delivery capability</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg></span>Long-term client support</li>
+        </ul>
+        <p class="kb-tagline">One KEYOB team · Connected across regions</p>
+      </div>
+
+      <!-- RIGHT: real world map -->
+      <div class="kb-mapwrap" id="kbMapWrap">
+        <svg class="kb-map" viewBox="0 0 1000 520" role="group" aria-label="KEYOB global network with the Australia head office at the centre, connected to the United States, Sweden, Pakistan, Dubai and Kingdom of Saudi Arabia" preserveAspectRatio="xMidYMid meet">
+
+          <!-- ===== spokes from the central Australia HQ to each location ===== -->
+          <g aria-hidden="true">
+            <path id="kbA1" class="kb-link hub" d="M500 262 L165 150"/>   <!-- AU -> US (far) -->
+            <path id="kbA2" class="kb-link hub" d="M500 262 L470 84"/>    <!-- AU -> Sweden (mid) -->
+            <path id="kbA3" class="kb-link hub" d="M500 262 L772 172"/>   <!-- AU -> Pakistan (near) -->
+            <path id="kbA4" class="kb-link hub" d="M500 262 L742 366"/>   <!-- AU -> Dubai (near) -->
+            <path id="kbA5" class="kb-link hub" d="M500 262 L300 372"/>   <!-- AU -> KSA (mid) -->
+          </g>
+
+          <!-- ===== bidirectional traffic: dots move OUT from and IN to Australia on each spoke ===== -->
+          <g aria-hidden="true">
+            <!-- outbound (AU -> location): path runs AU->loc, default direction -->
+            <circle class="kb-pulse" r="3.6"><animateMotion dur="3.6s" begin="0s"   repeatCount="indefinite"><mpath href="#kbA1"/></animateMotion></circle>
+            <circle class="kb-pulse" r="3.6"><animateMotion dur="2.8s" begin="0.7s" repeatCount="indefinite"><mpath href="#kbA2"/></animateMotion></circle>
+            <circle class="kb-pulse" r="3.6"><animateMotion dur="3.0s" begin="1.3s" repeatCount="indefinite"><mpath href="#kbA3"/></animateMotion></circle>
+            <circle class="kb-pulse" r="3.6"><animateMotion dur="3.2s" begin="0.4s" repeatCount="indefinite"><mpath href="#kbA4"/></animateMotion></circle>
+            <circle class="kb-pulse" r="3.6"><animateMotion dur="2.6s" begin="1.8s" repeatCount="indefinite"><mpath href="#kbA5"/></animateMotion></circle>
+            <!-- inbound (location -> AU): same path, reversed via keyPoints 1->0 -->
+            <circle class="kb-pulse dim" r="3"><animateMotion dur="4.2s" begin="1.1s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#kbA1"/></animateMotion></circle>
+            <circle class="kb-pulse dim" r="3"><animateMotion dur="3.4s" begin="2.0s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#kbA2"/></animateMotion></circle>
+            <circle class="kb-pulse dim" r="3"><animateMotion dur="3.6s" begin="0.9s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#kbA3"/></animateMotion></circle>
+            <circle class="kb-pulse dim" r="3"><animateMotion dur="3.8s" begin="2.4s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#kbA4"/></animateMotion></circle>
+            <circle class="kb-pulse dim" r="3"><animateMotion dur="3.1s" begin="0.2s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#kbA5"/></animateMotion></circle>
+          </g>
+
+          <!-- ===== surrounding location dots ===== -->
+          <!-- United States (far) -->
+          <g class="kb-dot" tabindex="0" role="button"
+             aria-label="United States. Client engagement and growth support."
+             data-key="us" data-x="165" data-y="150">
+            <circle class="ping" cx="165" cy="150" r="6"/>
+            <circle class="ping2" cx="165" cy="150" r="6"/>
+            <circle class="focusring" cx="165" cy="150" r="13"/>
+            <circle class="core" cx="165" cy="150" r="5.5"/>
+          </g>
+          <text class="kb-mlabel" x="150" y="126" text-anchor="middle">United States</text>
+
+          <!-- Sweden (mid) -->
+          <g class="kb-dot" tabindex="0" role="button"
+             aria-label="Sweden. European presence and partnerships."
+             data-key="se" data-x="470" data-y="84">
+            <circle class="ping" cx="470" cy="84" r="6"/>
+            <circle class="ping2" cx="470" cy="84" r="6"/>
+            <circle class="focusring" cx="470" cy="84" r="13"/>
+            <circle class="core" cx="470" cy="84" r="5.5"/>
+          </g>
+          <text class="kb-mlabel" x="470" y="60" text-anchor="middle">Sweden</text>
+
+          <!-- Pakistan (near) -->
+          <g class="kb-dot" tabindex="0" role="button"
+             aria-label="Pakistan. Engineering, delivery, and support."
+             data-key="pk" data-x="772" data-y="172">
+            <circle class="ping" cx="772" cy="172" r="6"/>
+            <circle class="ping2" cx="772" cy="172" r="6"/>
+            <circle class="focusring" cx="772" cy="172" r="13"/>
+            <circle class="core" cx="772" cy="172" r="5.5"/>
+          </g>
+          <text class="kb-mlabel" x="788" y="146" text-anchor="middle">Pakistan</text>
+
+          <!-- Dubai (near) -->
+          <g class="kb-dot" tabindex="0" role="button"
+             aria-label="Dubai, United Arab Emirates. Middle East client engagement and partnerships."
+             data-key="ae" data-x="742" data-y="366">
+            <circle class="ping" cx="742" cy="366" r="6"/>
+            <circle class="ping2" cx="742" cy="366" r="6"/>
+            <circle class="focusring" cx="742" cy="366" r="13"/>
+            <circle class="core" cx="742" cy="366" r="5.5"/>
+          </g>
+          <text class="kb-mlabel" x="758" y="400" text-anchor="middle">Dubai</text>
+
+          <!-- KSA (mid) -->
+          <g class="kb-dot" tabindex="0" role="button"
+             aria-label="Kingdom of Saudi Arabia. Regional growth, consulting, and enterprise support."
+             data-key="sa" data-x="300" data-y="372">
+            <circle class="ping" cx="300" cy="372" r="6"/>
+            <circle class="ping2" cx="300" cy="372" r="6"/>
+            <circle class="focusring" cx="300" cy="372" r="13"/>
+            <circle class="core" cx="300" cy="372" r="5.5"/>
+          </g>
+          <text class="kb-mlabel" x="288" y="406" text-anchor="middle">Saudi Arabia</text>
+
+          <!-- Australia — HEAD OFFICE, centre & largest -->
+          <g class="kb-dot kb-hq" tabindex="0" role="button"
+             aria-label="Australia, KEYOB head office. Client strategy, consulting, partnerships."
+             data-key="au" data-x="500" data-y="262">
+            <circle class="hqping" cx="500" cy="262" r="11"/>
+            <circle class="hqping2" cx="500" cy="262" r="11"/>
+            <circle class="focusring" cx="500" cy="262" r="22"/>
+            <circle class="hqring" cx="500" cy="262" r="17"/>
+            <circle class="core" cx="500" cy="262" r="10"/>
+          </g>
+          <text class="kb-mlabel kb-hqname" x="500" y="226" text-anchor="middle">Australia</text>
+          <text class="kb-hqlabel" x="500" y="304" text-anchor="middle">HEAD OFFICE</text>
+        </svg>
+
+        <!-- tooltip (desktop) -->
+        <div class="kb-tip" id="kbTip" role="status" aria-live="polite"></div>
+      </div>
+
+    </div>
+
+    <!-- ===== six-card location strip ===== -->
+    <div class="kb-strip">
+      <div class="kb-card" tabindex="0">
+        <div class="kb-card-line"></div>
+        <h4>Australia</h4>
+        <div class="addr">Springwood, Queensland</div>
+        <div class="role">Client strategy, consulting, partnerships</div>
+        <p class="desc">Local conversations, business discovery, AI assessment, and client relationship management.</p>
+      </div>
+      <div class="kb-card" tabindex="0">
+        <div class="kb-card-line"></div>
+        <h4>Pakistan</h4>
+        <div class="addr">Delivery operations</div>
+        <div class="role">Engineering, delivery, and support</div>
+        <p class="desc">Software development, CRM, ERP, automation, integrations, dashboards, and ongoing technical support.</p>
+      </div>
+      <div class="kb-card" tabindex="0">
+        <div class="kb-card-line"></div>
+        <h4>Sweden</h4>
+        <div class="addr">Regional collaboration</div>
+        <div class="role">European presence and partnerships</div>
+        <p class="desc">Business development, client engagement, and partnership support across European opportunities.</p>
+      </div>
+      <div class="kb-card" tabindex="0">
+        <div class="kb-card-line"></div>
+        <h4>United States</h4>
+        <div class="addr">North America</div>
+        <div class="role">Client engagement and growth support</div>
+        <p class="desc">Strategic conversations and support for businesses expanding their digital and operational capability.</p>
+      </div>
+      <div class="kb-card" tabindex="0">
+        <div class="kb-card-line"></div>
+        <h4>Dubai</h4>
+        <div class="addr">Dubai, UAE</div>
+        <div class="role">Middle East client engagement and partnerships</div>
+        <p class="desc">Regional business conversations, digital transformation advisory, AI opportunity discovery, and partnership support across the UAE market.</p>
+      </div>
+      <div class="kb-card" tabindex="0">
+        <div class="kb-card-line"></div>
+        <h4>Kingdom of Saudi Arabia</h4>
+        <div class="addr">Saudi Arabia</div>
+        <div class="role">Regional growth, consulting, and enterprise support</div>
+        <p class="desc">Strategic engagement for businesses modernizing operations, customer systems, ERP workflows, automation, and AI-enabled business processes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  const DATA={
+    us:{t:"United States",s:"Client engagement and growth support",d:"Consulting, strategic conversations, and support for businesses expanding their digital and operational capability."},
+    se:{t:"Sweden",s:"European presence and partnerships",d:"Regional collaboration, business development, and client engagement across European opportunities."},
+    pk:{t:"Pakistan",s:"Engineering, delivery, and support",d:"Software development, CRM, ERP, automation, integrations, dashboards, and ongoing technical support."},
+    au:{t:"Australia",s:"Client strategy, consulting, partnerships",d:"Local conversations, business discovery, AI assessment, and client relationship management."},
+    ae:{t:"Dubai",s:"Middle East client engagement and partnerships",d:"Regional business conversations, digital transformation advisory, AI opportunity discovery, and partnership support across the UAE market."},
+    sa:{t:"Kingdom of Saudi Arabia",s:"Regional growth, consulting, and enterprise support",d:"Strategic engagement for businesses modernizing operations, customer systems, ERP workflows, automation, and AI-enabled business processes."}
+  };
+  const wrap=document.getElementById('kbMapWrap');
+  const svg=wrap.querySelector('.kb-map');
+  const tip=document.getElementById('kbTip');
+  let active=null;
+
+  function place(dot){
+    const info=DATA[dot.dataset.key]; if(!info) return;
+    tip.innerHTML=`<h4>${info.t}</h4><div class="sub">${info.s}</div><p class="desc">${info.d}</p>`;
+    const vb=svg.viewBox.baseVal, rect=svg.getBoundingClientRect();
+    const px=(+dot.dataset.x)*(rect.width/vb.width), py=(+dot.dataset.y)*(rect.height/vb.height);
+    tip.style.left=Math.min(Math.max(px+18,8),rect.width-tip.offsetWidth-8)+'px';
+    tip.style.top=Math.max(py-tip.offsetHeight/2,8)+'px';
+    tip.classList.add('show'); active=dot;
+  }
+  function hide(){tip.classList.remove('show');active=null;}
+
+  svg.querySelectorAll('.kb-dot').forEach(dot=>{
+    dot.addEventListener('mouseenter',()=>place(dot));
+    dot.addEventListener('mouseleave',()=>{if(active===dot)hide();});
+    dot.addEventListener('focus',()=>place(dot));
+    dot.addEventListener('blur',()=>{if(active===dot)hide();});
+    dot.addEventListener('click',e=>{e.stopPropagation();active===dot?hide():place(dot);});
+    dot.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();active===dot?hide():place(dot);}if(e.key==='Escape')hide();});
+  });
+  document.addEventListener('click',e=>{if(!wrap.contains(e.target))hide();});
+  addEventListener('resize',()=>{if(active)place(active);});
+})();
+</script>
+</body>
+</html>

@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { industries } from '@/config/keyob-data';
 import { stories, type StoryCategory } from '@/config/keyob-stories';
 import { newsArticles } from '@/config/keyob-news';
@@ -51,6 +52,9 @@ export function Nav() {
   const closeAll = useCallback(() => {
     itemsRef.current?.forEach((el) => el.classList.remove('is-open'));
   }, []);
+
+  const pathname = usePathname();
+  const contactHref = pathname === '/' ? '#contact' : '/#contact';
 
   useEffect(() => {
     const items = document.querySelectorAll('nav.top li.has-menu');
@@ -186,7 +190,7 @@ export function Nav() {
             Contact Us <span className="caret">▾</span>
             <div className="menu" role="menu">
               <span className="mhead">Begin a conversation</span>
-              <Link href="#contact" role="menuitem">
+              <Link href={contactHref} role="menuitem">
                 <span className="ic">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
                     <path d="M3 7h18M3 12h12M3 17h18" />
@@ -251,13 +255,13 @@ export function Nav() {
               <div className="sep" />
               <div className="foot">
                 <span>Within one business day</span>
-                <Link href="#contact">Open inquiry form →</Link>
+                <Link href={contactHref}>Open inquiry form →</Link>
               </div>
             </div>
           </li>
         </ul>
 
-        <Link href="#contact" className="nav-cta">
+        <Link href={contactHref} className="nav-cta">
           <span className="dot" />
           Free AI assessment
         </Link>
