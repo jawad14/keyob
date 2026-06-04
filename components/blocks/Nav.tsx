@@ -102,7 +102,7 @@ export function Nav() {
         <ul>
           <li><Link href="/about" style={{ color: 'inherit', textDecoration: 'none' }}>About Us</Link></li>
 
-          <li>What We Do <span className="caret">▾</span></li>
+          <li><Link href="/what-we-do" style={{ color: 'inherit', textDecoration: 'none' }}>What We Do</Link></li>
 
           <li className="has-menu" data-menu="industries">
             Industries <span className="caret">▾</span>
