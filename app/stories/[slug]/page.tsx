@@ -10,6 +10,7 @@ const BESPOKE_SLUGS = new Set([
   'investment-markets-australia',
   'best-value-custom-erp',
   'automart-nationwide',
+  'international-coaching-institute',
 ]);
 
 export function generateStaticParams() {
