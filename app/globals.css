@@ -7532,3 +7532,446 @@ section.stories-cta {
   max-width: 70ch;
 }
 
+/* =====================================================================
+   CENTRALIZED RESPONSIVE LAYER
+   Single source of truth for tablet → mobile breakpoints.
+   Applies consistently across every page (home, about, what-we-do,
+   stories, news, leadership-team, contact, blog).
+
+   Canonical breakpoints (Tailwind v4 defaults):
+     ≤1024px : tablet
+     ≤768px  : large mobile
+     ≤480px  : small mobile
+   ===================================================================== */
+
+/* ===== TABLET (≤1024px) ===== */
+@media (max-width: 1024px) {
+  .wrap { width: min(1320px, 100% - 40px); }
+
+  section.opening,
+  .lt-opening,
+  .wwd-hero,
+  .au-opening,
+  .ct-hero,
+  .story-shero,
+  .news-hero,
+  .news-ahero,
+  section.phead,
+  .gp-section { padding-top: 140px; padding-bottom: 80px; }
+
+  section.value,
+  section.why,
+  section.wkd,
+  section.method,
+  section.caps,
+  section.cases,
+  section.insights,
+  section.quote,
+  section.wp,
+  section.contact,
+  section.story-outcomes-section,
+  section.story-human,
+  section.story-method,
+  section.story-faq,
+  section.story-related,
+  section.story-cta,
+  section.wwd-pathway,
+  section.wwd-connected,
+  section.wwd-stage-sec,
+  section.wwd-eco,
+  section.wwd-paths,
+  section.wwd-method,
+  section.wwd-human,
+  section.wwd-faq,
+  section.wwd-final,
+  section.wwd-intro,
+  section.au-shift,
+  section.au-became,
+  section.au-trust,
+  section.au-principles,
+  section.au-journey,
+  section.au-philo,
+  section.au-rel,
+  section.au-diff,
+  section.au-founder,
+  section.au-final,
+  section.au-faq,
+  section.lt-leaders,
+  section.lt-philo,
+  section.lt-team,
+  section.lt-engage,
+  section.lt-culture,
+  section.lt-final,
+  section.ct-faq,
+  section.news-feed,
+  section.news-signup,
+  section.news-cta,
+  section.news-body,
+  section.news-related,
+  section.stories,
+  section.stories-cta,
+  section.story-article { padding-top: 90px; padding-bottom: 90px; }
+
+  .stage-grid,
+  .rel-layers,
+  .au-stats-grid,
+  .wwd-stage-grid,
+  .au-rel-layers,
+  .gp-strip { grid-template-columns: repeat(2, 1fr); }
+
+  .pgrid,
+  .au-pgrid,
+  .lt-pgrid,
+  .news-grid,
+  .news-rgrid,
+  .story-rgrid,
+  .wwd-paths-grid,
+  .lt-lgrid,
+  .story-ogrid { grid-template-columns: repeat(2, 1fr); }
+
+  .hero-grid,
+  .wwd-hero-grid,
+  .opening-grid,
+  .au-trust-grid,
+  .au-became-grid,
+  .au-diff-grid,
+  .au-philo-grid,
+  .au-founder-grid,
+  .lt-team-grid,
+  .lt-culture-grid,
+  .wwd-eco-grid,
+  .wwd-connected-grid,
+  .wwd-human-grid,
+  .wwd-intro-grid,
+  .gp-grid,
+  .quote-card,
+  .wkd-grid,
+  .faq .grid,
+  .contact .grid,
+  .why .grid { grid-template-columns: 1fr; gap: 40px; }
+
+  .scard.feat { grid-column: span 1; flex-direction: column; }
+  .scard.feat .scard-visual { min-height: 240px; aspect-ratio: 16/9; }
+
+  .case-card .case-body,
+  .scard-body,
+  .news-card-body,
+  .news-feat-body,
+  .lt-lcard-body,
+  .au-pcard,
+  .lt-pcard,
+  .au-rlayer,
+  .wwd-stage-card,
+  .gp-card,
+  .story-ocard,
+  .story-rcard,
+  .news-rcard-b { padding: 28px 24px; }
+}
+
+/* ===== LARGE MOBILE (≤768px) ===== */
+@media (max-width: 768px) {
+  .wrap { width: min(1320px, 100% - 32px); }
+  .story-narrow,
+  .news-narrow { max-width: none; padding: 0 20px; }
+
+  section.opening,
+  .lt-opening,
+  .wwd-hero,
+  .au-opening,
+  .ct-hero,
+  .story-shero,
+  .news-hero,
+  .news-ahero,
+  section.phead,
+  .gp-section { padding-top: 110px; padding-bottom: 60px; }
+  .au-opening { min-height: auto; }
+
+  section.value,
+  section.why,
+  section.wkd,
+  section.method,
+  section.caps,
+  section.cases,
+  section.insights,
+  section.quote,
+  section.wp,
+  section.contact,
+  section.story-outcomes-section,
+  section.story-human,
+  section.story-method,
+  section.story-faq,
+  section.story-related,
+  section.story-cta,
+  section.wwd-pathway,
+  section.wwd-connected,
+  section.wwd-stage-sec,
+  section.wwd-eco,
+  section.wwd-paths,
+  section.wwd-method,
+  section.wwd-human,
+  section.wwd-faq,
+  section.wwd-final,
+  section.wwd-intro,
+  section.au-shift,
+  section.au-became,
+  section.au-trust,
+  section.au-principles,
+  section.au-journey,
+  section.au-philo,
+  section.au-rel,
+  section.au-diff,
+  section.au-founder,
+  section.au-final,
+  section.au-faq,
+  section.lt-leaders,
+  section.lt-philo,
+  section.lt-team,
+  section.lt-engage,
+  section.lt-culture,
+  section.lt-final,
+  section.ct-faq,
+  section.news-feed,
+  section.news-signup,
+  section.news-cta,
+  section.news-body,
+  section.news-related,
+  section.stories,
+  section.stories-cta,
+  section.story-article { padding-top: 64px; padding-bottom: 64px; }
+
+  .value-grid,
+  .case-grid,
+  .cap-grid,
+  .stage-grid,
+  .rel-layers,
+  .pgrid,
+  .au-pgrid,
+  .lt-pgrid,
+  .au-stats-grid,
+  .au-rel-layers,
+  .wwd-stage-grid,
+  .wwd-paths-grid,
+  .news-grid,
+  .news-rgrid,
+  .story-rgrid,
+  .lt-lgrid,
+  .gp-strip,
+  .sgrid,
+  .story-ogrid { grid-template-columns: 1fr; }
+
+  .story-facts { grid-template-columns: repeat(2, 1fr); }
+  .story-fact:nth-child(2) { border-right: none; }
+
+  .lt-msteps,
+  .wwd-method-steps,
+  .story-msteps {
+    grid-template-columns: 1fr;
+    border-top: none;
+  }
+  .lt-mstep,
+  .wwd-mstep,
+  .story-mstep {
+    border-right: none;
+    border-top: 1px solid var(--line);
+    padding: 24px 0;
+  }
+  .lt-mstep:first-child,
+  .wwd-mstep:first-child,
+  .story-mstep:first-child { border-top: none; }
+
+  .au-jphase { grid-template-columns: 1fr; gap: 12px; }
+  .au-jphase-ph::after { display: none; }
+
+  .lt-flow,
+  .wwd-paths-grid { gap: 12px; }
+  .lt-arrow {
+    right: auto;
+    top: auto;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%) rotate(90deg);
+  }
+
+  .lt-lcard-photo { height: 240px; }
+  .lt-lcard { min-height: 0; }
+
+  .wwd-stage-card { min-height: 0; padding: 24px 20px; }
+
+  .wwd-ladder,
+  .wwd-hub-vis,
+  .wwd-eco-vis,
+  .au-layer-vis,
+  .au-loop-vis,
+  .au-diff-vis,
+  .gp-mapwrap { max-width: 360px; margin: 0 auto; }
+
+  .scard.feat .scard-visual { min-height: 200px; }
+  .scard-visual { aspect-ratio: 16/10; min-height: 0; }
+
+  .story-filters,
+  .news-filters { position: relative; top: auto; }
+  .story-filter-row,
+  .news-filter-row,
+  .wwd-legend {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 16px 0;
+  }
+  .story-filter-row::-webkit-scrollbar,
+  .news-filter-row::-webkit-scrollbar,
+  .wwd-legend::-webkit-scrollbar { display: none; }
+
+  .story-pullquote,
+  .au-philo-key,
+  .au-trust-key,
+  .au-diff-ask,
+  .au-shift-key { padding-left: 20px; }
+
+  footer.keyob-footer .top { grid-template-columns: 1fr; gap: 36px; }
+  footer.keyob-footer .bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
+
+  .story-human-card,
+  .au-founder-grid,
+  .lt-team-grid { grid-template-columns: 1fr; gap: 32px; text-align: left; }
+  .au-founder-img { max-width: 100%; aspect-ratio: 4/4; }
+}
+
+/* ===== SMALL MOBILE (≤480px) ===== */
+@media (max-width: 480px) {
+  .wrap { width: 100%; padding: 0 16px; box-sizing: border-box; }
+  .story-narrow,
+  .news-narrow { padding: 0 16px; }
+
+  section.opening,
+  .lt-opening,
+  .wwd-hero,
+  .au-opening,
+  .ct-hero,
+  .story-shero,
+  .news-hero,
+  .news-ahero,
+  section.phead,
+  .gp-section { padding-top: 96px; padding-bottom: 48px; }
+
+  section.value,
+  section.why,
+  section.wkd,
+  section.method,
+  section.caps,
+  section.cases,
+  section.insights,
+  section.quote,
+  section.wp,
+  section.contact,
+  section.story-outcomes-section,
+  section.story-human,
+  section.story-method,
+  section.story-faq,
+  section.story-related,
+  section.story-cta,
+  section.wwd-pathway,
+  section.wwd-connected,
+  section.wwd-stage-sec,
+  section.wwd-eco,
+  section.wwd-paths,
+  section.wwd-method,
+  section.wwd-human,
+  section.wwd-faq,
+  section.wwd-final,
+  section.wwd-intro,
+  section.au-shift,
+  section.au-became,
+  section.au-trust,
+  section.au-principles,
+  section.au-journey,
+  section.au-philo,
+  section.au-rel,
+  section.au-diff,
+  section.au-founder,
+  section.au-final,
+  section.au-faq,
+  section.lt-leaders,
+  section.lt-philo,
+  section.lt-team,
+  section.lt-engage,
+  section.lt-culture,
+  section.lt-final,
+  section.ct-faq,
+  section.news-feed,
+  section.news-signup,
+  section.news-cta,
+  section.news-body,
+  section.news-related,
+  section.stories,
+  section.stories-cta,
+  section.story-article { padding-top: 48px; padding-bottom: 48px; }
+
+  .story-facts { grid-template-columns: 1fr; }
+  .story-fact { border-right: none !important; border-bottom: 1px solid rgba(245, 248, 250, .1); }
+  .story-fact:last-child { border-bottom: none; }
+
+  .case-card .case-body,
+  .scard-body,
+  .news-card-body,
+  .news-feat-body,
+  .lt-lcard-body,
+  .au-pcard,
+  .lt-pcard,
+  .au-rlayer,
+  .wwd-stage-card,
+  .gp-card,
+  .story-ocard,
+  .story-rcard,
+  .news-rcard-b { padding: 22px 20px; }
+
+  .au-compare { grid-template-columns: 1fr; }
+
+  .case-thumb .stat-num,
+  .scard-stat-num { font-size: 38px; }
+
+  .wwd-final-cta,
+  .lt-final-cta,
+  .au-final-cta,
+  .ct-hero-ctas,
+  .wwd-hero-ctas,
+  .news-hero-ctas { flex-direction: column; align-items: stretch; }
+  .wwd-btn,
+  .lt-btn,
+  .au-btn,
+  .ct-btn,
+  .news-btn,
+  .story-cta-btn { width: 100%; justify-content: center; }
+
+  .ct-faq-q,
+  .au-faq-q,
+  .wwd-faq-q,
+  .story-faq-q,
+  .news-faq-q { font-size: 18px; padding: 22px 0; }
+
+  .story-pullquote { font-size: clamp(18px, 5vw, 24px); padding-left: 16px; }
+
+  .ct-hero-pills span,
+  .lt-region-row span,
+  .wwd-legend span { font-size: 10px; padding: 6px 11px; }
+
+  .footer-logo { height: 56px; }
+  .footer-bigmark { font-size: 28px; }
+
+  .lt-collage { grid-template-columns: 1fr; grid-auto-rows: 160px; }
+  .lt-tile--wide { grid-column: span 1; }
+
+  .wwd-ladder,
+  .wwd-hub-vis,
+  .wwd-eco-vis,
+  .au-layer-vis,
+  .au-loop-vis,
+  .au-diff-vis,
+  .gp-mapwrap { max-width: 280px; }
+}
+
+/* ===== HORIZONTAL OVERFLOW SAFETY ===== */
+html, body { overflow-x: hidden; }
+img, svg, video { max-width: 100%; height: auto; }
+
