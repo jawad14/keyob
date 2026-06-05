@@ -37,8 +37,8 @@ export function Footer() {
               <Image
                 src="/logo-keyob-white.png"
                 alt=""
-                width={2172}
-                height={724}
+                width={2114}
+                height={570}
                 className="footer-logo"
               />
             </div>
