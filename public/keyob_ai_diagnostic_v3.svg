@@ -118,8 +118,8 @@
   <circle cx="430" cy="174" r="1.5" fill="#00C5E8" opacity="0.5"/>
   <circle cx="450" cy="186" r="1.5" fill="#00C5E8" opacity="0.5"/>
 
-  <text font-family="sans-serif" font-size="9" fill="#00C5E8" opacity="0.85" x="440" y="152" text-anchor="middle" dominant-baseline="central" font-weight="600" letter-spacing="1.5">AI ENGINE</text>
-  <text font-family="sans-serif" font-size="8" fill="#0D2B6B" opacity="0.4" x="440" y="162" text-anchor="middle" dominant-baseline="central" letter-spacing="0.8">KEYOB INTELLIGENCE</text>
+  <text font-family="sans-serif" font-size="10" fill="#0A8DA8" opacity="1" x="440" y="124" text-anchor="middle" dominant-baseline="central" font-weight="700" letter-spacing="1.8">AI ENGINE</text>
+  <text font-family="sans-serif" font-size="8.5" fill="#0D2B6B" opacity="0.7" x="440" y="137" text-anchor="middle" dominant-baseline="central" font-weight="600" letter-spacing="1">KEYOB INTELLIGENCE</text>
 
   <path d="M 472 187 C 498 180, 518 155, 545 152" fill="none" stroke="#00C5E8" stroke-width="0.9" opacity="0.3" stroke-dasharray="4 3"/>
   <path d="M 472 196 C 498 196, 520 200, 545 200" fill="none" stroke="#00C5E8" stroke-width="0.9" opacity="0.3" stroke-dasharray="4 3"/>
@@ -129,20 +129,20 @@
   <circle cx="586" cy="200" r="22" fill="#00C5E8" opacity="0.07" class="outcome-glow" style="animation-delay:1.4s"/>
   <circle cx="586" cy="248" r="22" fill="#00C5E8" opacity="0.07" class="outcome-glow" style="animation-delay:2.3s"/>
 
-  <rect x="545" y="132" width="90" height="40" rx="7" fill="#F4FCFE" stroke="#00C5E8" stroke-width="1" opacity="0.85"/>
-  <text font-family="sans-serif" font-size="10" fill="#0D2B6B" opacity="1" x="590" y="148" text-anchor="middle" dominant-baseline="central" font-weight="700" letter-spacing="0.4">TIME SAVED</text>
-  <text font-family="sans-serif" font-size="9" fill="#0A8DA8" opacity="1" x="590" y="161" text-anchor="middle" dominant-baseline="central" font-weight="500">↑ capacity</text>
+  <rect x="545" y="132" width="90" height="40" rx="7" fill="#FFFFFF" stroke="#00C5E8" stroke-width="1.2" opacity="1"/>
+  <text font-family="sans-serif" font-size="10.5" fill="#0A1F4B" opacity="1" x="590" y="148" text-anchor="middle" dominant-baseline="central" font-weight="800" letter-spacing="0.5">TIME SAVED</text>
+  <text font-family="sans-serif" font-size="9.5" fill="#066D85" opacity="1" x="590" y="161" text-anchor="middle" dominant-baseline="central" font-weight="700">↑ capacity</text>
 
-  <rect x="545" y="180" width="90" height="40" rx="7" fill="#F4FCFE" stroke="#00C5E8" stroke-width="1" opacity="0.85"/>
-  <text font-family="sans-serif" font-size="10" fill="#0D2B6B" opacity="1" x="590" y="196" text-anchor="middle" dominant-baseline="central" font-weight="700" letter-spacing="0.4">LOWER COST</text>
-  <text font-family="sans-serif" font-size="9" fill="#0A8DA8" opacity="1" x="590" y="209" text-anchor="middle" dominant-baseline="central" font-weight="500">↓ leakage</text>
+  <rect x="545" y="180" width="90" height="40" rx="7" fill="#FFFFFF" stroke="#00C5E8" stroke-width="1.2" opacity="1"/>
+  <text font-family="sans-serif" font-size="10.5" fill="#0A1F4B" opacity="1" x="590" y="196" text-anchor="middle" dominant-baseline="central" font-weight="800" letter-spacing="0.5">LOWER COST</text>
+  <text font-family="sans-serif" font-size="9.5" fill="#066D85" opacity="1" x="590" y="209" text-anchor="middle" dominant-baseline="central" font-weight="700">↓ leakage</text>
 
-  <rect x="545" y="228" width="90" height="40" rx="7" fill="#F4FCFE" stroke="#00C5E8" stroke-width="1" opacity="0.85"/>
-  <text font-family="sans-serif" font-size="10" fill="#0D2B6B" opacity="1" x="590" y="244" text-anchor="middle" dominant-baseline="central" font-weight="700" letter-spacing="0.4">PERFORMANCE</text>
-  <text font-family="sans-serif" font-size="9" fill="#0A8DA8" opacity="1" x="590" y="257" text-anchor="middle" dominant-baseline="central" font-weight="500">↑ output</text>
+  <rect x="545" y="228" width="90" height="40" rx="7" fill="#FFFFFF" stroke="#00C5E8" stroke-width="1.2" opacity="1"/>
+  <text font-family="sans-serif" font-size="10.5" fill="#0A1F4B" opacity="1" x="590" y="244" text-anchor="middle" dominant-baseline="central" font-weight="800" letter-spacing="0.5">PERFORMANCE</text>
+  <text font-family="sans-serif" font-size="9.5" fill="#066D85" opacity="1" x="590" y="257" text-anchor="middle" dominant-baseline="central" font-weight="700">↑ output</text>
 
-  <path d="M 639 127 L 645 127 L 645 273 L 639 273" fill="none" stroke="#00C5E8" stroke-width="0.8" opacity="0.3" stroke-linecap="round"/>
-  <text font-family="sans-serif" font-size="8.5" fill="#00C5E8" opacity="0.38" x="653" y="200" text-anchor="middle" dominant-baseline="central" transform="rotate(90, 653, 200)" letter-spacing="1.2">OUTCOMES</text>
+  <path d="M 639 127 L 645 127 L 645 273 L 639 273" fill="none" stroke="#00C5E8" stroke-width="0.9" opacity="0.55" stroke-linecap="round"/>
+  <text font-family="sans-serif" font-size="9" fill="#0A8DA8" opacity="0.75" x="653" y="200" text-anchor="middle" dominant-baseline="central" transform="rotate(90, 653, 200)" letter-spacing="1.4" font-weight="600">OUTCOMES</text>
 
   <circle r="3" fill="#185FA5" opacity="0.75" class="flow-dot" style="offset-path: path('M 20 140 L 124 140'); animation-delay:0s; animation-duration:3.2s"/>
   <circle r="3" fill="#185FA5" opacity="0.75" class="flow-dot" style="offset-path: path('M 20 200 L 124 200'); animation-delay:1s; animation-duration:3.2s"/>
