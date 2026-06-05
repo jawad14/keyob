@@ -45,12 +45,11 @@ export function Nav() {
         <div className="wrap inner">
           <Link href="/" className="logo" aria-label="KEYOB — home">
             <Image
-              src="/logo-final.svg"
+              src="/logo-keyob.png"
               alt=""
-              width={672}
-              height={186}
+              width={2172}
+              height={724}
               priority
-              unoptimized
               className="logo-img"
             />
           </Link>
@@ -105,11 +104,10 @@ export function Nav() {
             onClick={() => setOpen(false)}
           >
             <Image
-              src="/logo-final-white.svg"
+              src="/logo-keyob-white.png"
               alt=""
-              width={672}
-              height={186}
-              unoptimized
+              width={2172}
+              height={724}
             />
           </Link>
           <button

@@ -35,11 +35,10 @@ export function Footer() {
           <div>
             <div className="footer-logo-row">
               <Image
-                src="/logo-final-white.svg"
+                src="/logo-keyob-white.png"
                 alt=""
-                width={672}
-                height={186}
-                unoptimized
+                width={2172}
+                height={724}
                 className="footer-logo"
               />
             </div>
