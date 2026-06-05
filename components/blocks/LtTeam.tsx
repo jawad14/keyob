@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { ltTiles } from '@/config/keyob-leadership';
 
 // On-brand placeholder tile SVG — same generator pattern as the source HTML.
@@ -16,14 +17,6 @@ function TileSvg({ seed }: { seed: number }) {
         <circle cx={255} cy={80} r={3} />
         <circle cx={210} cy={80} r={3} />
       </g>
-    </svg>
-  );
-}
-
-function PlayIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor">
-      <path d="M8 5v14l11-7z" />
     </svg>
   );
 }
@@ -59,12 +52,16 @@ export function LtTeam() {
               key={t.caption}
               className={`lt-tile${t.span !== 'none' ? ` lt-tile--${t.span}` : ''}`}
             >
-              <TileSvg seed={i} />
-              {t.video ? (
-                <div className="lt-tile-play" aria-hidden="true">
-                  <PlayIcon />
-                </div>
-              ) : null}
+              {t.image ? (
+                <Image
+                  src={t.image}
+                  alt={t.caption}
+                  fill
+                  sizes="(min-width: 960px) 50vw, 100vw"
+                />
+              ) : (
+                <TileSvg seed={i} />
+              )}
               <span className="lt-tile-cap">{t.caption}</span>
             </div>
           ))}

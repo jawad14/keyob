@@ -7112,8 +7112,8 @@ section.stories-cta {
 .lt-team-copy p + p { margin-top: 14px; }
 .lt-collage {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 170px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 260px;
   gap: 16px;
 }
 .lt-tile {
@@ -7318,7 +7318,7 @@ section.stories-cta {
   .lt-lgrid { grid-template-columns: 1fr 1fr; }
   .lt-pgrid { grid-template-columns: 1fr 1fr; }
   .lt-team-grid { grid-template-columns: 1fr; gap: 34px; }
-  .lt-collage { grid-template-columns: 1fr 1fr; grid-auto-rows: 150px; }
+  .lt-collage { grid-template-columns: 1fr 1fr; grid-auto-rows: 220px; }
   .lt-tile--wide { grid-column: span 2; }
   .lt-flow { grid-template-columns: 1fr; }
   .lt-arrow {
@@ -7969,7 +7969,7 @@ section.stories-cta {
   .footer-logo { height: 56px; }
   .footer-bigmark { font-size: 28px; }
 
-  .lt-collage { grid-template-columns: 1fr; grid-auto-rows: 160px; }
+  .lt-collage { grid-template-columns: 1fr; grid-auto-rows: 240px; }
   .lt-tile--wide { grid-column: span 1; }
 
   .wwd-ladder,

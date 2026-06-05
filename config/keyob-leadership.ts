@@ -22,37 +22,15 @@ export const ltLeaders: LtLeader[] = [
     photo: '/jawad-siddique-au.png',
   },
   {
-    name: 'Rehman Shafiq',
-    region: 'Sweden',
-    role: 'Regional Leadership / European Partnerships',
+    name: 'Ehsan Alvi',
+    region: 'Australia',
+    role: 'Strategic Leadership / Business Growth',
     quote:
-      'Modern technology partnerships work best when they are built on clarity, communication, and a shared understanding of where the business is going.',
+      'The right technology partner does not simply deliver a project. It helps the client think clearly, move confidently, and prepare for what comes next.',
     message:
-      "Rehman supports KEYOB's European presence with a focus on partnerships, strategic conversations, and helping clients approach technology decisions with confidence.",
-    link: 'https://www.linkedin.com/in/rehmanshafiq/',
-    photo: '/rehman-shafiq-se.png',
-  },
-  {
-    name: 'Asif Malik',
-    region: 'United States',
-    role: 'Client Engagement / North America',
-    quote:
-      'Clients trust teams that listen carefully, respond professionally, and keep showing up after the first delivery.',
-    message:
-      "Asif represents KEYOB's client-facing presence in the United States, supporting business relationships, regional engagement, and long-term growth conversations.",
-    link: 'https://www.facebook.com/asifmaliksh',
-    photo: '/asif-malik-usa.png',
-  },
-  {
-    name: 'Mansoor Ahmad Samar',
-    region: 'Pakistan',
-    role: 'Technology Leadership / Delivery Operations',
-    quote:
-      'Good software is not only about writing code. It is about understanding how a business works and building systems that make daily operations stronger.',
-    message:
-      "Mansoor supports KEYOB's technical delivery, software architecture, ERP systems, CRM integrations, automation, and operational technology execution.",
-    link: 'https://www.linkedin.com/in/mansoor-ahmad-samar-564b8229/',
-    photo: '/mansoor-ahmad-samar-pk.png',
+      "Ehsan contributes to KEYOB's Australian leadership presence, supporting strategic direction, client relationships, and business growth initiatives.",
+    link: 'https://www.linkedin.com/in/ehsanalvi/',
+    photo: '/ehsan-alvi-au.png',
   },
   {
     name: 'Paul',
@@ -71,15 +49,37 @@ export const ltLeaders: LtLeader[] = [
     photo: '/faris-au.png',
   },
   {
-    name: 'Ehsan Alvi',
-    region: 'Australia',
-    role: 'Strategic Leadership / Business Growth',
+    name: 'Asif Malik',
+    region: 'United States',
+    role: 'Client Engagement / North America',
     quote:
-      'The right technology partner does not simply deliver a project. It helps the client think clearly, move confidently, and prepare for what comes next.',
+      'Clients trust teams that listen carefully, respond professionally, and keep showing up after the first delivery.',
     message:
-      "Ehsan contributes to KEYOB's Australian leadership presence, supporting strategic direction, client relationships, and business growth initiatives.",
-    link: 'https://www.linkedin.com/in/ehsanalvi/',
-    photo: '/ehsan-alvi-au.png',
+      "Asif represents KEYOB's client-facing presence in the United States, supporting business relationships, regional engagement, and long-term growth conversations.",
+    link: 'https://www.facebook.com/asifmaliksh',
+    photo: '/asif-malik-usa.png',
+  },
+  {
+    name: 'Rehman Shafiq',
+    region: 'Sweden',
+    role: 'Regional Leadership / European Partnerships',
+    quote:
+      'Modern technology partnerships work best when they are built on clarity, communication, and a shared understanding of where the business is going.',
+    message:
+      "Rehman supports KEYOB's European presence with a focus on partnerships, strategic conversations, and helping clients approach technology decisions with confidence.",
+    link: 'https://www.linkedin.com/in/rehmanshafiq/',
+    photo: '/rehman-shafiq-se.png',
+  },
+  {
+    name: 'Mansoor Ahmad Samar',
+    region: 'Pakistan',
+    role: 'Technology Leadership / Delivery Operations',
+    quote:
+      'Good software is not only about writing code. It is about understanding how a business works and building systems that make daily operations stronger.',
+    message:
+      "Mansoor supports KEYOB's technical delivery, software architecture, ERP systems, CRM integrations, automation, and operational technology execution.",
+    link: 'https://www.linkedin.com/in/mansoor-ahmad-samar-564b8229/',
+    photo: '/mansoor-ahmad-samar-pk.png',
   },
 ];
 
@@ -91,13 +91,18 @@ export const ltPhilosophy: LtPhilosophy[] = [
   { n: '04', title: 'Improve continuously', body: 'We treat systems as living business assets, not one-time deliveries.' },
 ];
 
-export type LtTile = { caption: string; span: 'wide' | 'tall' | 'none'; video?: boolean };
+export type LtTile = {
+  caption: string;
+  span: 'wide' | 'tall' | 'none';
+  image?: string;
+};
 export const ltTiles: LtTile[] = [
-  { caption: 'Design reviews', span: 'tall' },
-  { caption: 'Engineering delivery', span: 'wide' },
-  { caption: 'AI workflow planning', span: 'none' },
-  { caption: 'Client support', span: 'none' },
-  { caption: 'Systems walkthrough', span: 'wide', video: true },
+  { caption: 'Design reviews', span: 'tall', image: '/team-design-reviews.png' },
+  { caption: 'Engineering delivery', span: 'wide', image: '/team-engineering-delivery.png' },
+  { caption: 'AI workflow planning', span: 'none', image: '/team-ai-workflow.png' },
+  { caption: 'Client support', span: 'none', image: '/team-client-support.png' },
+  { caption: 'Inside the studio', span: 'none', image: '/keyob-pakistan-office.png' },
+  { caption: 'Team culture', span: 'wide', image: '/keyob-pakistan-team.png' },
 ];
 
 export type LtFlowStep = { n: string; title: string; body: string };
