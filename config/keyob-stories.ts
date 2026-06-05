@@ -332,25 +332,29 @@ const storyExtras: Record<string, Extra> = {
       ctaHref: '/contact',
     },
   },
-  'customer-operations-capacity': {
+  'automart-nationwide': {
     category: 'service',
-    categoryLabel: 'Customer Operations · Service Business',
-    headline: { pre: 'More requests handled, ', em: 'without the overhead.' },
+    categoryLabel: 'Automart Nationwide · Aftermarket Auto Parts · USA',
+    headline: {
+      pre: 'From scattered requests to ',
+      em: 'one connected service queue.',
+    },
     body: [
-      "Inbound requests were arriving in five different places — email, web form, phone notes, third-party platforms, and a shared inbox no one really owned. Senior staff spent more time triaging than resolving, and SLAs slipped quietly because nothing was measuring them in one place.",
-      "We built a single intake and routing layer that takes every request, classifies it, routes it to the right person, and surfaces the whole queue on a live operational board. Routing rules now encode the business policies that used to live in someone's head; escalations happen automatically when an item ages past its target.",
-      "The team didn't have to work faster. They just stopped losing time to coordination — and that gave them back enough capacity to handle 42% more customer requests without adding management overhead.",
+      "Automart Nationwide operates in a demanding aftermarket auto parts environment, where customers need fast answers, accurate part handling, reliable delivery coordination, and clear communication. The business already trusted KEYOB's industry-specific ERP foundation for automotive parts operations, but as customer activity grew, a new challenge appeared: inbound requests were arriving from too many places, and the team needed a smarter way to manage them.",
+      'KEYOB helped Automart move beyond scattered communication by building a single intake and routing layer that brought requests, rules, queues, ownership, and escalation into one connected operational view.',
+      'Every request is now captured, classified, routed, queued, and made visible the moment it lands. Routing rules encode the business policies that used to live in senior staff heads. Escalations trigger automatically when an item ages past its target.',
+      'The team did not have to work faster. They stopped losing time to coordination — and that gave them back enough capacity to handle 42% more customer requests without adding management overhead.',
     ],
     keyOutcomes: [
-      '42% increase in service handling capacity without additional staff',
-      'All inbound channels consolidated into a single routed queue',
-      'Live SLA tracking with automatic escalation on aging requests',
+      '42% more customer request capacity without added management overhead',
+      'Five inbound channels consolidated into one routed, measurable queue',
+      'Live SLA visibility with automatic escalation on aging requests',
     ],
     facts: [
-      { k: 'Industry', v: 'Customer operations' },
-      { k: 'Scale', v: '5 channels' },
-      { k: 'Capability', v: 'Routing & queueing' },
-      { k: 'Outcome', v: '+42% capacity' },
+      { k: 'Industry', v: 'Aftermarket auto parts' },
+      { k: 'Starting point', v: "KEYOB's automotive ERP foundation" },
+      { k: 'Scope', v: '5 request channels' },
+      { k: 'Outcome', v: '+42% request capacity' },
     ],
     challenges: [
       'Requests arriving across five separate channels, with no central queue.',
@@ -358,34 +362,41 @@ const storyExtras: Record<string, Extra> = {
       "Routing rules living in people's heads, applied inconsistently under load.",
       'SLAs slipping because nothing measured them in one place.',
       'No visibility into the size or age of the backlog at any point in time.',
+      'Customer service activity not fully connected to the wider ERP-driven operation.',
+      'Growth creating more coordination pressure instead of more clarity.',
     ],
     approachIntro:
-      "We built one intake and routing layer above the existing channels. Every request is classified, routed, queued — and visible — the moment it lands.",
-    pullquote: SHARED_PULLQUOTE,
+      'We built one intake and routing layer above the existing channels. Every request is captured, classified, routed, queued — and visible — the moment it lands. The system sits alongside the KEYOB automotive ERP foundation so customer service activity finally connects to the wider operation.',
+    pullquote:
+      "\"Most business owners know AI could help them. What they're missing is someone who can show them exactly where — and then build it properly.\"",
     outcomeCards: [
       {
         title: '42% more capacity',
-        body: 'The team absorbed a 42% larger workload without adding people or management overhead.',
+        body: 'Automart absorbed a 42% larger request workload without adding people or management overhead.',
       },
       {
         title: 'One routed queue',
-        body: 'Five inbound channels consolidated into a single classified, prioritised queue.',
+        body: 'Five inbound channels consolidated into a single classified, prioritised queue on a live operational board.',
       },
       {
-        title: 'Live SLA tracking',
+        title: 'SLA visibility by default',
         body: 'Aging requests escalate automatically — slipping SLAs surface before they become problems.',
       },
     ],
     humanIntro:
-      "Coordination was the silent tax on the team's day. Removing it gave the same people meaningful new capacity.",
+      'Automart already used the KEYOB automotive-parts ERP foundation. The intake and routing layer extended that relationship into customer service operations — meeting the business where its next pressure point actually was.',
     humanQuote:
-      "\"We didn't need to work faster. We just needed to stop losing time figuring out who was meant to handle what.\"",
-    humanRole: 'Customer ops manager · National service business',
+      '"We did not need to work faster. We needed one controlled way to see, route, and manage the work."',
+    humanRole: 'Service operations lead · Automart Nationwide',
     faq: [
       ...SHARED_FAQ,
       {
+        q: 'How does the intake layer relate to the existing ERP?',
+        a: "The intake and routing layer sits above the channels and alongside KEYOB's automotive-parts ERP foundation. Customer service activity is captured, routed and measured in the new layer; the ERP continues to own parts, inventory, sales, purchasing, warehouse and delivery — and the two work together as one operational view.",
+      },
+      {
         q: 'How are routing rules maintained over time?',
-        a: 'The rules live in the operating layer, not in code. Operations leads can update routing logic, priority bands and escalation thresholds themselves — without engineering involvement.',
+        a: 'Routing logic, priority bands and escalation thresholds live in the operating layer, not in code. Operations leads can update them themselves without engineering involvement.',
       },
     ],
   },

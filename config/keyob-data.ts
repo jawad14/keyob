@@ -344,7 +344,7 @@ export const outcomes: Outcome[] = [
     statSub: 'investor portal stabilized within the timeline',
     story: 'KEYOB helped stabilize, modernize, and prepare a complex investment portal for launch through structured QA, Redux analysis, dependency upgrades, and issue resolution — turning launch risk into launch readiness.',
     paletteIndex: 1,
-    image: '/cases/investment-markets-australia.png',
+    image: '/cases/investment-markets-launch-ready.png',
     imageAlt: 'Investment portal shown on laptop and mobile, with search and comparison cards',
     slug: 'investment-markets-australia',
   },
@@ -356,21 +356,23 @@ export const outcomes: Outcome[] = [
     story:
       "KEYOB built a custom ERP around Best Value's aftermarket auto parts operations — then stayed close as the system evolved with the business for nearly a decade.",
     paletteIndex: 2,
-    image: '/cases/best-value-custom-erp.png',
+    image: '/cases/best-value-story.png',
     imageAlt:
       'Custom ERP dashboard for an aftermarket auto parts business — inventory, sales, warehouse and delivery routes',
     slug: 'best-value-custom-erp',
   },
   {
-    industry: 'Customer Operations · Service Business',
-    tag: 'Service Capacity',
+    industry: 'Automart Nationwide · Aftermarket Auto Parts',
+    tag: 'Service Capacity · Auto Parts',
     stat: '42%',
-    statSub: 'increase in service handling capacity',
-    story: 'By centralising requests, automating routing, and giving teams a live view of pending work, KEYOB helped a service business handle more customer requests without adding unnecessary management overhead.',
+    statSub: 'more customer requests handled',
+    story:
+      "Automart Nationwide already trusted KEYOB's automotive-parts ERP foundation. As customer activity grew, KEYOB built an intake and routing layer that unified five channels, improved SLA visibility, and helped the team handle 42% more customer requests without added management overhead.",
     paletteIndex: 3,
-    image: '/cases/customer-operations.webp',
-    imageAlt: 'Customer service team working at desks with multi-screen dashboards',
-    slug: 'customer-operations-capacity',
+    image: '/cases/automart-nationwide.png',
+    imageAlt:
+      'Five request channels routing into one intake layer and a live operational board',
+    slug: 'automart-nationwide',
   },
   {
     industry: 'Growing Business · Multi-Department Operations',

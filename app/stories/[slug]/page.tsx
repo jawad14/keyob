@@ -6,7 +6,11 @@ import { StoryDetail } from '@/components/blocks/StoryDetail';
 import { stories } from '@/config/keyob-stories';
 import { siteConfig } from '@/config/site.config';
 
-const BESPOKE_SLUGS = new Set(['investment-markets-australia', 'best-value-custom-erp']);
+const BESPOKE_SLUGS = new Set([
+  'investment-markets-australia',
+  'best-value-custom-erp',
+  'automart-nationwide',
+]);
 
 export function generateStaticParams() {
   return stories
