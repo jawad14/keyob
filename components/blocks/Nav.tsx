@@ -81,11 +81,12 @@ export function Nav() {
       <div className="wrap inner">
         <Link href="/" className="logo" aria-label="KEYOB — home">
           <Image
-            src="/logo-blue.png"
+            src="/logo-final.svg"
             alt=""
             width={672}
             height={186}
             priority
+            unoptimized
             className="logo-img"
           />
         </Link>
