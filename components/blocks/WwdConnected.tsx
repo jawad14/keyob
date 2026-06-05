@@ -3,17 +3,19 @@ import { wwdHubNodes } from '@/config/keyob-wwd';
 // Hub visual — KEYOB Operating Layer at center with 10 capabilities around it.
 const cx = 230;
 const cy = 230;
-const r = 170;
+const rFar = 210;
+const rNear = 180;
 
 export function WwdConnected() {
+  const uniformW = Math.max(...wwdHubNodes.map((l) => l.length * 7 + 24));
   const nodes = wwdHubNodes.map((label, i) => {
     const a = ((-90 + i * (360 / wwdHubNodes.length)) * Math.PI) / 180;
+    const r = i % 2 === 0 ? rFar : rNear;
     const x = cx + r * Math.cos(a);
     const y = cy + r * Math.sin(a);
     const lx = cx + 62 * Math.cos(a);
     const ly = cy + 62 * Math.sin(a);
-    const w = label.length * 7 + 24;
-    return { label, x, y, lx, ly, w, delay: i * 0.12 };
+    return { label, x, y, lx, ly, w: uniformW, delay: i * 0.12 };
   });
 
   return (
