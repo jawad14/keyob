@@ -43,8 +43,8 @@ export const H6 = (props: LeveledProps) => <Heading level={6} {...props} />;
 const textVariants = cva('', {
   variants: {
     variant: {
-      body: 'text-foreground text-base leading-relaxed',
-      lead: 'text-muted-foreground text-lg leading-relaxed',
+      body: 'text-foreground text-lg leading-relaxed',
+      lead: 'text-muted-foreground text-xl leading-relaxed',
       muted: 'text-muted-foreground text-base',
       small: 'text-muted-foreground text-sm',
       caption: 'text-muted-foreground text-xs',
