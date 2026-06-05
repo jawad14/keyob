@@ -19,7 +19,7 @@ export const ltLeaders: LtLeader[] = [
       'Most businesses do not need more disconnected tools. They need the right systems, connected properly, so their teams can work with more clarity and confidence.',
     message:
       'Jawad leads KEYOB with a focus on practical AI, long-term client trust, and technology that creates measurable business value.',
-    photo: '/jawad-profile.png',
+    photo: '/jawad-siddique-au.png',
   },
   {
     name: 'Rehman Shafiq',
@@ -30,6 +30,7 @@ export const ltLeaders: LtLeader[] = [
     message:
       "Rehman supports KEYOB's European presence with a focus on partnerships, strategic conversations, and helping clients approach technology decisions with confidence.",
     link: 'https://www.linkedin.com/in/rehmanshafiq/',
+    photo: '/rehman-shafiq-se.png',
   },
   {
     name: 'Asif Malik',
@@ -40,6 +41,7 @@ export const ltLeaders: LtLeader[] = [
     message:
       "Asif represents KEYOB's client-facing presence in the United States, supporting business relationships, regional engagement, and long-term growth conversations.",
     link: 'https://www.facebook.com/asifmaliksh',
+    photo: '/asif-malik-usa.png',
   },
   {
     name: 'Mansoor Ahmad Samar',
@@ -50,6 +52,23 @@ export const ltLeaders: LtLeader[] = [
     message:
       "Mansoor supports KEYOB's technical delivery, software architecture, ERP systems, CRM integrations, automation, and operational technology execution.",
     link: 'https://www.linkedin.com/in/mansoor-ahmad-samar-564b8229/',
+    photo: '/mansoor-ahmad-samar-pk.png',
+  },
+  {
+    name: 'Paul',
+    region: 'Australia',
+    role: 'TBD',
+    quote: 'TBD',
+    message: 'TBD',
+    photo: '/paul-au.png',
+  },
+  {
+    name: 'Faris',
+    region: 'Australia',
+    role: 'TBD',
+    quote: 'TBD',
+    message: 'TBD',
+    photo: '/faris-au.png',
   },
   {
     name: 'Ehsan Alvi',
@@ -60,6 +79,7 @@ export const ltLeaders: LtLeader[] = [
     message:
       "Ehsan contributes to KEYOB's Australian leadership presence, supporting strategic direction, client relationships, and business growth initiatives.",
     link: 'https://www.linkedin.com/in/ehsanalvi/',
+    photo: '/ehsan-alvi-au.png',
   },
 ];
 
