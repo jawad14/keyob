@@ -19,7 +19,7 @@ export const ltLeaders: LtLeader[] = [
       'Most businesses do not need more disconnected tools. They need the right systems, connected properly, so their teams can work with more clarity and confidence.',
     message:
       'Jawad leads KEYOB with a focus on practical AI, long-term client trust, and technology that creates measurable business value.',
-    photo: '/jawad-ceo.png',
+    photo: '/jawad-profile.png',
   },
   {
     name: 'Rehman Shafiq',

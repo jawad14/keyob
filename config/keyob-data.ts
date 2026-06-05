@@ -375,15 +375,17 @@ export const outcomes: Outcome[] = [
     slug: 'automart-nationwide',
   },
   {
-    industry: 'Growing Business · Multi-Department Operations',
-    tag: 'Tool Consolidation',
-    stat: '4 tools',
-    statSub: 'consolidated into one operating view',
-    story: 'Sales, tasks, approvals, reporting, and customer records were scattered across separate tools. KEYOB connected the workflow into one clearer operating layer for leadership and teams.',
+    industry: 'International Coaching Institute · Coaching & Education',
+    tag: 'BI Platform · Source of Truth',
+    stat: '13 → 1',
+    statSub: 'systems consolidated into one trusted view',
+    story:
+      'KEYOB built a consolidated BI platform that gave ICI live visibility into real ROAS, funnel health, sales performance, and lead journeys — without manual weekly reconciliation.',
     paletteIndex: 4,
-    image: '/cases/multi-department.webp',
-    imageAlt: 'Cross-functional team collaborating around a unified operations dashboard',
-    slug: 'multi-tool-consolidation',
+    image: '/cases/international-coaching-institute.png',
+    imageAlt:
+      'Thirteen disconnected data sources flowing into one central executive BI dashboard',
+    slug: 'international-coaching-institute',
   },
   {
     industry: 'Back Office · Finance & Operations',
