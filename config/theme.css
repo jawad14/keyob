@@ -8,6 +8,11 @@
   --keyob-steel:    #D8DEE6;
   --keyob-graphite: #4B5563;
 
+  /* Accent — used sparingly for risk / launch-readiness cues
+     (e.g. "challenge" eyebrows, burndown markers, before-state bars). */
+  --keyob-red:      #E0322D;
+  --keyob-red-soft: #FF5A55;
+
   --keyob-gradient: linear-gradient(90deg,
     #07101E 0%, #123C8C 35%, #2563D9 65%, #19C6E8 100%);
 

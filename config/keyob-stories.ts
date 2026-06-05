@@ -13,11 +13,30 @@ export type StoryOutcomeCard = { title: string; body: string };
 export type StoryFaqItem = { q: string; a: string };
 export type StoryHeadline = { pre: string; em: string; post?: string };
 
+export type StorySectionHeading = { pre: string; em: string; post?: string };
+
+export type StoryMethodStep = { n: string; name: string; body: string };
+export type StoryRelatedCard = {
+  type: 'Capability' | 'Story';
+  title: string;
+  cta: string;
+  href: string;
+};
+export type StoryBottomCta = {
+  headline: StoryHeadline;
+  body: string;
+  ctaLabel: string;
+  ctaHref: string;
+};
+
 export type Story = Outcome & {
   category: StoryCategory;
   categoryLabel: string;
   featured?: boolean;
   headline: StoryHeadline;
+  // body, approachIntro, fact `v` and facts may contain inline <strong>/<em>;
+  // StoryDetail renders them with dangerouslySetInnerHTML (content is authored
+  // by us, not user input).
   body: string[];
   keyOutcomes: string[];
   facts: StoryFact[];
@@ -29,6 +48,15 @@ export type Story = Outcome & {
   humanQuote: string;
   humanRole: string;
   faq: StoryFaqItem[];
+  // Optional per-story overrides.
+  situationHeading?: StorySectionHeading;
+  challengesHeading?: StorySectionHeading;
+  approachHeading?: StorySectionHeading;
+  breadcrumbLabel?: string;
+  hasDiagram?: boolean;
+  methodSteps?: StoryMethodStep[];
+  related?: StoryRelatedCard[];
+  bottomCta?: StoryBottomCta;
 };
 
 export const storyCategories: { key: StoryCategory | 'all'; label: string }[] = [
@@ -58,60 +86,71 @@ const SHARED_FAQ: StoryFaqItem[] = [
 ];
 
 const storyExtras: Record<string, Extra> = {
-  'reclaiming-senior-hours': {
-    category: 'professional',
-    categoryLabel: 'Professional Services Firm · 200 Staff',
-    headline: { pre: 'Senior hours, reclaimed from ', em: 'manual reporting.' },
+  'investment-markets-australia': {
+    category: 'financial',
+    categoryLabel: 'Investment Markets Australia · Financial Services',
+    headline: {
+      pre: 'Making launch possible for an investment platform that ',
+      em: 'could not afford to miss its moment.',
+    },
     body: [
-      "Every Monday, senior staff spent the first part of the week pulling numbers from project management, time tracking and billing tools that didn't talk to each other, and stitching the result into a weekly report. The numbers were accurate — eventually — but the cost of producing them was paid in lost billable hours.",
-      'We unified the existing project management, time tracking and billing systems into a single operational layer. Definitions for utilization, margin and pipeline are agreed once and applied everywhere; the weekly report now assembles itself overnight.',
-      "The work the team was already doing didn't change. The friction around proving it did.",
+      'Investment Markets Australia was preparing to bring its investor platform to market. The idea was strong, the launch window was near, but the portal was carrying thousands of unresolved issues across usability, state management, broken flows, missing links, dependencies, and overall stability.',
+      'KEYOB was brought in to help turn the platform from launch risk into launch readiness.',
+      'KEYOB approached the engagement with structure. The first priority was to understand where the portal was breaking, which issues mattered most for launch, and how the system could be stabilized without losing time. The team performed detailed QA, reviewed Redux behavior, identified functional and UX gaps, upgraded required dependencies, resolved critical issues, connected missing links, improved broken flows, and modernized key parts of the portal experience.',
+      'As QA, analysis, and fixes progressed, the portal became more stable. User journeys became clearer. Missing connections were restored. Technical issues were reduced. The platform moved from a problem list toward a usable, launch-ready product — and the client gained the confidence they needed to go live.',
     ],
     keyOutcomes: [
-      '68% reduction in time spent on manual weekly reporting',
-      'One consistent definition of utilization, margin and pipeline',
-      'Senior consulting hours reclaimed for client-facing work',
+      'Launch readiness achieved within the required timeline',
+      'Critical portal issues identified, prioritized and resolved',
+      'Clearer user journeys across search, compare and investor flows',
     ],
     facts: [
-      { k: 'Industry', v: 'Professional services' },
-      { k: 'Scale', v: '200 staff' },
-      { k: 'Capability', v: 'Reporting automation' },
-      { k: 'Outcome', v: '68% time saved' },
+      { k: 'Industry', v: 'Financial services' },
+      { k: 'Engagement', v: 'QA + technical stabilization' },
+      { k: 'Capability', v: 'Launch readiness' },
+      { k: 'Outcome', v: 'Launch-ready portal' },
     ],
     challenges: [
-      'Project management, time tracking and billing tools running independently of each other.',
-      'Senior consultants assembling Monday reports by hand from three sources every week.',
-      'Different definitions of utilization and margin across departments — every meeting started with a reconciliation.',
-      'Numbers always one week old by the time leadership saw them.',
-      'No way to roll partial-period data into a forward view without manual work.',
+      'Thousands of unresolved portal issues close to launch.',
+      'Broken or incomplete user flows across the investor journey.',
+      'Redux / state management issues causing inconsistent behaviour.',
+      'Missing links and disconnected areas of the portal.',
+      'Outdated or unstable dependencies adding technical risk.',
+      'Usability and manageability problems making the platform harder to operate.',
+      'A launch timeline that could not keep moving indefinitely.',
     ],
     approachIntro:
-      "We didn't replace the tools the consultants already used. We connected them — and put one definition of every metric in the layer above.",
-    pullquote: SHARED_PULLQUOTE,
+      'KEYOB moved quickly from diagnosis to stabilization — structured QA, Redux analysis, dependency upgrades, issue resolution, and UX improvements, prioritized against launch impact.',
+    pullquote:
+      '"Some projects need more than development. They need structure, priority, and a team that can stay calm when the launch window is close."',
     outcomeCards: [
       {
-        title: 'Weekly reporting automated',
-        body: 'The Monday report now generates itself overnight; senior staff review it instead of building it.',
+        title: 'Launch-ready within the timeline',
+        body: 'The portal became usable, manageable and reliable in time for go-live — without slipping the launch window.',
       },
       {
-        title: 'One consistent metric definition',
-        body: 'Utilization, margin and pipeline are agreed once and applied everywhere — no reconciliation arguments.',
+        title: 'Clearer user journeys',
+        body: 'Search, compare and investor flows became easier to follow; missing links and broken paths were restored.',
       },
       {
-        title: 'Senior hours back to client work',
-        body: 'The hours that used to vanish into report assembly went back into billable, client-facing work.',
+        title: 'Stable technical foundation',
+        body: 'Dependencies upgraded, Redux state issues resolved, and critical defects burned down to a launch-ready baseline.',
       },
     ],
     humanIntro:
-      "The clearest sign of success wasn't on a dashboard. It was that Mondays stopped starting with three CSV exports and a spreadsheet.",
+      'This engagement reflected the kind of work KEYOB is built for: stepping into complex business-critical systems, understanding the pressure, identifying what matters, and moving quickly without losing professionalism.',
     humanQuote:
-      '"We used to spend the start of every week building the numbers. Now we spend it talking about what they mean."',
-    humanRole: 'Partner · National consulting firm',
+      '"Some projects need more than development. They need structure, priority, and a team that can stay calm when the launch window is close."',
+    humanRole: 'KEYOB — internal reflection on the engagement',
     faq: [
       ...SHARED_FAQ,
       {
-        q: 'How were the metric definitions agreed?',
-        a: 'In the architecture phase. Each department defined how it measured utilization and margin, then we facilitated a single shared definition that everyone aligned to. That definition lives in the operating layer, not in any one tool.',
+        q: 'What did KEYOB actually deliver?',
+        a: 'Structured QA across user journeys, a Redux / state management review, prioritized defect resolution, dependency upgrades, repaired flows and links, and targeted UX improvements — all sequenced against launch impact rather than ticket order.',
+      },
+      {
+        q: 'How was launch readiness measured?',
+        a: 'We tracked open issues against a launch-ready baseline and worked the burndown by priority. The portal had to be stable, navigable end-to-end, and manageable by the client team — those were the gates we drove toward.',
       },
     ],
   },
@@ -174,14 +213,21 @@ const storyExtras: Record<string, Extra> = {
   },
   'real-time-control-warehouses': {
     category: 'distribution',
-    categoryLabel: 'Automotive Parts · Distribution',
+    categoryLabel: 'Logistics & Distribution · Aftermarket Auto Parts',
     featured: true,
-    headline: { pre: 'Real-time control across ', em: 'twelve warehouses.' },
+    headline: { pre: 'From delayed updates to ', em: 'real-time control', post: ' across twelve warehouses.' },
+    // body[0..1] = Situation paragraphs, body[2..] = Approach continuation.
+    // Inline <strong> matches story.html emphasis.
     body: [
-      'When the leadership team wanted to know what was in stock, where it was, and what was selling, they were waiting hours for answers. Each warehouse ran its own systems, transferred data on its own schedule, and reconciled on its own terms. Decisions were being made on yesterday.',
-      'KEYOB built the integration and reporting layer that connects inventory, transfers, sales and demand into one event-driven backbone. Reporting now runs continuously instead of nightly, transfers reconcile in minutes instead of days, and demand signals reach the right warehouse without anyone having to call ahead.',
-      'The visible change is speed. The deeper change is confidence: every team, from purchasing to the front counter, is now looking at the same number at the same moment.',
+      'The distributor had grown the way successful businesses do — by adding warehouses, sales channels and product lines faster than the systems underneath could keep up. Inventory lived in one place, transfers in another, sales and demand in a third. None of them spoke the same language at the same time.',
+      "The result was a business making real decisions on stale information. Stock figures were reconciled by hand. A part could show as available in the system and be gone from the shelf. Branch managers spent mornings on the phone confirming what they should have been able to see on a screen. <strong>The cost wasn't dramatic — it was constant.</strong> A steady drag of manual coordination, double-handling and missed demand that scaled with every new site.",
+      "Through systems integration and ecosystem design, we connected the warehouse, transfer, sales and demand systems into one synchronised flow. On top of it sat an operational reporting and intelligence layer — so the data wasn't just connected, it was visible, live, to the people who needed to act on it.",
     ],
+    situationHeading: { pre: 'A growing network, running on ', em: "yesterday's numbers." },
+    challengesHeading: { pre: 'Where the friction ', em: 'actually lived.' },
+    approachHeading: { pre: 'We connected what was already ', em: 'there.' },
+    breadcrumbLabel: 'Real-time inventory control',
+    hasDiagram: true,
     keyOutcomes: [
       'Real-time stock visibility across all 12 warehouses',
       'Transfer reconciliation reduced from days to minutes',
@@ -189,19 +235,19 @@ const storyExtras: Record<string, Extra> = {
     ],
     facts: [
       { k: 'Industry', v: 'Auto-parts distribution' },
-      { k: 'Scale', v: '12 warehouses' },
+      { k: 'Scale', v: '<em>12</em> warehouses' },
       { k: 'Capability', v: 'Systems integration' },
-      { k: 'Outcome', v: 'Real-time visibility' },
+      { k: 'Outcome', v: '<em>Real-time</em> visibility' },
     ],
     challenges: [
-      'Inventory, transport and sales systems with no shared real-time view across the network.',
+      'Inventory, transport and sales systems with no shared, real-time view across the network.',
       'Stock counts reconciled manually — accurate the moment they were taken, wrong soon after.',
       'Transfers between warehouses tracked over email and spreadsheets rather than system logic.',
       'Demand signals arriving too late to influence purchasing or rebalancing decisions.',
       'Operational reporting assembled by hand, days after the events it described.',
     ],
     approachIntro:
-      "KEYOB's first move is never to replace. We built the operating layer between the systems they already ran — so teams kept the tools they knew, while gaining a single live view across all of them.",
+      "KEYOB's first move is never to replace. The distributor's teams knew their tools, and ripping them out would have meant months of disruption for a business that couldn't afford to pause. Instead, we did what we do best: <strong>we built the operating layer between the systems they already ran.</strong>",
     pullquote: SHARED_PULLQUOTE,
     outcomeCards: [
       {
@@ -213,7 +259,7 @@ const storyExtras: Record<string, Extra> = {
         body: 'Teams stopped phoning between branches to confirm stock — the system showed them what they needed to know.',
       },
       {
-        title: 'Centralised reporting',
+        title: 'Centralized reporting',
         body: 'Operational reports drawn from one connected source, available on demand instead of assembled by hand.',
       },
     ],
@@ -221,14 +267,59 @@ const storyExtras: Record<string, Extra> = {
       "The clearest sign of success wasn't on a dashboard. It was that branch managers stopped starting their day with a round of phone calls — and started spending that time on the work only they could do.",
     humanQuote:
       "\"We used to manage by phone call. Now the answer's already on the screen — so we can actually get on with running the business instead of chasing it.\"",
-    humanRole: 'Operations lead · National parts distributor',
+    humanRole: 'Operations Lead · National parts distributor',
+    methodSteps: [
+      { n: '01', name: 'Discovery', body: 'Mapped every system, transfer and decision point across the network.' },
+      { n: '02', name: 'Architecture', body: 'Designed the integration and reporting layer to sit over existing tools.' },
+      { n: '03', name: 'Build', body: 'Connected systems in stages, with no disruption to live operations.' },
+      { n: '04', name: 'Calibrate', body: 'Tuned the data flows and reporting against how teams actually work.' },
+      { n: '05', name: 'Evolve', body: 'Left a foundation ready for automation and operational intelligence next.' },
+    ],
     faq: [
-      ...SHARED_FAQ,
+      {
+        q: "Did KEYOB replace the distributor's existing systems?",
+        a: 'No. We built an integration and reporting layer that connected the existing warehouse, sales and demand systems. The business kept the tools its teams already knew, while gaining a single live view across all of them — modernisation without the rebuild.',
+      },
+      {
+        q: 'How long did the transformation take?',
+        a: 'The engagement followed our five-phase method — discovery, architecture, build, calibrate and evolve. The integration and reporting layer was delivered in measured stages so live operations were never interrupted.',
+      },
+      {
+        q: 'What changed for the team day to day?',
+        a: "Teams stopped reconciling stock by hand and chasing transfers across systems. They could see live inventory across every warehouse, which reduced manual coordination and let them act on current demand rather than yesterday's data.",
+      },
       {
         q: 'Could this approach work for a different industry?',
-        a: 'Yes. The same pattern — connecting fragmented systems into one operating layer with live visibility — applies anywhere disconnected tools carry a real operational cost. We have used it across professional services, healthcare, financial services and more.',
+        a: "Yes. The same pattern — connecting fragmented systems into one operating layer with live visibility — applies anywhere disconnected tools carry a real operational cost. We've used it across professional services, healthcare, financial services and more.",
       },
     ],
+    related: [
+      {
+        type: 'Capability',
+        title: 'Systems Integration & Ecosystem Design',
+        cta: 'See how we connect tools →',
+        href: '/#capabilities',
+      },
+      {
+        type: 'Capability',
+        title: 'AI-Powered Operational Intelligence',
+        cta: 'Turn data into decisions →',
+        href: '/#capabilities',
+      },
+      {
+        type: 'Story',
+        title: 'Reclaiming senior hours from manual reporting',
+        cta: 'Professional services →',
+        href: '/stories/reclaiming-senior-hours',
+      },
+    ],
+    bottomCta: {
+      headline: { pre: 'Where is your business ', em: 'running on stale data?' },
+      body:
+        'A free AI assessment is the same first step every one of these stories began with — a focused look at where intelligence and integration would earn their place. No obligation.',
+      ctaLabel: 'Book your free AI assessment',
+      ctaHref: '/contact',
+    },
   },
   'customer-operations-capacity': {
     category: 'service',

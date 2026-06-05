@@ -6,8 +6,12 @@ import { StoryDetail } from '@/components/blocks/StoryDetail';
 import { stories } from '@/config/keyob-stories';
 import { siteConfig } from '@/config/site.config';
 
+const BESPOKE_SLUGS = new Set(['investment-markets-australia']);
+
 export function generateStaticParams() {
-  return stories.map((s) => ({ slug: s.slug }));
+  return stories
+    .filter((s) => !BESPOKE_SLUGS.has(s.slug))
+    .map((s) => ({ slug: s.slug }));
 }
 
 export async function generateMetadata({
