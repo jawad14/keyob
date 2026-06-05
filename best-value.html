@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Best Value Auto Body Supply Client Story | KEYOB</title>
+<meta name="description" content="How KEYOB built a custom ERP for Best Value Auto Body Supply, supporting aftermarket auto parts operations, inventory, sales, purchasing, warehouse, delivery, reporting, and long-term modernization.">
+<meta name="keywords" content="Best Value Auto Body Supply, aftermarket auto parts ERP, custom ERP development, auto parts inventory system, warehouse ERP, parts distribution software, ERP modernization, custom software development, business workflow automation, KEYOB client story">
+<link rel="canonical" href="https://keyob.com.au/stories/best-value-auto-body-supply">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Best Value Auto Body Supply Client Story | KEYOB">
+<meta property="og:description" content="From off-the-shelf frustration to a custom ERP powering a decade of growth for an aftermarket auto parts business.">
+<meta property="og:url" content="https://keyob.com.au/stories/best-value-auto-body-supply">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0d1b2a">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"From off-the-shelf frustration to a custom ERP powering a decade of growth.","description":"How KEYOB built and continues to evolve a custom ERP for Best Value Auto Body Supply.","about":{"@type":"Organization","name":"Best Value Auto Body Supply","url":"https://bestvaluepart.com/"},"author":{"@type":"Organization","name":"KEYOB","url":"https://keyob.com.au"},"publisher":{"@type":"Organization","name":"KEYOB","logo":{"@type":"ImageObject","url":"https://keyob.com.au/keyob-mark.png"}},"mainEntityOfPage":"https://keyob.com.au/stories/best-value-auto-body-supply","articleSection":"Aftermarket Auto Parts","keywords":"custom ERP development, auto parts inventory system, warehouse ERP, ERP modernization"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://keyob.com.au/"},{"@type":"ListItem","position":2,"name":"Client Stories","item":"https://keyob.com.au/stories"},{"@type":"ListItem","position":3,"name":"Best Value Auto Body Supply","item":"https://keyob.com.au/stories/best-value-auto-body-supply"}]}
+</script>
+<style>
+  :root{
+    --navy:#0d1b2a;--navy-2:#11263b;--azure:#01b0f4;--azure-soft:#4fc8f8;
+    --paper:#ffffff;--ice:#f4f8fb;--ice-2:#e9f1f7;
+    --ink:#07162d;--mute:#5f6b7a;--border:#dde7ef;
+    --auto:#f0681e;--auto-soft:#ff8a4c;
+    --serif:'Fraunces',Georgia,serif;--sans:'Space Grotesk',sans-serif;--mono:'JetBrains Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  ::selection{background:var(--azure);color:#fff}a{color:inherit;text-decoration:none}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--azure);display:flex;align-items:center;gap:12px}
+  .eyebrow.amber{color:var(--auto-soft)}.eyebrow.amber::before{background:var(--auto)}
+  .eyebrow.center{justify-content:center}
+  .eyebrow::before{content:"";width:30px;height:1px;background:var(--azure)}
+  .eyebrow.nobar::before{display:none}
+  h2.sec{font-family:var(--serif);font-weight:300;font-size:clamp(28px,4.2vw,52px);line-height:1.07;letter-spacing:-.02em}
+  h2.sec em{font-style:italic;color:var(--azure)}
+  .lead{font-size:18px;line-height:1.7;color:var(--mute)}
+  .btn{display:inline-flex;align-items:center;gap:11px;background:var(--azure);color:#022;font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.03em;padding:16px 28px;border-radius:48px;border:none;cursor:pointer;transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}
+  .btn:hover{transform:translateY(-3px);box-shadow:0 14px 30px -12px rgba(1,176,244,.6)}
+  .btn .arr{transition:transform .35s}.btn:hover .arr{transform:translateX(4px)}
+  .btn-ghost{display:inline-flex;align-items:center;gap:11px;border:1px solid rgba(255,255,255,.45);color:#fff;font-family:var(--mono);font-size:13px;letter-spacing:.03em;padding:16px 28px;border-radius:48px;transition:background .3s}
+  .btn-ghost:hover{background:rgba(255,255,255,.1)}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:22px 32px;transition:background .4s,padding .4s}
+  nav.solid{background:rgba(13,27,42,.96);padding:15px 32px;backdrop-filter:blur(8px)}
+  .logo{font-family:var(--serif);font-weight:500;font-size:23px;letter-spacing:.16em;color:#fff}.logo b{color:var(--azure-soft)}
+  .navlinks{display:flex;gap:30px;align-items:center}.navlinks a{font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:#fff;opacity:.82;transition:opacity .3s}.navlinks a:hover{opacity:1}
+  .nav-cta{border:1px solid rgba(255,255,255,.5);padding:9px 18px;border-radius:40px}
+  @media(max-width:880px){.navlinks a:not(.nav-cta){display:none}}
+
+  /* 1. HERO */
+  .hero{position:relative;overflow:hidden;background:var(--navy);color:#fff;padding:150px 0 90px}
+  .hero-mesh{position:absolute;inset:0;background:radial-gradient(90% 80% at 88% 10%,rgba(240,104,30,.2),transparent 52%),radial-gradient(80% 90% at 4% 100%,rgba(1,176,244,.16),transparent 55%)}
+  .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  .crumb{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:rgba(255,255,255,.55);margin-bottom:26px}
+  .crumb a{color:var(--azure-soft)}.crumb span{margin:0 8px;opacity:.5}
+  .hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(32px,4.4vw,58px);line-height:1.05;letter-spacing:-.02em;margin-top:22px}
+  .hero h1 em{font-style:italic;color:var(--azure-soft)}
+  .hero p.sub{margin-top:24px;max-width:54ch;font-size:17px;line-height:1.7;color:rgba(255,255,255,.76)}
+  .hero p.sub + p.sub{margin-top:14px}
+  .mock{position:relative;width:100%;aspect-ratio:5/4;max-width:520px;margin-left:auto}
+  .mock svg{width:100%;height:100%;overflow:visible}
+
+  /* 2. SNAPSHOT */
+  .snapshot{background:var(--ice)}
+  .snap-grid{display:grid;grid-template-columns:repeat(5,1fr);border-bottom:1px solid var(--border)}
+  .snap{padding:36px 24px;border-right:1px solid var(--border)}
+  .snap:last-child{border-right:none}
+  .snap .lab{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--mute)}
+  .snap .val{font-family:var(--serif);font-size:clamp(20px,2.1vw,26px);font-weight:400;color:var(--ink);margin:12px 0 10px;line-height:1.12}
+  .snap .val.amber{color:var(--auto)}
+  .snap p{font-size:13px;line-height:1.55;color:var(--mute)}
+  .snap .cite{display:block;margin-top:8px;font-family:var(--mono);font-size:10px;color:#9aa7b4}
+  @media(max-width:980px){.snap-grid{grid-template-columns:1fr 1fr 1fr}.snap{border-bottom:1px solid var(--border)}.snap:nth-child(3){border-right:none}}
+  @media(max-width:620px){.snap-grid{grid-template-columns:1fr 1fr}.snap:nth-child(odd){border-right:1px solid var(--border)}.snap:nth-child(even){border-right:none}}
+
+  /* generic content sections */
+  .sct{padding:100px 0}
+  .sct.alt{background:var(--ice)}
+  .sct.dark{background:var(--navy);color:#fff}
+  .sct.dark h2.sec{color:#fff}.sct.dark .lead{color:rgba(255,255,255,.72)}
+  .sct-head{max-width:60ch;margin-bottom:18px}
+  .body-copy{max-width:64ch}
+  .body-copy p{font-size:17px;line-height:1.75;color:var(--mute);margin-top:18px}
+  .sct.dark .body-copy p{color:rgba(255,255,255,.72)}
+  .two{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;margin-top:8px}
+  @media(max-width:860px){.two{grid-template-columns:1fr;gap:40px}}
+
+  /* problems / lists */
+  .problems{margin-top:36px;display:grid;grid-template-columns:1fr;gap:13px;max-width:760px}
+  .problems li{list-style:none;display:flex;gap:13px;align-items:flex-start;font-size:15.5px;color:var(--ink);line-height:1.5}
+  .problems li .x{flex-shrink:0;width:18px;height:18px;color:var(--auto);margin-top:1px}
+  .focus{margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:11px}
+  .focus span{font-family:var(--mono);font-size:12px;color:var(--ink);border:1px solid var(--border);border-radius:10px;padding:12px 14px;background:var(--paper);display:flex;align-items:center;gap:9px}
+  .focus span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--azure);flex-shrink:0}
+  @media(max-width:620px){.focus{grid-template-columns:1fr}}
+
+  /* generic-vs-custom visual */
+  .gvc{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:8px}
+  .gvc-card{border-radius:18px;padding:28px;border:1px solid var(--border)}
+  .gvc-card.gen{background:var(--ice)}
+  .gvc-card.cus{background:var(--navy);color:#fff;border-color:transparent;position:relative;overflow:hidden}
+  .gvc-card.cus::after{content:"";position:absolute;inset:0;background:radial-gradient(70% 80% at 90% 0%,rgba(1,176,244,.2),transparent 55%);pointer-events:none}
+  .gvc-card h4{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:20px}
+  .gvc-card.gen h4{color:var(--mute)}.gvc-card.cus h4{color:var(--azure-soft)}
+  .gvc-row{display:flex;align-items:center;gap:12px;padding:11px 0;font-size:14.5px}
+  .gvc-card.gen .gvc-row{color:var(--mute);border-bottom:1px solid var(--border)}
+  .gvc-card.cus .gvc-row{color:rgba(255,255,255,.85);border-bottom:1px solid rgba(255,255,255,.1)}
+  .gvc-row:last-child{border-bottom:none}
+  .gvc-card.gen .mk{color:var(--auto)}.gvc-card.cus .mk{color:var(--azure)}
+  /* misfit vs fit blocks */
+  .fitvis{margin-top:26px;height:88px;position:relative}
+  .fitvis svg{width:100%;height:100%;overflow:visible}
+  @media(max-width:760px){.gvc{grid-template-columns:1fr}}
+
+  /* ERP module orbit */
+  .erpvis{position:relative;aspect-ratio:1/1;max-width:520px;margin:0 auto;width:100%}
+  .erpvis svg{width:100%;height:100%;overflow:visible}
+  .erp-core{fill:var(--azure)}.erp-core-lab{font-family:var(--serif);font-style:italic;fill:#022;font-size:13px}
+  .erp-spoke{stroke:rgba(1,176,244,.35);stroke-width:1;stroke-dasharray:4 5;animation:dash 1.4s linear infinite}
+  @keyframes dash{to{stroke-dashoffset:-18}}
+  .erp-node{fill:var(--navy-2);stroke:rgba(255,255,255,.18)}
+  .erp-lab{font-family:var(--mono);font-size:9.5px;fill:rgba(255,255,255,.85)}
+  .erp-grid-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:50px}
+  .ecard{border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:24px 22px;background:rgba(255,255,255,.03);transition:transform .4s,background .4s,border-color .4s}
+  .ecard:hover{transform:translateY(-5px);background:rgba(1,176,244,.06);border-color:rgba(1,176,244,.4)}
+  .ecard h3{font-family:var(--serif);font-weight:400;font-size:19px;margin-bottom:10px;color:#fff}
+  .ecard p{font-size:13.5px;line-height:1.6;color:rgba(255,255,255,.66)}
+  @media(max-width:900px){.erp-grid-cards{grid-template-columns:1fr 1fr}}@media(max-width:600px){.erp-grid-cards{grid-template-columns:1fr}}
+
+  /* timeline */
+  .tl{margin-top:50px;display:grid;gap:0;position:relative}
+  .tl-row{display:grid;grid-template-columns:150px 1fr;gap:30px;padding:26px 0;border-top:1px solid rgba(255,255,255,.12)}
+  .tl-row:last-child{border-bottom:1px solid rgba(255,255,255,.12)}
+  .tl-ph{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--azure-soft);position:relative;padding-left:26px}
+  .tl-ph::before{content:"";position:absolute;left:0;top:1px;width:11px;height:11px;border-radius:50%;background:var(--navy);border:2px solid var(--azure);box-shadow:0 0 0 4px rgba(1,176,244,.12)}
+  .tl-ph::after{content:"";position:absolute;left:5px;top:18px;bottom:-26px;width:1px;background:rgba(1,176,244,.3)}
+  .tl-row:last-child .tl-ph::after{display:none}
+  .tl-row.wide .tl-ph{color:var(--auto-soft)}
+  .tl-row.wide .tl-ph::before{border-color:var(--auto);box-shadow:0 0 0 4px rgba(240,104,30,.14)}
+  .tl-row h3{font-family:var(--serif);font-weight:400;font-size:clamp(19px,2.3vw,25px);margin-bottom:8px}
+  .tl-row p{font-size:15px;color:rgba(255,255,255,.68);line-height:1.6;max-width:60ch}
+  @media(max-width:680px){.tl-row{grid-template-columns:1fr;gap:8px}.tl-ph::after{display:none}}
+
+  /* outcome bullets */
+  .outcomes{margin-top:36px;display:grid;grid-template-columns:1fr 1fr;gap:13px;max-width:900px}
+  .outcomes li{list-style:none;display:flex;gap:13px;align-items:flex-start;font-size:15.5px;line-height:1.5}
+  .outcomes li .c{flex-shrink:0;width:20px;height:20px;color:var(--azure);margin-top:1px}
+  @media(max-width:680px){.outcomes{grid-template-columns:1fr}}
+
+  /* philosophy pathway */
+  .pathvis{position:relative;margin-top:10px}
+  .pathvis svg{width:100%;height:auto;overflow:visible}
+  .path-entry{fill:var(--auto)}.path-entry-lab{fill:#fff;font-family:var(--mono);font-size:11px}
+  .path-branch{fill:var(--navy-2);stroke:rgba(1,176,244,.4)}
+  .path-branch-lab{fill:rgba(255,255,255,.82);font-family:var(--mono);font-size:10px}
+  .path-line{stroke:rgba(1,176,244,.4);stroke-width:1.4;fill:none;stroke-dasharray:5 5;animation:dash 1.6s linear infinite}
+  .path-tag{font-family:var(--serif);font-style:italic;font-size:clamp(18px,2.4vw,26px);color:#fff;text-align:center;margin-top:34px}
+
+  /* quote */
+  .reflect{max-width:900px;margin:0 auto}
+  .reflect blockquote{font-family:var(--serif);font-style:italic;font-size:clamp(21px,2.9vw,30px);line-height:1.38;color:var(--ink);border-left:2px solid var(--auto);padding-left:28px}
+  .reflect .by{margin-top:18px;font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:var(--mute);padding-left:28px}
+
+  /* capabilities */
+  .caps{display:flex;flex-wrap:wrap;gap:11px;margin-top:36px}
+  .caps span{font-family:var(--mono);font-size:12px;letter-spacing:.02em;color:var(--ink);border:1px solid var(--border);background:var(--paper);border-radius:40px;padding:10px 17px;transition:border-color .3s,color .3s}
+  .caps span:hover{border-color:var(--azure);color:var(--azure)}
+
+  /* final CTA */
+  .final{position:relative;overflow:hidden;background:var(--navy);color:#fff;padding:120px 0;text-align:center}
+  .final-mesh{position:absolute;inset:0;background:radial-gradient(70% 100% at 80% 100%,rgba(240,104,30,.24),transparent 55%),radial-gradient(70% 90% at 8% 10%,rgba(1,176,244,.2),transparent 55%)}
+  .final .in{position:relative;z-index:2}
+  .final h2{font-family:var(--serif);font-weight:300;font-size:clamp(30px,4.6vw,58px);line-height:1.05;letter-spacing:-.02em;max-width:22ch;margin:0 auto}
+  .final h2 em{font-style:italic;color:var(--azure-soft)}
+  .final p{max-width:54ch;margin:22px auto 0;font-size:17px;color:rgba(255,255,255,.76);line-height:1.7}
+  .final-cta{margin-top:40px;display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+
+  footer{background:#081320;color:#fff;padding:70px 0 38px;border-top:1px solid rgba(255,255,255,.1)}
+  .foot-top{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:50px;padding-bottom:54px;border-bottom:1px solid rgba(255,255,255,.1)}
+  .foot-logo{font-family:var(--serif);font-size:28px;letter-spacing:.1em;margin-bottom:16px}.foot-logo b{color:var(--azure-soft)}
+  .foot-top p{font-size:15px;color:rgba(255,255,255,.6);max-width:36ch;line-height:1.65;font-style:italic;font-family:var(--serif)}
+  .foot-col h5{font-family:var(--mono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--azure-soft);margin-bottom:16px}
+  .foot-col a{display:block;font-size:14px;color:rgba(255,255,255,.7);margin-bottom:10px;transition:color .3s}.foot-col a:hover{color:#fff}
+  .foot-bot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;padding-top:32px;font-family:var(--mono);font-size:12px;color:rgba(255,255,255,.45)}
+  @media(max-width:780px){.foot-top{grid-template-columns:1fr;gap:34px}.hero-grid{grid-template-columns:1fr;gap:44px}.mock{margin:0 auto}}
+
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}.reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="logo">KEY<b>OB</b></div>
+  <div class="navlinks">
+    <a href="what-we-do.html">What we do</a>
+    <a href="stories.html">Stories</a>
+    <a href="about-us.html">About</a>
+    <a href="#capabilities">Capabilities</a>
+    <a href="https://keyob.com.au/#contact" class="nav-cta">Free AI assessment</a>
+  </div>
+</nav>
+
+<!-- 1. HERO -->
+<header class="hero">
+  <div class="hero-mesh"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="crumb"><a href="https://keyob.com.au/">Home</a><span>/</span><a href="stories.html">Client Stories</a><span>/</span>Best Value Auto Body Supply</div>
+      <div class="eyebrow amber nobar" style="margin-bottom:0">Client Story · Aftermarket Auto Parts · USA</div>
+      <h1>From off-the-shelf frustration to a custom ERP <em>powering a decade of growth.</em></h1>
+      <p class="sub">Best Value Auto Body Supply was looking for an ERP system that could support the realities of the aftermarket auto parts industry. Off-the-shelf systems were not fitting their processes, and the business needed a platform that could handle the way they actually worked.</p>
+      <p class="sub">KEYOB started with discovery, moved through analysis, design, and development, and built a custom ERP that became the operational backbone of the business. Nearly a decade later, the system is still in production — continuously improved as Best Value grows and modernizes.</p>
+    </div>
+    <div class="mock">
+      <svg viewBox="0 0 520 416" aria-label="A custom ERP dashboard for an auto parts business: inventory, sales, warehouse and delivery routes">
+        <defs><linearGradient id="scr" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#11263b"/><stop offset="100%" stop-color="#0d1b2a"/></linearGradient></defs>
+        <!-- monitor -->
+        <rect x="40" y="36" width="440" height="280" rx="12" fill="#0a1623" stroke="rgba(255,255,255,.12)"/>
+        <rect x="54" y="50" width="412" height="252" rx="6" fill="url(#scr)"/>
+        <!-- top bar -->
+        <rect x="54" y="50" width="412" height="30" rx="6" fill="#0a1623"/>
+        <circle cx="72" cy="65" r="4" fill="var(--auto)"/>
+        <rect x="86" y="61" width="90" height="8" rx="4" fill="rgba(255,255,255,.4)"/>
+        <rect x="392" y="59" width="58" height="12" rx="6" fill="var(--azure)" opacity=".75"/>
+        <!-- left module rail -->
+        <g fill="rgba(255,255,255,.06)"><rect x="68" y="92" width="92" height="200" rx="6"/></g>
+        <g fill="rgba(255,255,255,.3)"><rect x="80" y="106" width="66" height="7" rx="3.5"/><rect x="80" y="124" width="54" height="7" rx="3.5"/><rect x="80" y="142" width="62" height="7" rx="3.5"/><rect x="80" y="160" width="48" height="7" rx="3.5"/><rect x="80" y="178" width="58" height="7" rx="3.5"/></g>
+        <rect x="74" y="120" width="80" height="16" rx="4" fill="rgba(1,176,244,.25)"/>
+        <!-- KPI cards -->
+        <g>
+          <rect x="176" y="92" width="86" height="54" rx="8" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.1)"/>
+          <rect x="272" y="92" width="86" height="54" rx="8" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.1)"/>
+          <rect x="368" y="92" width="86" height="54" rx="8" fill="rgba(240,104,30,.12)" stroke="rgba(240,104,30,.4)"/>
+          <text x="188" y="116" font-family="Fraunces,serif" font-size="15" fill="#fff">Inventory</text>
+          <text x="284" y="116" font-family="Fraunces,serif" font-size="15" fill="#fff">Sales</text>
+          <text x="380" y="116" font-family="Fraunces,serif" font-size="15" fill="var(--auto-soft)">Routes</text>
+          <g fill="rgba(255,255,255,.3)"><rect x="188" y="128" width="48" height="6" rx="3"/><rect x="284" y="128" width="40" height="6" rx="3"/><rect x="380" y="128" width="44" height="6" rx="3"/></g>
+        </g>
+        <!-- chart area -->
+        <rect x="176" y="158" width="182" height="130" rx="8" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.1)"/>
+        <polyline points="190,256 220,236 250,244 280,212 310,222 342,188" fill="none" stroke="var(--azure)" stroke-width="2.5"/>
+        <g fill="var(--azure)"><circle cx="310" cy="222" r="3"/><circle cx="342" cy="188" r="3"/></g>
+        <!-- route map mini -->
+        <rect x="368" y="158" width="86" height="130" rx="8" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.1)"/>
+        <path d="M384 268 L398 230 L418 244 L434 200 L444 176" fill="none" stroke="var(--auto-soft)" stroke-width="2" stroke-dasharray="3 4"/>
+        <g fill="var(--auto-soft)"><circle cx="384" cy="268" r="3.5"/><circle cx="418" cy="244" r="3.5"/><circle cx="444" cy="176" r="3.5"/></g>
+        <!-- stand -->
+        <rect x="232" y="316" width="56" height="34" fill="#0a1623"/>
+        <rect x="180" y="350" width="160" height="12" rx="6" fill="#0a1623" stroke="rgba(255,255,255,.1)"/>
+        <!-- small parts row -->
+        <g opacity=".9">
+          <rect x="86" y="378" width="64" height="26" rx="6" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.12)"/><text x="118" y="395" font-family="JetBrains Mono,monospace" font-size="9" fill="rgba(255,255,255,.7)" text-anchor="middle">Bumpers</text>
+          <rect x="158" y="378" width="60" height="26" rx="6" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.12)"/><text x="188" y="395" font-family="JetBrains Mono,monospace" font-size="9" fill="rgba(255,255,255,.7)" text-anchor="middle">Lighting</text>
+          <rect x="226" y="378" width="74" height="26" rx="6" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.12)"/><text x="263" y="395" font-family="JetBrains Mono,monospace" font-size="9" fill="rgba(255,255,255,.7)" text-anchor="middle">Sheet metal</text>
+          <rect x="308" y="378" width="54" height="26" rx="6" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.12)"/><text x="335" y="395" font-family="JetBrains Mono,monospace" font-size="9" fill="rgba(255,255,255,.7)" text-anchor="middle">Grills</text>
+          <rect x="370" y="378" width="64" height="26" rx="6" fill="rgba(240,104,30,.14)" stroke="rgba(240,104,30,.4)"/><text x="402" y="395" font-family="JetBrains Mono,monospace" font-size="9" fill="var(--auto-soft)" text-anchor="middle">Paint</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<!-- 2. SNAPSHOT -->
+<section class="snapshot"><div class="snap-grid">
+  <div class="snap"><div class="lab">Industry</div><div class="val">Aftermarket auto parts</div><p>A complex inventory and distribution business with large product variety and operational depth.</p></div>
+  <div class="snap"><div class="lab">Original need</div><div class="val amber">Custom ERP</div><p>Off-the-shelf software could not properly support Best Value's real business workflows.</p></div>
+  <div class="snap"><div class="lab">Partnership</div><div class="val">Nearly a decade</div><p>The ERP has remained in production and continues to evolve with the business.</p></div>
+  <div class="snap"><div class="lab">Expansion</div><div class="val">Beyond ERP</div><p>The partnership now extends into modernization, branding, and web presence upgrades.</p></div>
+  <div class="snap"><div class="lab">Inventory scale</div><div class="val">110,000+ parts</div><p>OEM replacement parts in stock.<span class="cite">Source: bestvaluepart.com</span></p></div>
+</div></section>
+
+<!-- 3. CHALLENGE -->
+<section class="sct"><div class="wrap">
+  <div class="sct-head reveal">
+    <div class="eyebrow amber">The challenge</div>
+    <h2 class="sec" style="margin-top:18px">Generic ERP systems <em style="color:var(--auto)">could not fit the business.</em></h2>
+  </div>
+  <div class="two">
+    <div>
+      <div class="body-copy reveal">
+        <p>Best Value Auto Body Supply operates in an industry where standard ERP assumptions often break down. The aftermarket auto parts business is not simple retail. It involves large inventory volumes, interchange parts, purchasing, pricing logic, warehouse activity, delivery routes, returns, accounting, reporting, customer history, and operational workflows that must work together every day.</p>
+        <p>Best Value had explored over-the-counter software solutions, but those systems were not helping the business operate the way it needed to. The software did not fit the process. The business needed a system designed around the industry, the team, and the operational reality.</p>
+      </div>
+      <ul class="problems reveal">
+        <li><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>Off-the-shelf ERP solutions did not match aftermarket auto parts workflows</li>
+        <li><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>Inventory complexity required industry-specific logic</li>
+        <li><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>Sales, purchasing, warehouse, delivery, and accounting needed to work together</li>
+        <li><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>Generic systems could not properly support operational rules and exceptions</li>
+        <li><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>Reporting and visibility needed to reflect the real business, not generic templates</li>
+        <li><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>The business needed a system that could evolve as requirements changed</li>
+        <li><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>Best Value needed a technology partner, not just software installation</li>
+      </ul>
+    </div>
+    <div class="reveal">
+      <div class="gvc">
+        <div class="gvc-card gen">
+          <h4>Generic ERP</h4>
+          <div class="gvc-row"><span class="mk">✕</span>Forces the business to fit the software</div>
+          <div class="gvc-row"><span class="mk">✕</span>Rigid inventory assumptions</div>
+          <div class="gvc-row"><span class="mk">✕</span>Generic report templates</div>
+          <div class="gvc-row"><span class="mk">✕</span>Hard to handle exceptions</div>
+          <div class="gvc-row"><span class="mk">✕</span>Limited room to evolve</div>
+        </div>
+        <div class="gvc-card cus">
+          <h4>Custom KEYOB ERP</h4>
+          <div class="gvc-row"><span class="mk">✓</span>Built around the real process</div>
+          <div class="gvc-row"><span class="mk">✓</span>Industry-specific part logic</div>
+          <div class="gvc-row"><span class="mk">✓</span>Reports that match operations</div>
+          <div class="gvc-row"><span class="mk">✓</span>Rules &amp; exceptions supported</div>
+          <div class="gvc-row"><span class="mk">✓</span>Evolves as the business grows</div>
+        </div>
+      </div>
+      <div class="fitvis">
+        <svg viewBox="0 0 460 88" aria-label="Rigid generic blocks not fitting, versus custom modules fitting the business shape">
+          <!-- business shape (wavy slot) -->
+          <path d="M10 70 Q60 30 110 50 Q160 70 210 44 Q260 22 310 48 Q360 70 410 46 Q435 36 450 50" fill="none" stroke="rgba(1,176,244,.5)" stroke-width="2"/>
+          <!-- rigid blocks sitting above the slot, misaligned (left) -->
+          <g fill="rgba(240,104,30,.18)" stroke="rgba(240,104,30,.55)"><rect x="24" y="20" width="34" height="34" rx="4"/><rect x="70" y="14" width="34" height="34" rx="4"/></g>
+          <!-- custom modules sitting on the curve (right) -->
+          <g fill="rgba(1,176,244,.18)" stroke="rgba(1,176,244,.6)"><rect x="250" y="30" width="30" height="26" rx="5"/><rect x="300" y="34" width="30" height="22" rx="5"/><rect x="350" y="32" width="30" height="22" rx="5"/></g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- 4. DISCOVERY & DESIGN -->
+<section class="sct alt"><div class="wrap">
+  <div class="sct-head reveal">
+    <div class="eyebrow">Discovery &amp; design</div>
+    <h2 class="sec" style="margin-top:18px">KEYOB started where serious ERP work should start: <em>discovery.</em></h2>
+  </div>
+  <div class="body-copy reveal">
+    <p>KEYOB did not begin by forcing a ready-made system onto the business. The work began with understanding how Best Value actually operated — how parts moved, how sales worked, how purchasing decisions were made, how warehouses functioned, how delivery was managed, how customers were served, and how leadership needed visibility.</p>
+    <p>This discovery phase shaped the ERP design. The goal was not to copy generic ERP features. The goal was to build a system that supported the business logic of an aftermarket auto parts operation.</p>
+  </div>
+  <div class="focus reveal" id="focus"></div>
+</div></section>
+
+<!-- 5. WHAT KEYOB BUILT -->
+<section class="sct dark"><div class="wrap">
+  <div class="sct-head reveal">
+    <div class="eyebrow">What KEYOB built</div>
+    <h2 class="sec" style="margin-top:18px">A custom ERP built around <em>the way Best Value operates.</em></h2>
+  </div>
+  <div class="two">
+    <div class="body-copy reveal">
+      <p>KEYOB designed and developed a custom ERP system to support Best Value's day-to-day operations. The system was built to handle the specific needs of the aftermarket auto parts industry, connecting core business functions into one operational platform.</p>
+      <p>The ERP gave Best Value a system that could support how the business actually worked — not a generic structure that required the business to compromise its process.</p>
+    </div>
+    <div class="reveal erpvis">
+      <svg viewBox="0 0 460 460" aria-label="Custom ERP core connected to sales, inventory, purchasing, warehouse, routes, pricing, accounting, reporting, RMA and dashboards">
+        <g id="erp-spokes"></g>
+        <circle class="erp-core" cx="230" cy="230" r="50"/>
+        <text class="erp-core-lab" x="230" y="226" text-anchor="middle">Custom ERP</text>
+        <text class="erp-core-lab" x="230" y="242" text-anchor="middle" font-size="10">operating core</text>
+        <g id="erp-nodes"></g>
+      </svg>
+    </div>
+  </div>
+  <div class="erp-grid-cards" id="erpCards"></div>
+</div></section>
+
+<!-- 6. PRODUCTION JOURNEY -->
+<section class="sct"><div class="wrap">
+  <div class="sct-head reveal">
+    <div class="eyebrow amber">The production journey</div>
+    <h2 class="sec" style="margin-top:18px">Not a one-time project. <em style="color:var(--auto)">A system that kept evolving.</em></h2>
+  </div>
+  <div class="body-copy reveal">
+    <p>The ERP went into production and became part of how Best Value runs. But the work did not stop at launch. As Best Value's operations grew, the ERP continued to evolve. KEYOB stayed involved, modifying the system, improving workflows, adding new capabilities, refining reports, and supporting the business as needs changed.</p>
+    <p>This is where the relationship became more than a software project. It became a long-term technology partnership.</p>
+  </div>
+</div>
+<div class="wrap"><div class="sct dark" style="border-radius:24px;padding:60px 48px;margin-top:40px">
+  <div class="tl" id="tl"></div>
+</div></div></section>
+
+<!-- 7. OUTCOME -->
+<section class="sct alt"><div class="wrap">
+  <div class="sct-head reveal">
+    <div class="eyebrow">The outcome</div>
+    <h2 class="sec" style="margin-top:18px">An ERP backbone built for <em>real operations.</em></h2>
+  </div>
+  <div class="body-copy reveal">
+    <p>Best Value gained a custom ERP system designed around the reality of its aftermarket auto parts business. The system helped connect operations, improve visibility, support daily workflows, and create a platform that could continue evolving over time.</p>
+    <p>Nearly a decade later, the ERP remains in production and KEYOB continues to support, modify, and extend it as Best Value's needs grow.</p>
+  </div>
+  <ul class="outcomes reveal" id="outcomes"></ul>
+</div></section>
+
+<!-- 8. PHILOSOPHY -->
+<section class="sct dark"><div class="wrap">
+  <div class="sct-head reveal">
+    <div class="eyebrow">KEYOB philosophy</div>
+    <h2 class="sec" style="margin-top:18px">Start anywhere. <em>Grow in every direction.</em></h2>
+  </div>
+  <div class="body-copy reveal">
+    <p>Best Value's journey with KEYOB reflects how modern technology partnerships should work. A client may come to KEYOB for one need — an ERP, a website, a CRM, an integration, an AI workflow, or a branding project. But business needs do not stay inside one category. As the relationship grows, the work can move wherever the client needs it to move.</p>
+    <p>Best Value came to KEYOB for custom ERP development. They stayed for continuous improvement. Now the partnership has expanded into branding and web presence modernization. That is KEYOB's philosophy in action: meet the client where they are, build what matters now, and keep supporting what the business needs next.</p>
+  </div>
+  <div class="pathvis reveal">
+    <svg viewBox="0 0 1000 200" aria-label="One entry point, custom ERP, branching into continuous improvement, automation, reporting, branding, website and future-ready modernization">
+      <path class="path-line" d="M150 100 L320 100"/>
+      <path class="path-line" d="M320 100 C400 100 400 40 500 40"/>
+      <path class="path-line" d="M320 100 C400 100 400 80 500 80"/>
+      <path class="path-line" d="M320 100 C400 100 400 120 500 120"/>
+      <path class="path-line" d="M320 100 C400 100 400 160 500 160"/>
+      <path class="path-line" d="M500 40 L660 40"/><path class="path-line" d="M500 80 L660 80"/>
+      <path class="path-line" d="M500 120 L660 120"/><path class="path-line" d="M500 160 L660 160"/>
+      <!-- entry -->
+      <circle class="path-entry" cx="120" cy="100" r="14"/>
+      <text class="path-entry-lab" x="120" y="135" text-anchor="middle">Custom ERP</text>
+      <text class="path-entry-lab" x="120" y="150" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.6)">entry point</text>
+      <!-- branches -->
+      <g id="pathBranches"></g>
+    </svg>
+  </div>
+  <div class="path-tag reveal">One relationship. Many directions.</div>
+</div></section>
+
+<!-- 9. HUMAN TRUST -->
+<section class="sct"><div class="wrap">
+  <div class="sct-head reveal" style="text-align:center;max-width:56ch;margin:0 auto 40px">
+    <div class="eyebrow center nobar" style="justify-content:center;color:var(--auto-soft)">A decade of trust</div>
+    <h2 class="sec" style="margin-top:14px">A decade of trust is built <em>one delivery at a time.</em></h2>
+  </div>
+  <div class="body-copy reveal" style="max-width:64ch;margin:0 auto 40px;text-align:center">
+    <p>Long-term partnerships are not created by contracts alone. They are created by years of communication, delivery, support, problem-solving, and shared understanding. For Best Value, KEYOB has remained close to the business as operations changed and requirements grew. The ERP has evolved because the business has evolved. That is the difference between building software and becoming a technology partner.</p>
+  </div>
+  <div class="reflect reveal">
+    <blockquote>"Best Value did not need software that looked good in a demo. They needed a system that could survive real operations — every order, every part, every route, every report."</blockquote>
+    <div class="by">KEYOB — internal reflection on the engagement</div>
+  </div>
+</div></section>
+
+<!-- 10. CAPABILITIES -->
+<section class="sct alt" id="capabilities"><div class="wrap">
+  <div class="sct-head reveal">
+    <div class="eyebrow">Capabilities involved</div>
+    <h2 class="sec" style="margin-top:18px">Capabilities involved in <em>this engagement.</em></h2>
+  </div>
+  <div class="body-copy reveal">
+    <p>The engagement combined software architecture, ERP development, operational analysis, reporting, workflow design, and long-term support — with the relationship now expanding into Best Value's broader digital presence.</p>
+  </div>
+  <div class="caps reveal" id="caps"></div>
+</div></section>
+
+<!-- 11. FINAL CTA -->
+<section class="final"><div class="final-mesh"></div><div class="wrap in">
+  <h2>Outgrown <em>generic software?</em></h2>
+  <p>KEYOB helps businesses build systems around the way they actually operate. Whether you need a custom ERP, CRM, automation layer, dashboard, integration, or future-ready digital upgrade, we can help you move from process frustration to operational clarity.</p>
+  <div class="final-cta">
+    <a href="https://keyob.com.au/#contact" class="btn">Talk to KEYOB <span class="arr">→</span></a>
+    <a href="what-we-do.html" class="btn-ghost">Explore what we do</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="foot-top">
+    <div>
+      <div class="foot-logo">KEY<b>OB</b></div>
+      <p>The operating layer modern businesses run on — software, websites, CRM, ERP, AI and dashboards, connected into one.</p>
+    </div>
+    <div class="foot-col">
+      <h5>Explore</h5>
+      <a href="what-we-do.html">What we do</a>
+      <a href="stories.html">Client stories</a>
+      <a href="about-us.html">About</a>
+      <a href="#capabilities">Capabilities</a>
+    </div>
+    <div class="foot-col">
+      <h5>Get in touch</h5>
+      <a href="mailto:hello@keyob.com.au">hello@keyob.com.au</a>
+      <a href="https://keyob.com.au/#contact">Free AI assessment</a>
+      <a href="https://linkedin.com/company/keyob">LinkedIn →</a>
+    </div>
+  </div>
+  <div class="foot-bot"><span>© 2026 KEYOB · Evolve your business.</span><span>AUSTRALIAN-BUILT · AI SINCE 2016</span></div>
+</div></footer>
+
+<script>
+const nav=document.getElementById('nav');addEventListener('scroll',()=>nav.classList.toggle('solid',scrollY>40));
+
+/* discovery focus areas */
+const FOCUS=["Inventory and part management","Sales and customer workflows","Purchasing and vendor processes","Warehouse and scanning operations","Delivery routes and fleet operations","Pricing and reporting logic","Returns and RMA handling","Accounting and operational reports","Management visibility and decision-making"];
+document.getElementById('focus').innerHTML=FOCUS.map(f=>`<span>${f}</span>`).join('');
+
+/* ERP module orbit + cards */
+const ERP=[
+  ["Sales & Customer Management","Managing customer orders, customer history, pricing, sales workflows, and operational visibility across customer activity."],
+  ["Inventory & Parts Management","Supporting large-scale part records, stock visibility, interchange logic, part categories, and warehouse-level inventory control."],
+  ["Purchasing & Vendor Workflows","Handling international and local purchasing, vendor processes, purchase orders, receiving, and procurement-related reporting."],
+  ["Pricing & Business Rules","Supporting pricing logic, updates, exceptions, approvals, and business-specific rules that generic systems could not easily handle."],
+  ["Warehouse & Scanning Operations","Helping warehouse teams manage parts, route sheets, scanning workflows, labels, and operational accuracy."],
+  ["Delivery & Route Operations","Supporting delivery routes, fleet-related workflows, route sheets, and operational coordination."],
+  ["RMA & Returns","Managing returns, return authorization, process control, and related operational checks."],
+  ["Accounting & Reporting","Supporting accounting workflows, receivable and payable visibility, statements, end-of-day reporting, and management reports."],
+  ["Dashboards & Visibility","Providing leadership and teams with clearer insight into operational performance, sales, inventory, routes, and business activity."]
+];
+const ORBIT=["Sales","Inventory","Purchasing","Pricing","Warehouse","Routes","RMA","Accounting","Dashboards"];
+(function(){
+  const cx=230,cy=230,r=165,sp=[],nd=[];
+  ORBIT.forEach((it,i)=>{const a=(-90+i*(360/ORBIT.length))*Math.PI/180;const x=cx+r*Math.cos(a),y=cy+r*Math.sin(a);
+    sp.push(`<line class="erp-spoke" x1="${cx+50*Math.cos(a)}" y1="${cy+50*Math.sin(a)}" x2="${x}" y2="${y}" style="animation-delay:${i*0.1}s"/>`);
+    const w=it.length*5.6+20;nd.push(`<g><rect class="erp-node" x="${x-w/2}" y="${y-13}" width="${w}" height="26" rx="7"/><text class="erp-lab" x="${x}" y="${y+4}" text-anchor="middle">${it}</text></g>`);});
+  document.getElementById('erp-spokes').innerHTML=sp.join('');
+  document.getElementById('erp-nodes').innerHTML=nd.join('');
+})();
+document.getElementById('erpCards').innerHTML=ERP.map(([t,p])=>`<div class="ecard reveal"><h3>${t}</h3><p>${p}</p></div>`).join('');
+
+/* production timeline */
+const TL=[
+  ["Phase 01","Discovery","Understanding how the aftermarket auto parts business actually worked.",false],
+  ["Phase 02","Analysis & Architecture","Turning operational complexity into a practical ERP blueprint.",false],
+  ["Phase 03","Development","Building a custom system around Best Value's workflows.",false],
+  ["Phase 04","Production","Deploying the ERP into day-to-day business operations.",false],
+  ["Phase 05","Continuous Improvement","Enhancing modules, reports, workflows, and system logic as the business grew.",false],
+  ["Phase 06","Broader Modernization","Expanding the partnership into branding, web presence, and future-ready digital improvements.",true]
+];
+document.getElementById('tl').innerHTML=TL.map(([ph,t,p,wide])=>`
+  <div class="tl-row${wide?' wide':''}"><div class="tl-ph">${ph}</div><div><h3>${t}</h3><p>${p}</p></div></div>`).join('');
+
+/* outcome bullets */
+const OUT=[
+  "Custom ERP designed around aftermarket auto parts operations",
+  "Better fit than generic off-the-shelf software",
+  "Core workflows connected into one operational platform",
+  "Improved visibility across inventory, sales, purchasing, warehouse, delivery, and reporting",
+  "System remained in production over the long term",
+  "Continuous modifications as the business grew",
+  "Relationship expanded beyond ERP into brand and web presence modernization",
+  "KEYOB became a long-term technology partner"
+];
+const CHECK='<svg class="c" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>';
+document.getElementById('outcomes').innerHTML=OUT.map(o=>`<li>${CHECK}<span>${o}</span></li>`).join('');
+
+/* philosophy branches */
+const BR=["Continuous improvement","Reporting & dashboards","Branding & web presence","Future-ready modernization"];
+const ys=[40,80,120,160];
+document.getElementById('pathBranches').innerHTML=BR.map((b,i)=>`
+  <g><rect class="path-branch" x="660" y="${ys[i]-15}" width="${b.length*6.4+24}" height="30" rx="8"/><text class="path-branch-lab" x="${672}" y="${ys[i]+4}">${b}</text></g>`).join('');
+
+/* capabilities */
+const CAPS=["Custom ERP Development","Discovery & Process Analysis","Business Workflow Design","Inventory Management","Purchasing & Vendor Workflows","Sales Operations","Pricing Logic","Warehouse Scanning","Route & Delivery Operations","RMA / Returns Management","Accounting & Reports","Dashboards & Visibility","System Modernization","Long-Term Support","Branding & Web Presence Upgrade"];
+document.getElementById('caps').innerHTML=CAPS.map(c=>`<span>${c}</span>`).join('');
+
+/* reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

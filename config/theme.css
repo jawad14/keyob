@@ -13,6 +13,12 @@
   --keyob-red:      #E0322D;
   --keyob-red-soft: #FF5A55;
 
+  /* Accent — used for auto-parts / industrial story cues
+     (e.g. Best Value challenge eyebrow, generic-vs-custom misfit blocks,
+     timeline "wide-scope" milestone). */
+  --keyob-amber:      #F0681E;
+  --keyob-amber-soft: #FF8A4C;
+
   --keyob-gradient: linear-gradient(90deg,
     #07101E 0%, #123C8C 35%, #2563D9 65%, #19C6E8 100%);
 

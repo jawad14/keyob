@@ -349,15 +349,17 @@ export const outcomes: Outcome[] = [
     slug: 'investment-markets-australia',
   },
   {
-    industry: 'Investment Markets · Financial Services',
-    tag: 'Onboarding Speed',
-    stat: '3.2×',
-    statSub: 'faster client onboarding lifecycle',
-    story: 'A boutique investment firm was onboarding clients across five disconnected platforms. KEYOB designed a unified onboarding architecture — reducing a fourteen-day process to under five.',
+    industry: 'Best Value · Aftermarket Auto Parts',
+    tag: 'Custom ERP · Aftermarket Parts',
+    stat: '~10 yrs',
+    statSub: 'custom ERP partnership, still evolving',
+    story:
+      "KEYOB built a custom ERP around Best Value's aftermarket auto parts operations — then stayed close as the system evolved with the business for nearly a decade.",
     paletteIndex: 2,
-    image: '/cases/investment-markets.webp',
-    imageAlt: 'Financial market charts and trading dashboards',
-    slug: 'compressed-onboarding',
+    image: '/cases/best-value-custom-erp.png',
+    imageAlt:
+      'Custom ERP dashboard for an aftermarket auto parts business — inventory, sales, warehouse and delivery routes',
+    slug: 'best-value-custom-erp',
   },
   {
     industry: 'Customer Operations · Service Business',

@@ -1315,7 +1315,7 @@ section.method {
   width: 0;
   background: var(--keyob-cyan);
   box-shadow: 0 0 10px rgba(94, 231, 255, .55);
-  animation: line-fill 16s linear infinite;
+  animation: line-fill 3s linear infinite;
 }
 @keyframes line-fill {
   0%       { width: 0; opacity: 0; }
@@ -1347,7 +1347,7 @@ section.method {
   font-family: var(--keyob-sans);
   font-size: 11px;
   color: var(--keyob-cyan);
-  animation-duration: 16s;
+  animation-duration: 3s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
@@ -1357,24 +1357,24 @@ section.method {
 .phase-flow .flow-dots > div:nth-child(4) .flow-dot { animation-name: dot-pass-4; }
 .phase-flow .flow-dots > div:nth-child(5) .flow-dot { animation-name: dot-pass-5; }
 @keyframes dot-pass-1 {
-  0%, 5%, 96%, 100% { border-color: rgba(245, 248, 250, .3); box-shadow: none; color: var(--keyob-cyan); transform: scale(1); }
-  8%, 94%           { border-color: var(--keyob-cyan); box-shadow: 0 0 16px rgba(94, 231, 255, .7); color: #fff; transform: scale(1.15); }
+  0%, 7%, 96%, 100% { border-color: rgba(245, 248, 250, .3); box-shadow: none; color: var(--keyob-cyan); transform: scale(1); }
+  10%, 94%          { border-color: var(--keyob-cyan); box-shadow: 0 0 16px rgba(94, 231, 255, .7); color: #fff; transform: scale(1.15); }
 }
 @keyframes dot-pass-2 {
-  0%, 20%, 96%, 100% { border-color: rgba(245, 248, 250, .3); box-shadow: none; color: var(--keyob-cyan); transform: scale(1); }
-  23%, 94%           { border-color: var(--keyob-cyan); box-shadow: 0 0 16px rgba(94, 231, 255, .7); color: #fff; transform: scale(1.15); }
+  0%, 22%, 96%, 100% { border-color: rgba(245, 248, 250, .3); box-shadow: none; color: var(--keyob-cyan); transform: scale(1); }
+  25%, 94%           { border-color: var(--keyob-cyan); box-shadow: 0 0 16px rgba(94, 231, 255, .7); color: #fff; transform: scale(1.15); }
 }
 @keyframes dot-pass-3 {
-  0%, 35%, 96%, 100% { border-color: rgba(245, 248, 250, .3); box-shadow: none; color: var(--keyob-cyan); transform: scale(1); }
-  38%, 94%           { border-color: var(--keyob-cyan); box-shadow: 0 0 16px rgba(94, 231, 255, .7); color: #fff; transform: scale(1.15); }
+  0%, 37%, 96%, 100% { border-color: rgba(245, 248, 250, .3); box-shadow: none; color: var(--keyob-cyan); transform: scale(1); }
+  40%, 94%           { border-color: var(--keyob-cyan); box-shadow: 0 0 16px rgba(94, 231, 255, .7); color: #fff; transform: scale(1.15); }
 }
 @keyframes dot-pass-4 {
-  0%, 50%, 96%, 100% { border-color: rgba(245, 248, 250, .3); box-shadow: none; color: var(--keyob-cyan); transform: scale(1); }
-  53%, 94%           { border-color: var(--keyob-cyan); box-shadow: 0 0 16px rgba(94, 231, 255, .7); color: #fff; transform: scale(1.15); }
+  0%, 52%, 96%, 100% { border-color: rgba(245, 248, 250, .3); box-shadow: none; color: var(--keyob-cyan); transform: scale(1); }
+  55%, 94%           { border-color: var(--keyob-cyan); box-shadow: 0 0 16px rgba(94, 231, 255, .7); color: #fff; transform: scale(1.15); }
 }
 @keyframes dot-pass-5 {
-  0%, 65%, 96%, 100% { border-color: rgba(245, 248, 250, .3); box-shadow: none; color: var(--keyob-cyan); transform: scale(1); }
-  68%, 94%           { border-color: var(--keyob-cyan); box-shadow: 0 0 16px rgba(94, 231, 255, .7); color: #fff; transform: scale(1.15); }
+  0%, 67%, 96%, 100% { border-color: rgba(245, 248, 250, .3); box-shadow: none; color: var(--keyob-cyan); transform: scale(1); }
+  70%, 94%           { border-color: var(--keyob-cyan); box-shadow: 0 0 16px rgba(94, 231, 255, .7); color: #fff; transform: scale(1.15); }
 }
 @media (prefers-reduced-motion: reduce) {
   .phase-flow .flowline-fill,
