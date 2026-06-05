@@ -5,12 +5,13 @@ const cx = 230;
 const cy = 230;
 const rFar = 210;
 const rNear = 180;
+const farLabels = new Set(['Brand', 'Website', 'Cloud', 'CRM', 'ERP', 'AI']);
 
 export function WwdConnected() {
   const uniformW = Math.max(...wwdHubNodes.map((l) => l.length * 7 + 24));
   const nodes = wwdHubNodes.map((label, i) => {
     const a = ((-90 + i * (360 / wwdHubNodes.length)) * Math.PI) / 180;
-    const r = i % 2 === 0 ? rFar : rNear;
+    const r = farLabels.has(label) ? rFar : rNear;
     const x = cx + r * Math.cos(a);
     const y = cy + r * Math.sin(a);
     const lx = cx + 62 * Math.cos(a);

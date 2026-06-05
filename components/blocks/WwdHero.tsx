@@ -6,22 +6,22 @@ import { wwdLadderStages } from '@/config/keyob-wwd';
 // and a clip-path wipe types each label left-to-right.
 const segmentCoords: Array<[number, number, number, number, number, number]> = [
   // [x1, y1, x2, y2, length, delay-s]
-  [40, 430, 122, 372, 100, 0.95],
-  [122, 372, 94, 314, 64, 2.05],
-  [94, 314, 176, 256, 100, 3.15],
-  [176, 256, 148, 198, 64, 4.25],
-  [148, 198, 230, 140, 100, 5.35],
-  [230, 140, 202, 82, 64, 6.45],
+  [40, 430, 122, 372, 100, 0.5],
+  [122, 372, 94, 314, 64, 1.05],
+  [94, 314, 176, 256, 100, 1.6],
+  [176, 256, 148, 198, 64, 2.15],
+  [148, 198, 230, 140, 100, 2.7],
+  [230, 140, 202, 82, 64, 3.25],
 ];
 
 const stops: Array<{ x: number; y: number; popDelay: number; labelDelay: number; tickEnd: number; textX: number; clipX: number; clipW: number }> = [
-  { x: 40, y: 430, popDelay: 0.4, labelDelay: 0.55, tickEnd: 150, textX: 158, clipX: 156, clipW: 170 },
-  { x: 122, y: 372, popDelay: 1.5, labelDelay: 1.65, tickEnd: 154, textX: 162, clipX: 160, clipW: 170 },
-  { x: 94, y: 314, popDelay: 2.6, labelDelay: 2.75, tickEnd: 204, textX: 212, clipX: 210, clipW: 180 },
-  { x: 176, y: 256, popDelay: 3.7, labelDelay: 3.85, tickEnd: 208, textX: 216, clipX: 214, clipW: 180 },
-  { x: 148, y: 198, popDelay: 4.8, labelDelay: 4.95, tickEnd: 258, textX: 266, clipX: 264, clipW: 180 },
-  { x: 230, y: 140, popDelay: 5.9, labelDelay: 6.05, tickEnd: 262, textX: 270, clipX: 268, clipW: 150 },
-  { x: 202, y: 82, popDelay: 7.0, labelDelay: 7.15, tickEnd: 234, textX: 242, clipX: 240, clipW: 190 },
+  { x: 40, y: 430, popDelay: 0.2, labelDelay: 0.3, tickEnd: 150, textX: 158, clipX: 156, clipW: 170 },
+  { x: 122, y: 372, popDelay: 0.75, labelDelay: 0.85, tickEnd: 154, textX: 162, clipX: 160, clipW: 170 },
+  { x: 94, y: 314, popDelay: 1.3, labelDelay: 1.4, tickEnd: 204, textX: 212, clipX: 210, clipW: 180 },
+  { x: 176, y: 256, popDelay: 1.85, labelDelay: 1.95, tickEnd: 208, textX: 216, clipX: 214, clipW: 180 },
+  { x: 148, y: 198, popDelay: 2.4, labelDelay: 2.5, tickEnd: 258, textX: 266, clipX: 264, clipW: 180 },
+  { x: 230, y: 140, popDelay: 2.95, labelDelay: 3.05, tickEnd: 262, textX: 270, clipX: 268, clipW: 150 },
+  { x: 202, y: 82, popDelay: 3.5, labelDelay: 3.6, tickEnd: 234, textX: 242, clipX: 240, clipW: 190 },
 ];
 
 export function WwdHero() {
@@ -99,28 +99,27 @@ export function WwdHero() {
               </g>
             ))}
 
-            <defs>
-              <marker
-                id="wwd-lad-arrow"
-                viewBox="0 0 10 10"
-                refX={7}
-                refY={5}
-                markerWidth={7}
-                markerHeight={7}
-                orient="auto-start-reverse"
-              >
-                <path d="M0 0 L10 5 L0 10 z" fill="var(--keyob-cyan)" />
-              </marker>
-            </defs>
             <line
-              className="wwd-lad-seg"
+              className="wwd-lad-seg wwd-lad-seg--final"
               x1={202}
               y1={82}
               x2={284}
               y2={24}
-              style={{ ['--len' as string]: '100px', ['--d' as string]: '8s' }}
-              markerEnd="url(#wwd-lad-arrow)"
+              style={{ ['--len' as string]: '100px', ['--d' as string]: '4s' }}
             />
+            <g
+              className="wwd-lad-arrowhead"
+              transform="translate(284 24) rotate(-35.28)"
+              style={{ ['--d' as string]: '4.3s' }}
+            >
+              <path
+                d="M-12 -6 L0 0 L-12 6 L-9 0 z"
+                fill="var(--keyob-cyan)"
+                stroke="var(--keyob-cyan)"
+                strokeWidth={0.5}
+                strokeLinejoin="round"
+              />
+            </g>
           </svg>
         </div>
       </div>
