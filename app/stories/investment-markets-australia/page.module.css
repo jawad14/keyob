@@ -119,6 +119,7 @@
   font-family: var(--im-serif); font-weight: 300;
   font-size: clamp(32px, 4.6vw, 60px); line-height: 1.04;
   letter-spacing: -0.02em; margin-top: 22px;
+  color: inherit;
 }
 .hero h1 em { font-style: italic; color: var(--im-azure-soft); }
 .hero p.sub {
@@ -450,6 +451,7 @@
   font-family: var(--im-serif); font-weight: 300;
   font-size: clamp(30px, 4.6vw, 58px); line-height: 1.05;
   letter-spacing: -0.02em; max-width: 22ch; margin: 0 auto;
+  color: inherit;
 }
 .final h2 em { font-style: italic; color: var(--im-azure-soft); }
 .final p {
