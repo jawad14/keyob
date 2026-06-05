@@ -116,7 +116,7 @@ const seeds: ArticleSeed[] = [
     seoTitle: 'What Is AI Operations for SMEs? A Practical Guide | KEYOB',
     metaDescription:
       "AI operations means applying AI inside your real workflows, data and decisions. Here's what it involves for small and growing businesses — and where it pays off.",
-    image: '/news/ai-operations-team-dashboard.webp',
+    image: '/news/ai-operations-team-dashboard.png',
     imageAlt: 'Operations team reviewing a connected business dashboard together',
     body: [
       { kind: 'p', text: "AI operations is the practical work of applying AI inside the systems a business already runs — its workflows, its data, and the decisions people make every day. It is not a product you buy. It is a way of running operations so that repetitive work is automated, information is visible in real time, and decisions are made on current data rather than last week's reports." },
@@ -153,7 +153,7 @@ const seeds: ArticleSeed[] = [
     seoTitle: 'How AI Workflow Automation Reduces Manual Work | KEYOB',
     metaDescription:
       "AI workflow automation removes repetitive, rule-based steps from daily operations. Here's how it works and where growing businesses see the biggest gains.",
-    image: '/news/workflow-automation-diagram.webp',
+    image: '/news/workflow-automation-diagram.png',
     imageAlt: 'Workflow steps connected into an automated process flow',
     body: [
       { kind: 'p', text: 'AI workflow automation reduces manual work by taking over the repetitive, rule-based steps inside a process — data entry, routing, status updates, follow-ups, document checks — and running them consistently without a person doing each one by hand.' },
@@ -189,7 +189,7 @@ const seeds: ArticleSeed[] = [
     seoTitle: 'Custom ERP vs Off-the-Shelf Software for Growing Businesses | KEYOB',
     metaDescription:
       'Should a growing business build a custom ERP or buy off-the-shelf? Compare fit, cost, speed and scale — and learn when each option makes sense.',
-    image: '/news/erp-comparison-screens.webp',
+    image: '/news/erp-comparison-screens.png',
     imageAlt: 'Two business software interfaces shown side by side for comparison',
     body: [
       { kind: 'p', text: 'Off-the-shelf software is the faster, cheaper way to start, and for many businesses it is the right answer. A custom ERP makes sense when your operations are unusual enough that standard tools force your team to work around the software instead of with it.' },
@@ -226,7 +226,7 @@ const seeds: ArticleSeed[] = [
     seoTitle: 'Why Disconnected Tools Slow Down Business Growth | KEYOB',
     metaDescription:
       "Disconnected tools force staff to act as the integration layer, creating hidden coordination costs that grow with the business. Here's how to spot and fix it.",
-    image: '/news/disconnected-tools-collaboration.webp',
+    image: '/news/disconnected-tools-collaboration.png',
     imageAlt: 'Team members coordinating across multiple separate software systems',
     body: [
       { kind: 'p', text: "Disconnected tools slow growth because, when systems don't share data, people fill the gap. Staff re-enter the same information in three places, reconcile reports by hand, and chase status across apps. That coordination cost is invisible on any invoice — and it grows with every new hire, site and product line." },
@@ -261,7 +261,7 @@ const seeds: ArticleSeed[] = [
     seoTitle: 'How Business Process Automation Improves Operational Visibility | KEYOB',
     metaDescription:
       'Automating a business process does more than save time — it creates a live, accurate record of every step, giving leaders real operational visibility.',
-    image: '/news/process-visibility-reporting.webp',
+    image: '/news/process-visibility-reporting.png',
     imageAlt: 'Manager viewing live operational reporting on a screen',
     body: [
       { kind: 'p', text: 'Business process automation improves visibility because a process that runs through a system records itself. Every step leaves a timestamped trace, so instead of asking people for a status update, leaders can see the current state directly — accurately and in real time.' },
@@ -296,7 +296,7 @@ const seeds: ArticleSeed[] = [
     seoTitle: 'What Is Operational Intelligence? Definition & Examples | KEYOB',
     metaDescription:
       "Operational intelligence is understanding and acting on what's happening in your business in real time. Learn what it means and how growing businesses use it.",
-    image: '/news/operational-intelligence-dashboard.webp',
+    image: '/news/operational-intelligence-dashboard.png',
     imageAlt: 'Live operations dashboard showing current business activity',
     body: [
       { kind: 'p', text: 'Operational intelligence is the ability to understand and act on what is happening in your business right now. It uses live data drawn from the systems running your operations, so decisions are based on the current state rather than a report assembled days later.' },
@@ -331,7 +331,7 @@ const seeds: ArticleSeed[] = [
     seoTitle: 'How AI Assistants Help Manage Customer Communication | KEYOB',
     metaDescription:
       'AI assistants handle routine customer messages and route complex ones with context, improving response times while keeping a human in the loop where it matters.',
-    image: '/news/customer-communication-team.webp',
+    image: '/news/customer-communication-team.png',
     imageAlt: 'Service team handling customer enquiries with system support',
     body: [
       { kind: 'p', text: "AI assistants help manage customer communication by handling the routine, repeatable enquiries automatically and routing everything else to the right person — with the relevant history already attached. The aim is faster responses and less manual triage, not removing people from the relationship." },
