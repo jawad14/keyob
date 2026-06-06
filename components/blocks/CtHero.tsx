@@ -67,7 +67,7 @@ export function CtHero() {
           right next step. No obligation, just a real conversation.
         </p>
         <div className="ct-hero-ctas">
-          <Link href="#form" className="ct-btn">
+          <Link href="#contact" className="ct-btn">
             Book a free AI assessment <span aria-hidden="true">→</span>
           </Link>
           <a href={`mailto:${contactQuickInfo.email}`} className="ct-btn ct-btn--ghost">

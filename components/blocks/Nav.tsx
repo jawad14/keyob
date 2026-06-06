@@ -11,11 +11,11 @@ const links = [
   { href: '/leadership-team', label: 'Leadership & Team' },
   { href: '/stories', label: 'Stories' },
   { href: '/news', label: 'News' },
-  { href: '/contact', label: 'Contact Us' },
+  { href: '/contact#contact', label: 'Contact Us' },
 ];
 
 export function Nav() {
-  const contactHref = '/contact';
+  const contactHref = '/contact#contact';
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
