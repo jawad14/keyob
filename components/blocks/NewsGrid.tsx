@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
 import { NewsMotif } from '@/components/blocks/NewsMotif';
@@ -63,7 +64,16 @@ export function NewsGrid({ excludeSlug }: { excludeSlug?: string }) {
               it.kind === 'card' ? (
                 <Link key={it.article.slug} href={`/news/${it.article.slug}`} className="news-card">
                   <div className="news-card-vis">
-                    <NewsMotif kind={it.article.visual} gradientId={`news-card-${idx}`} />
+                    {it.article.image ? (
+                      <Image
+                        src={it.article.image}
+                        alt={it.article.imageAlt}
+                        fill
+                        sizes="(min-width: 960px) 33vw, (min-width: 600px) 50vw, 100vw"
+                      />
+                    ) : (
+                      <NewsMotif kind={it.article.visual} gradientId={`news-card-${idx}`} />
+                    )}
                   </div>
                   <div className="news-card-body">
                     <div className="news-tag">

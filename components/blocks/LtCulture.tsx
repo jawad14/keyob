@@ -22,8 +22,8 @@ export function LtCulture() {
         </div>
         <div className="lt-culture-vis">
           <Image
-            src="/keyob-australia-office.png"
-            alt="KEYOB Australia office — team in the Sydney workspace"
+            src="/team.jpg"
+            alt="KEYOB team across Australia, the United States, Pakistan and Sweden"
             fill
             sizes="(min-width: 960px) 45vw, 100vw"
             style={{ objectFit: 'cover' }}

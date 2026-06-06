@@ -61,7 +61,7 @@ export const siteConfig: SiteConfig = {
   providers: {
     logger: 'console',
     analytics: 'none',
-    email: 'none',
+    email: 'smtp',
     cms: 'mdx',
     errors: 'console',
     search: 'pagefind',

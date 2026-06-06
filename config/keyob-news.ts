@@ -365,8 +365,8 @@ const seeds: ArticleSeed[] = [
     seoTitle: 'When Does a Growing Business Need a Custom ERP System? | KEYOB',
     metaDescription:
       'Not every business needs a custom ERP. Here are the clear signals that standard tools have become the bottleneck — and a tailored system is worth the investment.',
-    image: '/news/growing-business-operations.webp',
-    imageAlt: 'Operations team in a growing business reviewing processes',
+    image: '/news/erp-comparison-screens.png',
+    imageAlt: 'ERP modules arranged as connected building blocks for a growing business',
     body: [
       { kind: 'p', text: "A growing business needs a custom ERP when the workarounds keeping standard tools alive start costing more — in time, errors and coordination — than a tailored system would. Until then, packaged software and good integration usually win." },
       { kind: 'h2', text: "Signals it's time to consider one" },
@@ -400,8 +400,8 @@ const seeds: ArticleSeed[] = [
     seoTitle: 'How Systems Integration Helps Teams Work Better | KEYOB',
     metaDescription:
       'Systems integration connects existing tools so data flows automatically, removing manual handoffs and giving teams a shared, accurate view to work from.',
-    image: '/news/systems-integration-teams.webp',
-    imageAlt: 'Cross-functional team working from one connected system',
+    image: '/news/disconnected-tools-collaboration.png',
+    imageAlt: 'Separate tools converging into one connected system for teams',
     body: [
       { kind: 'p', text: 'Systems integration helps teams work better by connecting the tools they already use, so information moves between systems automatically instead of being carried by hand. When sales, service and operations share one accurate view, the friction between them largely disappears.' },
       { kind: 'h2', text: 'Why handoffs are where work breaks' },
@@ -434,8 +434,8 @@ const seeds: ArticleSeed[] = [
     seoTitle: 'How Distribution Businesses Can Improve Inventory Visibility | KEYOB',
     metaDescription:
       "Distribution businesses gain real inventory visibility by connecting stock, sales, transfers and demand into one live view. Here's the practical approach.",
-    image: '/news/warehouse-inventory-visibility.webp',
-    imageAlt: 'Warehouse aisles with inventory and a stock-control screen',
+    image: '/news/operational-intelligence-dashboard.png',
+    imageAlt: 'Inventory and operations data flowing into a unified visibility dashboard',
     body: [
       { kind: 'p', text: 'Distribution businesses improve inventory visibility by connecting the systems that hold stock, sales, transfers and demand into one synchronised, live view. The goal is simple: what the system shows should match what is actually on the shelf, at every site, right now.' },
       { kind: 'h2', text: 'Why visibility breaks across multiple sites' },
@@ -468,8 +468,8 @@ const seeds: ArticleSeed[] = [
     seoTitle: 'AI Automation for Service Businesses: Where to Start | KEYOB',
     metaDescription:
       "For service businesses, the best place to start with AI automation is request intake, routing and status updates. Here's a practical, low-risk first step.",
-    image: '/news/service-business-operations.webp',
-    imageAlt: 'Service business team coordinating incoming customer requests',
+    image: '/news/customer-communication-team.png',
+    imageAlt: 'Customer requests across channels routed into one service workflow',
     body: [
       { kind: 'p', text: "Service businesses should start AI automation where the work is repetitive and customer-facing: how requests come in, how they're routed, and how status is communicated. These are high-frequency, rule-based steps where automation improves the experience quickly and at low risk." },
       { kind: 'h2', text: 'A sensible first sequence' },
@@ -503,8 +503,8 @@ const seeds: ArticleSeed[] = [
     seoTitle: 'Why KEYOB Focuses on Operational Clarity Before Automation | KEYOB',
     metaDescription:
       "Automating a process you don't understand just makes a mess run faster. Learn why KEYOB establishes operational clarity before automating anything.",
-    image: '/news/operational-clarity-discovery.webp',
-    imageAlt: 'Team mapping out business processes during a discovery session',
+    image: '/news/ai-operations-team-dashboard.png',
+    imageAlt: 'Central operations hub bringing disparate business signals into one clear view',
     body: [
       { kind: 'p', text: "KEYOB focuses on operational clarity first because automating a process you don't fully understand only makes a mess run faster. Clarity comes first: map how the business actually works, find where the real friction is, then automate the right things in the right order." },
       { kind: 'h2', text: 'Clarity before tools' },

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { NewsMotif } from '@/components/blocks/NewsMotif';
 import type { NewsArticle } from '@/config/keyob-news';
@@ -9,7 +10,17 @@ export function NewsFeatured({ article }: { article: NewsArticle }) {
         <p className="news-sec-label">Featured</p>
         <Link href={`/news/${article.slug}`} className="news-feat">
           <div className="news-feat-vis">
-            <NewsMotif kind={article.visual} gradientId="news-feat-gradient" />
+            {article.image ? (
+              <Image
+                src={article.image}
+                alt={article.imageAlt}
+                fill
+                sizes="(min-width: 960px) 50vw, 100vw"
+                priority
+              />
+            ) : (
+              <NewsMotif kind={article.visual} gradientId="news-feat-gradient" />
+            )}
           </div>
           <div className="news-feat-body">
             <div className="news-tag">

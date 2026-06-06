@@ -1,8 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useActionState } from 'react';
+import { useFormStatus } from 'react-dom';
 import { Section } from '@/components/ui/layout';
 import { H2, Text } from '@/components/ui/typography';
+import { submitContact, type ContactState } from '@/app/actions/contact';
 
 const industries = [
   'Professional Services',
@@ -23,13 +25,27 @@ const teamSizes = [
   'Over 1,000',
 ];
 
-export function ContactSection() {
-  const [submitted, setSubmitted] = useState(false);
+const initialState: ContactState = { ok: false };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
+function SubmitButton({ sent }: { sent: boolean }) {
+  const { pending } = useFormStatus();
+  const label = pending ? 'Sending…' : sent ? 'Sent — thank you ✓' : 'Book your free assessment';
+  return (
+    <button type="submit" disabled={pending}>
+      {label}
+      {!sent && !pending && (
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
+          <path d="M5 12h14M13 5l7 7-7 7" />
+        </svg>
+      )}
+    </button>
+  );
+}
+
+export function ContactSection() {
+  const [state, formAction] = useActionState(submitContact, initialState);
+  const sent = state.ok === true;
+  const errors = state.fieldErrors ?? {};
 
   return (
     <Section spacing="none" as="section" className="contact" id="contact">
@@ -99,14 +115,24 @@ export function ContactSection() {
             </div>
           </div>
 
-          <form className="cf" onSubmit={handleSubmit}>
+          <form className="cf" action={formAction} noValidate>
+            <input
+              type="text"
+              name="website"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              style={{ position: 'absolute', left: '-10000px', width: 1, height: 1, opacity: 0 }}
+            />
             <div>
               <label htmlFor="cf-name">Your name</label>
-              <input id="cf-name" name="name" placeholder="Full name" required />
+              <input id="cf-name" name="name" placeholder="Full name" required aria-invalid={!!errors.name} />
+              {errors.name && <span className="cf-err">{errors.name}</span>}
             </div>
             <div>
               <label htmlFor="cf-org">Organization</label>
-              <input id="cf-org" name="organization" placeholder="Company / organization" required />
+              <input id="cf-org" name="organization" placeholder="Company / organization" required aria-invalid={!!errors.organization} />
+              {errors.organization && <span className="cf-err">{errors.organization}</span>}
             </div>
             <div>
               <label htmlFor="cf-industry">Industry</label>
@@ -128,7 +154,8 @@ export function ContactSection() {
             </div>
             <div className="full">
               <label htmlFor="cf-email">Email</label>
-              <input id="cf-email" name="email" type="email" placeholder="name@company.com" required />
+              <input id="cf-email" name="email" type="email" placeholder="name@company.com" required aria-invalid={!!errors.email} />
+              {errors.email && <span className="cf-err">{errors.email}</span>}
             </div>
             <div className="full">
               <label htmlFor="cf-challenge">Where would you most like AI to help in your business?</label>
@@ -137,18 +164,20 @@ export function ContactSection() {
                 name="challenge"
                 placeholder="A few sentences about your business and what you're hoping AI could help with."
                 required
+                aria-invalid={!!errors.challenge}
               />
+              {errors.challenge && <span className="cf-err">{errors.challenge}</span>}
             </div>
-            <button type="submit">
-              {submitted ? 'Sent — thank you ✓' : 'Book your free assessment'}
-              {!submitted && (
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
-                  <path d="M5 12h14M13 5l7 7-7 7" />
-                </svg>
-              )}
-            </button>
-            <Text as="p" className={`cf-success${submitted ? ' is-visible' : ''}`}>
-              Thank you. We&apos;ll be in touch within one business day to set up your free AI assessment.
+            <SubmitButton sent={sent} />
+            {state.message && !sent && (
+              <Text as="p" className="cf-error is-visible" role="alert">
+                {state.message}
+              </Text>
+            )}
+            <Text as="p" className={`cf-success${sent ? ' is-visible' : ''}`}>
+              {sent
+                ? state.message ?? "Thank you. We'll be in touch within one business day to set up your free AI assessment."
+                : "Thank you. We'll be in touch within one business day to set up your free AI assessment."}
             </Text>
           </form>
         </div>

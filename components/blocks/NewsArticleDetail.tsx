@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { NewsMotif } from '@/components/blocks/NewsMotif';
 import { newsArticles, type NewsArticle } from '@/config/keyob-news';
@@ -122,7 +123,16 @@ export function NewsArticleDetail({ article }: { article: NewsArticle }) {
               {related.map((r, i) => (
                 <Link key={r.slug} href={`/news/${r.slug}`} className="news-rcard">
                   <div className="news-rcard-v">
-                    <NewsMotif kind={r.visual} gradientId={`news-related-${i}`} />
+                    {r.image ? (
+                      <Image
+                        src={r.image}
+                        alt={r.imageAlt}
+                        fill
+                        sizes="(min-width: 960px) 33vw, (min-width: 600px) 50vw, 100vw"
+                      />
+                    ) : (
+                      <NewsMotif kind={r.visual} gradientId={`news-related-${i}`} />
+                    )}
                   </div>
                   <div className="news-rcard-b">
                     <div className="news-rcard-t">{r.category}</div>
