@@ -95,7 +95,7 @@ export function NewsArticleDetail({ article }: { article: NewsArticle }) {
             <div className="news-takeaway-l">Related solutions</div>
             <div className="news-sol-grid">
               {article.relatedSolutions.map((label) => (
-                <Link key={label} href="/#capabilities">
+                <Link key={label} href="/what-we-do">
                   {label} <span className="news-ar">→</span>
                 </Link>
               ))}

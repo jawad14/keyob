@@ -7855,6 +7855,43 @@ section.stories-cta {
 }
 
 /* =====================================================================
+   TOP LOADER (route-change progress bar)
+   ===================================================================== */
+.toploader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0;
+  overflow: hidden;
+  transition: opacity .28s ease;
+}
+.toploader.is-visible { opacity: 1; }
+.toploader-bar {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--keyob-blue) 0%,
+    var(--keyob-cyan) 55%,
+    #5EE7FF 100%
+  );
+  box-shadow:
+    0 0 10px rgba(25, 198, 232, .55),
+    0 0 4px rgba(25, 198, 232, .8);
+  transform: translateX(-100%);
+  transition: transform .22s ease-out;
+  will-change: transform;
+}
+@media (prefers-reduced-motion: reduce) {
+  .toploader { transition: none; }
+  .toploader-bar { transition: transform .1s linear; box-shadow: none; }
+}
+
+/* =====================================================================
    PRIVACY POLICY (/privacy)
    Dark hero like .story-shero, sticky numbered TOC + prose body,
    on-brand bottom CTA. Server-rendered, no JS.

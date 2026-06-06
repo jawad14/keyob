@@ -3,6 +3,7 @@ import { Fraunces, Instrument_Serif, Inter } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import { ThemeProvider } from '@/components/providers/theme-provider';
 import { HashScroll } from '@/components/util/HashScroll';
+import { TopLoader } from '@/components/util/TopLoader';
 import { defaultMetadata } from '@/config/site.config';
 import './globals.css';
 
@@ -60,6 +61,7 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
+          <TopLoader />
           <HashScroll />
           {children}
         </ThemeProvider>

@@ -44,11 +44,11 @@ export const siteConfig: SiteConfig = {
   locale: 'en_AU',
   author: { name: 'KEYOB', url: 'https://keyob.com.au' },
   nav: [
-    { label: 'What we do', href: '#capabilities' },
-    { label: 'Methodology', href: '#methodology' },
-    { label: 'Outcomes', href: '#outcomes' },
-    { label: 'Insights', href: '#insights' },
-    { label: 'Careers', href: '/careers' },
+    { label: 'What we do', href: '/what-we-do' },
+    { label: 'Stories', href: '/stories' },
+    { label: 'Leadership', href: '/leadership-team' },
+    { label: 'News', href: '/news' },
+    { label: 'Contact', href: '/contact#contact' },
   ],
   social: [
     { label: 'LinkedIn', href: 'https://www.linkedin.com/company/keyobofficial' },

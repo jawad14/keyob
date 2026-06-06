@@ -27,7 +27,7 @@ const insights = [
     kind: 'Problem Diagnosis',
     title: 'The hidden cost of fragmented systems: a framework for quantification.',
     readTime: '11 min read',
-    href: '#',
+    href: '/news/why-disconnected-tools-slow-down-business-growth',
     featured: false,
     image: '/fragmented_systems.webp',
   },
@@ -41,7 +41,7 @@ export function InsightsSection() {
           <H2>
             Perspectives worth <em>your time.</em>
           </H2>
-          <Link href="#" className="btn-ghost">
+          <Link href="/news" className="btn-ghost">
             All perspectives
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M7 17L17 7M9 7h8v8" />
