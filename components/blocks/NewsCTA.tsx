@@ -12,7 +12,7 @@ export function NewsCTA() {
           KEYOB helps growing businesses identify workflow gaps, automation opportunities, and the
           systems needed to scale with clarity.
         </p>
-        <Link href="/#contact" className="news-btn">
+        <Link href="/contact#contact" className="news-btn">
           Book an operational clarity session <span aria-hidden="true">→</span>
         </Link>
       </div>

@@ -16,7 +16,7 @@ const company = [
   { label: 'How We Work', href: '#methodology' },
   { label: 'Industries', href: '#industries' },
   { label: 'Insights', href: '#insights' },
-  { label: 'Strategic Inquiry', href: '#contact' },
+  { label: 'Strategic Inquiry', href: '/contact#contact' },
 ];
 
 const perspectives = [

@@ -40,7 +40,7 @@ export function WwdHero() {
             dashboards, and integration into one practical growth journey.
           </p>
           <div className="wwd-hero-ctas">
-            <Link href="/#contact" className="wwd-btn">
+            <Link href="/contact#contact" className="wwd-btn">
               Book a free AI assessment <span aria-hidden="true">→</span>
             </Link>
             <Link href="#stages" className="wwd-btn wwd-btn--ghost">

@@ -106,7 +106,7 @@ export function NewsArticleDetail({ article }: { article: NewsArticle }) {
             <h2>
               Discuss this with <em>KEYOB</em>
             </h2>
-            <Link href="/#contact" className="news-btn">
+            <Link href="/contact#contact" className="news-btn">
               Discuss this with KEYOB <span aria-hidden="true">→</span>
             </Link>
           </section>

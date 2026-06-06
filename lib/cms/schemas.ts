@@ -22,7 +22,7 @@ export const postFrontmatterSchema = z.object({
       heading: z.string().min(1),
       body: z.string().min(1),
       label: z.string().min(1),
-      href: z.string().default('/#contact'),
+      href: z.string().default('/contact#contact'),
     })
     .optional(),
 });

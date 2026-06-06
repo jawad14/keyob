@@ -14,7 +14,7 @@ export function LtFinalCta() {
           find the right next step.
         </p>
         <div className="lt-final-cta">
-          <Link href="/#contact" className="lt-btn">
+          <Link href="/contact#contact" className="lt-btn">
             Book a free AI assessment <span aria-hidden="true">→</span>
           </Link>
           <Link href="/what-we-do" className="lt-btn lt-btn--ghost">

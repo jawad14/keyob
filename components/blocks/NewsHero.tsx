@@ -18,7 +18,7 @@ export function NewsHero() {
           <Link href="#feed" className="news-btn">
             Explore latest updates <span aria-hidden="true">→</span>
           </Link>
-          <Link href="/#contact" className="news-btn news-btn--ghost">
+          <Link href="/contact#contact" className="news-btn news-btn--ghost">
             Book an operational clarity session
           </Link>
         </div>

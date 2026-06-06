@@ -71,6 +71,7 @@
 /* ----- Reset & base ----- */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 96px;
   font-feature-settings: 'ss01', 'cv11';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

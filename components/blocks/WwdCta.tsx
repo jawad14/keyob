@@ -14,10 +14,10 @@ export function WwdCta() {
           identify the right next step.
         </p>
         <div className="wwd-final-cta">
-          <Link href="/#contact" className="wwd-btn">
+          <Link href="/contact#contact" className="wwd-btn">
             Book a free AI assessment <span aria-hidden="true">→</span>
           </Link>
-          <Link href="/#contact" className="wwd-btn wwd-btn--ghost">
+          <Link href="/contact#contact" className="wwd-btn wwd-btn--ghost">
             Tell us where you are stuck
           </Link>
         </div>

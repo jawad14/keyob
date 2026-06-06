@@ -78,7 +78,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <div className="article-cta">
               <span className="eyebrow">{post.cta?.heading ?? 'Free AI Assessment'}</span>
               <p>{post.cta?.body ?? 'Book a free AI assessment with us. We\'ll explore where AI could create the next opportunity in your business — simple, practical ways to save time, reduce costs, and support growth.'}</p>
-              <Link href={post.cta?.href ?? '/#contact'} className="btn-primary">
+              <Link href={post.cta?.href ?? '/contact#contact'} className="btn-primary">
                 {post.cta?.label ?? 'Book your free AI assessment'}
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
                   <path d="M5 12h14M13 5l7 7-7 7" />

@@ -19,7 +19,7 @@ export function AuFinalCta() {
           </span>
         </p>
         <div className="au-final-cta">
-          <Link href="/#contact" className="au-btn">
+          <Link href="/contact#contact" className="au-btn">
             Book a free AI assessment <span aria-hidden="true">→</span>
           </Link>
           <Link href="/what-we-do" className="au-btn au-btn--ghost">

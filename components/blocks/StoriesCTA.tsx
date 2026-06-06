@@ -12,7 +12,7 @@ export function StoriesCTA() {
             Every one of these began with a free AI assessment — a focused look at where you are
             and where intelligence would actually earn its place. No obligation.
           </p>
-          <Link href="/#contact" className="btn-cta">
+          <Link href="/contact#contact" className="btn-cta">
             Book your free AI assessment <span aria-hidden="true">→</span>
           </Link>
         </div>
