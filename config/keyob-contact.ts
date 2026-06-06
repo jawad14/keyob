@@ -30,7 +30,7 @@ export const contactFaq: CtFaqItem[] = [
 ];
 
 export const contactQuickInfo = {
-  email: 'hello@keyob.com.au',
+  email: 'info@keyob.com',
   phones: [
     { display: '+61 433 278 992', href: 'tel:+61433278992' },
     { display: '+61 415 373 506', href: 'tel:+61415373506' },

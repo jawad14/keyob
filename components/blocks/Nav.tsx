@@ -159,7 +159,7 @@ export function Nav() {
             <span aria-hidden="true">→</span>
           </Link>
           <div className="nav-overlay-meta">
-            <a href="mailto:hello@keyob.com.au">hello@keyob.com.au</a>
+            <a href="mailto:info@keyob.com">info@keyob.com</a>
             <span className="nav-overlay-sep" aria-hidden="true">·</span>
             <span>Within one business day</span>
           </div>

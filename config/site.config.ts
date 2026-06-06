@@ -54,7 +54,7 @@ export const siteConfig: SiteConfig = {
     { label: 'LinkedIn', href: 'https://linkedin.com/company/keyob' },
   ],
   contact: {
-    email: 'hello@keyob.com.au',
+    email: 'info@keyob.com',
     phones: ['+61 433 278 992', '+61 415 373 506'],
     address: 'Level 1, 67 Springwood Road, Springwood, QLD 4127, Australia',
   },
