@@ -77,7 +77,7 @@ export function CtHero() {
         <div className="ct-hero-pills">
           <span>Within one business day</span>
           <span>No obligation</span>
-          <span>Australia · Sweden · US · Pakistan · Middle East</span>
+          <span>Australia · US · Sweden · Pakistan · KSA · UAE</span>
         </div>
       </div>
     </header>

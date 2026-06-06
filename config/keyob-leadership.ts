@@ -114,4 +114,4 @@ export const ltFlow: LtFlowStep[] = [
   { n: '05', title: 'Support', body: 'Staying close as systems evolve and clients grow.' },
 ];
 
-export const ltRegions = ['Australia', 'Sweden', 'United States', 'Pakistan', 'Middle East'];
+export const ltRegions = ['Australia', 'United States', 'Sweden', 'Pakistan', 'KSA', 'UAE'];

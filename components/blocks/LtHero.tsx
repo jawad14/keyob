@@ -60,8 +60,8 @@ export function LtHero() {
             problem, design the right system, and stay close as the business evolves.
           </p>
           <p>
-            KEYOB&apos;s leadership brings together experience across Australia, Sweden, the
-            United States, Pakistan, and the Middle East — combining business strategy, software
+            KEYOB&apos;s leadership brings together experience across Australia, the United
+            States, Sweden, Pakistan, KSA, and UAE — combining business strategy, software
             delivery, systems integration, AI adoption, and long-term client partnership.
           </p>
         </div>

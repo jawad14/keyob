@@ -8,6 +8,8 @@ export type KeyobLocation = {
   address: string;
   role: string;
   description: string;
+  officeAddress?: string;
+  phone?: string;
   x: number;
   y: number;
   labelX: number;
@@ -16,6 +18,22 @@ export type KeyobLocation = {
 };
 
 export const keyobLocations: KeyobLocation[] = [
+  {
+    key: 'au',
+    name: 'Australia',
+    short: 'Australia',
+    address: 'Head office',
+    role: 'Client strategy, consulting, partnerships',
+    description:
+      'Local conversations, business discovery, AI assessment, and client relationship management.',
+    officeAddress: '67 Springwood Rd, QLD 4127',
+    phone: '+61 433 278 992',
+    x: 500,
+    y: 262,
+    labelX: 500,
+    labelY: 226,
+    hq: true,
+  },
   {
     key: 'us',
     name: 'United States',
@@ -56,33 +74,6 @@ export const keyobLocations: KeyobLocation[] = [
     labelY: 146,
   },
   {
-    key: 'au',
-    name: 'Australia',
-    short: 'Australia',
-    address: 'Springwood, Queensland',
-    role: 'Client strategy, consulting, partnerships',
-    description:
-      'Local conversations, business discovery, AI assessment, and client relationship management.',
-    x: 500,
-    y: 262,
-    labelX: 500,
-    labelY: 226,
-    hq: true,
-  },
-  {
-    key: 'ae',
-    name: 'Dubai',
-    short: 'Dubai',
-    address: 'Dubai, UAE',
-    role: 'Middle East client engagement and partnerships',
-    description:
-      'Regional business conversations, digital transformation advisory, AI opportunity discovery, and partnership support across the UAE market.',
-    x: 742,
-    y: 366,
-    labelX: 758,
-    labelY: 400,
-  },
-  {
     key: 'sa',
     name: 'Kingdom of Saudi Arabia',
     short: 'Saudi Arabia',
@@ -94,6 +85,21 @@ export const keyobLocations: KeyobLocation[] = [
     y: 372,
     labelX: 288,
     labelY: 406,
+  },
+  {
+    key: 'ae',
+    name: 'Dubai',
+    short: 'Dubai',
+    address: 'Dubai, UAE',
+    role: 'Middle East client engagement and partnerships',
+    description:
+      'Regional business conversations, digital transformation advisory, AI opportunity discovery, and partnership support across the UAE market.',
+    officeAddress: 'Madina Mall, Muhaisnah 4, Dubai',
+    phone: '+971 4 288 8632',
+    x: 742,
+    y: 366,
+    labelX: 758,
+    labelY: 400,
   },
 ];
 

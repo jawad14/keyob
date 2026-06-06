@@ -13,12 +13,12 @@ import { siteConfig } from '@/config/site.config';
 export const metadata: Metadata = {
   title: 'Leadership & Team | KEYOB',
   description:
-    "Meet KEYOB's leadership and team across Australia, Sweden, the United States, Pakistan, and the Middle East — the people behind KEYOB's software, AI, CRM, ERP, automation, and business systems work.",
+    "Meet KEYOB's leadership and team across Australia, the United States, Sweden, Pakistan, KSA, and UAE — the people behind KEYOB's software, AI, CRM, ERP, automation, and business systems work.",
   alternates: { canonical: `${siteConfig.url}/leadership-team` },
   openGraph: {
     title: 'Leadership & Team | KEYOB',
     description:
-      "The people behind KEYOB's software, AI, CRM, ERP, automation and business systems work — across Australia, Sweden, the US, Pakistan and the Middle East.",
+      "The people behind KEYOB's software, AI, CRM, ERP, automation and business systems work — across Australia, the US, Sweden, Pakistan, KSA and UAE.",
     url: `${siteConfig.url}/leadership-team`,
   },
 };

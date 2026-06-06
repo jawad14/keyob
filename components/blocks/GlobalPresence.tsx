@@ -76,7 +76,7 @@ export function GlobalPresence() {
               viewBox="0 0 1000 520"
               preserveAspectRatio="xMidYMid meet"
               role="group"
-              aria-label="KEYOB global network with the Australia head office at the centre, connected to the United States, Sweden, Pakistan, Dubai and Saudi Arabia"
+              aria-label="KEYOB global network with the Australia head office at the centre, connected to the United States, Sweden, Pakistan, Saudi Arabia and Dubai"
             >
               {/* spokes */}
               <g aria-hidden="true">
@@ -234,7 +234,55 @@ export function GlobalPresence() {
               <h4>{loc.name}</h4>
               <div className="gp-card-addr">{loc.address}</div>
               <div className="gp-card-role">{loc.role}</div>
-              <p className="gp-card-desc">{loc.description}</p>
+              {loc.officeAddress || loc.phone ? (
+                <dl className="gp-card-contact">
+                  {loc.officeAddress && (
+                    <>
+                      <dt aria-label="Office">
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1.8"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          aria-hidden="true"
+                        >
+                          <path d="M12 21s-7-7-7-12a7 7 0 1 1 14 0c0 5-7 12-7 12Z" />
+                          <circle cx="12" cy="9" r="2.5" />
+                        </svg>
+                      </dt>
+                      <dd>{loc.officeAddress}</dd>
+                    </>
+                  )}
+                  {loc.phone && (
+                    <>
+                      <dt aria-label="Phone">
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1.8"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          aria-hidden="true"
+                        >
+                          <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" />
+                        </svg>
+                      </dt>
+                      <dd>
+                        <a href={`tel:${loc.phone.replace(/\s+/g, '')}`}>{loc.phone}</a>
+                      </dd>
+                    </>
+                  )}
+                </dl>
+              ) : (
+                <p className="gp-card-desc">{loc.description}</p>
+              )}
             </div>
           ))}
         </div>

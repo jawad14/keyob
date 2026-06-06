@@ -1,6 +1,6 @@
 'use client';
 
-import { useActionState } from 'react';
+import { useActionState, useEffect, useRef, useState } from 'react';
 import { useFormStatus } from 'react-dom';
 import { Section } from '@/components/ui/layout';
 import { H2, Text } from '@/components/ui/typography';
@@ -27,16 +27,77 @@ const teamSizes = [
 
 const initialState: ContactState = { ok: false };
 
-function SubmitButton({ sent }: { sent: boolean }) {
-  const { pending } = useFormStatus();
-  const label = pending ? 'Sending…' : sent ? 'Sent — thank you ✓' : 'Book your free assessment';
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+const clientValidate: Record<string, (v: string) => string | null> = {
+  name: (v) => (!v.trim() ? 'Please tell us your name' : null),
+  organization: (v) => (!v.trim() ? 'Which organization are you with?' : null),
+  email: (v) => {
+    if (!v.trim()) return 'We need your email to follow up';
+    if (!EMAIL_RE.test(v.trim())) return "That doesn't look like a valid email";
+    return null;
+  },
+  challenge: (v) => (!v.trim() ? 'A few sentences help us prepare' : null),
+};
+
+function Spinner() {
   return (
-    <button type="submit" disabled={pending}>
-      {label}
-      {!sent && !pending && (
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
-          <path d="M5 12h14M13 5l7 7-7 7" />
-        </svg>
+    <svg
+      className="cf-spin"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.4"
+      aria-hidden="true"
+    >
+      <path d="M12 3a9 9 0 1 0 9 9" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function ArrowIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" aria-hidden="true">
+      <path d="M5 12h14M13 5l7 7-7 7" />
+    </svg>
+  );
+}
+
+function CheckCircleIcon() {
+  return (
+    <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+      <circle cx="12" cy="12" r="10" />
+      <path d="M8.5 12.5l2.5 2.5 4.5-5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function AlertIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+      <circle cx="12" cy="12" r="10" />
+      <path d="M12 8v5" strokeLinecap="round" />
+      <circle cx="12" cy="16.5" r="0.6" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+function SubmitButton() {
+  const { pending } = useFormStatus();
+  return (
+    <button type="submit" disabled={pending} aria-busy={pending}>
+      {pending ? (
+        <>
+          <Spinner />
+          <span>Sending…</span>
+        </>
+      ) : (
+        <>
+          <span>Book your free assessment</span>
+          <ArrowIcon />
+        </>
       )}
     </button>
   );
@@ -45,7 +106,62 @@ function SubmitButton({ sent }: { sent: boolean }) {
 export function ContactSection() {
   const [state, formAction] = useActionState(submitContact, initialState);
   const sent = state.ok === true;
-  const errors = state.fieldErrors ?? {};
+  const formRef = useRef<HTMLFormElement>(null);
+  const [clientErrors, setClientErrors] = useState<Record<string, string>>({});
+  const [touched, setTouched] = useState<Record<string, boolean>>({});
+
+  const errors: Record<string, string | undefined> = {
+    ...clientErrors,
+    ...(state.fieldErrors ?? {}),
+  };
+
+  useEffect(() => {
+    if (sent) {
+      formRef.current?.reset();
+      setClientErrors({});
+      setTouched({});
+    }
+  }, [sent]);
+
+  useEffect(() => {
+    if (!state.fieldErrors) return;
+    const keys = Object.keys(state.fieldErrors);
+    if (keys.length === 0) return;
+    const el = formRef.current?.querySelector<HTMLElement>(`[name="${keys[0]}"]`);
+    if (el) {
+      el.focus();
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }, [state.fieldErrors]);
+
+  function validateField(name: string, value: string) {
+    const rule = clientValidate[name];
+    if (!rule) return;
+    setClientErrors((prev) => {
+      const next = { ...prev };
+      const msg = rule(value);
+      if (msg) next[name] = msg;
+      else delete next[name];
+      return next;
+    });
+  }
+
+  function handleBlur(
+    e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
+  ) {
+    const { name, value } = e.target;
+    setTouched((t) => ({ ...t, [name]: true }));
+    validateField(name, value);
+  }
+
+  function handleChange(
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
+  ) {
+    const { name, value } = e.target;
+    if (touched[name]) validateField(name, value);
+  }
+
+  const serverError = state.message && !sent;
 
   return (
     <Section spacing="none" as="section" className="contact" id="contact">
@@ -115,71 +231,134 @@ export function ContactSection() {
             </div>
           </div>
 
-          <form className="cf" action={formAction} noValidate>
-            <input
-              type="text"
-              name="website"
-              tabIndex={-1}
-              autoComplete="off"
-              aria-hidden="true"
-              style={{ position: 'absolute', left: '-10000px', width: 1, height: 1, opacity: 0 }}
-            />
-            <div>
-              <label htmlFor="cf-name">Your name</label>
-              <input id="cf-name" name="name" placeholder="Full name" required aria-invalid={!!errors.name} />
-              {errors.name && <span className="cf-err">{errors.name}</span>}
+          {sent ? (
+            <div className="cf-success-card" role="status" aria-live="polite">
+              <div className="cf-success-card-ic" aria-hidden="true">
+                <CheckCircleIcon />
+              </div>
+              <h3>Message received</h3>
+              <p>
+                {state.message ??
+                  "Thank you. We'll be in touch within one business day to set up your free AI assessment."}
+              </p>
+              <p className="cf-success-card-meta">
+                A confirmation copy has been sent to the email you provided.
+              </p>
             </div>
-            <div>
-              <label htmlFor="cf-org">Organization</label>
-              <input id="cf-org" name="organization" placeholder="Company / organization" required aria-invalid={!!errors.organization} />
-              {errors.organization && <span className="cf-err">{errors.organization}</span>}
-            </div>
-            <div>
-              <label htmlFor="cf-industry">Industry</label>
-              <select id="cf-industry" name="industry" defaultValue="">
-                <option value="" disabled>Select industry</option>
-                {industries.map((ind) => (
-                  <option key={ind} value={ind}>{ind}</option>
-                ))}
-              </select>
-            </div>
-            <div>
-              <label htmlFor="cf-size">Team size</label>
-              <select id="cf-size" name="teamSize" defaultValue="">
-                <option value="" disabled>Select size</option>
-                {teamSizes.map((s) => (
-                  <option key={s} value={s}>{s}</option>
-                ))}
-              </select>
-            </div>
-            <div className="full">
-              <label htmlFor="cf-email">Email</label>
-              <input id="cf-email" name="email" type="email" placeholder="name@company.com" required aria-invalid={!!errors.email} />
-              {errors.email && <span className="cf-err">{errors.email}</span>}
-            </div>
-            <div className="full">
-              <label htmlFor="cf-challenge">Where would you most like AI to help in your business?</label>
-              <textarea
-                id="cf-challenge"
-                name="challenge"
-                placeholder="A few sentences about your business and what you're hoping AI could help with."
-                required
-                aria-invalid={!!errors.challenge}
+          ) : (
+            <form ref={formRef} className="cf" action={formAction} noValidate>
+              <input
+                type="text"
+                name="website"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                style={{ position: 'absolute', left: '-10000px', width: 1, height: 1, opacity: 0 }}
               />
-              {errors.challenge && <span className="cf-err">{errors.challenge}</span>}
-            </div>
-            <SubmitButton sent={sent} />
-            {state.message && !sent && (
-              <Text as="p" className="cf-error is-visible" role="alert">
-                {state.message}
-              </Text>
-            )}
-            <Text as="p" className={`cf-success${sent ? ' is-visible' : ''}`}>
-              {sent
-                ? state.message ?? "Thank you. We'll be in touch within one business day to set up your free AI assessment."
-                : "Thank you. We'll be in touch within one business day to set up your free AI assessment."}
-            </Text>
-          </form>
+              <div className={`cf-field${errors.name ? ' is-invalid' : ''}`}>
+                <label htmlFor="cf-name">Your name</label>
+                <input
+                  id="cf-name"
+                  name="name"
+                  placeholder="Full name"
+                  required
+                  aria-invalid={!!errors.name}
+                  aria-describedby={errors.name ? 'cf-name-err' : undefined}
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                />
+                {errors.name && (
+                  <span id="cf-name-err" className="cf-err" role="alert">
+                    <AlertIcon />
+                    <span>{errors.name}</span>
+                  </span>
+                )}
+              </div>
+              <div className={`cf-field${errors.organization ? ' is-invalid' : ''}`}>
+                <label htmlFor="cf-org">Organization</label>
+                <input
+                  id="cf-org"
+                  name="organization"
+                  placeholder="Company / organization"
+                  required
+                  aria-invalid={!!errors.organization}
+                  aria-describedby={errors.organization ? 'cf-org-err' : undefined}
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                />
+                {errors.organization && (
+                  <span id="cf-org-err" className="cf-err" role="alert">
+                    <AlertIcon />
+                    <span>{errors.organization}</span>
+                  </span>
+                )}
+              </div>
+              <div className="cf-field">
+                <label htmlFor="cf-industry">Industry</label>
+                <select id="cf-industry" name="industry" defaultValue="">
+                  <option value="" disabled>Select industry</option>
+                  {industries.map((ind) => (
+                    <option key={ind} value={ind}>{ind}</option>
+                  ))}
+                </select>
+              </div>
+              <div className="cf-field">
+                <label htmlFor="cf-size">Team size</label>
+                <select id="cf-size" name="teamSize" defaultValue="">
+                  <option value="" disabled>Select size</option>
+                  {teamSizes.map((s) => (
+                    <option key={s} value={s}>{s}</option>
+                  ))}
+                </select>
+              </div>
+              <div className={`cf-field full${errors.email ? ' is-invalid' : ''}`}>
+                <label htmlFor="cf-email">Email</label>
+                <input
+                  id="cf-email"
+                  name="email"
+                  type="email"
+                  placeholder="name@company.com"
+                  required
+                  aria-invalid={!!errors.email}
+                  aria-describedby={errors.email ? 'cf-email-err' : undefined}
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                />
+                {errors.email && (
+                  <span id="cf-email-err" className="cf-err" role="alert">
+                    <AlertIcon />
+                    <span>{errors.email}</span>
+                  </span>
+                )}
+              </div>
+              <div className={`cf-field full${errors.challenge ? ' is-invalid' : ''}`}>
+                <label htmlFor="cf-challenge">Where would you most like AI to help in your business?</label>
+                <textarea
+                  id="cf-challenge"
+                  name="challenge"
+                  placeholder="A few sentences about your business and what you're hoping AI could help with."
+                  required
+                  aria-invalid={!!errors.challenge}
+                  aria-describedby={errors.challenge ? 'cf-challenge-err' : undefined}
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                />
+                {errors.challenge && (
+                  <span id="cf-challenge-err" className="cf-err" role="alert">
+                    <AlertIcon />
+                    <span>{errors.challenge}</span>
+                  </span>
+                )}
+              </div>
+              {serverError && (
+                <div className="cf-banner cf-banner--error" role="alert">
+                  <AlertIcon />
+                  <span>{state.message}</span>
+                </div>
+              )}
+              <SubmitButton />
+            </form>
+          )}
         </div>
       </div>
     </Section>
