@@ -51,7 +51,7 @@ export const siteConfig: SiteConfig = {
     { label: 'Careers', href: '/careers' },
   ],
   social: [
-    { label: 'LinkedIn', href: 'https://linkedin.com/company/keyob' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/company/keyobofficial' },
   ],
   contact: {
     email: 'info@keyob.com',

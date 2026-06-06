@@ -1,33 +1,24 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Heading, Text } from '@/components/ui/typography';
-
-const whatWeDo = [
-  { label: 'Workflow Automation', href: '#capabilities' },
-  { label: 'CRM & Data Integration', href: '#capabilities' },
-  { label: 'Operational Visibility', href: '#capabilities' },
-  { label: 'Process Automation', href: '#capabilities' },
-  { label: 'AI Intelligence', href: '#capabilities' },
-  { label: 'Systems Integration', href: '#capabilities' },
-];
+import { siteConfig } from '@/config/site.config';
 
 const company = [
-  { label: 'About KEYOB', href: '#what-we-do' },
-  { label: 'How We Work', href: '#methodology' },
-  { label: 'Industries', href: '#industries' },
-  { label: 'Insights', href: '#insights' },
-  { label: 'Strategic Inquiry', href: '/contact#contact' },
+  { label: 'About Us', href: '/about' },
+  { label: 'What We Do', href: '/what-we-do' },
+  { label: 'Leadership & Team', href: '/leadership-team' },
+  { label: 'Contact Us', href: '/contact' },
 ];
 
-const perspectives = [
-  { label: 'Operational Frameworks', href: '#insights' },
-  { label: 'Transformation Perspective', href: '#insights' },
-  { label: 'Industry Intelligence', href: '#insights' },
-  { label: 'Problem Diagnosis', href: '#insights' },
-  { label: 'Technology Context', href: '#insights' },
+const resources = [
+  { label: 'Stories', href: '/stories' },
+  { label: 'News & Perspectives', href: '/news' },
 ];
 
 export function Footer() {
+  const primaryPhone = siteConfig.contact.phones[0];
+  const phoneHref = `tel:${primaryPhone.replace(/\s+/g, '')}`;
+
   return (
     <footer className="keyob-footer">
       <div className="wrap">
@@ -52,17 +43,6 @@ export function Footer() {
           </div>
 
           <div>
-            <Heading level={5}>What We Do</Heading>
-            <ul>
-              {whatWeDo.map((item) => (
-                <li key={item.label}>
-                  <Link href={item.href}>{item.label}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
             <Heading level={5}>Company</Heading>
             <ul>
               {company.map((item) => (
@@ -74,22 +54,42 @@ export function Footer() {
           </div>
 
           <div>
-            <Heading level={5}>Perspectives</Heading>
+            <Heading level={5}>Resources</Heading>
             <ul>
-              {perspectives.map((item) => (
+              {resources.map((item) => (
                 <li key={item.label}>
                   <Link href={item.href}>{item.label}</Link>
                 </li>
               ))}
             </ul>
           </div>
+
+          <div>
+            <Heading level={5}>Get in touch</Heading>
+            <ul>
+              <li>
+                <Link href="/contact#contact">Book a free AI assessment</Link>
+              </li>
+              <li>
+                <a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a>
+              </li>
+              <li>
+                <a href={phoneHref}>{primaryPhone}</a>
+              </li>
+              <li className="footer-meta">Head office · Springwood, QLD</li>
+            </ul>
+          </div>
         </div>
 
         <div className="bottom">
-          <div>© 2026 KEYOB. All rights reserved. Evolve your business.</div>
+          <div>© {new Date().getFullYear()} KEYOB. All rights reserved.</div>
           <div className="bottom-links">
-            <Link href="https://linkedin.com/company/keyob">LinkedIn</Link>
-            <Link href="/privacy">Privacy</Link>
+            <Link href="/privacy">Privacy Policy</Link>
+            {siteConfig.social.map((s) => (
+              <Link key={s.label} href={s.href} target="_blank" rel="noopener noreferrer">
+                {s.label}
+              </Link>
+            ))}
           </div>
         </div>
       </div>

@@ -32,7 +32,7 @@ export function organizationSchema() {
       contactType: 'customer service',
       availableLanguage: 'en',
     },
-    sameAs: ['https://linkedin.com/company/keyob'],
+    sameAs: ['https://www.linkedin.com/company/keyobofficial'],
     knowsAbout: [
       'Artificial Intelligence',
       'Business Process Automation',

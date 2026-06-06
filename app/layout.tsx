@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Fraunces, Instrument_Serif, Inter } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import { ThemeProvider } from '@/components/providers/theme-provider';
+import { HashScroll } from '@/components/util/HashScroll';
 import { defaultMetadata } from '@/config/site.config';
 import './globals.css';
 
@@ -59,6 +60,7 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
+          <HashScroll />
           {children}
         </ThemeProvider>
         <Analytics />
