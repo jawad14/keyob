@@ -50,13 +50,6 @@ export default function PrivacyPage() {
         <header className="priv-hero">
           <div className="priv-hero-mesh" aria-hidden="true" />
           <div className="wrap priv-hero-in">
-            <div className="priv-crumb">
-              <Link href="/">Home</Link>
-              <span>/</span>
-              <span>Legal</span>
-              <span>/</span>
-              Privacy Policy
-            </div>
             <div className="priv-tag">Legal</div>
             <h1>
               Privacy <em>Policy.</em>
