@@ -4,10 +4,11 @@
  * this file's CSS module rather than the shared typography primitives. The
  * lint rule that mandates <H1>/<Text>/etc. is intentionally bypassed here. */
 
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import Link from 'next/link';
 import { Nav } from '@/components/blocks/Nav';
 import { Footer } from '@/components/blocks/Footer';
+import { RevealOnScroll } from '@/components/util/RevealOnScroll';
 import { siteConfig } from '@/config/site.config';
 import styles from './page.module.css';
 
@@ -19,14 +20,35 @@ const DESCRIPTION =
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
+  keywords: [
+    'Investment Markets Australia',
+    'launch readiness',
+    'QA',
+    'Redux',
+    'dependency upgrades',
+    'portal stabilization',
+    'investor platform',
+    'AI consulting Australia',
+    'KEYOB client story',
+  ],
   alternates: { canonical: `${siteConfig.url}/stories/${SLUG}` },
   openGraph: {
+    type: 'article',
     title: `${TITLE} | KEYOB`,
     description:
       'From launch risk to launch-ready: QA, Redux analysis, dependency upgrades, issue resolution and UX improvements for an investor platform.',
     url: `${siteConfig.url}/stories/${SLUG}`,
-    type: 'article',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${TITLE} | KEYOB`,
+    description:
+      'From launch risk to launch-ready for an investor platform — QA, Redux analysis, dependency upgrades.',
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: '#0d1b2a',
 };
 
 const PROBLEMS = [
@@ -165,9 +187,11 @@ export default function InvestmentMarketsAustraliaPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
 
+      <RevealOnScroll rootSelector="main" />
+
       <main className={styles.page}>
         {/* 1. HERO */}
-        <header className={styles.hero}>
+        <header data-reveal className={styles.hero}>
           <div className={styles.heroMesh} aria-hidden="true" />
           <div className={cx(styles.wrap, styles.heroGrid)}>
             <div>
@@ -267,7 +291,7 @@ export default function InvestmentMarketsAustraliaPage() {
         </header>
 
         {/* 2. SNAPSHOT */}
-        <section className={styles.snapshot}>
+        <section data-reveal className={styles.snapshot}>
           <div className={styles.snapGrid}>
             <div className={styles.snap}>
               <div className={styles.lab}>Situation</div>
@@ -301,7 +325,7 @@ export default function InvestmentMarketsAustraliaPage() {
         </section>
 
         {/* 3. CHALLENGE */}
-        <section className={styles.sct}>
+        <section data-reveal className={styles.sct}>
           <div className={styles.wrap}>
             <div className={styles.sctHead}>
               <div className={cx(styles.eyebrow, styles.red)}>The challenge</div>
@@ -413,7 +437,7 @@ export default function InvestmentMarketsAustraliaPage() {
         </section>
 
         {/* 4. WHAT KEYOB DID */}
-        <section className={cx(styles.sct, styles.dark)}>
+        <section data-reveal className={cx(styles.sct, styles.dark)}>
           <div className={styles.wrap}>
             <div className={styles.sctHead}>
               <div className={styles.eyebrow}>What KEYOB did</div>
@@ -447,7 +471,7 @@ export default function InvestmentMarketsAustraliaPage() {
         </section>
 
         {/* 5. TURNING POINT */}
-        <section className={cx(styles.sct, styles.alt)}>
+        <section data-reveal className={cx(styles.sct, styles.alt)}>
           <div className={styles.wrap}>
             <div className={styles.sctHead}>
               <div className={styles.eyebrow}>The turning point</div>
@@ -472,7 +496,7 @@ export default function InvestmentMarketsAustraliaPage() {
                 </p>
               </div>
 
-              <figure className={styles.burnvis} aria-hidden="true">
+              <figure data-reveal className={styles.burnvis} aria-hidden="true">
                 <svg
                   viewBox="0 0 460 300"
                   role="img"
@@ -502,16 +526,17 @@ export default function InvestmentMarketsAustraliaPage() {
                   <text className={styles.burnBaselab} x="60" y="212" textAnchor="start">Launch-ready baseline</text>
 
                   <path
+                    className={styles.burnArea}
                     d="M64 64 C150 70 150 150 232 168 C320 188 360 210 422 214 L422 232 L64 232 Z"
                     fill="url(#ima-burnFill)"
                   />
                   <path className={styles.burnLine} d="M64 64 C150 70 150 150 232 168 C320 188 360 210 422 214" />
 
                   <g className={styles.burnDots}>
-                    <circle cx="64" cy="64" r="5" />
-                    <circle cx="174" cy="120" r="5" />
-                    <circle cx="262" cy="176" r="5" />
-                    <circle className="end" cx="422" cy="214" r="6" />
+                    <circle cx="64" cy="64" r="5" style={{ ['--d' as string]: '0.2s' } as React.CSSProperties} />
+                    <circle cx="174" cy="120" r="5" style={{ ['--d' as string]: '0.55s' } as React.CSSProperties} />
+                    <circle cx="262" cy="176" r="5" style={{ ['--d' as string]: '0.9s' } as React.CSSProperties} />
+                    <circle className="end" cx="422" cy="214" r="6" style={{ ['--d' as string]: '1.25s' } as React.CSSProperties} />
                   </g>
                   <text className={styles.burnEnd} x="416" y="206" textAnchor="end">
                     Ready ✓
@@ -546,7 +571,7 @@ export default function InvestmentMarketsAustraliaPage() {
         </section>
 
         {/* 6. OUTCOME */}
-        <section className={styles.sct}>
+        <section data-reveal className={styles.sct}>
           <div className={styles.wrap}>
             <div className={styles.sctHead}>
               <div className={styles.eyebrow}>The outcome</div>
@@ -587,7 +612,7 @@ export default function InvestmentMarketsAustraliaPage() {
                 </ul>
               </div>
 
-              <aside className={styles.readyvis} aria-hidden="true">
+              <aside data-reveal className={styles.readyvis} aria-hidden="true">
                 <div className={styles.readyHead}>
                   <span className={styles.readyTitle}>Portal readiness</span>
                   <span className={styles.readyLegend}>
@@ -598,7 +623,7 @@ export default function InvestmentMarketsAustraliaPage() {
                   </span>
                 </div>
                 <div className={styles.readyBars}>
-                  {READY.map(([t, b, a]) => (
+                  {READY.map(([t, b, a], i) => (
                     <div key={t} className={styles.rb}>
                       <div className={styles.rbLab}>
                         <span>{t}</span>
@@ -612,6 +637,7 @@ export default function InvestmentMarketsAustraliaPage() {
                           {
                             ['--aw' as string]: `${a}%`,
                             ['--bw' as string]: `${b}%`,
+                            ['--d' as string]: `${0.15 + i * 0.12}s`,
                           } as React.CSSProperties
                         }
                       >
@@ -628,7 +654,7 @@ export default function InvestmentMarketsAustraliaPage() {
         </section>
 
         {/* 7. HUMAN / TRUST */}
-        <section className={cx(styles.sct, styles.alt)}>
+        <section data-reveal className={cx(styles.sct, styles.alt)}>
           <div className={styles.wrap}>
             <div
               className={styles.sctHead}
@@ -668,7 +694,7 @@ export default function InvestmentMarketsAustraliaPage() {
         </section>
 
         {/* 8. CAPABILITIES */}
-        <section className={styles.sct} id="capabilities">
+        <section data-reveal className={styles.sct} id="capabilities">
           <div className={styles.wrap}>
             <div className={styles.sctHead}>
               <div className={styles.eyebrow}>Capabilities involved</div>
@@ -693,7 +719,7 @@ export default function InvestmentMarketsAustraliaPage() {
         </section>
 
         {/* 9. FINAL CTA */}
-        <section className={styles.final}>
+        <section data-reveal className={styles.final}>
           <div className={styles.finalMesh} aria-hidden="true" />
           <div className={cx(styles.wrap, styles.in)}>
             <h2>

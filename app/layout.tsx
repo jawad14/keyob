@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Fraunces, Instrument_Serif, Inter } from 'next/font/google';
+import { Fraunces, Instrument_Serif, Inter, JetBrains_Mono } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import { ThemeProvider } from '@/components/providers/theme-provider';
 import { HashScroll } from '@/components/util/HashScroll';
@@ -30,7 +30,7 @@ const fontFraunces = Fraunces({
   display: 'swap',
 });
 
-const fontMono = Inter({
+const fontMono = JetBrains_Mono({
   variable: '--font-mono',
   subsets: ['latin'],
   weight: ['400', '500'],

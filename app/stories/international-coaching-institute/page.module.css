@@ -241,6 +241,22 @@
   0%, 100% { r: 9; }
   50%      { r: 11; }
 }
+.ordRing {
+  stroke-dasharray: var(--c);
+  stroke-dashoffset: var(--c);
+}
+.ordervis[data-in] .ordRing {
+  animation: ici-ord-draw 1.4s var(--rd, 0s) cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes ici-ord-draw { to { stroke-dashoffset: 0; } }
+.ordScatter line { opacity: 0.6; }
+.ordervis[data-in] .ordScatter line {
+  animation: ici-ord-fade 1.6s var(--rd, 0s) ease forwards;
+}
+@keyframes ici-ord-fade {
+  0%   { opacity: 0.6; }
+  100% { opacity: 0; }
+}
 .ordDot {
   fill: var(--ici-azure-soft);
   filter: drop-shadow(0 0 4px rgba(25, 198, 232, 0.5));
@@ -358,14 +374,18 @@
   background: rgba(0, 0, 0, 0.06); overflow: hidden;
 }
 .cmp.truth .cmpbar { background: rgba(255, 255, 255, 0.1); }
-.cmpbar i { display: block; height: 100%; border-radius: 8px; }
-.cmp.pixel .cmpbar i {
-  width: 46%; background: var(--ici-mute);
+.cmpbar i {
+  display: block; height: 100%; border-radius: 8px;
+  width: 0;
+  transition: width 1.2s 0.1s cubic-bezier(0.16, 1, 0.3, 1);
 }
+.cmp.pixel .cmpbar i { background: var(--ici-mute); }
 .cmp.truth .cmpbar i {
-  width: 92%;
   background: linear-gradient(90deg, var(--ici-azure-soft), var(--ici-azure));
+  transition-delay: 0.35s;
 }
+.compare[data-in] .cmp.pixel .cmpbar i { width: 46%; }
+.compare[data-in] .cmp.truth .cmpbar i { width: 92%; }
 .cmp .barlab {
   margin-top: 9px; font-family: var(--ici-mono);
   font-size: 10px; letter-spacing: 0.05em;

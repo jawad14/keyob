@@ -4,10 +4,11 @@
  * owned by this file's CSS module rather than the shared typography
  * primitives. */
 
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import Link from 'next/link';
 import { Nav } from '@/components/blocks/Nav';
 import { Footer } from '@/components/blocks/Footer';
+import { RevealOnScroll } from '@/components/util/RevealOnScroll';
 import { siteConfig } from '@/config/site.config';
 import styles from './page.module.css';
 
@@ -19,14 +20,35 @@ const DESCRIPTION =
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
+  keywords: [
+    'Automart Nationwide',
+    'customer request management',
+    'workflow automation',
+    'SLA tracking',
+    'automotive ERP',
+    'intake automation',
+    'routing rules',
+    'service operations',
+    'KEYOB client story',
+  ],
   alternates: { canonical: `${siteConfig.url}/stories/${SLUG}` },
   openGraph: {
+    type: 'article',
     title: `${TITLE} | KEYOB`,
     description:
       'From scattered customer requests to a connected service operation — one intake and routing layer across five channels.',
     url: `${siteConfig.url}/stories/${SLUG}`,
-    type: 'article',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${TITLE} | KEYOB`,
+    description:
+      'From scattered customer requests to a connected service operation across five channels.',
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: '#0d1b2a',
 };
 
 // --- challenge cards ----------------------------------------------------------
@@ -139,7 +161,7 @@ const CAPS = [
 const articleLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'From scattered requests to one connected service queue.',
+  headline: 'From scattered customer requests to a connected service operation.',
   description:
     'How KEYOB built an intake and routing layer for Automart Nationwide, unifying five request channels and improving SLA visibility and service capacity.',
   about: {
@@ -212,9 +234,11 @@ export default function AutomartStoryPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
 
+      <RevealOnScroll rootSelector="main" />
+
       <main className={styles.page}>
         {/* 1. HERO */}
-        <header className={styles.hero}>
+        <header data-reveal className={styles.hero}>
           <div className={styles.heroMesh} aria-hidden="true" />
           <div className={cx(styles.wrap, styles.heroGrid)}>
             <div>
@@ -233,7 +257,7 @@ export default function AutomartStoryPage() {
               </div>
               <h1>
                 From scattered requests to{' '}
-                <em>one connected service queue.</em>
+                <em>a connected service operation.</em>
               </h1>
               <p className={styles.sub}>
                 Automart Nationwide operates in a demanding aftermarket auto parts environment,
@@ -358,7 +382,7 @@ export default function AutomartStoryPage() {
         </header>
 
         {/* 2. SNAPSHOT */}
-        <section className={styles.snapshot}>
+        <section data-reveal className={styles.snapshot}>
           <div className={styles.snapGrid}>
             <div className={styles.snap}>
               <div className={styles.lab}>Industry</div>
@@ -387,7 +411,7 @@ export default function AutomartStoryPage() {
         </section>
 
         {/* 3. THE SITUATION */}
-        <section className={styles.sct}>
+        <section data-reveal className={styles.sct}>
           <div className={styles.wrap}>
             <div className={styles.sctHead}>
               <div className={cx(styles.eyebrow, styles.amber)}>The situation</div>
@@ -476,7 +500,7 @@ export default function AutomartStoryPage() {
         </section>
 
         {/* 4. OPERATIONAL CHALLENGES */}
-        <section className={cx(styles.sct, styles.dark)}>
+        <section data-reveal className={cx(styles.sct, styles.dark)}>
           <div className={styles.wrap}>
             <div className={styles.sctHead}>
               <div className={styles.eyebrow}>Operational challenges</div>
@@ -500,7 +524,7 @@ export default function AutomartStoryPage() {
         </section>
 
         {/* 5. THE APPROACH */}
-        <section className={styles.sct}>
+        <section data-reveal className={styles.sct}>
           <div className={styles.wrap}>
             <div className={styles.sctHead}>
               <div className={styles.eyebrow}>The approach</div>
@@ -536,7 +560,7 @@ export default function AutomartStoryPage() {
         </section>
 
         {/* 6. WHAT KEYOB BUILT */}
-        <section className={cx(styles.sct, styles.dark)}>
+        <section data-reveal className={cx(styles.sct, styles.dark)}>
           <div className={styles.wrap}>
             <div className={styles.sctHead}>
               <div className={styles.eyebrow}>What KEYOB built</div>
@@ -564,7 +588,7 @@ export default function AutomartStoryPage() {
         </section>
 
         {/* 7. OUTCOME */}
-        <section className={cx(styles.sct, styles.alt)}>
+        <section data-reveal className={cx(styles.sct, styles.alt)}>
           <div className={styles.wrap}>
             <div className={styles.sctHead}>
               <div className={styles.eyebrow}>The outcome</div>
@@ -612,7 +636,7 @@ export default function AutomartStoryPage() {
         </section>
 
         {/* 8. BIGGER PARTNERSHIP STORY */}
-        <section className={cx(styles.sct, styles.dark)}>
+        <section data-reveal className={cx(styles.sct, styles.dark)}>
           <div className={styles.wrap}>
             <div className={styles.sctHead}>
               <div className={styles.eyebrow}>The bigger partnership story</div>
@@ -677,7 +701,7 @@ export default function AutomartStoryPage() {
         </section>
 
         {/* 9. AI OPERATIONS PERSPECTIVE */}
-        <section className={styles.sct}>
+        <section data-reveal className={styles.sct}>
           <div className={styles.wrap}>
             <div className={styles.sctHead}>
               <div className={cx(styles.eyebrow, styles.amber)}>AI operations perspective</div>
@@ -750,7 +774,7 @@ export default function AutomartStoryPage() {
                   <circle className={styles.aiDot} r="3.5" cx={AI_X} cy={AI_Y0}>
                     <animate
                       attributeName="cy"
-                      values={`${AI_Y0};${AI_Y0 + (AI_STEPS.length - 1) * AI_STRIDE + 34};${AI_Y0}`}
+                      values={`${AI_Y0};${AI_Y0 + (AI_STEPS.length - 1) * AI_STRIDE + 28};${AI_Y0}`}
                       dur="4s"
                       repeatCount="indefinite"
                     />
@@ -769,7 +793,7 @@ export default function AutomartStoryPage() {
         </section>
 
         {/* 10. CAPABILITIES */}
-        <section className={cx(styles.sct, styles.alt)} id="capabilities">
+        <section data-reveal className={cx(styles.sct, styles.alt)} id="capabilities">
           <div className={styles.wrap}>
             <div className={styles.sctHead}>
               <div className={styles.eyebrow}>Capabilities involved</div>
@@ -793,7 +817,7 @@ export default function AutomartStoryPage() {
         </section>
 
         {/* 11. FINAL CTA */}
-        <section className={styles.final}>
+        <section data-reveal className={styles.final}>
           <div className={styles.finalMesh} aria-hidden="true" />
           <div className={cx(styles.wrap, styles.in)}>
             <h2>

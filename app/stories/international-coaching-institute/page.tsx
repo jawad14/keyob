@@ -3,10 +3,11 @@
  * per-section em accents) is pixel-faithful to ici.html and is owned by this
  * file's CSS module rather than the shared typography primitives. */
 
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import Link from 'next/link';
 import { Nav } from '@/components/blocks/Nav';
 import { Footer } from '@/components/blocks/Footer';
+import { RevealOnScroll } from '@/components/util/RevealOnScroll';
 import { siteConfig } from '@/config/site.config';
 import styles from './page.module.css';
 
@@ -18,14 +19,34 @@ const DESCRIPTION =
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
+  keywords: [
+    'International Coaching Institute',
+    'BI platform',
+    'business intelligence',
+    'ROAS attribution',
+    'funnel health',
+    'CRM integration',
+    'data consolidation',
+    'KEYOB client story',
+  ],
   alternates: { canonical: `${siteConfig.url}/stories/${SLUG}` },
   openGraph: {
+    type: 'article',
     title: `${TITLE} | KEYOB`,
     description:
       'One source of truth across thirteen disconnected systems — a consolidated BI platform for ROI, funnel health, and sales performance.',
     url: `${siteConfig.url}/stories/${SLUG}`,
-    type: 'article',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${TITLE} | KEYOB`,
+    description:
+      'One source of truth across thirteen disconnected systems — a consolidated BI platform.',
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: '#0d1b2a',
 };
 
 // --- content data ------------------------------------------------------------
@@ -342,9 +363,11 @@ export default function IciStoryPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
 
+      <RevealOnScroll rootSelector="main" />
+
       <main className={styles.page}>
         {/* 1. HERO */}
-        <header className={styles.hero}>
+        <header data-reveal className={styles.hero}>
           <div className={styles.heroMesh} aria-hidden="true" />
           <div className={cx(styles.wrap, styles.heroGrid)}>
             <div>
@@ -446,7 +469,7 @@ export default function IciStoryPage() {
         </header>
 
         {/* 2. SNAPSHOT */}
-        <section className={styles.snapshot}>
+        <section data-reveal className={styles.snapshot}>
           <div className={styles.snapGrid}>
             <div className={styles.snap}>
               <div className={styles.lab}>Situation</div>
@@ -472,7 +495,7 @@ export default function IciStoryPage() {
         </section>
 
         {/* 3. THE SITUATION */}
-        <section className={styles.sct}>
+        <section data-reveal className={styles.sct}>
           <div className={styles.wrap}>
             <div className={styles.sctHead}>
               <div className={styles.eyebrow}>The situation</div>
@@ -559,7 +582,7 @@ export default function IciStoryPage() {
         </section>
 
         {/* 4. OPERATIONAL CHALLENGES */}
-        <section className={cx(styles.sct, styles.dark)}>
+        <section data-reveal className={cx(styles.sct, styles.dark)}>
           <div className={styles.wrap}>
             <div className={styles.sctHead}>
               <div className={styles.eyebrow}>Operational challenges</div>
@@ -579,7 +602,7 @@ export default function IciStoryPage() {
         </section>
 
         {/* 5. KEYOB APPROACH */}
-        <section className={styles.sct}>
+        <section data-reveal className={styles.sct}>
           <div className={styles.wrap}>
             <div className={styles.sctHead}>
               <div className={styles.eyebrow}>KEYOB approach</div>
@@ -606,34 +629,45 @@ export default function IciStoryPage() {
                   daily decision platform.
                 </p>
               </div>
-              <div className={styles.ordervis} aria-hidden="true">
+              <div data-reveal className={styles.ordervis} aria-hidden="true">
                 <svg
                   viewBox="0 0 440 440"
                   role="img"
                   aria-label="Scattered lines resolving into concentric rings with data points moving smoothly around them"
                 >
-                  <g stroke="rgba(25,198,232,.4)" strokeWidth="1" fill="none" opacity="0.35">
-                    {scatterLines.map((l) => (
+                  <g className={styles.ordScatter} stroke="rgba(25,198,232,.4)" strokeWidth="1" fill="none">
+                    {scatterLines.map((l, i) => (
                       <line
                         key={l.key}
                         x1={l.x1.toFixed(0)}
                         y1={l.y1.toFixed(0)}
                         x2={l.x2.toFixed(0)}
                         y2={l.y2.toFixed(0)}
+                        style={{ ['--rd' as string]: `${0.1 + (i % 8) * 0.1}s` } as React.CSSProperties}
                       />
                     ))}
                   </g>
                   <g fill="none">
-                    {ORD_RADII.map((r) => (
-                      <circle
-                        key={`ring-${r}`}
-                        cx={ORD_CX}
-                        cy={ORD_CY}
-                        r={r}
-                        stroke="rgba(25,198,232,.35)"
-                        strokeWidth="1.4"
-                      />
-                    ))}
+                    {ORD_RADII.map((r, i) => {
+                      const circumference = (2 * Math.PI * r).toFixed(2);
+                      return (
+                        <circle
+                          key={`ring-${r}`}
+                          className={styles.ordRing}
+                          cx={ORD_CX}
+                          cy={ORD_CY}
+                          r={r}
+                          stroke="rgba(25,198,232,.35)"
+                          strokeWidth="1.4"
+                          style={
+                            {
+                              ['--c' as string]: circumference,
+                              ['--rd' as string]: `${i * 0.15}s`,
+                            } as React.CSSProperties
+                          }
+                        />
+                      );
+                    })}
                   </g>
                   <circle className={styles.ordCore} cx={ORD_CX} cy={ORD_CY} r="9" fill="var(--keyob-cyan)" />
                   <g>
@@ -672,7 +706,7 @@ export default function IciStoryPage() {
         </section>
 
         {/* 6. WHAT KEYOB BUILT */}
-        <section className={cx(styles.sct, styles.dark)}>
+        <section data-reveal className={cx(styles.sct, styles.dark)}>
           <div className={styles.wrap}>
             <div className={styles.sctHead}>
               <div className={styles.eyebrow}>What KEYOB built</div>
@@ -698,7 +732,7 @@ export default function IciStoryPage() {
         </section>
 
         {/* 7. TURNING POINT */}
-        <section className={cx(styles.sct, styles.alt)}>
+        <section data-reveal className={cx(styles.sct, styles.alt)}>
           <div className={styles.wrap}>
             <div className={styles.sctHead}>
               <div className={styles.eyebrow}>The turning point</div>
@@ -749,7 +783,7 @@ export default function IciStoryPage() {
                 <p className={styles.sitcap}>Every data point, finally visible — and brought into focus.</p>
               </div>
             </div>
-            <div className={styles.compare}>
+            <div data-reveal className={styles.compare}>
               <div className={cx(styles.cmp, styles.pixel)}>
                 <div className={styles.tag}>Pixel-only view</div>
                 <h4>Partial attribution</h4>
@@ -778,7 +812,7 @@ export default function IciStoryPage() {
         </section>
 
         {/* 8. OUTCOME */}
-        <section className={styles.sct}>
+        <section data-reveal className={styles.sct}>
           <div className={styles.wrap}>
             <div className={styles.sctHead}>
               <div className={styles.eyebrow}>The outcome</div>
@@ -807,7 +841,7 @@ export default function IciStoryPage() {
         </section>
 
         {/* 9. BEFORE / AFTER */}
-        <section className={cx(styles.sct, styles.alt)}>
+        <section data-reveal className={cx(styles.sct, styles.alt)}>
           <div className={styles.wrap}>
             <div className={styles.sctHead}>
               <div className={styles.eyebrow}>Before &amp; after</div>
@@ -843,7 +877,7 @@ export default function IciStoryPage() {
         </section>
 
         {/* 10. HUMAN TRUST */}
-        <section className={styles.sct}>
+        <section data-reveal className={styles.sct}>
           <div className={styles.wrap}>
             <div
               className={styles.sctHead}
@@ -884,7 +918,7 @@ export default function IciStoryPage() {
         </section>
 
         {/* 11. CAPABILITIES */}
-        <section className={cx(styles.sct, styles.alt)} id="capabilities">
+        <section data-reveal className={cx(styles.sct, styles.alt)} id="capabilities">
           <div className={styles.wrap}>
             <div className={styles.sctHead}>
               <div className={styles.eyebrow}>Capabilities involved</div>
@@ -901,7 +935,7 @@ export default function IciStoryPage() {
         </section>
 
         {/* 12. FINAL CTA */}
-        <section className={styles.final}>
+        <section data-reveal className={styles.final}>
           <div className={styles.finalMesh} aria-hidden="true" />
           <div className={cx(styles.wrap, styles.in)}>
             <h2>

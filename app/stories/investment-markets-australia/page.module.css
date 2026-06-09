@@ -280,15 +280,33 @@
   font-family: var(--im-mono); font-size: 9px;
   fill: var(--im-azure); letter-spacing: 0.06em;
 }
+.burnArea { opacity: 0; transition: opacity 0.6s 0.2s ease; }
+.burnvis[data-in] .burnArea { opacity: 1; }
 .burnLine {
   fill: none; stroke: var(--im-red); stroke-width: 2.5; stroke-linecap: round;
+  stroke-dasharray: 520; stroke-dashoffset: 520;
 }
-.burnDots circle { fill: var(--im-red); }
+.burnvis[data-in] .burnLine {
+  animation: ima-burn-draw 1.6s 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes ima-burn-draw { to { stroke-dashoffset: 0; } }
+.burnDots circle {
+  fill: var(--im-red);
+  opacity: 0; transform: scale(0); transform-origin: center;
+}
 .burnDots circle.end { fill: var(--im-azure); }
+.burnvis[data-in] .burnDots circle {
+  animation: ima-burn-pop 0.4s var(--d, 0s) cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes ima-burn-pop {
+  to { opacity: 1; transform: scale(1); }
+}
 .burnEnd {
   font-family: var(--im-mono); font-size: 10px;
   fill: var(--im-azure); letter-spacing: 0.05em;
+  opacity: 0; transition: opacity 0.5s 1.5s ease;
 }
+.burnvis[data-in] .burnEnd { opacity: 1; }
 .burnCap {
   font-family: var(--im-mono); font-size: 11px;
   letter-spacing: 0.03em; color: var(--im-mute);
@@ -379,8 +397,10 @@
   position: absolute; left: 0; top: 0; height: 100%;
   border-radius: 6px;
   background: linear-gradient(90deg, var(--im-azure-soft), var(--im-azure));
-  width: var(--aw);
+  width: 0;
+  transition: width 1.1s var(--d, 0s) cubic-bezier(0.16, 1, 0.3, 1);
 }
+.readyvis[data-in] .rb .rbAfter { width: var(--aw); }
 .rb .rbBefore {
   position: absolute; left: 0; top: 0; height: 100%;
   border-radius: 6px; background: rgba(224, 50, 45, 0.55);

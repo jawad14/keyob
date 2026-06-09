@@ -3,10 +3,11 @@
  * per-section em accents) is pixel-faithful to best-value.html and is owned by
  * this file's CSS module rather than the shared typography primitives. */
 
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import Link from 'next/link';
 import { Nav } from '@/components/blocks/Nav';
 import { Footer } from '@/components/blocks/Footer';
+import { RevealOnScroll } from '@/components/util/RevealOnScroll';
 import { siteConfig } from '@/config/site.config';
 import styles from './page.module.css';
 
@@ -18,14 +19,34 @@ const DESCRIPTION =
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
+  keywords: [
+    'Best Value Auto Body Supply',
+    'aftermarket auto parts ERP',
+    'custom ERP development',
+    'inventory management',
+    'sales operations',
+    'warehouse workflows',
+    'long-term technology partnership',
+    'KEYOB client story',
+  ],
   alternates: { canonical: `${siteConfig.url}/stories/${SLUG}` },
   openGraph: {
+    type: 'article',
     title: `${TITLE} | KEYOB`,
     description:
       'From off-the-shelf frustration to a custom ERP powering a decade of growth for an aftermarket auto parts business.',
     url: `${siteConfig.url}/stories/${SLUG}`,
-    type: 'article',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${TITLE} | KEYOB`,
+    description:
+      'A custom ERP powering a decade of growth for an aftermarket auto parts business.',
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: '#0d1b2a',
 };
 
 const PROBLEMS = [
@@ -193,9 +214,11 @@ export default function BestValueStoryPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
 
+      <RevealOnScroll rootSelector="main" />
+
       <main className={styles.page}>
         {/* 1. HERO */}
-        <header className={styles.hero}>
+        <header data-reveal className={styles.hero}>
           <div className={styles.heroMesh} aria-hidden="true" />
           <div className={cx(styles.wrap, styles.heroGrid)}>
             <div>
@@ -303,7 +326,7 @@ export default function BestValueStoryPage() {
         </header>
 
         {/* 2. SNAPSHOT */}
-        <section className={styles.snapshot}>
+        <section data-reveal className={styles.snapshot}>
           <div className={styles.snapGrid}>
             <div className={styles.snap}>
               <div className={styles.lab}>Industry</div>
@@ -343,7 +366,7 @@ export default function BestValueStoryPage() {
         </section>
 
         {/* 3. CHALLENGE */}
-        <section className={styles.sct}>
+        <section data-reveal className={styles.sct}>
           <div className={styles.wrap}>
             <div className={styles.sctHead}>
               <div className={cx(styles.eyebrow, styles.amber)}>The challenge</div>
@@ -420,7 +443,7 @@ export default function BestValueStoryPage() {
         </section>
 
         {/* 4. DISCOVERY & DESIGN */}
-        <section className={cx(styles.sct, styles.alt)}>
+        <section data-reveal className={cx(styles.sct, styles.alt)}>
           <div className={styles.wrap}>
             <div className={styles.sctHead}>
               <div className={styles.eyebrow}>Discovery &amp; design</div>
@@ -452,7 +475,7 @@ export default function BestValueStoryPage() {
         </section>
 
         {/* 5. WHAT KEYOB BUILT */}
-        <section className={cx(styles.sct, styles.dark)}>
+        <section data-reveal className={cx(styles.sct, styles.dark)}>
           <div className={styles.wrap}>
             <div className={styles.sctHead}>
               <div className={styles.eyebrow}>What KEYOB built</div>
@@ -536,7 +559,7 @@ export default function BestValueStoryPage() {
         </section>
 
         {/* 6. PRODUCTION JOURNEY */}
-        <section className={styles.sct}>
+        <section data-reveal className={styles.sct}>
           <div className={styles.wrap}>
             <div className={styles.sctHead}>
               <div className={cx(styles.eyebrow, styles.amber)}>The production journey</div>
@@ -577,7 +600,7 @@ export default function BestValueStoryPage() {
         </section>
 
         {/* 7. OUTCOME */}
-        <section className={cx(styles.sct, styles.alt)}>
+        <section data-reveal className={cx(styles.sct, styles.alt)}>
           <div className={styles.wrap}>
             <div className={styles.sctHead}>
               <div className={styles.eyebrow}>The outcome</div>
@@ -611,7 +634,7 @@ export default function BestValueStoryPage() {
         </section>
 
         {/* 8. PHILOSOPHY */}
-        <section className={cx(styles.sct, styles.dark)}>
+        <section data-reveal className={cx(styles.sct, styles.dark)}>
           <div className={styles.wrap}>
             <div className={styles.sctHead}>
               <div className={styles.eyebrow}>KEYOB philosophy</div>
@@ -691,7 +714,7 @@ export default function BestValueStoryPage() {
         </section>
 
         {/* 9. HUMAN / TRUST */}
-        <section className={styles.sct}>
+        <section data-reveal className={styles.sct}>
           <div className={styles.wrap}>
             <div
               className={styles.sctHead}
@@ -722,9 +745,9 @@ export default function BestValueStoryPage() {
             </div>
             <div className={styles.reflect}>
               <blockquote>
-                “Best Value did not need software that looked good in a demo. They needed a
+                &quot;Best Value did not need software that looked good in a demo. They needed a
                 system that could survive real operations — every order, every part, every
-                route, every report.”
+                route, every report.&quot;
               </blockquote>
               <div className={styles.by}>KEYOB — internal reflection on the engagement</div>
             </div>
@@ -732,7 +755,7 @@ export default function BestValueStoryPage() {
         </section>
 
         {/* 10. CAPABILITIES */}
-        <section className={cx(styles.sct, styles.alt)} id="capabilities">
+        <section data-reveal className={cx(styles.sct, styles.alt)} id="capabilities">
           <div className={styles.wrap}>
             <div className={styles.sctHead}>
               <div className={styles.eyebrow}>Capabilities involved</div>
@@ -756,7 +779,7 @@ export default function BestValueStoryPage() {
         </section>
 
         {/* 11. FINAL CTA */}
-        <section className={styles.final}>
+        <section data-reveal className={styles.final}>
           <div className={styles.finalMesh} aria-hidden="true" />
           <div className={cx(styles.wrap, styles.in)}>
             <h2>

@@ -9,6 +9,7 @@ import Link from 'next/link';
 import { Nav } from '@/components/blocks/Nav';
 import { Footer } from '@/components/blocks/Footer';
 import { siteConfig } from '@/config/site.config';
+import { RevealOnScroll } from '@/components/util/RevealOnScroll';
 import { BusyLine } from './_visuals/BusyLine';
 import { AiCapture } from './_visuals/AiCapture';
 import styles from './page.module.css';
@@ -275,9 +276,11 @@ export default function AleesaStoryPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
 
+      <RevealOnScroll rootSelector="main" />
+
       <main className={styles.page}>
         {/* 1. HERO */}
-        <header className={styles.hero}>
+        <header data-reveal className={styles.hero}>
           <div className={styles.heroMesh} aria-hidden="true" />
           <div className={cx(styles.wrap, styles.heroGrid)}>
             <div>
@@ -455,7 +458,7 @@ export default function AleesaStoryPage() {
         </header>
 
         {/* 2. SNAPSHOT */}
-        <section className={styles.snapshot}>
+        <section data-reveal className={styles.snapshot}>
           <div className={styles.snapGrid}>
             <div className={styles.snap}>
               <div className={styles.lab}>Origin</div>
@@ -481,7 +484,7 @@ export default function AleesaStoryPage() {
         </section>
 
         {/* 3. THE SITUATION */}
-        <section className={styles.sct}>
+        <section data-reveal className={styles.sct}>
           <div className={styles.wrap}>
             <div className={styles.sctHead}>
               <div className={styles.eyebrow}>The situation</div>
@@ -514,7 +517,7 @@ export default function AleesaStoryPage() {
         </section>
 
         {/* 4. THE CHALLENGE */}
-        <section className={cx(styles.sct, styles.dark)}>
+        <section data-reveal className={cx(styles.sct, styles.dark)}>
           <div className={styles.wrap}>
             <div className={styles.sctHead}>
               <div className={styles.eyebrow}>The challenge</div>
@@ -551,7 +554,7 @@ export default function AleesaStoryPage() {
         </section>
 
         {/* 5. WHAT KEYOB BUILT */}
-        <section className={styles.sct}>
+        <section data-reveal className={styles.sct}>
           <div className={styles.wrap}>
             <div className={styles.sctHead}>
               <div className={styles.eyebrow}>What KEYOB built</div>
@@ -582,7 +585,7 @@ export default function AleesaStoryPage() {
         </section>
 
         {/* 6. CORE CAPABILITIES */}
-        <section className={cx(styles.sct, styles.dark)}>
+        <section data-reveal className={cx(styles.sct, styles.dark)}>
           <div className={styles.wrap}>
             <div className={styles.sctHead}>
               <div className={styles.eyebrow}>Core capabilities</div>
@@ -612,7 +615,7 @@ export default function AleesaStoryPage() {
         </section>
 
         {/* 7. TURNING POINT */}
-        <section className={cx(styles.sct, styles.alt)}>
+        <section data-reveal className={cx(styles.sct, styles.alt)}>
           <div className={styles.wrap}>
             <div className={styles.sctHead}>
               <div className={styles.eyebrow}>The turning point</div>
@@ -659,7 +662,7 @@ export default function AleesaStoryPage() {
         </section>
 
         {/* 8. OUTCOME */}
-        <section className={styles.sct}>
+        <section data-reveal className={styles.sct}>
           <div className={styles.wrap}>
             <div className={styles.sctHead}>
               <div className={styles.eyebrow}>The outcome</div>
@@ -692,7 +695,7 @@ export default function AleesaStoryPage() {
         </section>
 
         {/* 9. BIGGER KEYOB PRODUCT STORY */}
-        <section className={cx(styles.sct, styles.dark)}>
+        <section data-reveal className={cx(styles.sct, styles.dark)}>
           <div className={styles.wrap}>
             <div className={styles.sctHead}>
               <div className={styles.eyebrow}>The bigger product story</div>
@@ -726,7 +729,7 @@ export default function AleesaStoryPage() {
         </section>
 
         {/* 10. HUMAN TRUST */}
-        <section className={styles.sct}>
+        <section data-reveal className={styles.sct}>
           <div className={styles.wrap}>
             <div
               className={styles.sctHead}
@@ -763,7 +766,7 @@ export default function AleesaStoryPage() {
         </section>
 
         {/* 11. CAPABILITIES */}
-        <section className={cx(styles.sct, styles.alt)} id="capabilities">
+        <section data-reveal className={cx(styles.sct, styles.alt)} id="capabilities">
           <div className={styles.wrap}>
             <div className={styles.sctHead}>
               <div className={styles.eyebrow}>Capabilities involved</div>
@@ -780,7 +783,7 @@ export default function AleesaStoryPage() {
         </section>
 
         {/* 12. FINAL CTA */}
-        <section className={styles.final}>
+        <section data-reveal className={styles.final}>
           <div className={styles.finalMesh} aria-hidden="true" />
           <div className={cx(styles.wrap, styles.in)}>
             <h2>

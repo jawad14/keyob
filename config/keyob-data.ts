@@ -326,6 +326,19 @@ export const industries: Industry[] = [
 
 export const outcomes: Outcome[] = [
   {
+    industry: 'Aleesa.ai',
+    tag: 'AI Receptionist · Automated Office',
+    stat: '24/7',
+    statSub: 'your automated office on the cloud',
+    story:
+      'A 24/7 lead capture and CRM layer that brings calls, forms, WhatsApp, and social messages into one organized system — so no inquiry gets lost.',
+    paletteIndex: 6,
+    image: '/cases/aleesa-ai.png',
+    imageAlt:
+      'Aleesa.ai — your automated office on the cloud, capturing leads from calls, forms, WhatsApp and social messages into one CRM',
+    slug: 'aleesa-ai',
+  },
+  {
     industry: 'Automotive Parts · Distribution',
     tag: 'Inventory Visibility',
     stat: 'Real-time',
@@ -386,19 +399,6 @@ export const outcomes: Outcome[] = [
     imageAlt:
       'Thirteen disconnected data sources flowing into one central executive BI dashboard',
     slug: 'international-coaching-institute',
-  },
-  {
-    industry: 'Aleesa.ai',
-    tag: 'AI Receptionist · Automated Office',
-    stat: '24/7',
-    statSub: 'your automated office on the cloud',
-    story:
-      'A 24/7 lead capture and CRM layer that brings calls, forms, WhatsApp, and social messages into one organized system — so no inquiry gets lost.',
-    paletteIndex: 6,
-    image: '/cases/aleesa-ai.png',
-    imageAlt:
-      'Aleesa.ai — your automated office on the cloud, capturing leads from calls, forms, WhatsApp and social messages into one CRM',
-    slug: 'aleesa-ai',
   },
 ];
 
