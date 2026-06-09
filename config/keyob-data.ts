@@ -388,15 +388,17 @@ export const outcomes: Outcome[] = [
     slug: 'international-coaching-institute',
   },
   {
-    industry: 'Back Office · Finance & Operations',
-    tag: 'Admin Automation',
-    stat: '60%',
-    statSub: 'reduction in repetitive admin work',
-    story: 'KEYOB automated routine admin tasks, approval follow-ups, document checks, and status updates — giving the operations team more time to focus on work that actually needed human judgment.',
-    paletteIndex: 5,
-    image: '/cases/back-office.webp',
-    imageAlt: 'Back-office finance operations with documents, laptops, and approval workflows',
-    slug: 'back-office-automation',
+    industry: 'Aleesa.ai',
+    tag: 'AI Receptionist · Automated Office',
+    stat: '24/7',
+    statSub: 'your automated office on the cloud',
+    story:
+      'A 24/7 lead capture and CRM layer that brings calls, forms, WhatsApp, and social messages into one organized system — so no inquiry gets lost.',
+    paletteIndex: 6,
+    image: '/cases/aleesa-ai.png',
+    imageAlt:
+      'Aleesa.ai — your automated office on the cloud, capturing leads from calls, forms, WhatsApp and social messages into one CRM',
+    slug: 'aleesa-ai',
   },
 ];
 

@@ -11,6 +11,7 @@ const BESPOKE_SLUGS = new Set([
   'best-value-custom-erp',
   'automart-nationwide',
   'international-coaching-institute',
+  'aleesa-ai',
 ]);
 
 export function generateStaticParams() {
