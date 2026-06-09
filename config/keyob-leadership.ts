@@ -33,19 +33,33 @@ export const ltLeaders: LtLeader[] = [
     photo: '/ehsan-alvi-au.png',
   },
   {
+    name: 'Saad Khalid',
+    region: 'Australia',
+    role: 'Director, Strategy and Partnerships — KEYOB Australia',
+    quote:
+      'Technology earns trust when people can understand it, use it, and see how it improves real lives.',
+    message:
+      'As Director, Strategy and Partnerships at KEYOB Australia, Saad helps bridge technology, trust, and real-world adoption — bringing strong experience across health, media, government, and social impact sectors.',
+    photo: '/saad-khalid-au.png',
+  },
+  {
     name: 'Paul',
     region: 'Australia',
-    role: 'TBD',
-    quote: 'TBD',
-    message: 'TBD',
+    role: 'Strategic Leadership / Business Growth',
+    quote:
+      'The right technology partner does not simply deliver a project. It helps the client think clearly, move confidently, and prepare for what comes next.',
+    message:
+      "Paul contributes to KEYOB's Australian leadership presence, supporting strategic direction, client relationships, and business growth initiatives.",
     photo: '/paul-au.png',
   },
   {
     name: 'Faris',
     region: 'Australia',
-    role: 'TBD',
-    quote: 'TBD',
-    message: 'TBD',
+    role: 'Strategic Leadership / Business Growth',
+    quote:
+      'The right technology partner does not simply deliver a project. It helps the client think clearly, move confidently, and prepare for what comes next.',
+    message:
+      "Faris contributes to KEYOB's Australian leadership presence, supporting strategic direction, client relationships, and business growth initiatives.",
     photo: '/faris-au.png',
   },
   {
