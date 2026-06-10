@@ -57,7 +57,13 @@ export function StoriesGrid() {
                 </div>
                 <div className="scard-body">
                   <div className="industry">{s.industry}</div>
-                  <p className="story">{s.story}</p>
+                  {s.featured && s.storyLong && s.storyLong.length > 0 ? (
+                    s.storyLong.map((p, i) => (
+                      <p key={i} className="story">{p}</p>
+                    ))
+                  ) : (
+                    <p className="story">{s.story}</p>
+                  )}
                   <span className="view">
                     {s.featured ? 'Read the story' : 'View story'}
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">

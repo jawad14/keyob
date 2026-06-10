@@ -225,7 +225,6 @@ const storyExtras: Record<string, Extra> = {
   'real-time-control-warehouses': {
     category: 'distribution',
     categoryLabel: 'Logistics & Distribution · Aftermarket Auto Parts',
-    featured: true,
     headline: { pre: 'From delayed updates to ', em: 'real-time control', post: ' across twelve warehouses.' },
     // body[0..1] = Situation paragraphs, body[2..] = Approach continuation.
     // Inline <strong> matches story.html emphasis.
@@ -473,6 +472,7 @@ const storyExtras: Record<string, Extra> = {
   'aleesa-ai': {
     category: 'service',
     categoryLabel: 'Aleesa.ai · AI Receptionist & Automated Office',
+    featured: true,
     headline: {
       pre: 'From AI receptionist to a ',
       em: '24/7 automated office',
