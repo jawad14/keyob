@@ -31,6 +31,7 @@ export type Outcome = {
   stat: string;
   statSub: string;
   story: string;
+  storyLong?: string[];
   paletteIndex: number;
   image: string;
   imageAlt: string;
@@ -332,6 +333,10 @@ export const outcomes: Outcome[] = [
     statSub: 'your automated office on the cloud',
     story:
       'A 24/7 lead capture and CRM layer that brings calls, forms, WhatsApp, and social messages into one organized system — so no inquiry gets lost.',
+    storyLong: [
+      'What began as an AI receptionist for an Australian health clinic evolved into a cloud-based automated office — a layer that listens, captures, and follows up on leads from calls, website forms, WhatsApp, Facebook, Instagram, and social media.',
+      'One CRM, clear owners, structured tasks — every inquiry visible from source to status, even when the office is closed.',
+    ],
     paletteIndex: 6,
     image: '/cases/aleesa-ai.png',
     imageAlt:

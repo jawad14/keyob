@@ -21,22 +21,23 @@ export function OutcomesSection() {
           automation create measurable operational impact.
         </Text>
 
-        <div className="case-grid">
-          {outcomes.map((o, idx) => {
-            return (
-              <Link key={idx} href={`/stories/${o.slug}`} className="case-card">
+        {(() => {
+          const [featured, ...rest] = outcomes;
+          return (
+            <>
+              <Link href={`/stories/${featured.slug}`} className="case-card case-card--featured">
                 <div className="case-thumb">
                   <Image
-                    src={o.image}
-                    alt={o.imageAlt}
+                    src={featured.image}
+                    alt={featured.imageAlt}
                     fill
-                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    sizes="(min-width: 1024px) 50vw, 100vw"
                     className="case-photo"
                   />
-                  <span className="label">{o.tag}</span>
+                  <span className="label">{featured.tag}</span>
                   <div className="stat-display">
-                    <div className="stat-num">{o.stat}</div>
-                    <div className="stat-sub">{o.statSub}</div>
+                    <div className="stat-num">{featured.stat}</div>
+                    <div className="stat-sub">{featured.statSub}</div>
                   </div>
                   <span className="badge">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -45,8 +46,14 @@ export function OutcomesSection() {
                   </span>
                 </div>
                 <div className="case-body">
-                  <div className="industry">{o.industry}</div>
-                  <Text as="p" className="story">{o.story}</Text>
+                  <div className="industry">{featured.industry}</div>
+                  {featured.storyLong && featured.storyLong.length > 0 ? (
+                    featured.storyLong.map((p, i) => (
+                      <Text key={i} as="p" className="story">{p}</Text>
+                    ))
+                  ) : (
+                    <Text as="p" className="story">{featured.story}</Text>
+                  )}
                   <span className="case-cta">
                     View story
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -55,9 +62,45 @@ export function OutcomesSection() {
                   </span>
                 </div>
               </Link>
-            );
-          })}
-        </div>
+
+              <div className="case-grid case-grid--two">
+                {rest.map((o, idx) => (
+                  <Link key={idx} href={`/stories/${o.slug}`} className="case-card">
+                    <div className="case-thumb">
+                      <Image
+                        src={o.image}
+                        alt={o.imageAlt}
+                        fill
+                        sizes="(min-width: 1024px) 50vw, 100vw"
+                        className="case-photo"
+                      />
+                      <span className="label">{o.tag}</span>
+                      <div className="stat-display">
+                        <div className="stat-num">{o.stat}</div>
+                        <div className="stat-sub">{o.statSub}</div>
+                      </div>
+                      <span className="badge">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M7 17L17 7M9 7h8v8" />
+                        </svg>
+                      </span>
+                    </div>
+                    <div className="case-body">
+                      <div className="industry">{o.industry}</div>
+                      <Text as="p" className="story">{o.story}</Text>
+                      <span className="case-cta">
+                        View story
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                          <path d="M5 12h14M13 5l7 7-7 7" />
+                        </svg>
+                      </span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </>
+          );
+        })()}
       </div>
     </Section>
   );

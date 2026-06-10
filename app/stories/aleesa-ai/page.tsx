@@ -12,6 +12,7 @@ import { siteConfig } from '@/config/site.config';
 import { RevealOnScroll } from '@/components/util/RevealOnScroll';
 import { BusyLine } from './_visuals/BusyLine';
 import { AiCapture } from './_visuals/AiCapture';
+import { AleesaConversations } from '@/components/blocks/AleesaConversations';
 import styles from './page.module.css';
 
 const SLUG = 'aleesa-ai';
@@ -613,6 +614,11 @@ export default function AleesaStoryPage() {
             </div>
           </div>
         </section>
+
+        {/* 6a. CONVERSATIONS — "Hear it work" */}
+        <div data-reveal>
+          <AleesaConversations />
+        </div>
 
         {/* 7. TURNING POINT */}
         <section data-reveal className={cx(styles.sct, styles.alt)}>

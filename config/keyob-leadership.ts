@@ -19,6 +19,7 @@ export const ltLeaders: LtLeader[] = [
       'Most businesses do not need more disconnected tools. They need the right systems, connected properly, so their teams can work with more clarity and confidence.',
     message:
       'Jawad leads KEYOB with a focus on practical AI, long-term client trust, and technology that creates measurable business value.',
+    link: 'https://www.linkedin.com/in/jawad-siddique-80a4003b/',
     photo: '/jawad-siddique-au.png',
   },
   {
@@ -40,6 +41,7 @@ export const ltLeaders: LtLeader[] = [
       'Technology earns trust when people can understand it, use it, and see how it improves real lives.',
     message:
       'As Director, Strategy and Partnerships at KEYOB Australia, Saad helps bridge technology, trust, and real-world adoption — bringing strong experience across health, media, government, and social impact sectors.',
+    link: 'https://www.linkedin.com/in/saadkhalid2021/',
     photo: '/saad-khalid-au.png',
   },
   {
