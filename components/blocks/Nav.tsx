@@ -5,19 +5,31 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-const links = [
+const links: { href: string; label: string }[] = [
   { href: '/about', label: 'About Us' },
   { href: '/what-we-do', label: 'What We Do' },
   { href: '/leadership-team', label: 'Leadership & Team' },
   { href: '/stories', label: 'Stories' },
   { href: '/news', label: 'News' },
-  { href: '/contact#contact', label: 'Contact Us' },
+  { href: '/contact', label: 'Contact Us' },
 ];
 
 export function Nav() {
-  const contactHref = '/contact#contact';
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const contactHref = pathname === '/contact' ? '#contact' : '/contact#contact';
+
+  // Same-URL clicks don't fire `hashchange`, so HashScroll won't run.
+  // When already on /contact, scroll explicitly.
+  const onContactClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    setOpen(false);
+    if (pathname !== '/contact') return;
+    const el = document.getElementById('contact');
+    if (!el) return;
+    e.preventDefault();
+    history.replaceState(null, '', '#contact');
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   // Close on route change.
   useEffect(() => {
@@ -57,14 +69,18 @@ export function Nav() {
           <ul>
             {links.map((l) => (
               <li key={l.href}>
-                <Link href={l.href} style={{ color: 'inherit', textDecoration: 'none' }}>
+                <Link
+                  href={l.href === '/contact' ? contactHref : l.href}
+                  onClick={l.href === '/contact' ? onContactClick : undefined}
+                  style={{ color: 'inherit', textDecoration: 'none' }}
+                >
                   {l.label}
                 </Link>
               </li>
             ))}
           </ul>
 
-          <Link href={contactHref} className="nav-cta">
+          <Link href={contactHref} className="nav-cta" onClick={onContactClick}>
             <span className="dot" />
             Free AI assessment
           </Link>
@@ -135,7 +151,10 @@ export function Nav() {
                   className={active ? 'is-active' : ''}
                   style={{ ['--i' as string]: i }}
                 >
-                  <Link href={l.href} onClick={() => setOpen(false)}>
+                  <Link
+                    href={l.href === '/contact' ? contactHref : l.href}
+                    onClick={l.href === '/contact' ? onContactClick : () => setOpen(false)}
+                  >
                     <span className="nav-overlay-num">{String(i + 1).padStart(2, '0')}</span>
                     <span className="nav-overlay-label">{l.label}</span>
                     <span className="nav-overlay-arr" aria-hidden="true">
@@ -152,7 +171,7 @@ export function Nav() {
           <Link
             href={contactHref}
             className="nav-overlay-cta"
-            onClick={() => setOpen(false)}
+            onClick={onContactClick}
           >
             <span className="dot" />
             Free AI assessment

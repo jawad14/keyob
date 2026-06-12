@@ -26,9 +26,7 @@ export default function ContactPage() {
       <Nav />
       <main>
         <CtHero />
-        <div id="form">
-          <ContactSection />
-        </div>
+        <ContactSection />
         <GlobalPresence />
         <CtFaq />
       </main>
