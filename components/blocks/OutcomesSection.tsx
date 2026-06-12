@@ -35,10 +35,6 @@ export function OutcomesSection() {
                     className="case-photo"
                   />
                   <span className="label">{featured.tag}</span>
-                  <div className="stat-display">
-                    <div className="stat-num">{featured.stat}</div>
-                    <div className="stat-sub">{featured.statSub}</div>
-                  </div>
                   <span className="badge">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <path d="M7 17L17 7M9 7h8v8" />
@@ -75,10 +71,6 @@ export function OutcomesSection() {
                         className="case-photo"
                       />
                       <span className="label">{o.tag}</span>
-                      <div className="stat-display">
-                        <div className="stat-num">{o.stat}</div>
-                        <div className="stat-sub">{o.statSub}</div>
-                      </div>
                       <span className="badge">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                           <path d="M7 17L17 7M9 7h8v8" />

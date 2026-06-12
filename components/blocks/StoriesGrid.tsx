@@ -50,10 +50,6 @@ export function StoriesGrid() {
                     className="scard-photo"
                   />
                   <span className="scard-tag">{s.tag}</span>
-                  <div className="scard-stat">
-                    <div className="scard-stat-num">{s.stat}</div>
-                    <div className="scard-stat-sub">{s.statSub}</div>
-                  </div>
                 </div>
                 <div className="scard-body">
                   <div className="industry">{s.industry}</div>
