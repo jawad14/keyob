@@ -15,6 +15,11 @@ const PORTRAITS: Record<string, string> = {
   'saad-khalid': '/saad-khalid-au.png',
 };
 
+const CANDIDS: Record<string, string> = {
+  'jawad-siddique': '/jawad-siddique-leadership.png',
+  'saad-khalid': '/saad-khalid-health-minister.png',
+};
+
 export function generateStaticParams() {
   return leaderProfiles.map((p) => ({ slug: p.slug }));
 }
@@ -97,7 +102,11 @@ export default async function LeaderProfilePage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
-      <LeaderProfile profile={profile} portraitSrc={PORTRAITS[profile.slug]} />
+      <LeaderProfile
+        profile={profile}
+        portraitSrc={PORTRAITS[profile.slug]}
+        candidSrc={CANDIDS[profile.slug]}
+      />
       <Footer />
     </>
   );

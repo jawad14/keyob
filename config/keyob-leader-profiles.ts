@@ -619,7 +619,8 @@ const saad: LeaderProfile = {
     ],
     quote:
       'At the heart of the work is one intention — to make a lasting impact, and to help ensure boardrooms better reflect the communities they serve.',
-    photoAlt: 'Saad Khalid speaking with community members',
+    photoAlt:
+      'Saad Khalid with Rachel Stephen-Smith, Health Minister of the Australian Capital Territory',
     photoNote:
       'A natural, candid photo of Saad — speaking, with community members, or at a recognition moment — not a formal portrait.',
   },

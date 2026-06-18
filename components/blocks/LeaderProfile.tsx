@@ -526,7 +526,11 @@ function Pathway({
         <path className="lp-path-line" d="M470 215 L650 215" />
         <path
           className="lp-path-line lp-path-loop"
-          d={`M650 ${loopY} C500 ${loopY} 500 130 300 130 L150 130`}
+          d={`M650 ${loopY} L470 ${loopY}`}
+        />
+        <path
+          className="lp-path-line lp-path-loop"
+          d={`M470 ${loopY} C380 ${loopY} 380 130 300 130`}
         />
         <circle cx={120} cy={130} r={15} fill={accent.plum} />
         <text className="lp-path-startlab" x={120} y={166} textAnchor="middle">
@@ -561,26 +565,113 @@ function Pathway({
         </g>
       </svg>
 
-      {/* Mobile-friendly fallback list */}
-      <ul className="lp-pathvis-fallback">
-        <li className="lp-pathvis-start">
-          <span
-            className="lp-pathvis-start-dot"
-            style={{ background: accent.plum }}
-            aria-hidden="true"
-          />
-          <span className="lp-pathvis-start-text">
-            {pathway.startLineA} {pathway.startLineB}
-          </span>
-        </li>
-        {pathway.branches.map((b) => (
-          <li key={b} className="lp-pathvis-branch">
-            {b}
-          </li>
-        ))}
-        <li className="lp-pathvis-loop">{pathway.loopLabel}</li>
-      </ul>
+      {/* Mobile-tuned SVG (vertical layout) */}
+      <MobilePathway pathway={pathway} accent={accent} />
     </div>
+  );
+}
+
+function MobilePathway({
+  pathway,
+  accent,
+}: {
+  pathway: LeaderProfileType['keyob']['pathway'];
+  accent: LeaderProfileType['accent'];
+}) {
+  const loopText = pathway.loopLabel.replace(/^↻\s*/, '');
+  const VB_W = 360;
+  const TILE_X = 40;
+  const TILE_W = 280;
+  const TILE_H = 38;
+  const startCx = VB_W / 2; // 180
+  const startCy = 70;
+  const trunkX = startCx; // 180 (centre vertical line)
+
+  // y centres of the six branch tiles
+  const tileSpacing = 60;
+  const firstTileY = 150;
+  const branchYs = Array.from({ length: 6 }, (_, i) => firstTileY + i * tileSpacing);
+  // Continuous modernisation tile (with a small extra gap)
+  const loopY = branchYs[branchYs.length - 1] + tileSpacing + 12;
+  const VB_H = loopY + TILE_H / 2 + 28;
+
+  return (
+    <svg
+      viewBox={`0 0 ${VB_W} ${VB_H}`}
+      role="img"
+      aria-label="A real business need branching into capabilities with continuous modernisation."
+      className="lp-pathvis-svg-mobile"
+    >
+      {/* Start labels (above circle) */}
+      <text className="lp-path-startlab" x={startCx} y={22} textAnchor="middle">
+        {pathway.startLineA}
+      </text>
+      <text className="lp-path-startlab" x={startCx} y={38} textAnchor="middle">
+        {pathway.startLineB}
+      </text>
+      {/* Start circle */}
+      <circle cx={startCx} cy={startCy} r={14} fill={accent.plum} />
+
+      {/* Forward connector: start → first tile */}
+      <path
+        className="lp-path-line"
+        d={`M${trunkX} ${startCy + 16} L${trunkX} ${branchYs[0] - TILE_H / 2}`}
+      />
+      {/* Connectors between branch tiles */}
+      {branchYs.slice(0, -1).map((y, i) => (
+        <path
+          key={`c-${i}`}
+          className="lp-path-line"
+          d={`M${trunkX} ${y + TILE_H / 2} L${trunkX} ${branchYs[i + 1] - TILE_H / 2}`}
+        />
+      ))}
+      {/* Branch tiles */}
+      {pathway.branches.map((b, i) => (
+        <g key={b}>
+          <rect
+            className="lp-path-node"
+            x={TILE_X}
+            y={branchYs[i] - TILE_H / 2}
+            width={TILE_W}
+            height={TILE_H}
+            rx={10}
+          />
+          <text
+            className="lp-path-lab"
+            x={startCx}
+            y={branchYs[i] + 4}
+            textAnchor="middle"
+          >
+            {b}
+          </text>
+        </g>
+      ))}
+
+      {/* Reverse loop: from loop tile → arc up the LEFT side → back to start */}
+      <path
+        className="lp-path-line lp-path-loop"
+        d={`M${TILE_X} ${loopY} C12 ${loopY} 8 ${loopY - 30} 8 ${loopY - 60} L8 ${startCy + 25} C8 ${startCy - 5} 28 ${startCy} 50 ${startCy} L${startCx - 14} ${startCy}`}
+      />
+      {/* Continuous modernisation tile */}
+      <g>
+        <rect
+          className="lp-path-node"
+          x={TILE_X}
+          y={loopY - TILE_H / 2}
+          width={TILE_W}
+          height={TILE_H}
+          rx={10}
+        />
+        <text
+          className="lp-path-lab"
+          x={startCx}
+          y={loopY + 4}
+          textAnchor="middle"
+        >
+          {loopText}
+        </text>
+      </g>
+    </svg>
   );
 }
 
