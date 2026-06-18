@@ -87,21 +87,46 @@ export function LtLeaders() {
                   </a>
                 ) : null}
 
-                {l.photo ? (
-                  <Image
-                    src={l.photo}
-                    alt={`${l.name}, ${l.role}`}
-                    fill
-                    sizes="(min-width: 960px) 33vw, (min-width: 600px) 50vw, 100vw"
-                    className="lt-lcard-photo-img"
-                  />
+                {l.profileSlug ? (
+                  <Link
+                    href={`/leadership-team/${l.profileSlug}`}
+                    className="lt-lcard-photo-link"
+                    aria-label={`View ${l.name}'s leadership profile`}
+                    tabIndex={-1}
+                  >
+                    {l.photo ? (
+                      <Image
+                        src={l.photo}
+                        alt={`${l.name}, ${l.role}`}
+                        fill
+                        sizes="(min-width: 960px) 33vw, (min-width: 600px) 50vw, 100vw"
+                        className="lt-lcard-photo-img"
+                      />
+                    ) : (
+                      <Monogram leader={l} />
+                    )}
+                    <div className="lt-lcard-reveal">
+                      <p>&ldquo;{l.quote}&rdquo;</p>
+                    </div>
+                  </Link>
                 ) : (
-                  <Monogram leader={l} />
+                  <>
+                    {l.photo ? (
+                      <Image
+                        src={l.photo}
+                        alt={`${l.name}, ${l.role}`}
+                        fill
+                        sizes="(min-width: 960px) 33vw, (min-width: 600px) 50vw, 100vw"
+                        className="lt-lcard-photo-img"
+                      />
+                    ) : (
+                      <Monogram leader={l} />
+                    )}
+                    <div className="lt-lcard-reveal">
+                      <p>&ldquo;{l.quote}&rdquo;</p>
+                    </div>
+                  </>
                 )}
-
-                <div className="lt-lcard-reveal">
-                  <p>&ldquo;{l.quote}&rdquo;</p>
-                </div>
               </div>
               <div className="lt-lcard-body">
                 <h3>
