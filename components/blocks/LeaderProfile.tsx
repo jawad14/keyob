@@ -500,10 +500,13 @@ function Pathway({
   accent: LeaderProfileType['accent'];
 }) {
   const ys = [40, 75, 110, 145, 180, 215];
+  const loopText = pathway.loopLabel.replace(/^↻\s*/, '');
+  const loopY = 250;
+  const loopW = loopText.length * 6.2 + 24;
   return (
     <div className="lp-pathvis" aria-hidden="true">
       <svg
-        viewBox="0 0 1080 260"
+        viewBox="0 0 1080 300"
         role="img"
         aria-label="A real business need branching across capabilities with continuous modernisation."
         className="lp-pathvis-svg"
@@ -522,9 +525,8 @@ function Pathway({
         <path className="lp-path-line" d="M470 180 L650 180" />
         <path className="lp-path-line" d="M470 215 L650 215" />
         <path
-          className="lp-path-line"
-          d="M650 215 C880 215 880 130 760 130 L300 130"
-          style={{ stroke: `${accent.plumSoft}99` }}
+          className="lp-path-line lp-path-loop"
+          d={`M650 ${loopY} C500 ${loopY} 500 130 300 130 L150 130`}
         />
         <circle cx={120} cy={130} r={15} fill={accent.plum} />
         <text className="lp-path-startlab" x={120} y={166} textAnchor="middle">
@@ -544,16 +546,19 @@ function Pathway({
             </g>
           );
         })}
-        <text
-          x={700}
-          y={252}
-          textAnchor="middle"
-          fontFamily="var(--keyob-mono, JetBrains Mono, monospace)"
-          fontSize={11}
-          fill={accent.plumMist}
-        >
-          {pathway.loopLabel}
-        </text>
+        <g>
+          <rect
+            className="lp-path-node"
+            x={650}
+            y={loopY - 15}
+            width={loopW}
+            height={30}
+            rx={8}
+          />
+          <text className="lp-path-lab" x={662} y={loopY + 4}>
+            {loopText}
+          </text>
+        </g>
       </svg>
 
       {/* Mobile-friendly fallback list */}
