@@ -5,7 +5,6 @@ import type {
   LeaderSnapshotItem,
   LeaderSnapshotLink,
 } from '@/config/keyob-leader-profiles';
-import { leaderProfiles } from '@/config/keyob-leader-profiles';
 import { LeaderProfileNav } from './LeaderProfileNav';
 import { LeaderProfileReveals } from './LeaderProfileReveals';
 
@@ -141,8 +140,6 @@ export function LeaderProfile({ profile, portraitSrc, candidSrc }: Props) {
     ['--lp-plum-mist' as string]: profile.accent.plumMist,
     ['--lp-plum-soft' as string]: profile.accent.plumSoft,
   } as React.CSSProperties;
-
-  const otherLeaders = leaderProfiles.filter((l) => l.slug !== profile.slug);
 
   return (
     <div className="lp-root" style={accentStyle}>
@@ -465,28 +462,6 @@ export function LeaderProfile({ profile, portraitSrc, candidSrc }: Props) {
             <p className="lp-cn-close lp-reveal">{profile.connect.closing}</p>
           </div>
         </section>
-
-        {/* NEXT-LEADER NAV */}
-        <nav className="lp-leadnav" aria-label="Leadership profiles">
-          <div className="wrap lp-leadnav-inner">
-            <Link className="back" href="/leadership-team">
-              <svg width={15} height={15} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}>
-                <path d="M15 18l-6-6 6-6" />
-              </svg>
-              Back to Leadership
-            </Link>
-            <div className="lp-leadnav-other">
-              {otherLeaders.map((l) => (
-                <Link key={l.slug} href={`/leadership-team/${l.slug}`}>
-                  {l.name}
-                  <svg width={14} height={14} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}>
-                    <path d="M9 18l6-6-6-6" />
-                  </svg>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </nav>
       </main>
     </div>
   );
