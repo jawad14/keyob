@@ -503,8 +503,7 @@ function Pathway({
   return (
     <div className="lp-pathvis" aria-hidden="true">
       <svg
-        viewBox="0 0 1120 260"
-        preserveAspectRatio="xMidYMid meet"
+        viewBox="0 0 1080 260"
         role="img"
         aria-label="A real business need branching across capabilities with continuous modernisation."
         className="lp-pathvis-svg"
@@ -524,7 +523,7 @@ function Pathway({
         <path className="lp-path-line" d="M470 215 L650 215" />
         <path
           className="lp-path-line"
-          d="M890 215 C960 215 960 130 760 130 L300 130"
+          d="M650 215 C880 215 880 130 760 130 L300 130"
           style={{ stroke: `${accent.plumSoft}99` }}
         />
         <circle cx={120} cy={130} r={15} fill={accent.plum} />
@@ -535,24 +534,18 @@ function Pathway({
           {pathway.startLineB}
         </text>
         {pathway.branches.map((b, i) => {
-          const w = 240;
+          const w = b.length * 6.2 + 24;
           return (
             <g key={b}>
               <rect className="lp-path-node" x={650} y={ys[i] - 15} width={w} height={30} rx={8} />
-              <text
-                className="lp-path-lab"
-                x={662}
-                y={ys[i] + 4}
-                textLength={w - 24}
-                lengthAdjust="spacingAndGlyphs"
-              >
+              <text className="lp-path-lab" x={662} y={ys[i] + 4}>
                 {b}
               </text>
             </g>
           );
         })}
         <text
-          x={560}
+          x={700}
           y={252}
           textAnchor="middle"
           fontFamily="var(--keyob-mono, JetBrains Mono, monospace)"

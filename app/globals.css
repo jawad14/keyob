@@ -9357,9 +9357,8 @@ img, svg, video { max-width: 100%; height: auto; }
 .lp-pathvis-svg {
   display: block;
   width: 100%;
-  max-width: 1120px;
   height: auto;
-  margin: 0 auto;
+  overflow: visible;
 }
 .lp-pathvis-fallback {
   display: none;
