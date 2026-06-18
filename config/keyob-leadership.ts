@@ -8,6 +8,7 @@ export type LtLeader = {
   message: string;
   link?: string;
   photo?: string;
+  profileSlug?: string;
 };
 
 export const ltLeaders: LtLeader[] = [
@@ -21,6 +22,7 @@ export const ltLeaders: LtLeader[] = [
       'Jawad leads KEYOB with a focus on practical AI, long-term client trust, and technology that creates measurable business value.',
     link: 'https://www.linkedin.com/in/jawad-siddique-80a4003b/',
     photo: '/jawad-siddique-au.png',
+    profileSlug: 'jawad-siddique',
   },
   {
     name: 'Ehsan Alvi',
@@ -43,6 +45,7 @@ export const ltLeaders: LtLeader[] = [
       'As Director, Strategy and Partnerships at KEYOB Australia, Saad helps bridge technology, trust, and real-world adoption — bringing strong experience across health, media, government, and social impact sectors.',
     link: 'https://www.linkedin.com/in/saadkhalid2021/',
     photo: '/saad-khalid-au.png',
+    profileSlug: 'saad-khalid',
   },
   {
     name: 'Paul',

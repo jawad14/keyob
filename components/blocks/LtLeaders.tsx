@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { ltLeaders, type LtLeader } from '@/config/keyob-leadership';
 
 function initials(name: string) {
@@ -66,7 +67,15 @@ export function LtLeaders() {
             <article key={l.name} className="lt-lcard" tabIndex={0}>
               <div className="lt-lcard-photo">
                 <span className="lt-lcard-region">{l.region}</span>
-                {l.link ? (
+                {l.profileSlug ? (
+                  <Link
+                    className="lt-lcard-link"
+                    href={`/leadership-team/${l.profileSlug}`}
+                    aria-label={`View ${l.name}'s leadership profile`}
+                  >
+                    <LinkIcon />
+                  </Link>
+                ) : l.link ? (
                   <a
                     className="lt-lcard-link"
                     href={l.link}
@@ -95,7 +104,13 @@ export function LtLeaders() {
                 </div>
               </div>
               <div className="lt-lcard-body">
-                <h3>{l.name}</h3>
+                <h3>
+                  {l.profileSlug ? (
+                    <Link href={`/leadership-team/${l.profileSlug}`}>{l.name}</Link>
+                  ) : (
+                    l.name
+                  )}
+                </h3>
                 <div className="lt-lcard-role">{l.role}</div>
                 <p className="lt-lcard-msg">{l.message}</p>
               </div>
