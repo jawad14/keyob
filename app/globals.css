@@ -1736,6 +1736,86 @@ section.cases { padding: 110px 0; background: var(--bg-soft); }
   .case-card--featured .case-body .story { font-size: 17px; }
 }
 
+/* ----- CASES SLIDER ----- */
+.case-slider { position: relative; }
+.case-viewport { overflow: hidden; }
+.case-track { display: flex; touch-action: pan-y pinch-zoom; }
+.case-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  padding: 0 4px;
+}
+.case-slide .case-card--featured { margin-bottom: 0; height: 100%; }
+
+.case-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  margin-top: 34px;
+}
+.case-arrow {
+  width: 46px;
+  height: 46px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--keyob-steel);
+  background: #FFFFFF;
+  color: var(--keyob-deep);
+  cursor: pointer;
+  transition: transform .2s, border-color .2s, box-shadow .2s, background .2s;
+}
+.case-arrow:hover {
+  border-color: rgba(37, 99, 217, .35);
+  box-shadow: 0 10px 24px rgba(7, 16, 30, .10);
+  transform: translateY(-2px);
+}
+.case-arrow:focus-visible {
+  outline: 2px solid var(--keyob-blue);
+  outline-offset: 2px;
+}
+.case-dots { display: flex; align-items: center; gap: 10px; }
+.case-dot {
+  position: relative;
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background: var(--keyob-steel);
+  cursor: pointer;
+  overflow: hidden;
+  transition: width .25s, background .25s;
+}
+.case-dot.is-active {
+  width: 30px;
+  background: rgba(37, 99, 217, .22);
+}
+.case-dot__fill {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--keyob-blue);
+  transform-origin: left center;
+  transform: scaleX(0);
+  animation-name: caseDotFill;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+@keyframes caseDotFill {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+.case-dot:focus-visible {
+  outline: 2px solid var(--keyob-blue);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .case-dot__fill { animation: none; transform: scaleX(1); }
+}
+
 /* ----- INSIGHTS ----- */
 section.insights { padding: 110px 0; background: var(--bg-2); }
 .insights .head {
