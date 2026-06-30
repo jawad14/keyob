@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KEYOB — Client Testimonials Section (preview)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!--
+  ============================================================================
+  KEYOB — "In their words" client testimonials section (PREVIEW)
+  ----------------------------------------------------------------------------
+  WHERE THIS GOES ON THE HOMEPAGE:
+  Place it AFTER "Client success stories" and BEFORE "Hear it work".
+    … Seven places we move the needle
+    … Client success stories            (proof of WORK)
+    →  In their words  ◀ THIS SECTION   (proof of TRUST — human voice)
+    … Hear it work (Aleesa sample calls) (proof of PRODUCT)
+    … Perspectives / News
+    … Free AI Assessment CTA
+  Rationale: success stories establish capability; testimonials add the human
+  trust layer right before the visitor reaches the booking decision. It also
+  cleanly complements the existing "Hear it work" block (that's product-demo
+  audio; this is the client's own voice — video, audio, and text).
+
+  This standalone file is only a look-and-feel preview. To ship inside the real
+  Next.js site: lift the <section class="kb-testimonials"> markup + the .kb-*
+  CSS into a component, swap design tokens for the site's existing ones, and
+  replace placeholder media with real <video>/<audio>/poster assets.
+  Fonts here approximate the live site; use the site's actual font stack on prod.
+  ============================================================================
+-->
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* ---- KEYOB tokens (matched to the live homepage) ---- */
+  :root{
+    --navy:#0a1a2f;          /* deep foundation */
+    --navy-2:#0f2440;
+    --ice:#F5F8FA;           /* site theme-color / soft background */
+    --ice-2:#eaf1f6;
+    --paper:#ffffff;
+    --azure:#01b0f4;
+    --azure-soft:#4fc8f8;
+    --ink:#0c1c2e;
+    --mute:#5b6a7a;
+    --line:#dde6ee;
+    --display:'Fraunces',Georgia,serif;     /* approximates KEYOB's emphasis serif feel */
+    --sans:'Inter',system-ui,sans-serif;
+    --mono:'JetBrains Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--sans);color:var(--ink);background:var(--ice);-webkit-font-smoothing:antialiased;line-height:1.6;font-weight:300}
+  /* page chrome just to frame the preview — NOT part of the section */
+  .preview-note{max-width:1180px;margin:0 auto;padding:26px 40px 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:var(--mute)}
+  .preview-note b{color:var(--azure)}
+
+  /* =========================================================
+     THE SECTION
+     ========================================================= */
+  .kb-testimonials{padding:104px 0 112px;background:var(--ice);position:relative;overflow:hidden}
+  .kb-wrap{max-width:1180px;margin:0 auto;padding:0 40px;position:relative;z-index:2}
+
+  /* eyebrow + heading — KEYOB pattern: small label + serif headline w/ italic emphasis */
+  .kb-eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--azure);display:flex;align-items:center;gap:13px}
+  .kb-eyebrow::before{content:"";width:30px;height:1px;background:var(--azure)}
+  .kb-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin:18px 0 8px}
+  .kb-title{font-family:var(--display);font-weight:300;font-size:clamp(30px,4.2vw,50px);line-height:1.08;letter-spacing:-.02em;max-width:18ch}
+  .kb-title em{font-style:italic;color:var(--azure)}
+  .kb-sub{font-size:16px;color:var(--mute);max-width:44ch;line-height:1.7}
+
+  /* layout: featured video (left) + stacked audio/text (right) */
+  .kb-grid{display:grid;grid-template-columns:1.32fr .98fr;gap:26px;margin-top:48px}
+
+  /* ---- FEATURED VIDEO TESTIMONIAL ---- */
+  .kb-video{position:relative;border-radius:22px;overflow:hidden;background:var(--navy);min-height:480px;display:flex;flex-direction:column;justify-content:flex-end;box-shadow:0 30px 60px -34px rgba(10,26,47,.5)}
+  .kb-video .poster{position:absolute;inset:0;background:
+     radial-gradient(120% 90% at 80% 0%,rgba(1,176,244,.22),transparent 55%),
+     linear-gradient(180deg,#13294a 0%,#0a1a2f 70%);
+  }
+  .kb-video .poster::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 38%,rgba(6,16,30,.86) 92%)}
+  .kb-video .vmeta{position:relative;z-index:3;padding:34px 36px 32px}
+  .kb-tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--azure-soft);background:rgba(1,176,244,.12);border:1px solid rgba(1,176,244,.3);padding:6px 12px;border-radius:40px;margin-bottom:18px}
+  .kb-video blockquote{font-family:var(--display);font-style:italic;font-weight:300;font-size:clamp(20px,2.3vw,27px);line-height:1.36;color:#fff;max-width:24ch}
+  .kb-video .who{margin-top:22px;display:flex;align-items:center;gap:13px}
+  .kb-video .who .av{width:46px;height:46px;border-radius:50%;background:linear-gradient(150deg,#27486f,#13294a);border:1px solid rgba(255,255,255,.18);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:var(--display);color:#fff;font-size:18px}
+  .kb-video .who .nm{font-size:14.5px;color:#fff;font-weight:500}
+  .kb-video .who .rl{font-size:12.5px;color:rgba(255,255,255,.6)}
+  /* play button */
+  .kb-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:4;width:84px;height:84px;border-radius:50%;border:none;cursor:pointer;background:rgba(255,255,255,.94);display:flex;align-items:center;justify-content:center;transition:transform .3s,background .3s;box-shadow:0 14px 36px -10px rgba(0,0,0,.4)}
+  .kb-play:hover{transform:translate(-50%,-50%) scale(1.07);background:#fff}
+  .kb-play::before{content:"";display:block;width:0;height:0;border-style:solid;border-width:13px 0 13px 22px;border-color:transparent transparent transparent var(--navy);margin-left:5px}
+  .kb-play .ring{position:absolute;inset:-10px;border-radius:50%;border:1px solid rgba(255,255,255,.4);animation:kb-pulse 2.6s ease-out infinite}
+  @keyframes kb-pulse{0%{transform:scale(.9);opacity:.7}100%{transform:scale(1.25);opacity:0}}
+  .kb-video .dur{position:absolute;top:22px;right:22px;z-index:3;font-family:var(--mono);font-size:11px;color:#fff;background:rgba(6,16,30,.6);padding:5px 10px;border-radius:30px;backdrop-filter:blur(4px)}
+
+  /* video column wraps the featured player + nav */
+  .kb-videocol{display:flex;flex-direction:column;gap:16px}
+  .kb-video{flex:1;position:relative}
+  /* swap transition */
+  .kb-video .poster,.kb-video blockquote,.kb-video .who,.kb-video .kb-tag,.kb-video .dur{transition:opacity .35s ease}
+  .kb-video.swapping .poster,.kb-video.swapping blockquote,.kb-video.swapping .who,.kb-video.swapping .kb-tag,.kb-video.swapping .dur{opacity:0}
+
+  /* prev / next arrows */
+  .kb-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(10,26,47,.55);backdrop-filter:blur(6px);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .3s,border-color .3s,transform .3s;opacity:.92}
+  .kb-arrow:hover{background:var(--azure);border-color:var(--azure);color:#03203a}
+  .kb-arrow.prev{left:18px}
+  .kb-arrow.next{right:18px}
+  .kb-arrow.prev:hover{transform:translateY(-50%) translateX(-2px)}
+  .kb-arrow.next:hover{transform:translateY(-50%) translateX(2px)}
+
+  /* dots + counter row */
+  .kb-nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:0 4px}
+  .kb-dots{display:flex;gap:9px;align-items:center}
+  .kb-dot{width:8px;height:8px;border-radius:50%;border:none;padding:0;cursor:pointer;background:var(--line);transition:background .3s,width .3s,border-radius .3s}
+  .kb-dot[aria-selected="true"]{background:var(--azure);width:26px;border-radius:5px}
+  .kb-dot:focus-visible{outline:2px solid var(--azure);outline-offset:3px}
+  .kb-count{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--mute)}
+
+
+  .kb-side{display:flex;flex-direction:column;gap:18px}
+
+  /* audio testimonial card (matches the site's "Hear it work" player vibe) */
+  .kb-audio{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:22px 24px;transition:box-shadow .35s,transform .35s}
+  .kb-audio:hover{box-shadow:0 18px 40px -28px rgba(10,26,47,.4);transform:translateY(-2px)}
+  .kb-audio .a-top{display:flex;align-items:center;gap:14px}
+  .kb-aplay{width:46px;height:46px;border-radius:50%;border:none;cursor:pointer;background:var(--navy);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:background .3s,transform .3s;position:relative}
+  .kb-aplay:hover{background:var(--azure);transform:scale(1.05)}
+  .kb-aplay::before{content:"";width:0;height:0;border-style:solid;border-width:7px 0 7px 12px;border-color:transparent transparent transparent #fff;margin-left:3px}
+  .kb-aplay.playing::before{border:none;width:12px;height:12px;margin:0;background:repeating-linear-gradient(90deg,#fff 0 3px,transparent 3px 6px)}
+  .kb-audio .a-id .nm{font-size:14.5px;font-weight:500;color:var(--ink)}
+  .kb-audio .a-id .rl{font-size:12.5px;color:var(--mute)}
+  .kb-audio .a-dur{margin-left:auto;font-family:var(--mono);font-size:11.5px;color:var(--mute)}
+  .kb-audio p{margin-top:15px;font-size:14.5px;line-height:1.62;color:var(--mute)}
+  .kb-audio p .hl{color:var(--ink)}
+  /* waveform */
+  .kb-wave{display:flex;align-items:center;gap:3px;height:26px;margin-top:15px}
+  .kb-wave i{flex:1;background:var(--ice-2);border-radius:2px;transition:background .3s}
+  .kb-audio:hover .kb-wave i{background:#cfe3f0}
+  .kb-audio.playing .kb-wave i{background:var(--azure-soft)}
+
+  /* text testimonial card */
+  .kb-text{background:var(--navy);color:#fff;border-radius:18px;padding:26px 26px 24px;position:relative;overflow:hidden}
+  .kb-text::after{content:"";position:absolute;inset:0;background:radial-gradient(80% 80% at 88% 6%,rgba(1,176,244,.18),transparent 58%);pointer-events:none}
+  .kb-text .qm{font-family:var(--display);font-size:46px;line-height:.5;color:var(--azure-soft);opacity:.7}
+  .kb-text blockquote{font-family:var(--display);font-style:italic;font-weight:300;font-size:18px;line-height:1.5;color:#fff;margin-top:6px;position:relative;z-index:2}
+  .kb-text .who{margin-top:18px;display:flex;align-items:center;gap:12px;position:relative;z-index:2}
+  .kb-text .who .av{width:40px;height:40px;border-radius:50%;background:linear-gradient(150deg,#27486f,#13294a);border:1px solid rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:16px;color:#fff;flex-shrink:0}
+  .kb-text .who .nm{font-size:14px;font-weight:500;color:#fff}
+  .kb-text .who .rl{font-size:12px;color:rgba(255,255,255,.6)}
+
+  /* trust footer row */
+  .kb-foot{margin-top:30px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-top:26px;border-top:1px solid var(--line)}
+  .kb-foot .note{font-family:var(--mono);font-size:11.5px;color:var(--mute);letter-spacing:.02em}
+  .kb-foot .note b{color:var(--ink);font-weight:500}
+  .kb-cta{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:13px;letter-spacing:.02em;color:#fff;background:var(--navy);padding:14px 24px;border-radius:44px;transition:background .3s,transform .3s;text-decoration:none}
+  .kb-cta:hover{background:var(--azure);color:#03203a;transform:translateY(-2px)}
+  .kb-cta .arr{transition:transform .3s}.kb-cta:hover .arr{transform:translateX(4px)}
+
+  /* responsive */
+  @media(max-width:920px){
+    .kb-grid{grid-template-columns:1fr}
+    .kb-video{min-height:400px}
+  }
+  @media(max-width:560px){
+    .kb-testimonials{padding:72px 0 80px}
+    .kb-wrap{padding:0 22px}
+    .kb-video .vmeta{padding:26px 24px}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="preview-note">PREVIEW · KEYOB homepage section — <b>“In their words”</b> · recommended placement: after “Client success stories”, before “Hear it work”.</div>
+
+<!-- ===================== SECTION START ===================== -->
+<section class="kb-testimonials" aria-labelledby="kb-h">
+  <div class="kb-wrap">
+
+    <div class="kb-eyebrow">In their words</div>
+    <div class="kb-head">
+      <h2 class="kb-title" id="kb-h">The systems are ours. <em>The results are theirs.</em></h2>
+      <p class="kb-sub">Hear directly from the business owners and teams who now run on the systems we built — in their own voice, on their own terms.</p>
+    </div>
+
+    <div class="kb-grid">
+
+      <!-- FEATURED VIDEO with arrow navigation (data-driven, manual advance) -->
+      <div class="kb-videocol">
+        <figure class="kb-video" id="kbVideo">
+          <div class="poster" id="kbPoster" role="img" aria-label="Video testimonial preview"></div>
+          <span class="dur" id="kbDur">2:14</span>
+          <button class="kb-play" id="kbPlay" aria-label="Play video testimonial"><span class="ring"></span></button>
+
+          <!-- prev / next arrows -->
+          <button class="kb-arrow prev" id="kbPrev" aria-label="Previous testimonial">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="kb-arrow next" id="kbNext" aria-label="Next testimonial">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+
+          <figcaption class="vmeta">
+            <span class="kb-tag" id="kbTag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg><span id="kbTagText">Video · Aftermarket parts</span></span>
+            <blockquote id="kbQuote">"We didn't want more software. We wanted our day back. KEYOB actually gave us that."</blockquote>
+            <div class="who">
+              <span class="av" id="kbAv">M</span>
+              <span><span class="nm" id="kbName">Operations Director</span><br><span class="rl" id="kbRole">Aftermarket auto parts distributor · 9-year client</span></span>
+            </div>
+          </figcaption>
+        </figure>
+
+        <!-- position dots + counter -->
+        <div class="kb-nav">
+          <div class="kb-dots" id="kbDots" role="tablist" aria-label="Choose a video testimonial"></div>
+          <span class="kb-count" id="kbCount" aria-hidden="true">01 / 04</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: audio + text -->
+      <div class="kb-side">
+
+        <!-- AUDIO TESTIMONIAL -->
+        <article class="kb-audio" id="aud1">
+          <div class="a-top">
+            <button class="kb-aplay" aria-label="Play audio testimonial" data-target="aud1"></button>
+            <span class="a-id"><span class="nm">Practice Manager</span><br><span class="rl">Dental clinic · Melbourne</span></span>
+            <span class="a-dur">0:48</span>
+          </div>
+          <div class="kb-wave" aria-hidden="true"></div>
+          <p><span class="hl">"Calls used to slip through after hours.</span> Now every enquiry lands in one place with a clear next step. Nothing gets lost."</p>
+        </article>
+
+        <!-- TEXT TESTIMONIAL -->
+        <article class="kb-text">
+          <div class="qm" aria-hidden="true">&ldquo;</div>
+          <blockquote>KEYOB connected the systems we already ran and finally gave us one live picture of the business. Decisions got faster overnight.</blockquote>
+          <div class="who">
+            <span class="av">S</span>
+            <span><span class="nm">Founder</span><br><span class="rl">Coaching &amp; education group</span></span>
+          </div>
+        </article>
+
+        <!-- SECOND AUDIO -->
+        <article class="kb-audio" id="aud2">
+          <div class="a-top">
+            <button class="kb-aplay" aria-label="Play audio testimonial" data-target="aud2"></button>
+            <span class="a-id"><span class="nm">Service Lead</span><br><span class="rl">Auto service network</span></span>
+            <span class="a-dur">1:02</span>
+          </div>
+          <div class="kb-wave" aria-hidden="true"></div>
+          <p>"We handle a lot more requests now without adding people. <span class="hl">The team finally trusts the numbers.</span>"</p>
+        </article>
+
+      </div>
+    </div>
+
+    <div class="kb-foot">
+      <span class="note"><b>Real clients, real systems.</b> Testimonials shared with permission. Names shown by role to respect client privacy.</span>
+      <a href="#contact" class="kb-cta">Talk to the team behind these results <span class="arr">→</span></a>
+    </div>
+
+  </div>
+</section>
+<!-- ===================== SECTION END ===================== -->
+
+<script>
+  // --- preview-only interactivity (no real media files attached) ---
+  // build lightweight waveforms
+  document.querySelectorAll('.kb-wave').forEach(function(w){
+    var bars=42,html='';
+    for(var i=0;i<bars;i++){
+      var h=20+Math.round(Math.abs(Math.sin(i*0.7))*70 + Math.random()*22);
+      html+='<i style="height:'+Math.min(h,100)+'%"></i>';
+    }
+    w.innerHTML=html;
+  });
+
+  // audio play toggle (visual only here; wire to <audio> on prod)
+  document.querySelectorAll('.kb-aplay').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var card=document.getElementById(btn.dataset.target);
+      var playing=card.classList.toggle('playing');
+      btn.classList.toggle('playing',playing);
+      // stop others
+      document.querySelectorAll('.kb-audio').forEach(function(c){
+        if(c!==card){c.classList.remove('playing');c.querySelector('.kb-aplay').classList.remove('playing');}
+      });
+    });
+  });
+
+  // ---------- VIDEO TESTIMONIALS (data-driven; add/remove freely) ----------
+  // Each entry: quote, name, role, tag, duration, avatar letter, and a poster
+  // gradient (replace `posterGrad` with a real poster image + `src` on prod).
+  var VIDEOS = [
+    {quote:'"We didn\u2019t want more software. We wanted our day back. KEYOB actually gave us that."',
+     name:"Operations Director", role:"Aftermarket auto parts distributor · 9-year client",
+     tag:"Video · Aftermarket parts", dur:"2:14", av:"M",
+     posterGrad:"radial-gradient(120% 90% at 80% 0%,rgba(1,176,244,.22),transparent 55%),linear-gradient(180deg,#13294a 0%,#0a1a2f 70%)"},
+    {quote:'"The first time the whole team saw the same live numbers, the room went quiet. Then everything sped up."',
+     name:"Managing Director", role:"Logistics & distribution network",
+     tag:"Video · Distribution", dur:"1:47", av:"R",
+     posterGrad:"radial-gradient(120% 90% at 20% 0%,rgba(1,176,244,.20),transparent 55%),linear-gradient(180deg,#16314f 0%,#0a1a2f 72%)"},
+    {quote:'"Launch felt impossible. KEYOB turned a stack of risk into something we could actually ship with confidence."',
+     name:"Product Lead", role:"Investment platform · Financial services",
+     tag:"Video · Financial services", dur:"2:31", av:"A",
+     posterGrad:"radial-gradient(120% 90% at 60% 0%,rgba(79,200,248,.20),transparent 55%),linear-gradient(180deg,#12243f 0%,#0a1a2f 70%)"},
+    {quote:'"We came for one fix and stayed for years. They keep finding the next thing before we feel the pain."',
+     name:"Founder", role:"Coaching & education group",
+     tag:"Video · Education", dur:"1:58", av:"S",
+     posterGrad:"radial-gradient(120% 90% at 85% 10%,rgba(1,176,244,.18),transparent 55%),linear-gradient(180deg,#15304d 0%,#0a1a2f 72%)"}
+  ];
+
+  var els={
+    poster:document.getElementById('kbPoster'), dur:document.getElementById('kbDur'),
+    tag:document.getElementById('kbTagText'), quote:document.getElementById('kbQuote'),
+    av:document.getElementById('kbAv'), name:document.getElementById('kbName'),
+    role:document.getElementById('kbRole'), fig:document.getElementById('kbVideo'),
+    dots:document.getElementById('kbDots'), count:document.getElementById('kbCount')
+  };
+  var current=0;
+
+  function pad(n){return (n<10?'0':'')+n;}
+
+  function applyVideo(i){
+    var v=VIDEOS[i];
+    els.poster.style.background=v.posterGrad;
+    els.dur.textContent=v.dur;
+    els.tag.textContent=v.tag;
+    els.quote.textContent=v.quote;
+    els.av.textContent=v.av;
+    els.name.textContent=v.name;
+    els.role.textContent=v.role;
+    els.count.textContent=pad(i+1)+' / '+pad(VIDEOS.length);
+    els.dots.querySelectorAll('.kb-dot').forEach(function(d,idx){
+      d.setAttribute('aria-selected', idx===i?'true':'false');
+    });
+  }
+  function goTo(i){
+    i=(i+VIDEOS.length)%VIDEOS.length; // wrap around
+    if(i===current) return;
+    els.fig.classList.add('swapping');
+    setTimeout(function(){
+      current=i; applyVideo(i);
+      els.fig.classList.remove('swapping');
+    },300);
+  }
+
+  // build the dots
+  els.dots.innerHTML = VIDEOS.map(function(v,i){
+    return '<button class="kb-dot" role="tab" aria-selected="'+(i===0?'true':'false')+'" data-i="'+i+'" aria-label="Show testimonial '+(i+1)+': '+v.name+'"></button>';
+  }).join('');
+  els.dots.querySelectorAll('.kb-dot').forEach(function(d){
+    d.addEventListener('click',function(){ goTo(+d.dataset.i); });
+  });
+
+  // arrows
+  document.getElementById('kbPrev').addEventListener('click',function(){ goTo(current-1); });
+  document.getElementById('kbNext').addEventListener('click',function(){ goTo(current+1); });
+  // keyboard: left/right when the video has focus
+  els.fig.setAttribute('tabindex','0');
+  els.fig.addEventListener('keydown',function(e){
+    if(e.key==='ArrowLeft'){e.preventDefault();goTo(current-1);}
+    if(e.key==='ArrowRight'){e.preventDefault();goTo(current+1);}
+  });
+
+  applyVideo(0);
+
+  // featured play (placeholder — replace with real <video> on prod)
+  document.getElementById('kbPlay').addEventListener('click',function(){
+    this.style.transform='translate(-50%,-50%) scale(.9)';
+    setTimeout(()=>{this.style.transform='translate(-50%,-50%)';},180);
+  });
+</script>
+</body>
+</html>

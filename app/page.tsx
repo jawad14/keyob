@@ -7,6 +7,7 @@ import { MethodologySection } from '@/components/blocks/MethodologySection';
 import { CapabilitiesSection } from '@/components/blocks/CapabilitiesSection';
 import { IndustriesSection } from '@/components/blocks/IndustriesSection';
 import { OutcomesSection } from '@/components/blocks/OutcomesSection';
+import { Testimonials } from '@/components/blocks/Testimonials';
 import { AleesaConversations } from '@/components/blocks/AleesaConversations';
 import { InsightsSection } from '@/components/blocks/InsightsSection';
 import { FounderQuote } from '@/components/blocks/FounderQuote';
@@ -30,6 +31,7 @@ export default function HomePage() {
         <CapabilitiesSection />
         {/* <IndustriesSection /> */}
         <OutcomesSection />
+        <Testimonials />
         <AleesaConversations />
         <InsightsSection />
         <FounderQuote />
