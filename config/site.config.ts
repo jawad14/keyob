@@ -73,6 +73,20 @@ export const siteConfig: SiteConfig = {
   },
 };
 
+// Shared social-share image. Every page reuses these so no route ships without
+// an og:image / twitter:image (Next.js does not inherit openGraph.images into a
+// route that defines its own openGraph object).
+export const defaultOgImageUrl = '/opengraph-image.png';
+export const defaultOgImages = [
+  {
+    url: defaultOgImageUrl,
+    width: 1200,
+    height: 630,
+    alt: 'KEYOB — AI Consulting for Australian Businesses',
+  },
+];
+export const defaultTwitterImages = [defaultOgImageUrl];
+
 export const defaultMetadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
@@ -108,21 +122,14 @@ export const defaultMetadata: Metadata = {
       'We help Australian business owners create more freedom by using AI in the right places. Book a free AI assessment — no obligation.',
     url: siteConfig.url,
     locale: siteConfig.locale,
-    images: [
-      {
-        url: '/opengraph-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'KEYOB — AI Consulting for Australian Businesses',
-      },
-    ],
+    images: defaultOgImages,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'KEYOB — AI Consulting for Australian Businesses',
     description:
       'We help Australian business owners create more freedom by using AI in the right places.',
-    images: ['/opengraph-image.png'],
+    images: defaultTwitterImages,
   },
   alternates: {
     canonical: siteConfig.url,

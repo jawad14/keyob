@@ -5,7 +5,7 @@ import { CtHero } from '@/components/blocks/CtHero';
 import { ContactSection } from '@/components/blocks/ContactSection';
 import { GlobalPresence } from '@/components/blocks/GlobalPresence';
 import { CtFaq } from '@/components/blocks/CtFaq';
-import { siteConfig } from '@/config/site.config';
+import { siteConfig, defaultOgImages } from '@/config/site.config';
 
 export const metadata: Metadata = {
   title: 'Contact KEYOB | Book a Free AI Assessment',
@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     description:
       'Tell us where you are. KEYOB helps you see what AI, automation and connected systems can do for your business — no obligation.',
     url: `${siteConfig.url}/contact`,
+    images: defaultOgImages,
   },
 };
 

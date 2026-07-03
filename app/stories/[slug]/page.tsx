@@ -4,7 +4,7 @@ import { Nav } from '@/components/blocks/Nav';
 import { Footer } from '@/components/blocks/Footer';
 import { StoryDetail } from '@/components/blocks/StoryDetail';
 import { stories } from '@/config/keyob-stories';
-import { siteConfig } from '@/config/site.config';
+import { siteConfig, defaultOgImages, defaultTwitterImages } from '@/config/site.config';
 
 export const viewport: Viewport = {
   themeColor: '#0d1b2a',
@@ -52,11 +52,13 @@ export async function generateMetadata({
       title: `${story.industry} — KEYOB`,
       description: story.story,
       url: `${siteConfig.url}/stories/${story.slug}`,
+      images: defaultOgImages,
     },
     twitter: {
       card: 'summary_large_image',
       title: `${story.industry} — KEYOB`,
       description: story.story,
+      images: defaultTwitterImages,
     },
   };
 }

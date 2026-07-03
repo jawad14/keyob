@@ -7,7 +7,7 @@ import { NewsGrid } from '@/components/blocks/NewsGrid';
 import { NewsSignup } from '@/components/blocks/NewsSignup';
 import { NewsCTA } from '@/components/blocks/NewsCTA';
 import { newsArticles } from '@/config/keyob-news';
-import { siteConfig } from '@/config/site.config';
+import { siteConfig, defaultOgImages } from '@/config/site.config';
 
 export const metadata: Metadata = {
   title: 'News & Perspectives on AI Operations',
@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     title: 'News & Perspectives on AI Operations | KEYOB',
     description: 'Practical insights on AI operations, workflow automation and ERP systems.',
     url: `${siteConfig.url}/news`,
+    images: defaultOgImages,
   },
 };
 

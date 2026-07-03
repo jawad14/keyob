@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { Nav } from '@/components/blocks/Nav';
 import { Footer } from '@/components/blocks/Footer';
 import { RevealOnScroll } from '@/components/util/RevealOnScroll';
-import { siteConfig } from '@/config/site.config';
+import { siteConfig, defaultOgImages, defaultTwitterImages } from '@/config/site.config';
 import styles from './page.module.css';
 
 const SLUG = 'investment-markets-australia';
@@ -38,9 +38,11 @@ export const metadata: Metadata = {
     description:
       'From launch risk to launch-ready: QA, Redux analysis, dependency upgrades, issue resolution and UX improvements for an investor platform.',
     url: `${siteConfig.url}/stories/${SLUG}`,
+    images: defaultOgImages,
   },
   twitter: {
     card: 'summary_large_image',
+    images: defaultTwitterImages,
     title: `${TITLE} | KEYOB`,
     description:
       'From launch risk to launch-ready for an investor platform — QA, Redux analysis, dependency upgrades.',

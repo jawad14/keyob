@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { Nav } from '@/components/blocks/Nav';
 import { Footer } from '@/components/blocks/Footer';
 import { RevealOnScroll } from '@/components/util/RevealOnScroll';
-import { siteConfig } from '@/config/site.config';
+import { siteConfig, defaultOgImages, defaultTwitterImages } from '@/config/site.config';
 import styles from './page.module.css';
 
 const SLUG = 'international-coaching-institute';
@@ -36,9 +36,11 @@ export const metadata: Metadata = {
     description:
       'One source of truth across thirteen disconnected systems — a consolidated BI platform for ROI, funnel health, and sales performance.',
     url: `${siteConfig.url}/stories/${SLUG}`,
+    images: defaultOgImages,
   },
   twitter: {
     card: 'summary_large_image',
+    images: defaultTwitterImages,
     title: `${TITLE} | KEYOB`,
     description:
       'One source of truth across thirteen disconnected systems — a consolidated BI platform.',

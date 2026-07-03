@@ -8,7 +8,7 @@ import { LtTeam } from '@/components/blocks/LtTeam';
 import { LtEngagement } from '@/components/blocks/LtEngagement';
 import { LtCulture } from '@/components/blocks/LtCulture';
 import { LtFinalCta } from '@/components/blocks/LtFinalCta';
-import { siteConfig } from '@/config/site.config';
+import { siteConfig, defaultOgImages } from '@/config/site.config';
 
 export const metadata: Metadata = {
   title: 'Leadership & Team | KEYOB',
@@ -20,6 +20,7 @@ export const metadata: Metadata = {
     description:
       "The people behind KEYOB's software, AI, CRM, ERP, automation and business systems work — across Australia, the US, Sweden, Pakistan, KSA and UAE.",
     url: `${siteConfig.url}/leadership-team`,
+    images: defaultOgImages,
   },
 };
 

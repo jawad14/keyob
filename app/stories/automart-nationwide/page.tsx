@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { Nav } from '@/components/blocks/Nav';
 import { Footer } from '@/components/blocks/Footer';
 import { RevealOnScroll } from '@/components/util/RevealOnScroll';
-import { siteConfig } from '@/config/site.config';
+import { siteConfig, defaultOgImages, defaultTwitterImages } from '@/config/site.config';
 import styles from './page.module.css';
 
 const SLUG = 'automart-nationwide';
@@ -38,9 +38,11 @@ export const metadata: Metadata = {
     description:
       'From scattered customer requests to a connected service operation — one intake and routing layer across five channels.',
     url: `${siteConfig.url}/stories/${SLUG}`,
+    images: defaultOgImages,
   },
   twitter: {
     card: 'summary_large_image',
+    images: defaultTwitterImages,
     title: `${TITLE} | KEYOB`,
     description:
       'From scattered customer requests to a connected service operation across five channels.',

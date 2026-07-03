@@ -4,7 +4,7 @@ import { Nav } from '@/components/blocks/Nav';
 import { Footer } from '@/components/blocks/Footer';
 import { NewsArticleDetail } from '@/components/blocks/NewsArticleDetail';
 import { newsArticles } from '@/config/keyob-news';
-import { siteConfig } from '@/config/site.config';
+import { siteConfig, defaultOgImages } from '@/config/site.config';
 
 export function generateStaticParams() {
   return newsArticles.map((a) => ({ slug: a.slug }));
@@ -27,6 +27,7 @@ export async function generateMetadata({
       description: article.metaDescription ?? article.excerpt,
       url: `${siteConfig.url}/news/${article.slug}`,
       type: 'article',
+      images: defaultOgImages,
     },
   };
 }

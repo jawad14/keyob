@@ -5,7 +5,7 @@ import { Footer } from '@/components/blocks/Footer';
 import { LeaderProfile } from '@/components/blocks/LeaderProfile';
 import { getLeaderProfile, leaderProfiles } from '@/config/keyob-leader-profiles';
 import { getLeaderArticlePage } from '@/config/keyob-leader-articles';
-import { siteConfig } from '@/config/site.config';
+import { siteConfig, defaultOgImages, defaultTwitterImages } from '@/config/site.config';
 
 export const viewport: Viewport = {
   themeColor: '#07101E',
@@ -44,11 +44,13 @@ export async function generateMetadata({
       title,
       description: profile.identityStatement,
       url,
+      images: defaultOgImages,
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description: profile.identityStatement,
+      images: defaultTwitterImages,
     },
   };
 }

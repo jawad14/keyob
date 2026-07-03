@@ -15,7 +15,7 @@ import { GlobalPresence } from '@/components/blocks/GlobalPresence';
 import { AuFounder } from '@/components/blocks/AuFounder';
 import { AuFinalCta } from '@/components/blocks/AuFinalCta';
 import { AuFaq } from '@/components/blocks/AuFaq';
-import { siteConfig } from '@/config/site.config';
+import { siteConfig, defaultOgImages } from '@/config/site.config';
 
 export const metadata: Metadata = {
   title: 'About KEYOB | Software, Data & AI Partner for Modern Businesses',
@@ -27,6 +27,7 @@ export const metadata: Metadata = {
     description:
       'The operating layer behind modern business. KEYOB connects software, websites, CRM, ERP, automation, dashboards and AI into systems that help businesses run with clarity.',
     url: `${siteConfig.url}/about`,
+    images: defaultOgImages,
   },
 };
 

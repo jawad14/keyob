@@ -12,7 +12,7 @@ import { WwdMethod } from '@/components/blocks/WwdMethod';
 import { WwdHuman } from '@/components/blocks/WwdHuman';
 import { WwdFaq } from '@/components/blocks/WwdFaq';
 import { WwdCta } from '@/components/blocks/WwdCta';
-import { siteConfig } from '@/config/site.config';
+import { siteConfig, defaultOgImages } from '@/config/site.config';
 
 export const metadata: Metadata = {
   title: 'What We Do',
@@ -24,6 +24,7 @@ export const metadata: Metadata = {
     description:
       'One partner for every stage of your digital and AI journey — from branding and websites to CRM, ERP, AI automation and dashboards.',
     url: `${siteConfig.url}/what-we-do`,
+    images: defaultOgImages,
   },
 };
 

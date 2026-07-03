@@ -5,12 +5,20 @@ import { Header } from '@/components/blocks/Header';
 import { Container, Section, Stack } from '@/components/ui/layout';
 import { H1, H2, Muted, Text } from '@/components/ui/typography';
 import { cms } from '@/lib/cms';
+import { siteConfig, defaultOgImages } from '@/config/site.config';
 
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: 'Blog',
   description: 'Latest articles.',
+  alternates: { canonical: `${siteConfig.url}/blog` },
+  openGraph: {
+    title: 'Blog | KEYOB',
+    description: 'Latest articles.',
+    url: `${siteConfig.url}/blog`,
+    images: defaultOgImages,
+  },
 };
 
 export default async function BlogIndexPage() {

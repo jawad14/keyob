@@ -5,7 +5,7 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 import { Nav } from '@/components/blocks/Nav';
 import { Footer } from '@/components/blocks/Footer';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { siteConfig } from '@/config/site.config';
+import { siteConfig, defaultOgImages } from '@/config/site.config';
 import { cms } from '@/lib/cms';
 
 export const revalidate = 3600;
@@ -33,6 +33,7 @@ export async function generateMetadata({
       description: post.description,
       publishedTime: post.date,
       tags: post.tags,
+      images: defaultOgImages,
     },
   };
 }

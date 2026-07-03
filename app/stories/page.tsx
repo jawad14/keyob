@@ -4,7 +4,7 @@ import { Footer } from '@/components/blocks/Footer';
 import { StoriesHero } from '@/components/blocks/StoriesHero';
 import { StoriesGrid } from '@/components/blocks/StoriesGrid';
 import { StoriesCTA } from '@/components/blocks/StoriesCTA';
-import { siteConfig } from '@/config/site.config';
+import { siteConfig, defaultOgImages } from '@/config/site.config';
 
 export const metadata: Metadata = {
   title: 'Client Stories',
@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     description:
       'How KEYOB turns fragmented operations into intelligent, connected systems — real client stories across Australian industries.',
     url: `${siteConfig.url}/stories`,
+    images: defaultOgImages,
   },
 };
 

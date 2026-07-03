@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { Nav } from '@/components/blocks/Nav';
 import { Footer } from '@/components/blocks/Footer';
 import { RevealOnScroll } from '@/components/util/RevealOnScroll';
-import { siteConfig } from '@/config/site.config';
+import { siteConfig, defaultOgImages, defaultTwitterImages } from '@/config/site.config';
 import styles from './page.module.css';
 
 const SLUG = 'best-value-custom-erp';
@@ -36,9 +36,11 @@ export const metadata: Metadata = {
     description:
       'From off-the-shelf frustration to a custom ERP powering a decade of growth for an aftermarket auto parts business.',
     url: `${siteConfig.url}/stories/${SLUG}`,
+    images: defaultOgImages,
   },
   twitter: {
     card: 'summary_large_image',
+    images: defaultTwitterImages,
     title: `${TITLE} | KEYOB`,
     description:
       'A custom ERP powering a decade of growth for an aftermarket auto parts business.',

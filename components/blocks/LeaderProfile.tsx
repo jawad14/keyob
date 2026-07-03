@@ -743,12 +743,17 @@ function EventsBlock({
   const visible = items.filter((e) => e.visible !== false);
   if (!visible.length) {
     return (
-      <div className="lp-art-empty lp-reveal">
-        <svg className="lp-ae-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.4}>
-          <rect x={3} y={5} width={18} height={16} rx={2} />
-          <path d="M3 9h18M8 3v4M16 3v4" />
-        </svg>
-        <p>{emptyMessage}</p>
+      <div className="lp-ev-empty lp-reveal">
+        <span className="lp-ev-empty-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+            <rect x={3} y={5} width={18} height={16} rx={2} />
+            <path d="M3 9h18M8 3v4M16 3v4" />
+          </svg>
+        </span>
+        <div>
+          <span className="lp-ev-empty-tag">Coming soon</span>
+          <p>{emptyMessage}</p>
+        </div>
       </div>
     );
   }

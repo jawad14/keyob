@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Nav } from '@/components/blocks/Nav';
 import { Footer } from '@/components/blocks/Footer';
-import { siteConfig } from '@/config/site.config';
+import { siteConfig, defaultOgImages } from '@/config/site.config';
 
 const LAST_UPDATED = '6 June 2026';
 const LAST_UPDATED_ISO = '2026-06-06';
@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     description:
       'How KEYOB handles your personal information, and the rights you have under Australian privacy law.',
     url: `${siteConfig.url}/privacy`,
+    images: defaultOgImages,
   },
   robots: { index: true, follow: true },
 };

@@ -8,7 +8,7 @@ import type { Metadata, Viewport } from 'next';
 import Link from 'next/link';
 import { Nav } from '@/components/blocks/Nav';
 import { Footer } from '@/components/blocks/Footer';
-import { siteConfig } from '@/config/site.config';
+import { siteConfig, defaultOgImages, defaultTwitterImages } from '@/config/site.config';
 import { RevealOnScroll } from '@/components/util/RevealOnScroll';
 import { BusyLine } from './_visuals/BusyLine';
 import { AiCapture } from './_visuals/AiCapture';
@@ -41,9 +41,11 @@ export const metadata: Metadata = {
     description:
       'A cloud-based automated office that captures leads from every channel into one CRM, working 24 hours a day.',
     url: `${siteConfig.url}/stories/${SLUG}`,
+    images: defaultOgImages,
   },
   twitter: {
     card: 'summary_large_image',
+    images: defaultTwitterImages,
     title: `${TITLE} | KEYOB`,
     description:
       'A cloud-based automated office that captures leads from every channel into one CRM, working 24 hours a day.',

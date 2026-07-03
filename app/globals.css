@@ -9699,6 +9699,57 @@ img, svg, video { max-width: 100%; height: auto; }
   max-width: 36ch;
   margin: 0 auto;
 }
+/* Events empty-state — deliberately distinct from the article empty box:
+   a left-aligned "coming soon" notice strip with a plum accent bar. */
+.lp-ev-empty {
+  margin-top: 44px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 30px 34px;
+  background: var(--lp-paper);
+  border: 1px solid var(--lp-border);
+  border-left: 3px solid var(--lp-plum);
+  border-radius: 18px;
+}
+.lp-ev-empty-ic {
+  width: 54px;
+  height: 54px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  background: var(--lp-plum-mist);
+  color: var(--lp-plum);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lp-ev-empty-ic svg {
+  width: 26px;
+  height: 26px;
+}
+.lp-ev-empty-tag {
+  font-family: var(--keyob-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--lp-plum);
+}
+.lp-ev-empty p {
+  font-family: var(--keyob-sans);
+  font-style: normal;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--lp-mute);
+  max-width: 54ch;
+  margin: 6px 0 0;
+}
+@media (max-width: 560px) {
+  .lp-ev-empty {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
 @media (max-width: 900px) {
   .lp-art-featured { grid-template-columns: 1fr; }
   .lp-art-grid { grid-template-columns: 1fr 1fr; }
