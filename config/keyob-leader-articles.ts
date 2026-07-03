@@ -258,3 +258,34 @@ export function getLeaderArticlePage(slug: string): LeaderArticlePage | undefine
 }
 
 export const leaderArticleSlugs = Object.keys(leaderArticlePages);
+
+export function getLeaderArticle(
+  leaderSlug: string,
+  articleSlug: string,
+): { page: LeaderArticlePage; article: LeaderLongArticle } | undefined {
+  const page = leaderArticlePages[leaderSlug];
+  const article = page?.articles.find((a) => a.slug === articleSlug);
+  return page && article ? { page, article } : undefined;
+}
+
+export function getAdjacentArticles(
+  leaderSlug: string,
+  articleSlug: string,
+): { prev: LeaderLongArticle | null; next: LeaderLongArticle | null } {
+  const list = leaderArticlePages[leaderSlug]?.articles ?? [];
+  const i = list.findIndex((a) => a.slug === articleSlug);
+  return {
+    prev: i > 0 ? list[i - 1] : null,
+    next: i >= 0 && i < list.length - 1 ? list[i + 1] : null,
+  };
+}
+
+export function articleMetaDescription(a: LeaderLongArticle): string {
+  const text = a.dek || a.body.find((b) => b.t === 'p')?.v || '';
+  return text.length > 158 ? `${text.slice(0, 155).trimEnd()}…` : text;
+}
+
+// Every (leaderSlug, articleSlug) pair — for the detail route's static params.
+export const leaderArticleParams = Object.entries(leaderArticlePages).flatMap(
+  ([slug, page]) => page.articles.map((a) => ({ slug, article: a.slug })),
+);

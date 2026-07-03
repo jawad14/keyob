@@ -3,7 +3,7 @@
  * LeaderArticles.module.css — raw headings/paragraphs keep styling local. */
 'use client';
 
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -99,6 +99,7 @@ function useCountUp(target: number) {
 
 export function LeaderArticles({ page, accent, leaderName }: Props) {
   const { author, articles, hero, archive, subscribe, profilePath } = page;
+  const hub = `${profilePath}/articles`;
 
   const accentStyle = {
     ['--la-plum' as string]: accent.plum,
@@ -117,7 +118,6 @@ export function LeaderArticles({ page, accent, leaderName }: Props) {
   );
 
   const [activeTopic, setActiveTopic] = useState('All');
-  const [openSlug, setOpenSlug] = useState<string | null>(null);
 
   const count = useCountUp(articles.length);
 
@@ -125,24 +125,6 @@ export function LeaderArticles({ page, accent, leaderName }: Props) {
     () => (activeTopic === 'All' ? articles : articles.filter((a) => a.topic === activeTopic)),
     [activeTopic, articles],
   );
-
-  const openArticle = useCallback((slug: string) => setOpenSlug(slug), []);
-  const closeArticle = useCallback(() => setOpenSlug(null), []);
-
-  const active = openSlug ? articles.find((a) => a.slug === openSlug) : null;
-
-  useEffect(() => {
-    if (!active) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') closeArticle();
-    };
-    document.addEventListener('keydown', onKey);
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.removeEventListener('keydown', onKey);
-      document.body.style.overflow = '';
-    };
-  }, [active, closeArticle]);
 
   return (
     <div className={styles.root} style={accentStyle}>
@@ -204,13 +186,9 @@ export function LeaderArticles({ page, accent, leaderName }: Props) {
                 <p className={styles.dek}>{featured.dek}</p>
                 <MetaRow a={featured} />
                 <div className={styles.fcCta}>
-                  <button
-                    type="button"
-                    className={styles.btn}
-                    onClick={() => openArticle(featured.slug)}
-                  >
+                  <Link href={`${hub}/${featured.slug}`} className={styles.btn}>
                     Read the article <span className={styles.arr}>→</span>
-                  </button>
+                  </Link>
                   <span className={styles.byline}>By {author.name}</span>
                 </div>
               </div>
@@ -247,11 +225,10 @@ export function LeaderArticles({ page, accent, leaderName }: Props) {
             {filtered.length > 0 ? (
               <div className={styles.grid}>
                 {filtered.map((a) => (
-                  <button
+                  <Link
                     key={a.slug}
-                    type="button"
+                    href={`${hub}/${a.slug}`}
                     className={styles.acard}
-                    onClick={() => openArticle(a.slug)}
                     aria-label={`Read: ${a.title}`}
                   >
                     <div className={styles.acMedia}>
@@ -266,7 +243,7 @@ export function LeaderArticles({ page, accent, leaderName }: Props) {
                       <p className={styles.acDek}>{a.dek}</p>
                       <MetaRow a={a} />
                     </div>
-                  </button>
+                  </Link>
                 ))}
               </div>
             ) : (
@@ -337,57 +314,6 @@ export function LeaderArticles({ page, accent, leaderName }: Props) {
           </div>
         </nav>
       </main>
-
-      {/* READER MODAL */}
-      <div
-        className={`${styles.reader} ${active ? styles.readerOpen : ''}`}
-        role="dialog"
-        aria-modal="true"
-        aria-hidden={!active}
-        aria-label={active ? active.title : undefined}
-        onClick={(e) => {
-          if (e.target === e.currentTarget) closeArticle();
-        }}
-      >
-        <div className={styles.readerPanel}>
-          <button
-            type="button"
-            className={styles.readerClose}
-            onClick={closeArticle}
-            aria-label="Close article"
-          >
-            ×
-          </button>
-          {active ? (
-            <div className={styles.readerBody}>
-              <span className={styles.rCat}>{active.topic}</span>
-              <h1 className={styles.rTitle}>{active.title}</h1>
-              <div className={styles.rMeta}>
-                <span>By {author.name}</span>
-                <span className={styles.sep} />
-                <span>{active.date}</span>
-                <span className={styles.sep} />
-                <span>{active.read}</span>
-              </div>
-              <div className={styles.rContent}>
-                {active.body.map((b, i) => {
-                  if (b.t === 'h') return <h3 key={i}>{b.v}</h3>;
-                  if (b.t === 'q') return <blockquote key={i}>{b.v}</blockquote>;
-                  return <p key={i}>{b.v}</p>;
-                })}
-              </div>
-              <div className={styles.rFoot}>
-                <span className={styles.rFootAv}>{author.initial}</span>
-                <span>
-                  <span className={styles.rFootNm}>{author.name}</span>
-                  <br />
-                  <span className={styles.rFootRl}>{author.role}</span>
-                </span>
-              </div>
-            </div>
-          ) : null}
-        </div>
-      </div>
     </div>
   );
 }

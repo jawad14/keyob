@@ -50,7 +50,7 @@ export function LeaderArticlesPreview({ page, accent }: Props) {
         <div className={styles.grid}>
           {/* FEATURED QUOTE CARD */}
           <Link
-            href={articlesHref}
+            href={`${articlesHref}/${latest.slug}`}
             className={styles.feat}
             aria-label={`Read: ${latest.title}`}
           >
@@ -85,7 +85,7 @@ export function LeaderArticlesPreview({ page, accent }: Props) {
             <div className={styles.rt}>More from the desk</div>
             <div className={styles.rlist}>
               {recent.map((a) => (
-                <Link key={a.slug} href={articlesHref} className={styles.ritem}>
+                <Link key={a.slug} href={`${articlesHref}/${a.slug}`} className={styles.ritem}>
                   <span className={styles.cat}>{a.topic}</span>
                   <h3 className={styles.ritemTitle}>
                     {a.title}{' '}
