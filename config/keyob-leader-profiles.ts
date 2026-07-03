@@ -173,7 +173,7 @@ const jawad: LeaderProfile = {
     ],
     links: [
       { href: 'https://www.linkedin.com/in/jawad-siddique-80a4003b/', label: 'LinkedIn', icon: 'linkedin' },
-      { href: '#articles', label: 'Articles', icon: 'articles' },
+      { href: '/leadership-team/jawad-siddique/articles', label: 'Articles', icon: 'articles' },
       { href: '#events', label: 'Events', icon: 'events' },
       { href: '#connect', label: 'Start a conversation', icon: 'chat', accent: true },
     ],
