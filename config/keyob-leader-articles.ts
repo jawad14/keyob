@@ -171,6 +171,9 @@ const jawadArticles: LeaderArticlePage = {
       dek: 'Off-the-shelf software is excellent — until the business is asked to reshape itself around it. Sometimes the right fit has to be built.',
       date: '2025',
       read: '6 min read',
+      image: '/articles/jawad-siddique/custom-in-a-saas-world.png',
+      imageAlt:
+        'Illustration contrasting off-the-shelf software with a custom system built to fit the business',
       body: [
         {
           t: 'p',
@@ -198,6 +201,9 @@ const jawadArticles: LeaderArticlePage = {
       dek: 'Automation only helps if people believe it. Trust is earned before the first workflow is switched on — not assumed after.',
       date: '2025',
       read: '5 min read',
+      image: '/articles/jawad-siddique/trust-before-automation.png',
+      imageAlt:
+        'Illustration of a team building trust in automation before switching on the first workflow',
       body: [
         {
           t: 'p',
@@ -221,6 +227,9 @@ const jawadArticles: LeaderArticlePage = {
       dek: 'A brand gets a business noticed. Operational intelligence lets it respond — turning attention into something the whole team can act on.',
       date: '2025',
       read: '6 min read',
+      image: '/articles/jawad-siddique/presence-to-operational-intelligence.png',
+      imageAlt:
+        'Illustration of a business moving from digital presence to operational intelligence it can act on',
       body: [
         {
           t: 'p',

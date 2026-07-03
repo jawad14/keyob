@@ -720,8 +720,26 @@
   color: var(--mute);
 }
 @media (max-width: 600px) {
+  .wrap {
+    padding: 0 20px;
+  }
+  .hero {
+    padding: 120px 0 48px;
+  }
+  .sct {
+    padding: 60px 0;
+  }
+  .feat {
+    padding-top: 56px;
+  }
+  .browse {
+    padding-top: 56px;
+  }
   .readerBody {
-    padding: 16px 26px 46px;
+    padding: 16px 22px 44px;
+  }
+  .reader {
+    padding: 20px 12px;
   }
 }
 
