@@ -433,6 +433,11 @@
   .focus { grid-template-columns: 1fr; }
 }
 @media (max-width: 600px) { .erpGridCards { grid-template-columns: 1fr; } }
+@media (max-width: 520px) {
+  .snapGrid { grid-template-columns: 1fr; }
+  .snap { border-right: none; border-bottom: 1px solid var(--bv-border); }
+  .tlShell { padding: 32px 20px; }
+}
 @media (prefers-reduced-motion: reduce) {
   .erpSpoke,
   .pathLine { animation: none; }

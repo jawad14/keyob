@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { Footer } from '@/components/blocks/Footer';
-import { Header } from '@/components/blocks/Header';
+import { Nav } from '@/components/blocks/Nav';
 import { Container, Section, Stack } from '@/components/ui/layout';
 import { H1, H2, Muted, Text } from '@/components/ui/typography';
 import { cms } from '@/lib/cms';
@@ -25,7 +25,7 @@ export default async function BlogIndexPage() {
   const posts = await cms.listPosts();
   return (
     <>
-      <Header />
+      <Nav />
       <Section as="main" spacing="lg" className="flex-1">
         <Container size="md">
           <H1>Blog</H1>

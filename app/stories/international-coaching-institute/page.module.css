@@ -530,6 +530,7 @@
   .snapGrid { grid-template-columns: 1fr; }
   .snap { border-right: none; border-bottom: 1px solid var(--ici-border); }
   .buildGrid { grid-template-columns: 1fr; }
+  .flow { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) {
   .mock :global(.travel),

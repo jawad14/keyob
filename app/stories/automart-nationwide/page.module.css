@@ -406,6 +406,7 @@
 @media (max-width: 520px) {
   .snapGrid { grid-template-columns: 1fr; }
   .snap { border-right: none; border-bottom: 1px solid var(--am-border); }
+  .flow { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) {
   .mock :global(.pulse),
