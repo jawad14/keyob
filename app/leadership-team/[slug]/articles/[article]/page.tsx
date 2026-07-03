@@ -43,7 +43,8 @@ export async function generateMetadata({
     ? [{ url: a.image, alt: a.imageAlt ?? a.title }]
     : defaultOgImages;
   return {
-    title: `${a.title} — ${profile.name}, KEYOB`,
+    // The layout title template appends "· KEYOB"; don't repeat the brand here.
+    title: `${a.title} — ${profile.name}`,
     description,
     alternates: { canonical: url },
     openGraph: {
