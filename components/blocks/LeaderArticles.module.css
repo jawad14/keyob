@@ -634,15 +634,6 @@
 .readerBody {
   padding: 20px 56px 60px;
 }
-.rMedia {
-  position: relative;
-  aspect-ratio: 16 / 9;
-  margin: 4px 0 26px;
-  overflow: hidden;
-  border-radius: 14px;
-  border: 1px solid var(--border);
-  background: linear-gradient(150deg, var(--navy-2), var(--navy));
-}
 .rCat {
   font-family: var(--mono);
   font-size: 10.5px;

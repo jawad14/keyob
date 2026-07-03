@@ -1,3 +1,6 @@
+/* eslint-disable no-restricted-syntax --
+ * Leadership profile block with a custom typographic scale owned by global
+ * lp-* styles — uses raw headings/paragraphs to keep styling local. */
 import Image from 'next/image';
 import Link from 'next/link';
 import type {
@@ -5,10 +8,17 @@ import type {
   LeaderSnapshotItem,
   LeaderSnapshotLink,
 } from '@/config/keyob-leader-profiles';
+import type { LeaderArticlePage } from '@/config/keyob-leader-articles';
 import { LeaderProfileNav } from './LeaderProfileNav';
 import { LeaderProfileReveals } from './LeaderProfileReveals';
+import { LeaderArticlesPreview } from './LeaderArticlesPreview';
 
-type Props = { profile: LeaderProfileType; portraitSrc?: string; candidSrc?: string };
+type Props = {
+  profile: LeaderProfileType;
+  portraitSrc?: string;
+  candidSrc?: string;
+  articlePage?: LeaderArticlePage;
+};
 
 function PinIcon() {
   return (
@@ -134,7 +144,7 @@ function SmartLink({
   );
 }
 
-export function LeaderProfile({ profile, portraitSrc, candidSrc }: Props) {
+export function LeaderProfile({ profile, portraitSrc, candidSrc, articlePage }: Props) {
   const accentStyle = {
     ['--lp-plum' as string]: profile.accent.plum,
     ['--lp-plum-mist' as string]: profile.accent.plumMist,
@@ -302,24 +312,28 @@ export function LeaderProfile({ profile, portraitSrc, candidSrc }: Props) {
         </section>
 
         {/* SECTION 4 — ARTICLES */}
-        <section className="lp-sct" id="articles" aria-labelledby="art-h">
-          <div className="wrap">
-            <div className="lp-sct-head lp-reveal">
-              <div className="lp-eyebrow plum">{profile.articles.eyebrow}</div>
-              <h2 className="lp-h2" id="art-h">
-                {profile.articles.headingPrefix} <em>{profile.articles.headingEm}</em>
-              </h2>
-              {profile.articles.lead ? (
-                <p className="lp-lead">{profile.articles.lead}</p>
-              ) : null}
+        {articlePage ? (
+          <LeaderArticlesPreview page={articlePage} accent={profile.accent} />
+        ) : (
+          <section className="lp-sct" id="articles" aria-labelledby="art-h">
+            <div className="wrap">
+              <div className="lp-sct-head lp-reveal">
+                <div className="lp-eyebrow plum">{profile.articles.eyebrow}</div>
+                <h2 className="lp-h2" id="art-h">
+                  {profile.articles.headingPrefix} <em>{profile.articles.headingEm}</em>
+                </h2>
+                {profile.articles.lead ? (
+                  <p className="lp-lead">{profile.articles.lead}</p>
+                ) : null}
+              </div>
+              <ArticlesBlock
+                items={profile.articles.items}
+                cta={profile.articles.featuredCta}
+                emptyMessage={profile.articles.emptyMessage}
+              />
             </div>
-            <ArticlesBlock
-              items={profile.articles.items}
-              cta={profile.articles.featuredCta}
-              emptyMessage={profile.articles.emptyMessage}
-            />
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* SECTION 5 — EVENTS */}
         <section className="lp-sct ice" id="events" aria-labelledby="ev-h">

@@ -360,17 +360,6 @@ export function LeaderArticles({ page, accent, leaderName }: Props) {
           </button>
           {active ? (
             <div className={styles.readerBody}>
-              {active.image ? (
-                <div className={styles.rMedia}>
-                  <Image
-                    src={active.image}
-                    alt={active.imageAlt ?? active.title}
-                    fill
-                    sizes="(min-width: 760px) 700px, 100vw"
-                    className={styles.mediaImg}
-                  />
-                </div>
-              ) : null}
               <span className={styles.rCat}>{active.topic}</span>
               <h1 className={styles.rTitle}>{active.title}</h1>
               <div className={styles.rMeta}>

@@ -4,6 +4,7 @@ import { Nav } from '@/components/blocks/Nav';
 import { Footer } from '@/components/blocks/Footer';
 import { LeaderProfile } from '@/components/blocks/LeaderProfile';
 import { getLeaderProfile, leaderProfiles } from '@/config/keyob-leader-profiles';
+import { getLeaderArticlePage } from '@/config/keyob-leader-articles';
 import { siteConfig } from '@/config/site.config';
 
 export const viewport: Viewport = {
@@ -106,6 +107,7 @@ export default async function LeaderProfilePage({
         profile={profile}
         portraitSrc={PORTRAITS[profile.slug]}
         candidSrc={CANDIDS[profile.slug]}
+        articlePage={getLeaderArticlePage(profile.slug)}
       />
       <Footer />
     </>

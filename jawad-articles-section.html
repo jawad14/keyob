@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>From Jawad's desk — section preview · KEYOB</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#031536;--navy-2:#14295A;--azure:#01b0f4;--azure-soft:#4fc8f8;
+    --paper:#ffffff;--ice:#f4f8fb;--ice-2:#e9f1f7;
+    --ink:#07162d;--mute:#5f6b7a;--border:#dde7ef;--faint:#9aa7b4;
+    --plum:#34264f;--plum-mist:#f2eef6;--plum-soft:#6b5a8a;
+    --serif:'Fraunces',Georgia,serif;--sans:'Space Grotesk',sans-serif;--mono:'JetBrains Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--plum-mist);color:var(--plum)}
+
+  /* ---- shared KEYOB conventions ---- */
+  .sct{padding:110px 0}
+  .sct.ice{background:var(--ice)}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--azure);display:flex;align-items:center;gap:12px}
+  .eyebrow.plum{color:var(--plum)}
+  .eyebrow::before{content:"";width:30px;height:1px;background:currentColor;opacity:.6}
+  h2.sec{font-family:var(--serif);font-weight:300;line-height:1.1;letter-spacing:-.02em;color:var(--ink);font-size:clamp(28px,3.6vw,44px)}
+  h2.sec em{font-style:italic;color:var(--plum)}
+  .lnk{font-family:var(--mono);font-size:12.5px;letter-spacing:.03em;color:var(--plum);display:inline-flex;align-items:center;gap:8px}
+  .lnk .arr,.btn .arr{transition:transform .3s}.lnk:hover .arr,.btn:hover .arr{transform:translateX(4px)}
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--azure);color:#022;font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.03em;padding:14px 24px;border-radius:44px;border:none;cursor:pointer;transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}
+  .btn:hover{transform:translateY(-3px);box-shadow:0 14px 30px -12px rgba(1,176,244,.6)}
+
+  /* ---- section head ---- */
+  .art-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:52px}
+  .art-head .lead{max-width:640px}
+  .art-head h2.sec{margin:16px 0 14px}
+  .art-head .sub{font-size:16px;line-height:1.7;color:var(--mute);max-width:52ch}
+  .art-head .count{font-family:var(--mono);font-size:12px;letter-spacing:.03em;color:var(--faint);text-align:right;line-height:1.7}
+  .art-head .count b{font-family:var(--serif);font-weight:300;font-size:40px;color:var(--plum);display:block}
+
+  /* ---- layout: featured quote + recent list ---- */
+  .art-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:26px;align-items:stretch}
+
+  /* featured quote card */
+  .feat{position:relative;border:1px solid var(--border);border-radius:24px;overflow:hidden;background:linear-gradient(158deg,var(--navy-2),var(--navy));color:#fff;padding:48px 46px;display:flex;flex-direction:column;justify-content:space-between;gap:34px}
+  .feat::before{content:"";position:absolute;inset:0;background:radial-gradient(68% 88% at 88% 6%,rgba(1,176,244,.20),transparent 60%),radial-gradient(60% 80% at -5% 105%,rgba(111,90,138,.5),transparent 62%);pointer-events:none}
+  .feat>*{position:relative;z-index:2}
+  .feat .flag{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--azure-soft)}
+  .feat .flag .dot{width:8px;height:8px;border-radius:50%;background:var(--azure);position:relative}
+  .feat .flag .dot::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:1px solid var(--azure-soft);animation:fp 2.6s ease-out infinite}
+  @keyframes fp{0%{transform:scale(.7);opacity:.7}100%{transform:scale(1.8);opacity:0}}
+  .feat .qmark{font-family:var(--serif);font-size:70px;line-height:.4;color:var(--azure);opacity:.4;height:26px}
+  .feat blockquote{font-family:var(--serif);font-weight:300;font-size:clamp(23px,2.5vw,31px);line-height:1.34;letter-spacing:-.015em;color:#fff;margin:22px 0 0}
+  .feat blockquote em{font-style:italic;color:var(--azure-soft)}
+  .feat .cite{margin-top:22px;font-family:var(--mono);font-size:11.5px;letter-spacing:.03em;color:rgba(255,255,255,.6)}
+  .feat .cite .tt{color:#fff}
+  .feat .foot{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.13);padding-top:26px}
+  .feat .foot .meta{font-family:var(--mono);font-size:11px;letter-spacing:.03em;color:rgba(255,255,255,.55);display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  .feat .foot .meta .sep{width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,.4)}
+  .feat .foot .btn{background:#fff;color:var(--navy)}
+  .feat .foot .btn:hover{box-shadow:0 14px 30px -12px rgba(255,255,255,.4)}
+
+  /* recent list */
+  .recent{border:1px solid var(--border);border-radius:24px;background:var(--paper);padding:36px 34px;display:flex;flex-direction:column}
+  .recent .rt{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--plum);margin-bottom:20px}
+  .rlist{display:flex;flex-direction:column;flex-grow:1}
+  .ritem{display:block;padding:18px 0;border-top:1px solid var(--border);transition:padding-left .3s}
+  .ritem:first-of-type{border-top:none;padding-top:4px}
+  .ritem:hover{padding-left:6px}
+  .ritem .cat{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--plum-soft)}
+  .ritem h3{font-family:var(--serif);font-weight:400;font-size:18px;line-height:1.28;color:var(--ink);margin:7px 0;transition:color .3s;display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+  .ritem:hover h3{color:var(--plum)}
+  .ritem h3 .go{font-family:var(--mono);font-size:14px;color:var(--plum);opacity:0;transform:translateX(-6px);transition:.3s;flex-shrink:0}
+  .ritem:hover h3 .go{opacity:1;transform:translateX(0)}
+  .ritem .rmeta{font-family:var(--mono);font-size:10.5px;letter-spacing:.03em;color:var(--faint)}
+  .recent .all{margin-top:24px;padding-top:22px;border-top:1px solid var(--border)}
+
+  @media(max-width:900px){
+    .art-grid{grid-template-columns:1fr}
+    .feat{padding:40px 32px}
+    .recent{padding:32px 28px}
+    .art-head .count{text-align:left}
+  }
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.feat .flag .dot::after{animation:none}}
+
+  /* preview label only — remove when porting */
+  .pv{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);text-align:center;padding:16px;background:var(--ice-2)}
+</style>
+</head>
+<body>
+
+<div class="pv">▼ Preview of the revamped <b>#articles</b> section · everything below is the drop-in block</div>
+
+<!-- ===================== FROM JAWAD'S DESK (#articles) ===================== -->
+<section class="sct ice" id="articles" aria-labelledby="articles-h">
+  <div class="wrap">
+
+    <div class="art-head reveal">
+      <div class="lead">
+        <div class="eyebrow plum">From Jawad's desk</div>
+        <h2 class="sec" id="articles-h">Ideas about business, technology <em>and what comes next.</em></h2>
+        <p class="sub">Perspectives on partnership, clarity and practical transformation — written for the business owners and teams navigating real change, not the hype cycle.</p>
+      </div>
+      <div class="count">
+        <b>6</b>
+        articles &amp; counting
+      </div>
+    </div>
+
+    <div class="art-grid">
+
+      <!-- FEATURED QUOTE CARD -->
+      <a class="feat reveal" href="/leadership-team/jawad-siddique/articles" aria-label="Read: Why businesses need technology partners, not software vendors">
+        <div>
+          <span class="flag"><span class="dot"></span> Latest perspective</span>
+          <span class="qmark">&ldquo;</span>
+          <blockquote>The strongest technology relationships are built when the client knows they do not have to <em>start again</em> every time the business changes.</blockquote>
+          <div class="cite">From <span class="tt">Why businesses need technology partners, not software vendors</span></div>
+        </div>
+        <div class="foot">
+          <div class="meta"><span>Partnership</span><span class="sep"></span><span>2026</span><span class="sep"></span><span>6 min read</span></div>
+          <span class="btn">Read the article <span class="arr">→</span></span>
+        </div>
+      </a>
+
+      <!-- COMPACT RECENT LIST -->
+      <div class="recent reveal d1">
+        <div class="rt">More from the desk</div>
+        <div class="rlist">
+          <a class="ritem" href="/leadership-team/jawad-siddique/articles">
+            <span class="cat">Systems</span>
+            <h3>The hidden cost of disconnected systems <span class="go">→</span></h3>
+            <span class="rmeta">2026 · 5 min read</span>
+          </a>
+          <a class="ritem" href="/leadership-team/jawad-siddique/articles">
+            <span class="cat">AI operations</span>
+            <h3>What practical AI operations look like for small business <span class="go">→</span></h3>
+            <span class="rmeta">2026 · 7 min read</span>
+          </a>
+          <a class="ritem" href="/leadership-team/jawad-siddique/articles">
+            <span class="cat">Software</span>
+            <h3>Why custom systems still matter in an off-the-shelf world <span class="go">→</span></h3>
+            <span class="rmeta">2025 · 6 min read</span>
+          </a>
+          <a class="ritem" href="/leadership-team/jawad-siddique/articles">
+            <span class="cat">AI operations</span>
+            <h3>Building trust before introducing automation <span class="go">→</span></h3>
+            <span class="rmeta">2025 · 5 min read</span>
+          </a>
+        </div>
+        <div class="all">
+          <a class="lnk" href="/leadership-team/jawad-siddique/articles">Browse all articles <span class="arr">→</span></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- =================== /FROM JAWAD'S DESK (#articles) =================== -->
+
+<script>
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>

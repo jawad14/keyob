@@ -26,14 +26,22 @@ export async function generateMetadata({
   if (!page || !profile) return {};
 
   const url = `${siteConfig.url}/leadership-team/${slug}/articles`;
-  const title = `${page.hero.eyebrow} — Articles & Perspectives · KEYOB`;
+  // The layout title template appends "· KEYOB"; keep the brand out of the page title.
+  const title = `${page.hero.eyebrow} — Articles & Perspectives`;
+  const ogTitle = `${title} · KEYOB`;
   const description = `Ideas on business, technology and partnership from ${profile.name}, ${profile.role}. Read the latest perspective and browse the full archive.`;
+  const ogImage = {
+    url: '/opengraph-image.png',
+    width: 1200,
+    height: 630,
+    alt: `${page.hero.eyebrow} — articles by ${profile.name}, KEYOB`,
+  };
   return {
     title,
     description,
     alternates: { canonical: url },
-    openGraph: { type: 'website', title, description, url },
-    twitter: { card: 'summary_large_image', title, description },
+    openGraph: { type: 'website', title: ogTitle, description, url, images: [ogImage] },
+    twitter: { card: 'summary_large_image', title: ogTitle, description, images: [ogImage.url] },
   };
 }
 
