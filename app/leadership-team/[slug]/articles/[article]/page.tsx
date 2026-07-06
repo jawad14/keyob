@@ -2,7 +2,6 @@
  * Article detail page with a custom editorial scale owned by article.module.css. */
 import type { Metadata, Viewport } from 'next';
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
 import Link from 'next/link';
 
 import { Nav } from '@/components/blocks/Nav';
@@ -204,21 +203,6 @@ export default async function ArticleDetailPage({
             </div>
           </div>
         </header>
-
-        {a.image ? (
-          <div className={styles.heroImageWrap}>
-            <div className={styles.heroImage}>
-              <Image
-                src={a.image}
-                alt={a.imageAlt ?? a.title}
-                fill
-                sizes="(min-width: 820px) 760px, 100vw"
-                className={styles.heroImageImg}
-                priority
-              />
-            </div>
-          </div>
-        ) : null}
 
         <main className={styles.body}>
           <article className={styles.col}>

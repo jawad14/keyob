@@ -71,8 +71,98 @@ const jawadArticles: LeaderArticlePage = {
   },
   articles: [
     {
-      slug: 'partners-not-vendors',
+      slug: 'information-gap-community-intelligence',
       featured: true,
+      topic: 'Community Intelligence',
+      title: 'The information gap we are not measuring',
+      dek: 'A message does not need to be true to become trusted — it only needs to arrive from someone we trust. The real challenge is not that false information exists, but that trusted information is slower, harder to understand and less connected to how communities actually communicate.',
+      date: '2026',
+      read: '3 min read',
+      body: [
+        {
+          t: 'p',
+          v: 'A message does not need to be true to become trusted. It only needs to arrive from someone we trust.',
+        },
+        {
+          t: 'p',
+          v: 'Imagine a voice note appearing in a family WhatsApp group. It is spoken in a familiar language. It is shared by a relative, a neighbour or a respected member of the community. It warns people about a new government rule, a health risk, an immigration change or a financial scam. Nobody knows where it originally came from — but people begin forwarding it.',
+        },
+        {
+          t: 'p',
+          v: 'Not because they want to spread misinformation. Because they want to protect someone. That is what makes today’s information challenge so difficult.',
+        },
+        {
+          t: 'p',
+          v: 'The problem is not simply that false information exists. The deeper problem is that trusted information is often slower, harder to understand and less connected to the way communities communicate.',
+        },
+        { t: 'h', v: 'We measure communication, but do we measure understanding?' },
+        {
+          t: 'p',
+          v: 'Organisations regularly measure website visits, campaign impressions, social media engagement and email opens. These numbers tell us whether information was delivered. They do not tell us whether it was understood.',
+        },
+        {
+          t: 'p',
+          v: 'Did people believe the message? Was the language accessible? Did the community interpret it differently from what was intended? What questions remained unanswered? What information did people receive from other sources?',
+        },
+        {
+          t: 'p',
+          v: 'These are not minor communication details. They are knowledge gaps. And knowledge gaps can quickly become trust gaps.',
+        },
+        { t: 'h', v: 'Translation alone is not enough' },
+        {
+          t: 'p',
+          v: 'Multicultural communication is often treated as a translation exercise. An English announcement is translated into several languages, uploaded to a website and distributed through established channels. That is useful. But translation does not automatically create understanding.',
+        },
+        {
+          t: 'p',
+          v: 'A message may be linguistically correct while still being culturally unclear. It may use unfamiliar institutional language. It may not address the questions people are actually asking. It may reach the community after another explanation has already become widely accepted.',
+        },
+        {
+          t: 'p',
+          v: 'Inclusive communication must begin before translation. It must begin with listening.',
+        },
+        { t: 'h', v: 'From fact-checking to Community Intelligence' },
+        {
+          t: 'p',
+          v: 'Fact-checking remains important. But it usually begins after a questionable claim has already attracted attention. What if organisations could understand the conditions that allow misinformation to spread?',
+        },
+        {
+          t: 'p',
+          v: 'What if they could identify recurring confusion before it developed into distrust? What if a council could see that residents were repeatedly misunderstanding a new service? What if a health organisation could recognise growing uncertainty within a particular language community? What if community leaders could see which questions were increasing before rumours became widespread?',
+        },
+        {
+          t: 'p',
+          v: 'This is the opportunity behind Community Intelligence. Community Intelligence is not about monitoring individuals. It is about recognising patterns in community questions, concerns, sentiment and knowledge gaps.',
+        },
+        {
+          t: 'q',
+          v: 'Knowledge gaps can quickly become trust gaps — and by the time a rumour is spreading, the moment to build understanding has already passed.',
+        },
+        {
+          t: 'p',
+          v: 'It can help organisations understand what communities are discussing, what they are uncertain about, which information they trust, where confusion is increasing, and how communication should be improved.',
+        },
+        {
+          t: 'p',
+          v: 'Technology can help process these signals across languages and channels. But technology is not the hero. Trust is still built through people. Community leaders, multicultural organisations, local services and trusted institutions remain essential. AI can help them see more clearly and respond more quickly.',
+        },
+        { t: 'h', v: 'We need to understand before we communicate' },
+        {
+          t: 'p',
+          v: 'The future of public communication will require more than producing accurate information. Organisations will need to understand how information moves through communities. They will need to recognise the difference between delivering a message and creating understanding. They will need to treat community sentiment, trust and awareness as essential decision-making information.',
+        },
+        {
+          t: 'p',
+          v: 'The organisations that succeed will not necessarily be those that publish the most content. They will be those that understand where uncertainty exists and respond before uncertainty becomes distrust.',
+        },
+        {
+          t: 'p',
+          v: 'The future of communication will not belong to those who speak the loudest. It will belong to those who understand first.',
+        },
+      ],
+    },
+    {
+      slug: 'partners-not-vendors',
       topic: 'Partnership',
       title: 'Why businesses need technology partners, not software vendors',
       dek: 'A vendor sells you a product and moves on. A partner stays close enough to understand what changes next — and that difference decides whether technology keeps paying off.',
