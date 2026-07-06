@@ -78,6 +78,9 @@ const jawadArticles: LeaderArticlePage = {
       dek: 'A message does not need to be true to become trusted — it only needs to arrive from someone we trust. The real challenge is not that false information exists, but that trusted information is slower, harder to understand and less connected to how communities actually communicate.',
       date: '2026',
       read: '3 min read',
+      image: '/articles/jawad-siddique/information-gap-community-intelligence.png',
+      imageAlt:
+        'A trusted source at the centre broadcasting information outward through a fan of light to interconnected community groups across a network',
       body: [
         {
           t: 'p',

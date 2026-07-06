@@ -15,7 +15,7 @@ import {
   type LeaderLongArticle,
 } from '@/config/keyob-leader-articles';
 import { getLeaderProfile } from '@/config/keyob-leader-profiles';
-import { siteConfig, defaultOgImages, defaultTwitterImages } from '@/config/site.config';
+import { siteConfig } from '@/config/site.config';
 import styles from './article.module.css';
 
 export const viewport: Viewport = { themeColor: '#07101E' };
@@ -38,9 +38,8 @@ export async function generateMetadata({
   const { article: a } = found;
   const url = `${siteConfig.url}/leadership-team/${slug}/articles/${a.slug}`;
   const description = articleMetaDescription(a);
-  const images = a.image
-    ? [{ url: a.image, alt: a.imageAlt ?? a.title }]
-    : defaultOgImages;
+  // og:image / twitter:image are supplied by the co-located opengraph-image.tsx
+  // and twitter-image.tsx routes — a dynamic 1200×630 card per article.
   return {
     // The layout title template appends "· KEYOB"; don't repeat the brand here.
     title: `${a.title} — ${profile.name}`,
@@ -55,13 +54,11 @@ export async function generateMetadata({
       authors: [profile.name],
       section: a.topic,
       publishedTime: a.date,
-      images,
     },
     twitter: {
       card: 'summary_large_image',
       title: a.title,
       description,
-      images: a.image ? [a.image] : defaultTwitterImages,
     },
   };
 }
