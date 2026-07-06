@@ -14,11 +14,13 @@ export const viewport: Viewport = {
 const PORTRAITS: Record<string, string> = {
   'jawad-siddique': '/jawad-siddique-au.png',
   'saad-khalid': '/saad-khalid-au.png',
+  'mansoor-ahmad-samar': '/mansoor-ahmad-samar-pk.png',
 };
 
 const CANDIDS: Record<string, string> = {
   'jawad-siddique': '/jawad-siddique-leadership.png',
   'saad-khalid': '/saad-khalid-health-minister.png',
+  'mansoor-ahmad-samar': '/mansoor-gitex-dubai-2025.jpg',
 };
 
 export function generateStaticParams() {

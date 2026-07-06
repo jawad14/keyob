@@ -92,13 +92,14 @@ export const ltLeaders: LtLeader[] = [
   {
     name: 'Mansoor Ahmad Samar',
     region: 'Pakistan',
-    role: 'Technology Leadership / Delivery Operations',
+    role: 'Chief Technology Officer — KEYOB',
     quote:
       'Good software is not only about writing code. It is about understanding how a business works and building systems that make daily operations stronger.',
     message:
       "Mansoor supports KEYOB's technical delivery, software architecture, ERP systems, CRM integrations, automation, and operational technology execution.",
     link: 'https://www.linkedin.com/in/mansoor-ahmad-samar-564b8229/',
     photo: '/mansoor-ahmad-samar-pk.png',
+    profileSlug: 'mansoor-ahmad-samar',
   },
 ];
 

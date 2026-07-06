@@ -658,7 +658,256 @@ const saad: LeaderProfile = {
   },
 };
 
-export const leaderProfiles: LeaderProfile[] = [jawad, saad];
+const mansoor: LeaderProfile = {
+  slug: 'mansoor-ahmad-samar',
+  name: 'Mansoor Ahmad Samar',
+  role: 'Chief Technology Officer, KEYOB',
+  regionLabel: 'Engineering leadership · Global delivery',
+  identityStatement:
+    'The engineering leader who turns the operating layer from an idea into systems businesses run on every day.',
+  portraitAlt: 'Mansoor Ahmad Samar, Chief Technology Officer of KEYOB',
+  portraitNote: 'Approved editorial portrait of Mansoor Ahmad Samar',
+  // Mansoor's personal accent — Deep Teal (token names kept for system parity).
+  accent: { plum: '#0d4f4a', plumMist: '#e9f4f2', plumSoft: '#3e8d84' },
+  thought: {
+    quote:
+      'Architecture is a promise about the future. Good engineering is',
+    emphasis: 'keeping it after everyone has forgotten it was made.',
+    caption: 'Mansoor Ahmad Samar on engineering that lasts',
+  },
+  snapshot: {
+    items: [
+      { icon: 'building', text: 'Chief Technology Officer of KEYOB' },
+      { icon: 'list', text: 'Solutions architecture & full-lifecycle software' },
+      { icon: 'governance', text: 'BS Computer Science — FAST-NUCES' },
+      { icon: 'pin', text: 'Based in Lahore · global delivery' },
+      { icon: 'globe', text: 'Building for clients across Australia and beyond' },
+    ],
+    links: [
+      {
+        href: 'https://www.linkedin.com/in/mansoor-ahmad-samar-564b8229/',
+        label: 'LinkedIn',
+        icon: 'linkedin',
+      },
+      { href: '#articles', label: 'Articles', icon: 'articles' },
+      { href: '#events', label: 'Events', icon: 'events' },
+      { href: '#connect', label: 'Start a conversation', icon: 'chat', accent: true },
+    ],
+  },
+  nav: SHARED_NAV,
+  story: {
+    eyebrow: 'The build log',
+    headingPrefix: 'A career shipped',
+    headingEm: 'in versions.',
+    paragraphs: [
+      "Every promise KEYOB makes to a client becomes, eventually, Mansoor's problem — in the best sense. Strategy sets the direction; his engineering organisation makes it real, reliable and still standing five years later.",
+      "From mobile products to solutions architecture to leading KEYOB's entire engineering function, his career has moved one way: closer to the point where technology decisions become business outcomes.",
+      "Engineers don't tell their story in job titles — they tell it in what they shipped and what it taught them. Six releases, no rollbacks.",
+    ],
+    steps: [
+      {
+        n: '01',
+        title: 'Computer science, properly',
+        body: 'A BS in Computer Science at FAST-NUCES — algorithms, operating systems, the unglamorous fundamentals. Understanding why systems work beats memorising how frameworks do.',
+      },
+      {
+        n: '02',
+        title: 'Mobile, where software meets hands',
+        body: "As a mobile application developer at Aplome, the lesson was immediate: software either works in someone's hand or it doesn't. Interface decisions became engineering decisions.",
+      },
+      {
+        n: '03',
+        title: 'Engineering under real load',
+        body: "Software engineering at ByteEvo — application development where the code met production traffic, deadlines and other people's code. Craft hardened into discipline.",
+      },
+      {
+        n: '04',
+        title: 'From building features to designing systems',
+        body: 'As Solutions Architect & Engineer at Greyscale Logic, the question was no longer "can we build this?" but "will this still be the right shape in three years?"',
+      },
+      {
+        n: '05',
+        title: 'Multiplying through a team',
+        body: "The hardest upgrade any engineer makes: from personal output to organisational output. Standards, reviews and mentoring — making a team's work better than the sum of its commits.",
+      },
+      {
+        n: '06',
+        title: 'Chief Technology Officer, KEYOB',
+        body: "Executive responsibility for the engineering behind KEYOB's promise — software, integrations, AI and data working as one operating layer clients run their businesses on.",
+      },
+    ],
+    highlight:
+      'Six releases, no rollbacks — a career measured not in job titles but in what shipped and still stands.',
+  },
+  philosophy: {
+    eyebrow: 'Engineering philosophy',
+    headingPrefix: 'Four rules the code',
+    headingEm: 'answers to.',
+    principles: [
+      {
+        n: '01',
+        title: 'Boring is a feature',
+        body: 'The most valuable systems are the ones nobody talks about, because they simply work. Novelty belongs in the product, not in the plumbing. Proven tools, ruthlessly applied.',
+        emph: 'Proven tools.',
+        variant: 'ice',
+      },
+      {
+        n: '02',
+        title: 'Own the whole lifecycle',
+        body: "Code that can't be maintained wasn't finished — it was abandoned early. Every system KEYOB ships is designed to be operated, extended and understood long after launch day.",
+        emph: 'Built to be operated.',
+        variant: 'navy',
+      },
+      {
+        n: '03',
+        title: 'AI earns its place',
+        body: "Automation and AI go where they demonstrably remove work or risk — not where they demo well. If it can't be measured in the client's operation, it doesn't ship.",
+        emph: 'Measure it, or skip it.',
+        variant: 'plum',
+      },
+      {
+        n: '04',
+        title: 'The team is the architecture',
+        body: "System quality is a lagging indicator of team quality. Reviews, standards and honest technical debate aren't process overhead — they're how reliability is actually manufactured.",
+        emph: 'Quality is manufactured.',
+        variant: 'ice',
+      },
+    ],
+  },
+  keyob: {
+    eyebrow: 'At KEYOB',
+    headingPrefix: 'The engineering behind',
+    headingEm: 'the operating layer.',
+    paragraphs: [
+      "Mansoor's organisation carries every technical commitment KEYOB makes — across the disciplines that make one integrated operating layer possible.",
+      'Custom software and platforms, mobile and interfaces, AI, data and integration: not a menu of services but a single layer, engineered to be owned rather than rented.',
+      "The through-line is ownership. Every system is built so the client's business can run on it, extend it and understand it long after launch day.",
+    ],
+    phrasePrefix: 'One operating layer.',
+    phraseEm: 'Every layer accountable.',
+    pathway: {
+      startLineA: 'A real',
+      startLineB: 'business need',
+      loopLabel: '↻ Owned, extended, understood',
+      branches: [
+        'Custom software & platforms',
+        'Mobile & interfaces',
+        'AI, data & integration',
+        'ERP & core systems',
+        'Automation & workflows',
+        'Cloud & infrastructure',
+      ],
+    },
+  },
+  articles: {
+    eyebrow: "From Mansoor's desk",
+    headingPrefix: 'Engineering notes,',
+    headingEm: 'in progress.',
+    lead: 'Writing on architecture, AI in production and engineering leadership.',
+    items: [],
+    emptyMessage:
+      "Mansoor's writing on architecture, AI in production and engineering leadership is on its way.",
+    featuredCta: 'Read article',
+  },
+  events: {
+    eyebrow: 'In the room',
+    headingPrefix: 'Where the engineering conversation',
+    headingEm: 'is happening.',
+    items: [
+      {
+        name: 'GITEX Global 2025',
+        type: 'Industry gathering',
+        location: 'Dubai, UAE',
+        date: '2025',
+        role: 'KEYOB engineering',
+        reflection:
+          'Separating the AI that works in production from the AI that only works on stage.',
+        visible: true,
+      },
+    ],
+    emptyMessage: 'Appearances and talks will be shared here.',
+  },
+  work: {
+    eyebrow: 'What he leads',
+    headingPrefix: 'The disciplines behind',
+    headingEm: 'one integrated layer.',
+    items: [
+      {
+        slug: 'custom-software-platforms',
+        url: '#',
+        tag: 'Custom software & platforms',
+        name: 'Systems clients own',
+        copy: 'Full-lifecycle engineering of the systems clients own — from ERP and CRM builds to the products KEYOB takes to market.',
+      },
+      {
+        slug: 'mobile-interfaces',
+        url: '#',
+        tag: 'Mobile & interfaces',
+        name: 'Where software meets people',
+        copy: 'Product surfaces engineered with the same rigour as the systems beneath them.',
+      },
+      {
+        slug: 'ai-data-integration',
+        url: '#',
+        tag: 'AI, data & integration',
+        name: 'Intelligence wired in',
+        copy: 'Practical automation, connected data and system integration — intelligence wired into operations, not bolted on beside them.',
+      },
+    ],
+  },
+  human: {
+    eyebrow: 'Off the clock',
+    headingPrefix: 'Curiosity is the',
+    headingEm: 'senior skill.',
+    paragraphs: [
+      "Away from the architecture diagrams, Mansoor's constant is curiosity — the habit he watches for when hiring, and the one he guards in himself.",
+      'He was at GITEX Global in Dubai in 2025, doing what good engineers do in a hall full of noise: sorting what actually works in production from what only works on stage.',
+    ],
+    quote:
+      "The best engineers I've worked with share one habit: they stay curious after they're senior. The day you stop asking how something works is the day your architecture starts ageing.",
+    photoAlt: 'Mansoor Ahmad Samar at GITEX Global, Dubai 2025',
+    photoNote: 'A candid photo of Mansoor at GITEX Global, Dubai 2025',
+  },
+  media: {
+    eyebrow: 'Profile resources',
+    headingPrefix: 'Media, profile',
+    headingEm: 'and speaking.',
+    speakingTopics: [
+      'Architecture that survives its own success',
+      'AI in production — beyond the demo',
+      'Building software clients can own, not rent',
+      'Engineering leadership and team quality',
+      'From features to systems: the architect’s shift',
+      'Practical automation in real operations',
+    ],
+    resources: [
+      { title: 'Professional biography', type: 'Profile', url: null },
+      { title: 'Approved headshot', type: 'Image', url: null },
+      { title: 'Speaking enquiries', type: 'Contact', url: '/contact#contact' },
+      {
+        title: 'LinkedIn profile',
+        type: 'Link',
+        url: 'https://www.linkedin.com/in/mansoor-ahmad-samar-564b8229/',
+      },
+    ],
+    note: 'Media and profile assets are made available on request. Items appear here once approved and uploaded.',
+  },
+  connect: {
+    eyebrow: 'Connect',
+    headingPrefix: 'Talk engineering with',
+    headingEm: 'Mansoor.',
+    lead: "Architecture reviews, build-vs-buy decisions, AI in production — if it's technical and it matters to your business, it's his territory.",
+    primaryCta: { href: '/contact#contact', label: 'Start a conversation' },
+    secondaryCta: {
+      href: 'https://www.linkedin.com/in/mansoor-ahmad-samar-564b8229/',
+      label: 'Connect on LinkedIn',
+    },
+    tertiaryCta: { href: '/', label: 'Explore KEYOB →' },
+    closing: 'One conversation can turn a technical question into a system your business runs on.',
+  },
+};
+
+export const leaderProfiles: LeaderProfile[] = [jawad, saad, mansoor];
 
 export function getLeaderProfile(slug: string): LeaderProfile | undefined {
   return leaderProfiles.find((p) => p.slug === slug);
