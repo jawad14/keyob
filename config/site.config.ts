@@ -39,10 +39,10 @@ export const siteConfig: SiteConfig = {
   shortName: 'KEYOB',
   description:
     'We help Australian business owners create more freedom by using AI in the right places. Save time, reduce costs, and support growth. Book a free AI assessment today.',
-  url: 'https://keyob.com.au',
+  url: 'https://www.keyob.com',
   ogImage: '/opengraph-image',
   locale: 'en_AU',
-  author: { name: 'KEYOB', url: 'https://keyob.com.au' },
+  author: { name: 'KEYOB', url: 'https://www.keyob.com' },
   nav: [
     { label: 'What we do', href: '/what-we-do' },
     { label: 'Stories', href: '/stories' },
