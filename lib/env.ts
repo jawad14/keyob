@@ -17,6 +17,9 @@ export const env = createEnv({
     EMAIL_FROM: z.string().email().optional(),
     EMAIL_TO: z.string().email().optional(),
     SENTRY_DSN: z.string().url().optional(),
+    // Aleesa Web Chat — key stays server-side only, never exposed to the browser.
+    ALEESA_WEBCHAT_API_KEY: z.string().optional(),
+    ALEESA_WEBHOOK_BASE_URL: z.string().url().optional(),
   },
   client: {
     NEXT_PUBLIC_SITE_URL: z.string().url().optional(),
@@ -34,6 +37,8 @@ export const env = createEnv({
     EMAIL_FROM: process.env.EMAIL_FROM,
     EMAIL_TO: process.env.EMAIL_TO,
     SENTRY_DSN: process.env.SENTRY_DSN,
+    ALEESA_WEBCHAT_API_KEY: process.env.ALEESA_WEBCHAT_API_KEY,
+    ALEESA_WEBHOOK_BASE_URL: process.env.ALEESA_WEBHOOK_BASE_URL,
     NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,
     NEXT_PUBLIC_ANALYTICS_DOMAIN: process.env.NEXT_PUBLIC_ANALYTICS_DOMAIN,
   },

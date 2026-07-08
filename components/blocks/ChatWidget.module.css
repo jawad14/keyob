@@ -1,0 +1,411 @@
+/* KEYOB Web Chat widget — brand-scoped styling.
+   Tokens come from config/theme.css (--keyob-*). Mirrors the visual language
+   of AleesaConversations.module.css: gradient surfaces, weight-300 titles,
+   serif italic cyan accents, hairline borders. */
+
+.root {
+  --wc-deep: var(--keyob-deep, #07101e);
+  --wc-navy: var(--keyob-navy, #123c8c);
+  --wc-blue: var(--keyob-blue, #2563d9);
+  --wc-cyan: var(--keyob-cyan, #19c6e8);
+  --wc-frost: var(--keyob-frost, #f5f8fa);
+  --wc-steel: var(--keyob-steel, #d8dee6);
+  --wc-graphite: var(--keyob-graphite, #4b5563);
+  --wc-gradient: var(
+    --keyob-gradient,
+    linear-gradient(90deg, #07101e 0%, #123c8c 35%, #2563d9 65%, #19c6e8 100%)
+  );
+  --wc-sans: var(--keyob-sans, 'Inter', system-ui, sans-serif);
+  --wc-serif: var(--keyob-serif, 'Instrument Serif', Georgia, serif);
+  font-family: var(--wc-sans);
+}
+
+/* ===== Launcher ===== */
+.launcher {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 60;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 999px;
+  color: #fff;
+  cursor: pointer;
+  background: var(--wc-gradient);
+  box-shadow:
+    0 12px 34px -10px rgba(37, 99, 217, 0.55),
+    0 4px 12px -4px rgba(7, 16, 30, 0.35);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+.launcher:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow:
+    0 18px 42px -10px rgba(37, 99, 217, 0.62),
+    0 6px 16px -4px rgba(7, 16, 30, 0.4);
+}
+.launcher:active {
+  transform: scale(0.96);
+}
+.launcher:focus-visible {
+  outline: 2px solid var(--wc-cyan);
+  outline-offset: 3px;
+}
+.launcherIcon {
+  display: flex;
+}
+/* Attention ring that pulses until first opened */
+.launcherPulse::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  border: 2px solid var(--wc-cyan);
+  animation: wcPulse 2.2s ease-out infinite;
+}
+.unread {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 13px;
+  height: 13px;
+  border-radius: 999px;
+  background: var(--wc-cyan);
+  border: 2px solid var(--wc-deep);
+}
+
+/* ===== Panel ===== */
+.panel {
+  position: fixed;
+  right: 20px;
+  bottom: 92px;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  width: min(calc(100vw - 40px), 388px);
+  height: min(72vh, 600px);
+  overflow: hidden;
+  border-radius: 20px;
+  background: var(--wc-frost);
+  border: 1px solid var(--wc-steel);
+  box-shadow:
+    0 30px 70px -24px rgba(7, 16, 30, 0.45),
+    0 12px 28px -12px rgba(7, 16, 30, 0.25);
+}
+
+/* ===== Header ===== */
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 16px 18px;
+  background: var(--wc-gradient);
+  color: #fff;
+}
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+.headerText {
+  min-width: 0;
+}
+.title {
+  margin: 0;
+  font-family: var(--wc-sans);
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  color: #fff;
+}
+.title em {
+  font-family: var(--wc-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--wc-cyan);
+}
+.status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.75);
+}
+.statusDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--wc-cyan);
+  box-shadow: 0 0 0 0 rgba(25, 198, 232, 0.6);
+  animation: wcBreathe 2.4s ease-in-out infinite;
+}
+.close {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.close:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+.close:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 1px;
+}
+
+/* ===== Message list ===== */
+.body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 18px 16px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  scroll-behavior: smooth;
+}
+.row {
+  display: flex;
+  justify-content: flex-start;
+}
+.rowUser {
+  justify-content: flex-end;
+}
+.bubble {
+  max-width: 82%;
+  padding: 9px 13px;
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: 16px;
+  animation: wcBubbleIn 0.22s ease-out;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.bubbleBot {
+  background: #fff;
+  color: var(--wc-graphite);
+  border: 1px solid var(--wc-steel);
+  border-bottom-left-radius: 5px;
+  box-shadow: 0 2px 8px -4px rgba(7, 16, 30, 0.14);
+}
+.bubbleUser {
+  color: #fff;
+  border-bottom-right-radius: 5px;
+  background: linear-gradient(135deg, var(--wc-blue) 0%, var(--wc-navy) 100%);
+  box-shadow: 0 4px 12px -5px rgba(37, 99, 217, 0.5);
+}
+
+/* ===== Typing indicator ===== */
+.typing {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 14px;
+}
+.typing span {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--wc-blue);
+  opacity: 0.5;
+  animation: wcTyping 1.2s ease-in-out infinite;
+}
+.typing span:nth-child(2) {
+  animation-delay: 0.18s;
+}
+.typing span:nth-child(3) {
+  animation-delay: 0.36s;
+}
+
+/* ===== Quick-reply chips ===== */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 2px 2px 6px;
+}
+.chip {
+  font-family: var(--wc-sans);
+  font-size: 12.5px;
+  color: var(--wc-navy);
+  background: #fff;
+  border: 1px solid var(--wc-steel);
+  border-radius: 999px;
+  padding: 7px 12px;
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease,
+    transform 0.15s ease;
+}
+.chip:hover {
+  border-color: var(--wc-blue);
+  color: var(--wc-blue);
+  transform: translateY(-1px);
+}
+.chip:focus-visible {
+  outline: 2px solid var(--wc-blue);
+  outline-offset: 1px;
+}
+
+/* ===== Error ===== */
+.error {
+  align-self: flex-start;
+  max-width: 82%;
+  padding: 9px 13px;
+  font-size: 13px;
+  line-height: 1.45;
+  border-radius: 14px;
+  color: #b42318;
+  background: rgba(224, 50, 45, 0.08);
+  border: 1px solid rgba(224, 50, 45, 0.2);
+}
+
+/* ===== Composer ===== */
+.composer {
+  padding: 12px;
+  border-top: 1px solid var(--wc-steel);
+  background: #fff;
+}
+.inputWrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 6px 6px 14px;
+  border-radius: 14px;
+  background: var(--wc-frost);
+  border: 1px solid var(--wc-steel);
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+.inputWrap:focus-within {
+  border-color: var(--wc-blue);
+}
+.input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  font-family: var(--wc-sans);
+  font-size: 14px;
+  color: var(--wc-deep);
+  outline: none;
+}
+.input::placeholder {
+  color: #8b95a3;
+}
+.send {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  background: var(--wc-gradient);
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
+}
+.send:hover:not(:disabled) {
+  transform: scale(1.05);
+}
+.send:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.send:focus-visible {
+  outline: 2px solid var(--wc-blue);
+  outline-offset: 2px;
+}
+
+/* ===== Footer note ===== */
+.footnote {
+  margin: 8px 2px 0;
+  font-size: 11px;
+  text-align: center;
+  color: #8b95a3;
+}
+
+/* ===== Keyframes ===== */
+@keyframes wcPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.55);
+    opacity: 0;
+  }
+}
+@keyframes wcBreathe {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(25, 198, 232, 0.55);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(25, 198, 232, 0);
+  }
+}
+@keyframes wcTyping {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.45;
+  }
+  30% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+@keyframes wcBubbleIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .launcher,
+  .launcher:hover,
+  .send:hover:not(:disabled),
+  .chip:hover {
+    transform: none;
+  }
+  .launcherPulse::after,
+  .statusDot,
+  .typing span,
+  .bubble {
+    animation: none;
+  }
+}

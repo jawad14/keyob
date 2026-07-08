@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Fraunces, Instrument_Serif, Inter, JetBrains_Mono } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
+import { ChatWidget } from '@/components/blocks/ChatWidget';
 import { ThemeProvider } from '@/components/providers/theme-provider';
 import { HashScroll } from '@/components/util/HashScroll';
 import { TopLoader } from '@/components/util/TopLoader';
@@ -64,6 +65,7 @@ export default function RootLayout({
           <TopLoader />
           <HashScroll />
           {children}
+          <ChatWidget />
         </ThemeProvider>
         <Analytics />
       </body>
