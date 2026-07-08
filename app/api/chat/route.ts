@@ -20,9 +20,10 @@ type ChatRequestBody = {
 
 export async function POST(request: Request) {
   const apiKey = env.ALEESA_WEBCHAT_API_KEY;
-  const baseUrl = env.ALEESA_WEBHOOK_BASE_URL;
+  // Full Aleesa web-chat endpoint URL, including the /webhooks/web-chat path.
+  const endpoint = env.ALEESA_WEBHOOK_BASE_URL;
 
-  if (!apiKey || !baseUrl) {
+  if (!apiKey || !endpoint) {
     return NextResponse.json(
       {
         success: false,
@@ -53,8 +54,6 @@ export async function POST(request: Request) {
 
   // A stable sessionId keeps the visitor's messages in one conversation thread.
   const sessionId = String(body.sessionId ?? '').trim() || `chat_${crypto.randomUUID()}`;
-
-  const endpoint = `${baseUrl.replace(/\/$/, '')}/webhooks/web-chat`;
 
   try {
     const upstream = await fetch(endpoint, {
