@@ -11,6 +11,8 @@ export const viewport: Viewport = {
   themeColor: '#07101E',
 };
 
+export const dynamicParams = false;
+
 const PORTRAITS: Record<string, string> = {
   'jawad-siddique': '/jawad-siddique-au.png',
   'saad-khalid': '/saad-khalid-au.png',

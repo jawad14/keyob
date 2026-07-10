@@ -10,6 +10,8 @@ export const viewport: Viewport = {
   themeColor: '#0d1b2a',
 };
 
+export const dynamicParams = false;
+
 const BESPOKE_SLUGS = new Set([
   'investment-markets-australia',
   'best-value-custom-erp',

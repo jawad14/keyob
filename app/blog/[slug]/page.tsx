@@ -9,6 +9,7 @@ import { siteConfig, defaultOgImages } from '@/config/site.config';
 import { cms } from '@/lib/cms';
 
 export const revalidate = 3600;
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
   const posts = await cms.listPosts();

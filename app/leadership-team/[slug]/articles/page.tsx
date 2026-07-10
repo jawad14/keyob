@@ -11,6 +11,8 @@ export const viewport: Viewport = {
   themeColor: '#07101E',
 };
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return leaderArticleSlugs.map((slug) => ({ slug }));
 }

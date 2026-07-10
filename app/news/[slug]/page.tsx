@@ -6,6 +6,8 @@ import { NewsArticleDetail } from '@/components/blocks/NewsArticleDetail';
 import { newsArticles } from '@/config/keyob-news';
 import { siteConfig, defaultOgImages } from '@/config/site.config';
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return newsArticles.map((a) => ({ slug: a.slug }));
 }
