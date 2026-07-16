@@ -56,6 +56,13 @@ function GovernanceIcon() {
     </svg>
   );
 }
+function WorldIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.7}>
+      <path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0zM3 12h18" />
+    </svg>
+  );
+}
 
 const ICONS: Record<LeaderSnapshotItem['icon'], () => React.ReactElement> = {
   pin: PinIcon,
@@ -63,6 +70,7 @@ const ICONS: Record<LeaderSnapshotItem['icon'], () => React.ReactElement> = {
   list: ListIcon,
   globe: GlobeIcon,
   governance: GovernanceIcon,
+  world: WorldIcon,
 };
 
 function LinkedInIcon() {
@@ -488,39 +496,70 @@ function Pathway({
   pathway: LeaderProfileType['keyob']['pathway'];
   accent: LeaderProfileType['accent'];
 }) {
+  // Desktop diagram is a 1:1 reproduction of the reference HTML: six branches
+  // that converge into a continuous-modernisation node, plus a return-arrow
+  // flow feeding back into the business need. Uniform 200-wide branch nodes are
+  // required so their right edges align at x=850 and the converge lines connect
+  // flush. The marker id is prefixed with the slug so multiple diagrams never
+  // collide when several render on one page.
   const ys = [40, 75, 110, 145, 180, 215];
-  const loopText = pathway.loopLabel.replace(/^↻\s*/, '');
-  const loopY = 250;
-  const loopW = loopText.length * 6.2 + 24;
+  const markerId = `lp-ret-arr-${pathway.startLineA}`.replace(/[^a-zA-Z0-9-]/g, '');
   return (
     <div className="lp-pathvis" aria-hidden="true">
       <svg
-        viewBox="0 0 1080 300"
+        viewBox="0 0 1080 260"
         role="img"
-        aria-label="A real business need branching across capabilities with continuous modernisation."
+        aria-label="A real business need branching into capabilities that converge into continuous modernisation, which feeds back into the business."
         className="lp-pathvis-svg"
       >
         <path className="lp-path-line" d="M150 130 L300 130" />
-        <path className="lp-path-line" d="M300 130 C380 130 380 40 470 40" />
-        <path className="lp-path-line" d="M300 130 C380 130 380 75 470 75" />
-        <path className="lp-path-line" d="M300 130 C380 130 380 110 470 110" />
-        <path className="lp-path-line" d="M300 130 C380 130 380 145 470 145" />
-        <path className="lp-path-line" d="M300 130 C380 130 380 180 470 180" />
-        <path className="lp-path-line" d="M300 130 C380 130 380 215 470 215" />
-        <path className="lp-path-line" d="M470 40 L650 40" />
-        <path className="lp-path-line" d="M470 75 L650 75" />
-        <path className="lp-path-line" d="M470 110 L650 110" />
-        <path className="lp-path-line" d="M470 145 L650 145" />
-        <path className="lp-path-line" d="M470 180 L650 180" />
-        <path className="lp-path-line" d="M470 215 L650 215" />
+        {ys.map((y) => (
+          <path
+            key={`branch-${y}`}
+            className="lp-path-line"
+            d={`M300 130 C380 130 380 ${y} 470 ${y}`}
+          />
+        ))}
+        {ys.map((y) => (
+          <path key={`h-${y}`} className="lp-path-line" d={`M470 ${y} L650 ${y}`} />
+        ))}
+        {/* branches converge into continuous modernisation */}
+        {ys.map((y) => (
+          <path
+            key={`conv-${y}`}
+            className="lp-path-line"
+            d={`M850 ${y} C 872 ${y} 872 130 886 130`}
+          />
+        ))}
+        {/* continuous modernisation node */}
+        <g>
+          <rect className="lp-path-node" x={886} y={115} width={186} height={30} rx={8} />
+          <text className="lp-path-lab" x={898} y={134}>
+            {pathway.loopLabel}
+          </text>
+        </g>
+        {/* return flow: modernisation feeds back into the business need */}
+        <defs>
+          <marker
+            id={markerId}
+            viewBox="0 0 10 10"
+            refX={8}
+            refY={5}
+            markerWidth={7}
+            markerHeight={7}
+            orient="auto-start-reverse"
+          >
+            <path d="M0 0 L10 5 L0 10 z" fill={accent.plumSoft} />
+          </marker>
+        </defs>
         <path
-          className="lp-path-line lp-path-loop"
-          d={`M650 ${loopY} L470 ${loopY}`}
+          className="lp-path-line"
+          d="M900 145 C 720 256, 320 256, 138 150"
+          stroke={accent.plum}
+          strokeOpacity={0.6}
+          markerEnd={`url(#${markerId})`}
         />
-        <path
-          className="lp-path-line lp-path-loop"
-          d={`M470 ${loopY} C380 ${loopY} 380 130 300 130`}
-        />
+        {/* start */}
         <circle cx={120} cy={130} r={15} fill={accent.plum} />
         <text className="lp-path-startlab" x={120} y={166} textAnchor="middle">
           {pathway.startLineA}
@@ -528,33 +567,18 @@ function Pathway({
         <text className="lp-path-startlab" x={120} y={181} textAnchor="middle">
           {pathway.startLineB}
         </text>
-        {pathway.branches.map((b, i) => {
-          const w = b.length * 6.2 + 24;
-          return (
-            <g key={b}>
-              <rect className="lp-path-node" x={650} y={ys[i] - 15} width={w} height={30} rx={8} />
-              <text className="lp-path-lab" x={662} y={ys[i] + 4}>
-                {b}
-              </text>
-            </g>
-          );
-        })}
-        <g>
-          <rect
-            className="lp-path-node"
-            x={650}
-            y={loopY - 15}
-            width={loopW}
-            height={30}
-            rx={8}
-          />
-          <text className="lp-path-lab" x={662} y={loopY + 4}>
-            {loopText}
-          </text>
-        </g>
+        {/* branches */}
+        {pathway.branches.map((b, i) => (
+          <g key={b}>
+            <rect className="lp-path-node" x={650} y={ys[i] - 15} width={200} height={30} rx={8} />
+            <text className="lp-path-lab" x={662} y={ys[i] + 4}>
+              {b}
+            </text>
+          </g>
+        ))}
       </svg>
 
-      {/* Mobile-tuned SVG (vertical layout) */}
+      {/* Mobile-tuned SVG (vertical layout) — keeps the diagram legible at 360px */}
       <MobilePathway pathway={pathway} accent={accent} />
     </div>
   );
@@ -567,7 +591,7 @@ function MobilePathway({
   pathway: LeaderProfileType['keyob']['pathway'];
   accent: LeaderProfileType['accent'];
 }) {
-  const loopText = pathway.loopLabel.replace(/^↻\s*/, '');
+  const loopText = pathway.loopLabel;
   const VB_W = 360;
   const TILE_X = 40;
   const TILE_W = 280;

@@ -20,12 +20,11 @@ const PORTRAITS: Record<string, string> = {
   'ehsan-alvi': '/ehsan-alvi-au.png',
 };
 
-// Ehsan's candid (ehsan-beyond-candid.jpg) is intentionally omitted so the
-// human section renders the placeholder note until an approved photo exists.
 const CANDIDS: Record<string, string> = {
   'jawad-siddique': '/jawad-siddique-leadership.png',
   'saad-khalid': '/saad-khalid-health-minister.png',
   'mansoor-ahmad-samar': '/mansoor-gitex-dubai-2025.jpg',
+  'ehsan-alvi': '/ehsan-alvi-candid.jpg',
 };
 
 export function generateStaticParams() {

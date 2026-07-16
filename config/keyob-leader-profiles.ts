@@ -56,7 +56,7 @@ export type LeaderHumanSection = {
   photoAlt: string;
   photoNote: string;
 };
-export type LeaderSnapshotItem = { icon: 'pin' | 'building' | 'list' | 'globe' | 'governance'; text: string };
+export type LeaderSnapshotItem = { icon: 'pin' | 'building' | 'list' | 'globe' | 'governance' | 'world'; text: string };
 export type LeaderSnapshotLink = { href: string; label: string; icon: 'linkedin' | 'articles' | 'events' | 'chat'; accent?: boolean };
 
 export type LeaderProfile = {
@@ -930,7 +930,7 @@ const ehsan: LeaderProfile = {
       { icon: 'building', text: 'Strategic Leadership & Business Growth, KEYOB' },
       { icon: 'list', text: 'Enterprise programs — energy markets, mining & utilities' },
       { icon: 'globe', text: 'Strategy, partnerships & relationship development' },
-      { icon: 'governance', text: 'Masters, Information Systems & eCommerce — UQ' },
+      { icon: 'world', text: 'Masters, Information Systems & eCommerce — UQ' },
     ],
     links: [
       { href: 'https://www.linkedin.com/in/ehsanalvi/', label: 'LinkedIn', icon: 'linkedin' },
