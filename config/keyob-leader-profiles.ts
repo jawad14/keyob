@@ -907,7 +907,226 @@ const mansoor: LeaderProfile = {
   },
 };
 
-export const leaderProfiles: LeaderProfile[] = [jawad, saad, mansoor];
+const ehsan: LeaderProfile = {
+  slug: 'ehsan-alvi',
+  name: 'Ehsan Alvi',
+  role: 'Strategic Leadership & Business Growth, KEYOB',
+  regionLabel: 'Leadership · Brisbane, Australia',
+  identityStatement:
+    'Bringing national-scale enterprise discipline to the growth of real businesses — and of KEYOB itself.',
+  portraitAlt: 'Ehsan Alvi, Strategic Leadership and Business Growth at KEYOB',
+  portraitNote: 'Approved editorial portrait of Ehsan Alvi',
+  // Ehsan's personal accent — Deep Forest Green (token names kept for system parity).
+  accent: { plum: '#245b38', plumMist: '#ebf4ee', plumSoft: '#5a9a74' },
+  thought: {
+    quote:
+      'Growth is not a campaign or a lucky quarter. It is strategy, delivery and relationships',
+    emphasis: 'compounding in the same direction.',
+    caption: 'Ehsan Alvi on disciplined growth',
+  },
+  snapshot: {
+    items: [
+      { icon: 'pin', text: 'Based in Brisbane, Queensland' },
+      { icon: 'building', text: 'Strategic Leadership & Business Growth, KEYOB' },
+      { icon: 'list', text: 'Enterprise programs — energy markets, mining & utilities' },
+      { icon: 'globe', text: 'Strategy, partnerships & relationship development' },
+      { icon: 'governance', text: 'Masters, Information Systems & eCommerce — UQ' },
+    ],
+    links: [
+      { href: 'https://www.linkedin.com/in/ehsanalvi/', label: 'LinkedIn', icon: 'linkedin' },
+      { href: '#articles', label: 'Articles', icon: 'articles' },
+      { href: '#events', label: 'Events', icon: 'events' },
+      { href: '#connect', label: 'Start a conversation', icon: 'chat', accent: true },
+    ],
+  },
+  nav: SHARED_NAV,
+  story: {
+    eyebrow: 'The journey',
+    headingPrefix: 'Enterprise discipline, pointed at',
+    headingEm: 'real business growth.',
+    paragraphs: [
+      "Ehsan Alvi's career was shaped where technology carries national consequence. With a Masters in Information Systems and eCommerce from The University of Queensland, he spent years in enterprise technology services and delivery for mining, oil and utilities at DXC Technology, and in program management at the Australian Energy Market Operator — inside the organisation that keeps Australia's energy markets running.",
+      'Those environments teach a particular discipline: strategy that names its assumptions, governance that protects momentum rather than smothering it, and relationships engineered as carefully as the systems they depend on. Alongside it, a craft formed that job titles undersell — solution architecture, strategic planning and relationship development working as one skill.',
+      'At KEYOB, Ehsan points that discipline at a different mission: growth. Growing the businesses the operating layer serves — and growing KEYOB with them. His conviction is that the rigour protecting national infrastructure is exactly what growing businesses are never offered, and that they deserve it sized honestly for their reality.',
+    ],
+    steps: [
+      { n: '01', title: 'Understand the position', body: 'Where the business truly stands — market, operations, momentum.' },
+      { n: '02', title: 'Set the direction', body: 'Strategy that names its assumptions and survives contact.' },
+      { n: '03', title: 'Deliver and prove', body: 'Value demonstrated in real operations, not in a deck.' },
+      { n: '04', title: 'Deepen the trust', body: 'Relationships built deliberately — and tested under load.' },
+      { n: '05', title: 'Expand together', body: 'One good engagement becomes the next shared opportunity.' },
+      { n: '06', title: 'Compound', body: 'Quarter after quarter, the small right moves accumulate.' },
+    ],
+    highlight:
+      'The compounding is invisible day to day — and completely undeniable over the years.',
+  },
+  philosophy: {
+    eyebrow: 'How he leads',
+    headingPrefix: 'Enterprise thinking. Honest sizing.',
+    headingEm: 'Compounding results.',
+    principles: [
+      {
+        n: '01',
+        title: 'Compounding beats campaigns',
+        body: 'Bursts fade; systems accumulate. Ehsan builds growth from strategy, delivery and relationships reinforcing each other quarter after quarter — never from one big swing.',
+        emph: 'Play the long game.',
+        variant: 'ice',
+      },
+      {
+        n: '02',
+        title: 'Relationships are infrastructure',
+        body: 'Trust is built like any critical system: deliberately, redundantly, tested under load. The relationships that grow a business deserve the same engineering as its software.',
+        emph: 'Build trust like a system.',
+        variant: 'navy',
+      },
+      {
+        n: '03',
+        title: 'Enterprise rigour, honest sizing',
+        body: "Growing businesses don't need enterprise bureaucracy — they need enterprise thinking, scaled truthfully to their reality. Governance should protect momentum, not smother it.",
+        emph: 'Size it honestly.',
+        variant: 'plum',
+      },
+      {
+        n: '04',
+        title: 'Strategy must survive contact',
+        body: "A plan that can't absorb a surprise was a wish. Real strategy names its assumptions, watches them, and adapts without losing direction — a thousand small decisions staying aligned.",
+        emph: 'Name the assumptions.',
+        variant: 'ice',
+      },
+    ],
+  },
+  keyob: {
+    eyebrow: 'Building KEYOB',
+    headingPrefix: 'Growth for clients and KEYOB —',
+    headingEm: 'one and the same agenda.',
+    paragraphs: [
+      "Ehsan's remit connects KEYOB's direction with its clients' growth — market strategy, partnerships and the long-term relationships that turn one engagement into a decade of shared progress. KEYOB works across branding, web experiences, CRM, ERP, data platforms, workflow automation, AI operations and system integration; his job is making sure that breadth compounds for the client.",
+      'Because business challenges never stay inside one category, growth doesn’t either. A branding issue becomes a website challenge; a website inquiry becomes a CRM workflow; a CRM workflow reveals a reporting gap; a reporting gap leads to integration, automation or an AI-enabled operating layer. Each step, taken well, sets up the next.',
+      "Ehsan's view is that this is what strategic growth actually looks like: joining the client at any stage, moving in whichever direction creates the greatest value, and letting the relationship — not a sales cycle — set the pace.",
+    ],
+    phrasePrefix: 'Small right moves. Aligned decisions.',
+    phraseEm: 'Growth that compounds.',
+    pathway: {
+      startLineA: 'A real',
+      startLineB: 'business need',
+      loopLabel: '↻ Continuous modernisation',
+      branches: [
+        'Brand & market presence',
+        'Digital experience',
+        'CRM & customer operations',
+        'ERP & core systems',
+        'Data & business intelligence',
+        'Automation & AI operations',
+      ],
+    },
+  },
+  articles: {
+    eyebrow: "From Ehsan's desk",
+    headingPrefix: 'Notes on strategy, partnerships',
+    headingEm: 'and disciplined growth.',
+    lead: 'Perspectives on growth, enterprise thinking and relationships that compound.',
+    items: [],
+    emptyMessage: 'More ideas from Ehsan are being prepared.',
+    featuredCta: 'Read article',
+  },
+  events: {
+    eyebrow: 'In conversation',
+    headingPrefix: 'The rooms, discussions and ideas',
+    headingEm: 'shaping the future of business.',
+    items: [],
+    emptyMessage: 'Upcoming conversations and appearances will be shared here.',
+  },
+  work: {
+    eyebrow: 'Work in practice',
+    headingPrefix: 'Leadership becomes meaningful when it',
+    headingEm: 'reaches real businesses.',
+    items: [
+      {
+        slug: 'best-value-auto-body-supply',
+        url: '/stories/best-value-custom-erp',
+        tag: 'Custom ERP · Long-term partnership',
+        name: 'Best Value Auto Body Supply',
+        copy: 'The model of compounding in practice — one ERP engagement growing into nearly a decade of operational evolution, improvement and modernisation.',
+      },
+      {
+        slug: 'investment-markets-australia',
+        url: '/stories/investment-markets-australia',
+        tag: 'Platform delivery · Launch readiness',
+        name: 'Investment Markets Australia',
+        copy: 'Enterprise discipline under deadline — structured delivery and calm execution moving a complex portal toward launch readiness.',
+      },
+      {
+        slug: 'international-coaching-institute',
+        url: '/stories/international-coaching-institute',
+        tag: 'BI platform · One trusted view',
+        name: 'International Coaching Institute',
+        copy: 'Strategy made visible — a fragmented data landscape turned into one trusted view that leadership can actually steer by.',
+      },
+      {
+        slug: 'automart-auto-body-supply',
+        url: '/stories/automart-nationwide',
+        tag: 'Service automation · Routing',
+        name: 'Automart Auto Body Supply',
+        copy: 'How relationships expand — an established ERP partnership growing into customer-service automation and smarter routing.',
+      },
+      {
+        slug: 'aleesa-ai',
+        url: '/stories/aleesa-ai',
+        tag: 'AI operations · Automated office',
+        name: 'Aleesa.ai',
+        copy: 'Where one need leads — a single clinic requirement compounding into a multi-channel automated office for growing businesses.',
+      },
+    ],
+  },
+  human: {
+    eyebrow: 'Beyond the role',
+    headingPrefix: 'Growth is a habit long before',
+    headingEm: 'it is a result.',
+    paragraphs: [
+      "Ehsan's style is grounded in steadiness. Clients who have worked in enterprise environments recognise it immediately: the assumptions written down, the risks named early, the follow-through that arrives without being chased.",
+      "Away from work, he is a cyclist on Brisbane's roads — and he will tell you the two disciplines are the same one. Progress that is invisible day to day, and undeniable over a year. You just keep turning the pedals.",
+      'For Ehsan, professionalism is exactly that: consistency you can plan around, and the confidence that the person who set the strategy will still be in the room when it is tested.',
+    ],
+    quote:
+      "Strategy isn't the big decision. It's a thousand small ones that all agree with each other.",
+    photoAlt: 'Ehsan Alvi in conversation with the KEYOB team',
+    photoNote:
+      'A natural, candid photo of Ehsan with clients, partners or the KEYOB team — not a formal portrait.',
+  },
+  media: {
+    eyebrow: 'Profile resources',
+    headingPrefix: 'Media, profile',
+    headingEm: 'and speaking.',
+    speakingTopics: [
+      'Growth as a discipline, not a campaign',
+      'Enterprise rigour for growing businesses — sized honestly',
+      'Relationships as infrastructure',
+      'Strategy that survives contact with reality',
+      'What national-scale programs teach about delivery',
+      'Turning one engagement into a decade of shared progress',
+    ],
+    resources: [
+      { title: 'Professional biography', type: 'Profile', url: null },
+      { title: 'Approved headshot', type: 'Image', url: null },
+      { title: 'Media profile', type: 'PDF', url: null },
+      { title: 'Speaking enquiries', type: 'Contact', url: '/contact#contact' },
+      { title: 'LinkedIn profile', type: 'Link', url: 'https://www.linkedin.com/in/ehsanalvi/' },
+    ],
+    note: 'Media and profile assets are made available on request. Items appear here once approved and uploaded.',
+  },
+  connect: {
+    eyebrow: 'Connect',
+    headingPrefix: 'Start with the',
+    headingEm: 'business conversation.',
+    lead: 'Whether the challenge begins with software, data, AI, customer operations, business systems or digital growth, the first step is understanding where the organisation is today — and where it needs to move next.',
+    primaryCta: { href: '/contact#contact', label: 'Start a conversation' },
+    secondaryCta: { href: 'https://www.linkedin.com/in/ehsanalvi/', label: 'Connect on LinkedIn' },
+    tertiaryCta: { href: '/', label: 'Explore KEYOB →' },
+    closing: 'One conversation can become the beginning of a long-term transformation partnership.',
+  },
+};
+
+export const leaderProfiles: LeaderProfile[] = [jawad, saad, mansoor, ehsan];
 
 export function getLeaderProfile(slug: string): LeaderProfile | undefined {
   return leaderProfiles.find((p) => p.slug === slug);

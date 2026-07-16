@@ -34,6 +34,7 @@ export const ltLeaders: LtLeader[] = [
       "Ehsan contributes to KEYOB's Australian leadership presence, supporting strategic direction, client relationships, and business growth initiatives.",
     link: 'https://www.linkedin.com/in/ehsanalvi/',
     photo: '/ehsan-alvi-au.png',
+    profileSlug: 'ehsan-alvi',
   },
   {
     name: 'Saad Khalid',
