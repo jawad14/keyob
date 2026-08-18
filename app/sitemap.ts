@@ -15,6 +15,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticPages: MetadataRoute.Sitemap = [
     { url: base, lastModified: now, changeFrequency: 'weekly', priority: 1 },
     { url: url('/what-we-do'), lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    {
+      url: url('/what-we-do/erp-implementations'),
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: url('/what-we-do/erp-implementations/sap-business-one'),
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: url('/what-we-do/erp-implementations/odoo'),
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
     { url: url('/stories'), lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: url('/leadership-team'), lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: url('/news'), lastModified: now, changeFrequency: 'weekly', priority: 0.8 },

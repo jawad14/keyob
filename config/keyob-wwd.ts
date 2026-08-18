@@ -4,6 +4,8 @@ export type WwdStage = {
   who: string;
   services: string[];
   outcome: string;
+  /** Optional deep-dive page for stages that have one. */
+  link?: { href: string; label: string };
 };
 
 export type WwdStageCard = { question: string; startWith: string };
@@ -109,6 +111,10 @@ export const wwdStages: WwdStage[] = [
     ],
     outcome:
       'Your business operations become structured, measurable, and easier to scale.',
+    link: {
+      href: '/what-we-do/erp-implementations',
+      label: 'Explore ERP Implementations — SAP Business One & Odoo',
+    },
   },
   {
     title: 'AI Workflows & Intelligent Automation',

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { wwdStages } from '@/config/keyob-wwd';
 
 export function WwdPathway() {
@@ -72,6 +73,11 @@ export function WwdPathway() {
                     <div className="wwd-stair-out">
                       <span className="wwd-stair-k">Business outcome</span>
                       {stage.outcome}
+                      {stage.link ? (
+                        <Link className="wwd-stair-link" href={stage.link.href}>
+                          {stage.link.label} <span aria-hidden="true">→</span>
+                        </Link>
+                      ) : null}
                     </div>
                   </div>
                 </div>

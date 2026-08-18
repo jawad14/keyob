@@ -1343,7 +1343,10 @@ const waqas: LeaderProfile = {
       href: 'https://www.linkedin.com/in/iamwaqasathar/',
       label: 'Connect on LinkedIn',
     },
-    tertiaryCta: { href: '/', label: 'Explore KEYOB →' },
+    tertiaryCta: {
+      href: '/what-we-do/erp-implementations',
+      label: 'Explore the ERP practice →',
+    },
     closing: 'One conversation can become the beginning of a long-term transformation partnership.',
   },
 };

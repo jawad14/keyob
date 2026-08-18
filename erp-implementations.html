@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07101E">
+<title>ERP Implementations — SAP Business One &amp; Odoo | KEYOB</title>
+<meta name="description" content="KEYOB's ERP implementation practice: SAP Business One and Odoo, delivered end to end and integrated into one connected operating layer — advisory, implementation, data migration and ongoing support.">
+<link rel="canonical" href="https://www.keyob.com/what-we-do/erp-implementations">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ERP Implementations — SAP Business One &amp; Odoo | KEYOB">
+<meta property="og:description" content="Two proven ERP paths, one delivery discipline — implemented and connected to everything else your business runs on.">
+<meta property="og:url" content="https://www.keyob.com/what-we-do/erp-implementations">
+<meta property="og:site_name" content="KEYOB">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Service","serviceType":"ERP Implementation","provider":{"@type":"Organization","name":"KEYOB","url":"https://www.keyob.com"},"areaServed":{"@type":"Country","name":"Australia"},"description":"ERP advisory, implementation, data migration, integration and support across SAP Business One and Odoo.","url":"https://www.keyob.com/what-we-do/erp-implementations","hasOfferCatalog":{"@type":"OfferCatalog","name":"ERP platforms","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"SAP Business One implementation"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Odoo implementation"}}]}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"What we do","item":"https://www.keyob.com/what-we-do"},{"@type":"ListItem","position":2,"name":"ERP Implementations","item":"https://www.keyob.com/what-we-do/erp-implementations"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What is the difference between SAP Business One and Odoo?","acceptedAnswer":{"@type":"Answer","text":"SAP Business One is SAP's ERP built for small and mid-sized businesses, offering a tightly integrated finance-first suite backed by SAP's global ecosystem. Odoo is a modular open-source business suite with a broad app range and a highly flexible, extensible architecture. The right choice depends on process complexity, regulatory requirements, budget and how much customisation the business needs."}},
+{"@type":"Question","name":"How long does an ERP implementation take?","acceptedAnswer":{"@type":"Answer","text":"Duration depends on scope: the number of business processes in scope, entities and locations, data quality, integrations required and how much customisation is involved. A focused single-entity rollout is considerably shorter than a multi-entity programme with complex integrations. Scoping during discovery produces the realistic timeline."}},
+{"@type":"Question","name":"What usually causes ERP projects to struggle?","acceptedAnswer":{"@type":"Answer","text":"Most difficulties come from outside the software: undocumented business processes, poor data quality discovered late, integrations left until the end, insufficient user training, and support that stops shortly after go-live. Addressing these deliberately is what separates a system that is installed from one that is adopted."}},
+{"@type":"Question","name":"Can an ERP connect to the systems we already use?","acceptedAnswer":{"@type":"Answer","text":"Yes. Both SAP Business One and Odoo support integration with CRM platforms, e-commerce, warehouse and logistics systems, reporting tools and custom applications through APIs and integration services. Integration should be designed into the architecture from the start rather than treated as a late-stage task."}}
+]}
+</script>
+
+<style>
+  :root{
+    --navy:#031536;--navy-2:#14295A;--azure:#01b0f4;--azure-soft:#4fc8f8;
+    --paper:#ffffff;--ice:#f4f8fb;--ice-2:#e9f1f7;
+    --ink:#07162d;--mute:#5f6b7a;--border:#dde7ef;--faint:#9aa7b4;
+    /* practice accent — Indigo, used sparingly. Azure still leads. */
+    --acc:#3d3a8c;--acc-soft:#6f6bc4;--acc-mist:#eeedf8;
+    /* platform identity tints (used only inside their own cards) */
+    --sap-gold:#f0ab00;--sap-gold-deep:#b8860b;
+    --odoo:#7d4b8c;--odoo-soft:#a87ab5;
+    --serif:'Fraunces',Georgia,serif;--sans:'Space Grotesk',sans-serif;--mono:'JetBrains Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--acc-mist);color:var(--acc)}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+
+  /* nav */
+  nav.site{position:fixed;top:0;left:0;right:0;z-index:40;transition:background .4s,backdrop-filter .4s,box-shadow .4s}
+  nav.site.solid{background:rgba(3,21,54,.86);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(255,255,255,.06)}
+  .nav-in{max-width:1180px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
+  .logo{font-family:var(--serif);font-size:22px;font-weight:500;color:#fff;letter-spacing:.02em}
+  .logo b{color:var(--azure);font-weight:500}
+  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links a{font-family:var(--mono);font-size:12.5px;letter-spacing:.03em;color:rgba(255,255,255,.8);transition:color .3s}
+  .nav-links a:hover{color:#fff}
+  .nav-cta{color:var(--navy)!important;background:var(--azure);padding:9px 16px;border-radius:30px}
+  @media(max-width:760px){.nav-links a:not(.nav-cta){display:none}}
+
+  /* shared */
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--azure);display:flex;align-items:center;gap:12px}
+  .eyebrow.acc{color:var(--acc)}
+  .eyebrow::before{content:"";width:30px;height:1px;background:currentColor;opacity:.6}
+  .eyebrow.nobar::before{display:none}
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--azure);color:#022;font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.03em;padding:14px 24px;border-radius:44px;border:none;cursor:pointer;transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}
+  .btn:hover{transform:translateY(-3px);box-shadow:0 14px 30px -12px rgba(1,176,244,.6)}
+  .btn-ghost{display:inline-flex;align-items:center;gap:10px;background:transparent;color:#fff;border:1px solid rgba(255,255,255,.3);font-family:var(--mono);font-size:13px;letter-spacing:.03em;padding:13px 23px;border-radius:44px;cursor:pointer;transition:.35s}
+  .btn-ghost:hover{border-color:#fff;transform:translateY(-3px)}
+  .arr{transition:transform .3s}
+  .btn:hover .arr,.lnk:hover .arr{transform:translateX(4px)}
+  .lnk{font-family:var(--mono);font-size:12.5px;letter-spacing:.03em;color:var(--acc);display:inline-flex;align-items:center;gap:8px}
+  .lnk:hover{color:var(--ink)}
+
+  .sct{padding:104px 0}
+  .sct.ice{background:var(--ice)}
+  .sct.dark{background:linear-gradient(165deg,var(--navy-2),var(--navy));color:#fff}
+  .sct.dark p{color:rgba(255,255,255,.82)}
+  h2.sec{font-family:var(--serif);font-weight:300;line-height:1.12;letter-spacing:-.02em;color:var(--ink);font-size:clamp(28px,3.4vw,42px)}
+  h2.sec em{font-style:italic;color:var(--azure)}
+  .sct.dark h2.sec{color:#fff}
+  .sct.dark h2.sec em{color:var(--acc-soft)}
+  .sec-head{max-width:740px;margin-bottom:56px}
+  .sec-head .sub{margin-top:16px;font-size:16.5px;line-height:1.72;color:var(--mute)}
+  .sct.dark .sec-head .sub{color:rgba(255,255,255,.75)}
+
+  /* ============ HERO ============ */
+  .hero{background:linear-gradient(160deg,var(--navy-2),var(--navy));color:#fff;padding:156px 0 92px;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(56% 78% at 90% 2%,rgba(1,176,244,.18),transparent 60%),radial-gradient(50% 70% at -6% 104%,rgba(111,107,196,.20),transparent 62%);pointer-events:none}
+  .hero .wrap{position:relative;z-index:2}
+  .crumb{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:rgba(255,255,255,.55);margin-bottom:36px;display:flex;gap:9px;flex-wrap:wrap}
+  .crumb a{color:rgba(255,255,255,.7)}.crumb a:hover{color:#fff}.crumb .s{opacity:.4}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  .hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(34px,4.9vw,60px);line-height:1.06;letter-spacing:-.02em;margin:12px 0 20px;max-width:17ch}
+  .hero h1 em{font-style:italic;color:var(--azure-soft)}
+  .hero .intro{font-size:clamp(16px,1.7vw,18.5px);line-height:1.68;color:rgba(255,255,255,.78);max-width:54ch}
+  .hero .intro + .intro{margin-top:14px}
+  .hero-cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+  .hero-panel svg{width:100%;height:auto;display:block}
+  .hero-cap{margin-top:12px;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:rgba(255,255,255,.42);text-align:center}
+  .flow{stroke-dasharray:5 5;animation:flowmove 2.8s linear infinite}
+  @keyframes flowmove{to{stroke-dashoffset:-20}}
+  @media(max-width:920px){.hero-grid{grid-template-columns:1fr}.hero-panel{max-width:520px;margin:0 auto}}
+
+  /* ============ three doors (nav map) ============ */
+  .doors{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:-56px;position:relative;z-index:5}
+  .door{background:var(--paper);border:1px solid var(--border);border-radius:18px;padding:26px 24px;display:flex;flex-direction:column;gap:8px;box-shadow:0 30px 60px -45px rgba(3,21,54,.5);transition:.35s cubic-bezier(.16,1,.3,1)}
+  .door:hover{transform:translateY(-4px);border-color:var(--acc-soft);box-shadow:0 30px 60px -35px rgba(61,58,140,.45)}
+  .door .k{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+  .door .t{font-family:var(--serif);font-size:19px;line-height:1.25;color:var(--ink)}
+  .door .d{font-size:13px;line-height:1.6;color:var(--mute)}
+  .door .go{margin-top:6px;font-family:var(--mono);font-size:11.5px;color:var(--acc);display:inline-flex;gap:7px;align-items:center}
+  .door:hover .go .arr{transform:translateX(4px)}
+  @media(max-width:880px){.doors{grid-template-columns:1fr;margin-top:-40px}}
+
+  /* ============ why us ============ */
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .why{background:var(--paper);border:1px solid var(--border);border-radius:18px;padding:32px 28px;transition:.35s cubic-bezier(.16,1,.3,1)}
+  .why:hover{transform:translateY(-4px);border-color:var(--acc-soft);box-shadow:0 24px 48px -30px rgba(61,58,140,.4)}
+  .why .n{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--acc);margin-bottom:14px}
+  .why h3{font-family:var(--serif);font-weight:400;font-size:20px;line-height:1.28;color:var(--ink);margin-bottom:10px}
+  .why p{font-size:14px;line-height:1.68;color:var(--mute)}
+  @media(max-width:880px){.why-grid{grid-template-columns:1fr}}
+
+  /* ============ SECTION 1 — the lead ============ */
+  .lead-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+  .lead-photo{aspect-ratio:4/5;border-radius:18px 18px 50px 18px;background:linear-gradient(150deg,var(--acc-soft),var(--acc));position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+  .lead-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .lead-photo .ph-note{font-family:var(--mono);font-size:10.5px;line-height:1.7;color:rgba(255,255,255,.9);text-align:center;padding:26px}
+  .lead-name{font-family:var(--serif);font-weight:300;font-size:clamp(28px,3.2vw,40px);line-height:1.1;color:var(--ink);margin:14px 0 6px}
+  .lead-role{font-family:var(--mono);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);margin-bottom:24px}
+  .lead-wrap p{font-size:15.5px;line-height:1.74;color:var(--mute);margin-bottom:16px;max-width:60ch}
+  .lead-quote{font-family:var(--serif);font-weight:300;font-size:clamp(19px,2.1vw,24px);line-height:1.44;color:var(--ink);border-left:3px solid var(--acc-soft);padding-left:24px;margin:28px 0}
+  .lead-quote em{font-style:italic;color:var(--acc)}
+  .lead-cta{margin-top:26px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+  @media(max-width:880px){.lead-wrap{grid-template-columns:1fr}.lead-photo{max-width:380px}}
+
+  /* ============ SECTION 2/3 — platform cards ============ */
+  .plat{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .pcard{position:relative;border-radius:24px;overflow:hidden;border:1px solid var(--border);background:var(--paper);display:flex;flex-direction:column;transition:.4s cubic-bezier(.16,1,.3,1)}
+  .pcard:hover{transform:translateY(-6px);box-shadow:0 40px 80px -50px rgba(3,21,54,.55)}
+  .pcard .top{padding:36px 34px 30px;position:relative;overflow:hidden;background:linear-gradient(155deg,var(--navy-2),var(--navy));color:#fff}
+  .pcard.sap .top::after{content:"";position:absolute;inset:0;background:radial-gradient(70% 90% at 88% 6%,rgba(240,171,0,.22),transparent 62%);pointer-events:none}
+  .pcard.odoo .top::after{content:"";position:absolute;inset:0;background:radial-gradient(70% 90% at 88% 6%,rgba(168,122,181,.26),transparent 62%);pointer-events:none}
+  .pcard .top > *{position:relative;z-index:2}
+  .pcard .badge{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;padding:5px 13px;border-radius:20px;display:inline-block}
+  .pcard.sap .badge{color:var(--sap-gold);background:rgba(240,171,0,.12);border:1px solid rgba(240,171,0,.32)}
+  .pcard.odoo .badge{color:var(--odoo-soft);background:rgba(168,122,181,.14);border:1px solid rgba(168,122,181,.34)}
+  .pcard h3{font-family:var(--serif);font-weight:300;font-size:clamp(24px,2.7vw,32px);line-height:1.14;margin:16px 0 12px}
+  .pcard .tagline{font-size:14.5px;line-height:1.66;color:rgba(255,255,255,.74);max-width:40ch}
+  .pcard .mark{position:absolute;right:28px;bottom:24px;z-index:2;opacity:.9}
+  .pcard .body{padding:30px 34px 34px;display:flex;flex-direction:column;flex-grow:1}
+  .pcard .fitk{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:14px}
+  .pcard ul{list-style:none;margin-bottom:24px}
+  .pcard li{display:flex;gap:12px;align-items:flex-start;padding:9px 0;font-size:14px;line-height:1.6;color:var(--ink);border-bottom:1px solid var(--border)}
+  .pcard li:last-child{border-bottom:none}
+  .pcard.sap .tk{color:var(--sap-gold-deep)}
+  .pcard.odoo .tk{color:var(--odoo)}
+  .pcard .tk{font-family:var(--mono);font-size:12px;flex-shrink:0;line-height:1.5}
+  .pcard .foot{margin-top:auto;padding-top:20px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .pcard .go{font-family:var(--mono);font-size:12.5px;display:inline-flex;gap:8px;align-items:center}
+  .pcard.sap .go{color:var(--sap-gold-deep)}
+  .pcard.odoo .go{color:var(--odoo)}
+  .pcard:hover .go .arr{transform:translateX(4px)}
+  .pcard .note{font-family:var(--mono);font-size:10.5px;color:var(--faint)}
+  @media(max-width:900px){.plat{grid-template-columns:1fr}}
+
+  /* ============ how we deliver ============ */
+  .steps{position:relative;max-width:940px;margin:0 auto}
+  .steps::before{content:"";position:absolute;left:20px;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,var(--azure),var(--acc-soft))}
+  .stp{position:relative;padding:0 0 40px 66px}
+  .stp:last-child{padding-bottom:0}
+  .stp .node{position:absolute;left:9px;top:2px;width:24px;height:24px;border-radius:50%;background:var(--navy);border:2px solid var(--azure);display:flex;align-items:center;justify-content:center}
+  .stp:nth-child(n+4) .node{border-color:var(--acc-soft)}
+  .stp .k{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--acc-soft);margin-bottom:8px;display:block}
+  .stp h3{font-family:var(--serif);font-weight:400;font-size:20px;color:#fff;margin-bottom:8px}
+  .stp p{font-size:14.2px;line-height:1.68;color:rgba(255,255,255,.72);max-width:60ch}
+
+  /* ============ FAQ ============ */
+  .faq{max-width:840px;margin:0 auto}
+  .fq{border-bottom:1px solid var(--border)}
+  .fq button{width:100%;background:none;border:none;text-align:left;cursor:pointer;padding:24px 40px 24px 0;position:relative;font-family:var(--serif);font-size:19px;font-weight:400;color:var(--ink);line-height:1.35}
+  .fq button::after{content:"+";position:absolute;right:6px;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:20px;color:var(--acc);transition:transform .3s}
+  .fq.open button::after{content:"–"}
+  .fq .a{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.16,1,.3,1)}
+  .fq .a p{font-size:14.8px;line-height:1.74;color:var(--mute);padding:0 40px 24px 0}
+
+  /* ============ CTA ============ */
+  .cta{text-align:center;max-width:760px;margin:0 auto}
+  .cta h2{font-family:var(--serif);font-weight:300;font-size:clamp(28px,3.6vw,44px);line-height:1.12;color:#fff;letter-spacing:-.02em}
+  .cta h2 em{font-style:italic;color:var(--acc-soft)}
+  .cta p{margin-top:18px;font-size:16.5px;line-height:1.7;color:rgba(255,255,255,.78)}
+  .cta .row{margin-top:34px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+  /* footer */
+  footer{background:var(--navy);color:rgba(255,255,255,.7);padding:64px 0 34px;border-top:1px solid rgba(255,255,255,.08)}
+  footer .top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:34px}
+  footer .blurb{font-family:var(--serif);font-size:19px;font-weight:300;line-height:1.5;color:#fff;max-width:30ch}
+  footer .blurb span{color:var(--azure)}
+  footer h4{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:16px}
+  footer ul{list-style:none}footer li{margin-bottom:9px}
+  footer a{font-size:13.5px;color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
+  footer .base{margin-top:44px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:rgba(255,255,255,.45)}
+  @media(max-width:760px){footer .top{grid-template-columns:1fr 1fr}}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none}
+    .flow{animation:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<nav class="site" id="siteNav"><div class="nav-in">
+  <a class="logo" href="/">KEY<b>OB</b></a>
+  <div class="nav-links">
+    <a href="what-we-do.html">What we do</a>
+    <a href="stories.html">Stories</a>
+    <a href="leadership-team.html">Leadership &amp; Team</a>
+    <a href="news.html">News</a>
+    <a class="nav-cta" href="https://keyob.com.au/contact#contact">Free AI assessment</a>
+  </div>
+</div></nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap">
+    <div class="crumb">
+      <a href="what-we-do.html">What we do</a><span class="s">/</span><span>ERP Implementations</span>
+    </div>
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow nobar" style="color:var(--acc-soft)">ERP Implementations</div>
+        <h1>Two proven ERP paths. <em>One</em> delivery discipline.</h1>
+        <p class="intro">An ERP decides how your business records a sale, releases stock, pays a supplier and closes a month. Get it right and the whole organisation moves faster. Get it wrong and everyone works around it for a decade.</p>
+        <p class="intro">KEYOB implements <b style="color:#fff;font-weight:400">SAP Business One</b> and <b style="color:#fff;font-weight:400">Odoo</b> — chosen on fit, not on preference — and connects each one to the rest of your operating layer.</p>
+        <div class="hero-cta">
+          <a class="btn" href="https://keyob.com.au/contact#contact">Talk about your ERP <span class="arr">→</span></a>
+          <a class="btn-ghost" href="#platforms">Compare the two paths</a>
+        </div>
+      </div>
+
+      <!-- business processes → ERP core → operating layer -->
+      <div class="hero-panel" aria-hidden="true">
+        <svg viewBox="0 0 460 350" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="erpCore" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#4fc8f8"/><stop offset="1" stop-color="#6f6bc4"/>
+            </linearGradient>
+          </defs>
+          <!-- inbound processes -->
+          <g font-family="JetBrains Mono,monospace" font-size="9.5" fill="rgba(255,255,255,.78)">
+            <text x="14" y="46">SALES ORDER</text>
+            <text x="14" y="106">INVENTORY</text>
+            <text x="14" y="166">PURCHASING</text>
+            <text x="14" y="226">FINANCE</text>
+            <text x="14" y="286">REPORTING</text>
+          </g>
+          <g class="flow" stroke="rgba(1,176,244,.5)" stroke-width="1.3" fill="none">
+            <path d="M108 42 C 158 42 172 168 208 168"/>
+            <path d="M108 102 C 158 102 178 168 208 168"/>
+            <path d="M108 162 L 208 168"/>
+            <path d="M108 222 C 158 222 178 168 208 168"/>
+            <path d="M108 282 C 158 282 172 168 208 168"/>
+          </g>
+          <!-- ERP core -->
+          <rect x="208" y="134" width="98" height="68" rx="14" fill="rgba(1,176,244,.10)" stroke="url(#erpCore)" stroke-width="1.9"/>
+          <text x="257" y="163" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#fff">ERP</text>
+          <text x="257" y="181" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="rgba(255,255,255,.6)">CORE</text>
+          <!-- two platform chips feeding the core -->
+          <g font-family="JetBrains Mono,monospace" font-size="9">
+            <rect x="196" y="70" width="122" height="28" rx="8" fill="rgba(240,171,0,.10)" stroke="rgba(240,171,0,.5)"/>
+            <text x="257" y="88" text-anchor="middle" fill="#f0ab00">SAP BUSINESS ONE</text>
+            <rect x="196" y="238" width="122" height="28" rx="8" fill="rgba(168,122,181,.12)" stroke="rgba(168,122,181,.55)"/>
+            <text x="257" y="256" text-anchor="middle" fill="#c79dd4">ODOO</text>
+          </g>
+          <path class="flow" d="M257 98 L 257 134" stroke="rgba(240,171,0,.55)" stroke-width="1.3" fill="none"/>
+          <path class="flow" d="M257 238 L 257 202" stroke="rgba(168,122,181,.6)" stroke-width="1.3" fill="none"/>
+          <!-- out to operating layer -->
+          <path class="flow" d="M306 168 L 356 168" stroke="#6f6bc4" stroke-width="1.5" fill="none"/>
+          <rect x="356" y="126" width="86" height="84" rx="10" fill="rgba(111,107,196,.12)" stroke="rgba(111,107,196,.5)" stroke-width="1.4"/>
+          <text x="399" y="158" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#9a96e0">CRM · WEB</text>
+          <text x="399" y="173" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#9a96e0">DATA · AI</text>
+          <text x="399" y="188" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#9a96e0">AUTOMATION</text>
+        </svg>
+        <div class="hero-cap">YOUR PROCESSES → THE RIGHT ERP → ONE OPERATING LAYER</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ THREE DOORS ============ -->
+<div class="wrap">
+  <div class="doors">
+    <a class="door" href="#lead">
+      <span class="k">01 · The practice</span>
+      <span class="t">Who leads your implementation</span>
+      <span class="d">The person accountable for delivery, from first assessment to long-term support.</span>
+      <span class="go">Meet the lead <span class="arr">→</span></span>
+    </a>
+    <a class="door" href="#sap-b1">
+      <span class="k">02 · Platform</span>
+      <span class="t">SAP Business One</span>
+      <span class="d">SAP's ERP for small and mid-sized businesses — finance-first, tightly integrated.</span>
+      <span class="go">Explore SAP B1 <span class="arr">→</span></span>
+    </a>
+    <a class="door" href="#odoo">
+      <span class="k">03 · Platform</span>
+      <span class="t">Odoo</span>
+      <span class="d">A modular open-source suite — broad app range, highly flexible and extensible.</span>
+      <span class="go">Explore Odoo <span class="arr">→</span></span>
+    </a>
+  </div>
+</div>
+
+<!-- ============ WHY KEYOB ============ -->
+<section class="sct">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow acc">Why it matters who implements it</div>
+      <h2 class="sec">Most ERP projects don't struggle on <em>software.</em></h2>
+      <p class="sub">They struggle on the parts either side of it — the processes nobody documented, the data quality discovered too late, the integrations left until last, and the support that ended the week after go-live.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why reveal">
+        <div class="n">01</div>
+        <h3>Platform chosen on fit</h3>
+        <p>We implement both SAP Business One and Odoo, so the recommendation follows your processes, complexity and budget — not whichever product we happen to sell.</p>
+      </div>
+      <div class="why reveal d1">
+        <div class="n">02</div>
+        <h3>Integration designed in</h3>
+        <p>Websites, CRMs, warehouses, dashboards and automations are planned into the architecture from day one, not bolted on after go-live.</p>
+      </div>
+      <div class="why reveal d2">
+        <div class="n">03</div>
+        <h3>Support that continues</h3>
+        <p>Go-live is where value begins, not where the engagement ends. Enhancements, training and roadmap work carry on with the same team.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 1 — THE LEAD ============ -->
+<section class="sct ice" id="lead">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow acc">01 · The practice lead</div>
+      <h2 class="sec">Every implementation has <em>one name</em> on it.</h2>
+      <p class="sub">ERP programmes fail quietly when accountability is spread thin. Ours sits with one person, from the first fit assessment to the support model years later.</p>
+    </div>
+
+    <div class="lead-wrap">
+      <div class="lead-photo reveal">
+        <!-- IMAGE SLOT: replace this .ph-note div with:
+             <img src="waqas-athar.jpg" alt="Waqas Athar, ERP Implementations Lead at KEYOB"> -->
+        <div class="ph-note">PORTRAIT PLACEHOLDER<br>Approved editorial portrait of the practice lead<br><br>alt: "Waqas Athar, ERP Implementations Lead at KEYOB"</div>
+      </div>
+
+      <div class="reveal d1">
+        <div class="eyebrow acc nobar" style="font-size:11px">Leading ERP implementations at KEYOB</div>
+        <div class="lead-name">Waqas Athar</div>
+        <div class="lead-role">ERP Implementations Lead · KEYOB</div>
+
+        <!-- ==========================================================
+             DEV NOTE — CONTENT TO CONFIRM BEFORE PUBLISHING
+             The copy below is deliberately free of specific claims
+             (no years, certifications, employers or client names),
+             because those were not supplied and could not be verified.
+             Replace the bracketed paragraph with his real background,
+             then delete these comments.
+             Suggested: years in ERP, SAP B1 / Odoo experience,
+             certifications, industries, prior firms, education.
+             ========================================================== -->
+        <p>Waqas Athar leads ERP implementations at KEYOB, giving the practice its direction, delivery standards and technical judgement. His remit spans the full arc of an engagement — the first fit assessment, platform recommendation, implementation and data migration, then the support model that carries a client long after go-live.</p>
+
+        <p><em style="color:var(--faint);font-style:normal;font-family:var(--mono);font-size:12.5px">[Background paragraph — add verified experience, platform specialisms and certifications here.]</em></p>
+
+        <p>His focus is the difference between a system that is installed and one that is genuinely adopted: process clarity first, honest platform advice, integration designed in, and a team that stays present once the business starts depending on it.</p>
+
+        <blockquote class="lead-quote">"An ERP isn't a project you finish. It's an operating capability you <em>keep earning</em> — every release, every process change, every year after go-live."</blockquote>
+
+        <div class="lead-cta">
+          <a class="btn" href="leadership-team/waqas-athar.html">View full profile <span class="arr">→</span></a>
+          <a class="lnk" href="https://www.linkedin.com/in/iamwaqasathar/" target="_blank" rel="noopener">Connect on LinkedIn <span class="arr">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTIONS 2 &amp; 3 — THE PLATFORMS ============ -->
+<section class="sct" id="platforms">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow acc">02 &amp; 03 · The platforms</div>
+      <h2 class="sec">Two paths. The right one depends on <em>your business.</em></h2>
+      <p class="sub">Both are capable, proven ERP platforms with very different characters. Part of our job is telling you plainly which one fits — and occasionally, that neither does.</p>
+    </div>
+
+    <div class="plat">
+
+      <!-- SAP Business One -->
+      <a class="pcard sap reveal" id="sap-b1" href="erp/sap-business-one.html">
+        <div class="top">
+          <span class="badge">Platform 02</span>
+          <h3>SAP Business One</h3>
+          <p class="tagline">SAP's ERP built for small and mid-sized businesses — a tightly integrated, finance-first core backed by SAP's global ecosystem.</p>
+          <svg class="mark" width="52" height="52" viewBox="0 0 52 52" aria-hidden="true">
+            <rect x="6" y="6" width="40" height="40" rx="9" fill="none" stroke="rgba(240,171,0,.55)" stroke-width="1.5"/>
+            <path d="M16 32V20M26 32V24M36 32v-16" stroke="#f0ab00" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="body">
+          <div class="fitk">Typically the better fit when</div>
+          <ul>
+            <li><span class="tk">→</span><span>Finance and compliance rigour lead the requirement</span></li>
+            <li><span class="tk">→</span><span>You want a single vendor-backed suite with a mature partner network</span></li>
+            <li><span class="tk">→</span><span>Processes suit a proven standard more than heavy customisation</span></li>
+            <li><span class="tk">→</span><span>You may grow into the wider SAP ecosystem over time</span></li>
+          </ul>
+          <div class="foot">
+            <span class="go">Explore SAP Business One <span class="arr">→</span></span>
+            <span class="note">Implementation · migration · support</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Odoo -->
+      <a class="pcard odoo reveal d1" id="odoo" href="erp/odoo.html">
+        <div class="top">
+          <span class="badge">Platform 03</span>
+          <h3>Odoo</h3>
+          <p class="tagline">A modular open-source business suite — a broad range of apps and an architecture built to be extended around how you actually work.</p>
+          <svg class="mark" width="52" height="52" viewBox="0 0 52 52" aria-hidden="true">
+            <rect x="6" y="6" width="40" height="40" rx="9" fill="none" stroke="rgba(168,122,181,.55)" stroke-width="1.5"/>
+            <circle cx="20" cy="26" r="6.5" fill="none" stroke="#c79dd4" stroke-width="2"/>
+            <circle cx="33" cy="26" r="6.5" fill="none" stroke="#c79dd4" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="body">
+          <div class="fitk">Typically the better fit when</div>
+          <ul>
+            <li><span class="tk">→</span><span>Your processes are distinctive and need real flexibility</span></li>
+            <li><span class="tk">→</span><span>You want to start with a few apps and expand module by module</span></li>
+            <li><span class="tk">→</span><span>Open-source extensibility and lower licence entry matter</span></li>
+            <li><span class="tk">→</span><span>Tight custom integration with existing tools is central</span></li>
+          </ul>
+          <div class="foot">
+            <span class="go">Explore Odoo <span class="arr">→</span></span>
+            <span class="note">Implementation · customisation · support</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW WE DELIVER ============ -->
+<section class="sct dark">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow" style="color:var(--acc-soft)">How we deliver</div>
+      <h2 class="sec">The same discipline, <em>whichever platform wins.</em></h2>
+      <p class="sub">Platforms differ. The way a serious implementation is run does not.</p>
+    </div>
+    <div class="steps">
+      <div class="stp reveal"><span class="node"></span><span class="k">Stage 01</span><h3>Discover</h3><p>Understand the business, the current landscape and the value at stake — then recommend a platform, including the honest answer when neither is right.</p></div>
+      <div class="stp reveal"><span class="node"></span><span class="k">Stage 02</span><h3>Design</h3><p>Fit-to-standard workshops against your real processes. Gaps identified honestly, integration architecture and data strategy set early.</p></div>
+      <div class="stp reveal"><span class="node"></span><span class="k">Stage 03</span><h3>Build</h3><p>Iterative configuration, extensions and integrations — validated with real users in short cycles, never one distant demo at the end.</p></div>
+      <div class="stp reveal"><span class="node"></span><span class="k">Stage 04</span><h3>Migrate</h3><p>Data cleansing, mapping and rehearsed migration runs. Data quality is treated as its own workstream, not a task someone squeezes in.</p></div>
+      <div class="stp reveal"><span class="node"></span><span class="k">Stage 05</span><h3>Go live</h3><p>Cutover, readiness checks, training and launch support — the unglamorous discipline that decides how go-live week actually feels.</p></div>
+      <div class="stp reveal"><span class="node"></span><span class="k">Stage 06</span><h3>Run &amp; improve</h3><p>Hypercare into steady-state support, then continuous improvement — the stage where the investment finally compounds.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sct ice">
+  <div class="wrap">
+    <div class="sec-head reveal" style="margin:0 auto 48px;text-align:center">
+      <div class="eyebrow acc" style="justify-content:center">Common questions</div>
+      <h2 class="sec" style="margin-top:16px">ERP, answered <em>plainly.</em></h2>
+    </div>
+    <div class="faq reveal">
+      <div class="fq">
+        <button type="button">What's the difference between SAP Business One and Odoo?</button>
+        <div class="a"><p>SAP Business One is SAP's ERP built for small and mid-sized businesses, offering a tightly integrated finance-first suite backed by SAP's global ecosystem. Odoo is a modular open-source business suite with a broad app range and a highly flexible, extensible architecture. The right choice depends on process complexity, regulatory requirements, budget and how much customisation the business genuinely needs.</p></div>
+      </div>
+      <div class="fq">
+        <button type="button">How long does an ERP implementation take?</button>
+        <div class="a"><p>It depends on scope: the number of processes involved, entities and locations, data quality, integrations required and how much customisation is needed. A focused single-entity rollout is considerably shorter than a multi-entity programme with complex integrations. Scoping during discovery is what produces a realistic timeline — and we'd rather give you that than an optimistic one.</p></div>
+      </div>
+      <div class="fq">
+        <button type="button">What usually causes ERP projects to struggle?</button>
+        <div class="a"><p>Most difficulties come from outside the software: undocumented business processes, poor data quality discovered late, integrations left until the end, insufficient user training, and support that stops shortly after go-live. Addressing these deliberately is what separates a system that is installed from one that is genuinely adopted.</p></div>
+      </div>
+      <div class="fq">
+        <button type="button">Can the ERP connect to the systems we already use?</button>
+        <div class="a"><p>Yes. Both platforms support integration with CRM, e-commerce, warehouse and logistics systems, reporting tools and custom applications through APIs and integration services. At KEYOB, integration is designed into the architecture from the start rather than treated as a late-stage task — that's the difference between an ERP that sits in the business and one that sits beside it.</p></div>
+      </div>
+      <div class="fq">
+        <button type="button">We already have an ERP that isn't working. Can you help?</button>
+        <div class="a"><p>Often, yes. Sometimes the issue is configuration, process fit, integration or training rather than the platform itself — and a re-implementation isn't always the answer. We start with an assessment of what's actually causing the friction before recommending anything.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="sct dark">
+  <div class="wrap">
+    <div class="cta reveal">
+      <h2>Not sure which ERP fits? <em>Start there.</em></h2>
+      <p>Whether you're choosing a platform, replacing something that never quite worked, or planning a migration — a conversation costs nothing and usually clarifies a great deal.</p>
+      <div class="row">
+        <a class="btn" href="https://keyob.com.au/contact#contact">Talk about your ERP <span class="arr">→</span></a>
+        <a class="btn-ghost" href="what-we-do.html">Explore what else we do</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <div class="blurb">KEYOB — <span>the operating layer.</span></div>
+      <div><h4>Company</h4><ul><li><a href="about-us.html">About</a></li><li><a href="what-we-do.html">What we do</a></li><li><a href="leadership-team.html">Leadership &amp; Team</a></li><li><a href="stories.html">Stories</a></li></ul></div>
+      <div><h4>ERP</h4><ul><li><a href="erp-implementations.html">ERP Implementations</a></li><li><a href="erp/sap-business-one.html">SAP Business One</a></li><li><a href="erp/odoo.html">Odoo</a></li><li><a href="sap.html">Enterprise SAP</a></li></ul></div>
+      <div><h4>Get in touch</h4><ul><li><a href="mailto:info@keyob.com">info@keyob.com</a></li><li><a href="tel:+61433278992">+61 433 278 992</a></li><li><a href="https://keyob.com.au/contact#contact">Contact</a></li></ul></div>
+    </div>
+    <div class="base"><span>© 2026 KEYOB</span><span>AUSTRALIAN-BUILT · AI SINCE 2016</span></div>
+  </div>
+</footer>
+
+<script>
+/* nav solid on scroll */
+var siteNav=document.getElementById('siteNav');
+addEventListener('scroll',function(){siteNav.classList.toggle('solid',scrollY>40);},{passive:true});
+
+/* reveal on scroll */
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+
+/* FAQ accordion */
+document.querySelectorAll('.fq button').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var item=btn.parentElement, panel=item.querySelector('.a'), isOpen=item.classList.contains('open');
+    document.querySelectorAll('.fq').forEach(function(f){
+      f.classList.remove('open');
+      f.querySelector('.a').style.maxHeight=null;
+    });
+    if(!isOpen){item.classList.add('open');panel.style.maxHeight=panel.scrollHeight+'px';}
+  });
+});
+</script>
+</body>
+</html>
