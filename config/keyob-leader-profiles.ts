@@ -1126,7 +1126,229 @@ const ehsan: LeaderProfile = {
   },
 };
 
-export const leaderProfiles: LeaderProfile[] = [jawad, saad, mansoor, ehsan];
+const waqas: LeaderProfile = {
+  slug: 'waqas-athar',
+  name: 'Waqas Athar',
+  role: 'ERP Implementations Lead, KEYOB',
+  regionLabel: 'Leadership · ERP Practice',
+  identityStatement:
+    'An ERP is not a system you install. It is a capability the business has to keep earning.',
+  portraitAlt: 'Waqas Athar, ERP Implementations Lead at KEYOB',
+  portraitNote: 'Approved editorial portrait of Waqas Athar',
+  // Waqas's personal accent — Deep Wine (token names kept for system parity).
+  accent: { plum: '#6e2639', plumMist: '#f7edf0', plumSoft: '#a8596f' },
+  thought: {
+    quote:
+      'The platform matters far less than the honesty of the advice, the clarity of the process and',
+    emphasis: 'who is still there after go-live.',
+    caption: 'Waqas Athar on ERP delivery',
+  },
+  snapshot: {
+    items: [
+      { icon: 'pin', text: 'ERP Implementations Lead at KEYOB' },
+      { icon: 'building', text: 'SAP Business One implementations' },
+      { icon: 'list', text: 'Odoo implementations & customisation' },
+      { icon: 'globe', text: 'Fit assessment, migration & integration' },
+      { icon: 'world', text: 'Managed support beyond go-live' },
+    ],
+    links: [
+      { href: 'https://www.linkedin.com/in/iamwaqasathar/', label: 'LinkedIn', icon: 'linkedin' },
+      { href: '#articles', label: 'Articles', icon: 'articles' },
+      { href: '#events', label: 'Events', icon: 'events' },
+      { href: '#connect', label: 'Start a conversation', icon: 'chat', accent: true },
+    ],
+  },
+  nav: SHARED_NAV,
+  story: {
+    eyebrow: 'The journey',
+    headingPrefix: 'The platform is a choice. The',
+    headingEm: 'discipline is the difference.',
+    paragraphs: [
+      "Waqas Athar leads ERP implementations at KEYOB, covering both SAP Business One and Odoo. That dual capability is deliberate: when a practice can implement two very different platforms, the recommendation can follow the client's processes rather than the partner's catalogue.",
+      'His conviction is that most ERP programmes do not struggle on software. They struggle on the parts either side of it — the processes nobody documented, the data quality discovered too late, the integrations left until last, and the support that quietly ended a fortnight after go-live.',
+      'So the practice he leads is built around those parts. Fit assessed honestly before anything is bought. Processes mapped before anything is configured. Data treated as its own workstream rather than a task squeezed in near the end. Integration designed into the architecture from day one. And the same team present long after the launch week is over.',
+    ],
+    steps: [
+      { n: '01', title: 'Assess the fit', body: 'Which platform suits the business — or whether neither does.' },
+      { n: '02', title: 'Map the processes', body: 'Configure against how the business really operates.' },
+      { n: '03', title: 'Build in short cycles', body: 'Validate with real users, never one distant demo.' },
+      { n: '04', title: 'Migrate the data properly', body: 'Cleansed, mapped and rehearsed — its own workstream.' },
+      { n: '05', title: 'Land the go-live', body: 'Training, cutover and the discipline launch week needs.' },
+      { n: '06', title: 'Stay for the long run', body: 'Support and improvement, where value compounds.' },
+    ],
+    highlight:
+      'A system that is installed is not the same as a system that is adopted. Only one of them was worth the money.',
+  },
+  philosophy: {
+    eyebrow: 'How he leads',
+    headingPrefix: 'Honest advice. Careful build.',
+    headingEm: 'Nobody left behind at go-live.',
+    principles: [
+      {
+        n: '01',
+        title: 'Platform chosen on fit',
+        body: "Because the practice implements both SAP Business One and Odoo, the recommendation can follow the client's processes, complexity and budget — including the occasional honest answer that neither is right.",
+        emph: "Advise, don't sell.",
+        variant: 'ice',
+      },
+      {
+        n: '02',
+        title: 'Standard first, customise deliberately',
+        body: 'Every customisation carries maintenance and upgrade cost forever. Waqas starts from the platform standard and extends only where it clearly earns its place in the business.',
+        emph: 'Customise on purpose.',
+        variant: 'navy',
+      },
+      {
+        n: '03',
+        title: 'Data is its own workstream',
+        body: 'More go-lives are damaged by data quality than by configuration. Cleansing, mapping and rehearsed migration runs are planned as real work, never squeezed into the final fortnight.',
+        emph: 'Respect the data.',
+        variant: 'plum',
+      },
+      {
+        n: '04',
+        title: 'Go-live is the beginning',
+        body: 'An ERP proves itself only once real operations depend on it. Hypercare, enhancements and roadmap work are part of the engagement — not a separate conversation once the invoice is paid.',
+        emph: 'Stay after launch.',
+        variant: 'ice',
+      },
+    ],
+  },
+  keyob: {
+    eyebrow: 'Building KEYOB',
+    headingPrefix: 'Two platforms, one',
+    headingEm: 'delivery discipline.',
+    paragraphs: [
+      "Waqas leads KEYOB's ERP practice across two platforms with very different characters. SAP Business One brings a tightly integrated, finance-first core backed by SAP's global ecosystem. Odoo brings modular, open-source flexibility that can be shaped closely around distinctive processes.",
+      'Neither is universally better. The work is knowing which one fits a given business — and being willing to say so plainly. Because KEYOB also builds the systems around the ERP, neither platform ends up as another island: the website, CRM, reporting layer and automation are planned into the architecture rather than bolted on afterwards.',
+      "Waqas's view is that an ERP earns its cost in the years after go-live, not in the launch announcement — so the practice is built to still be there when it does.",
+    ],
+    phrasePrefix: 'Right platform. Clean data. Real adoption.',
+    phraseEm: 'Support that outlasts the project.',
+    pathway: {
+      startLineA: 'A real',
+      startLineB: 'business need',
+      loopLabel: '↻ Continuous modernisation',
+      branches: [
+        'Brand & market presence',
+        'Digital experience',
+        'CRM & customer operations',
+        'ERP & core systems',
+        'Data & business intelligence',
+        'Automation & AI operations',
+      ],
+    },
+  },
+  articles: {
+    eyebrow: "From Waqas's desk",
+    headingPrefix: 'Notes on ERP, delivery',
+    headingEm: 'and what actually goes wrong.',
+    lead: 'Perspectives on platform choice, data migration and adoption after go-live.',
+    items: [],
+    emptyMessage: 'More ideas from Waqas are being prepared.',
+    featuredCta: 'Read article',
+  },
+  events: {
+    eyebrow: 'In conversation',
+    headingPrefix: 'The rooms, discussions and ideas',
+    headingEm: 'shaping the future of business.',
+    items: [],
+    emptyMessage: 'Upcoming conversations and appearances will be shared here.',
+  },
+  work: {
+    eyebrow: 'Work in practice',
+    headingPrefix: 'Leadership becomes meaningful when it',
+    headingEm: 'reaches real businesses.',
+    items: [
+      {
+        slug: 'best-value-auto-body-supply',
+        url: '/stories/best-value-custom-erp',
+        tag: 'Custom ERP · Long-term partnership',
+        name: 'Best Value Auto Body Supply',
+        copy: 'The long-run case for ERP done properly — a custom build that carried nearly a decade of operational evolution and modernisation.',
+      },
+      {
+        slug: 'investment-markets-australia',
+        url: '/stories/investment-markets-australia',
+        tag: 'Platform delivery · Launch readiness',
+        name: 'Investment Markets Australia',
+        copy: 'Delivery discipline under deadline — structured execution moving a complex platform toward launch readiness.',
+      },
+      {
+        slug: 'international-coaching-institute',
+        url: '/stories/international-coaching-institute',
+        tag: 'BI platform · One trusted view',
+        name: 'International Coaching Institute',
+        copy: 'Why data is its own workstream — a fragmented landscape turned into one trusted view people actually rely on.',
+      },
+      {
+        slug: 'automart-auto-body-supply',
+        url: '/stories/automart-nationwide',
+        tag: 'Service automation · Routing',
+        name: 'Automart Auto Body Supply',
+        copy: 'An ERP that kept earning — an automotive partnership extended into service automation and smarter routing.',
+      },
+      {
+        slug: 'aleesa-ai',
+        url: '/stories/aleesa-ai',
+        tag: 'AI operations · Automated office',
+        name: 'Aleesa.ai',
+        copy: 'Where integration leads — one clinic requirement growing into a multi-channel automated office.',
+      },
+    ],
+  },
+  human: {
+    eyebrow: 'Beyond the role',
+    headingPrefix: 'The hardest part of an ERP',
+    headingEm: 'is never the software.',
+    paragraphs: [
+      'ERP work puts people under real pressure. Finance teams close a month on a system they learned last week; warehouse staff scan stock in a process that changed on Monday. Waqas treats that human cost as part of the engineering problem, not a training footnote.',
+      'It shapes how his team works: explain the change before making it, train by role rather than by manual, and make sure someone knowledgeable answers the phone in the first weeks when confidence is fragile.',
+      'For Waqas, a successful implementation is measured a year later — in whether people trust the numbers, and whether anyone still keeps a spreadsheet on the side.',
+    ],
+    quote:
+      'You can tell a good implementation by what disappeared — the workarounds, the side spreadsheets, the reconciliation nobody admitted to doing.',
+    photoAlt: 'Waqas Athar working with the KEYOB ERP team',
+    photoNote:
+      'A natural, candid photo of Waqas with clients or the KEYOB delivery team — not a formal portrait.',
+  },
+  media: {
+    eyebrow: 'Profile resources',
+    headingPrefix: 'Media, profile',
+    headingEm: 'and speaking.',
+    speakingTopics: [
+      'SAP Business One or Odoo — choosing on fit, not on vendor',
+      'Why ERP projects fail outside the software',
+      'Data migration as a first-class workstream',
+      'Customisation and the cost you pay forever',
+      'Adoption: the year after go-live',
+      'Integrating ERP so it never becomes an island',
+    ],
+    resources: [
+      { title: 'Professional biography', type: 'Profile', url: null },
+      { title: 'Approved headshot', type: 'Image', url: null },
+      { title: 'Media profile', type: 'PDF', url: null },
+      { title: 'Speaking enquiries', type: 'Contact', url: '/contact#contact' },
+      { title: 'LinkedIn profile', type: 'Link', url: 'https://www.linkedin.com/in/iamwaqasathar/' },
+    ],
+    note: 'Media and profile assets are made available on request. Items appear here once approved and uploaded.',
+  },
+  connect: {
+    eyebrow: 'Connect',
+    headingPrefix: 'Start with the',
+    headingEm: 'business conversation.',
+    lead: 'Whether the challenge begins with software, data, AI, customer operations, business systems or digital growth, the first step is understanding where the organisation is today — and where it needs to move next.',
+    primaryCta: { href: '/contact#contact', label: 'Start a conversation' },
+    secondaryCta: {
+      href: 'https://www.linkedin.com/in/iamwaqasathar/',
+      label: 'Connect on LinkedIn',
+    },
+    tertiaryCta: { href: '/', label: 'Explore KEYOB →' },
+    closing: 'One conversation can become the beginning of a long-term transformation partnership.',
+  },
+};
+
+export const leaderProfiles: LeaderProfile[] = [jawad, saad, mansoor, ehsan, waqas];
 
 export function getLeaderProfile(slug: string): LeaderProfile | undefined {
   return leaderProfiles.find((p) => p.slug === slug);

@@ -18,6 +18,7 @@ const PORTRAITS: Record<string, string> = {
   'saad-khalid': '/saad-khalid-au.png',
   'mansoor-ahmad-samar': '/mansoor-ahmad-samar-pk.png',
   'ehsan-alvi': '/ehsan-alvi-au.png',
+  'waqas-athar': '/waqas-athar-pk.webp',
 };
 
 const CANDIDS: Record<string, string> = {

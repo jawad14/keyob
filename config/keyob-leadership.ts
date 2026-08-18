@@ -102,6 +102,18 @@ export const ltLeaders: LtLeader[] = [
     photo: '/mansoor-ahmad-samar-pk.png',
     profileSlug: 'mansoor-ahmad-samar',
   },
+  {
+    name: 'Waqas Athar',
+    region: 'Pakistan',
+    role: 'ERP Implementations Lead — KEYOB',
+    quote:
+      'The platform matters far less than the honesty of the advice, the clarity of the process, and who is still there after go-live.',
+    message:
+      "Waqas leads KEYOB's ERP practice across SAP Business One and Odoo — from honest fit assessment through data migration and go-live, to the support that continues long after launch week.",
+    link: 'https://www.linkedin.com/in/iamwaqasathar/',
+    photo: '/waqas-athar-pk.webp',
+    profileSlug: 'waqas-athar',
+  },
 ];
 
 export type LtPhilosophy = { n: string; title: string; body: string };
