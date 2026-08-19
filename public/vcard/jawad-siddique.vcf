@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Siddique;Jawad;;;
+FN:Jawad Siddique
+ORG:KEYOB
+TITLE:Founder & CEO
+TEL;TYPE=WORK,VOICE:+61433278992
+EMAIL;TYPE=WORK:jawad@keyob.com
+URL:https://www.keyob.com
+ADR;TYPE=WORK:;;Level 1, 67 Springwood Road;Springwood;QLD;4127;Australia
+NOTE:Reshaping business with software, data & AI
+END:VCARD
