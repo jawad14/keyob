@@ -1,18 +1,22 @@
-import { createEnv } from '@t3-oss/env-nextjs';
-import { z } from 'zod';
+import { createEnv } from "@t3-oss/env-nextjs";
+import { z } from "zod";
 
 export const env = createEnv({
   server: {
-    NODE_ENV: z.enum(['development', 'test', 'production']).default('development'),
-    LOG_LEVEL: z.enum(['debug', 'info', 'warn', 'error', 'fatal']).default('info'),
+    NODE_ENV: z
+      .enum(["development", "test", "production"])
+      .default("development"),
+    LOG_LEVEL: z
+      .enum(["debug", "info", "warn", "error", "fatal"])
+      .default("info"),
     RESEND_API_KEY: z.string().optional(),
     SMTP_HOST: z.string().optional(),
     SMTP_PORT: z.coerce.number().int().positive().optional(),
     SMTP_USER: z.string().optional(),
     SMTP_PASS: z.string().optional(),
     SMTP_SECURE: z
-      .enum(['true', 'false'])
-      .transform((v) => v === 'true')
+      .enum(["true", "false"])
+      .transform((v) => v === "true")
       .optional(),
     EMAIL_FROM: z.string().email().optional(),
     EMAIL_TO: z.string().email().optional(),
@@ -20,6 +24,9 @@ export const env = createEnv({
     // Aleesa Web Chat — key stays server-side only, never exposed to the browser.
     ALEESA_WEBCHAT_API_KEY: z.string().optional(),
     ALEESA_WEBHOOK_BASE_URL: z.string().url().optional(),
+    // Aleesa Website Form intake — files contact submissions in the Aleesa CRM.
+    ALEESA_API_URL: z.string().url().optional(),
+    ALEESA_WEBSITE_FORM_API_KEY: z.string().optional(),
   },
   client: {
     NEXT_PUBLIC_SITE_URL: z.string().url().optional(),
@@ -39,6 +46,8 @@ export const env = createEnv({
     SENTRY_DSN: process.env.SENTRY_DSN,
     ALEESA_WEBCHAT_API_KEY: process.env.ALEESA_WEBCHAT_API_KEY,
     ALEESA_WEBHOOK_BASE_URL: process.env.ALEESA_WEBHOOK_BASE_URL,
+    ALEESA_API_URL: process.env.ALEESA_API_URL,
+    ALEESA_WEBSITE_FORM_API_KEY: process.env.ALEESA_WEBSITE_FORM_API_KEY,
     NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,
     NEXT_PUBLIC_ANALYTICS_DOMAIN: process.env.NEXT_PUBLIC_ANALYTICS_DOMAIN,
   },
