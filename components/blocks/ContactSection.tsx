@@ -109,6 +109,14 @@ export function ContactSection() {
   const formRef = useRef<HTMLFormElement>(null);
   const [clientErrors, setClientErrors] = useState<Record<string, string>>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
+  const referrerRef = useRef<HTMLInputElement>(null);
+
+  // Only the browser knows where the visitor came from, and a Server Action
+  // gets no request headers — so it rides along as a hidden field, written
+  // after hydration so the server-rendered HTML stays identical.
+  useEffect(() => {
+    if (referrerRef.current) referrerRef.current.value = document.referrer;
+  }, []);
 
   const errors: Record<string, string | undefined> = {
     ...clientErrors,
@@ -255,6 +263,7 @@ export function ContactSection() {
                 aria-hidden="true"
                 style={{ position: 'absolute', left: '-10000px', width: 1, height: 1, opacity: 0 }}
               />
+              <input type="hidden" name="referrer" ref={referrerRef} />
               <div className={`cf-field${errors.name ? ' is-invalid' : ''}`}>
                 <label htmlFor="cf-name">Your name</label>
                 <input

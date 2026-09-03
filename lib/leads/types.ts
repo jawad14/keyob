@@ -10,4 +10,10 @@ export type Lead = {
   /** Both optional: the form offers them as selects the visitor can skip. */
   industry?: string;
   teamSize?: string;
+  /**
+   * document.referrer when the form was submitted — the page that sent the
+   * visitor here. Empty for direct visits and where the browser suppresses
+   * it, so it is always optional.
+   */
+  referrer?: string;
 };

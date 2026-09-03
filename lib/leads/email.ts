@@ -34,6 +34,7 @@ function rows(lead: Lead): Array<[string, string]> {
     ["Email", lead.email],
     ["Industry", lead.industry || "—"],
     ["Team size", lead.teamSize || "—"],
+    ["Came from", lead.referrer || "Direct / unknown"],
   ];
 }
 

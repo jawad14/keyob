@@ -65,6 +65,7 @@ function buildFields(lead: Lead): Record<string, string> {
     industry: lead.industry,
     team_size: lead.teamSize,
     message: lead.challenge,
+    referrer: lead.referrer,
     form_source: lead.source,
   };
 

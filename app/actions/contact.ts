@@ -11,6 +11,9 @@ const contactSchema = z.object({
   teamSize: z.string().trim().max(40).optional().or(z.literal("")),
   email: z.string().trim().email("Please enter a valid email").max(200),
   challenge: z.string().trim().min(1, "Please share a few sentences").max(5000),
+  // Never rejects: a malformed or oversized referrer is worth dropping, not
+  // worth failing a genuine submission over.
+  referrer: z.string().trim().max(2000).catch(""),
   website: z.string().max(0).optional(),
 });
 
@@ -32,6 +35,7 @@ export async function submitContact(
     email: formData.get("email"),
     challenge: formData.get("challenge"),
     website: formData.get("website"),
+    referrer: formData.get("referrer"),
   };
 
   const parsed = contactSchema.safeParse(raw);
@@ -64,6 +68,7 @@ export async function submitContact(
       challenge: data.challenge,
       industry: data.industry || undefined,
       teamSize: data.teamSize || undefined,
+      referrer: data.referrer || undefined,
       source: "contact-form",
     });
   } catch (error) {
