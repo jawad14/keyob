@@ -15,7 +15,14 @@ const contactSchema = z.object({
   // worth failing a genuine submission over.
   referrer: z.string().trim().max(2000).catch(""),
   website: z.string().max(0).optional(),
+  // Written after hydration, so an absent value means no JS ran rather than
+  // a bot — not grounds to reject a genuine submission.
+  startedAt: z.string().trim().max(20).catch(""),
 });
+
+// No human reads the form and types a considered answer in under three
+// seconds; a scripted submit does.
+const MIN_FILL_MS = 3000;
 
 export type ContactState = {
   ok: boolean;
@@ -35,6 +42,7 @@ export async function submitContact(
     email: formData.get("email"),
     challenge: formData.get("challenge"),
     website: formData.get("website"),
+    startedAt: formData.get("startedAt"),
     referrer: formData.get("referrer"),
   };
 
@@ -57,6 +65,11 @@ export async function submitContact(
   const data = parsed.data;
 
   if (data.website && data.website.length > 0) {
+    return { ok: true, message: "Thank you." };
+  }
+
+  const startedAt = Number(data.startedAt);
+  if (Number.isFinite(startedAt) && startedAt > 0 && Date.now() - startedAt < MIN_FILL_MS) {
     return { ok: true, message: "Thank you." };
   }
 

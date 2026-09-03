@@ -110,12 +110,14 @@ export function ContactSection() {
   const [clientErrors, setClientErrors] = useState<Record<string, string>>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const referrerRef = useRef<HTMLInputElement>(null);
+  const startedAtRef = useRef<HTMLInputElement>(null);
 
   // Only the browser knows where the visitor came from, and a Server Action
   // gets no request headers — so it rides along as a hidden field, written
   // after hydration so the server-rendered HTML stays identical.
   useEffect(() => {
     if (referrerRef.current) referrerRef.current.value = document.referrer;
+    if (startedAtRef.current) startedAtRef.current.value = String(Date.now());
   }, []);
 
   const errors: Record<string, string | undefined> = {
@@ -126,6 +128,7 @@ export function ContactSection() {
   useEffect(() => {
     if (sent) {
       formRef.current?.reset();
+      if (startedAtRef.current) startedAtRef.current.value = String(Date.now());
       setClientErrors({});
       setTouched({});
     }
@@ -255,15 +258,13 @@ export function ContactSection() {
             </div>
           ) : (
             <form ref={formRef} className="cf" action={formAction} noValidate>
-              <input
-                type="text"
-                name="website"
-                tabIndex={-1}
-                autoComplete="off"
-                aria-hidden="true"
-                style={{ position: 'absolute', left: '-10000px', width: 1, height: 1, opacity: 0 }}
-              />
+              {/* An off-screen text input on a form that collects personal details
+                  is the pattern Safe Browsing scores as social engineering, so the
+                  honeypot is a declared-hidden field and startedAt carries the
+                  timing check that a hidden honeypot alone would lose. */}
+              <input type="hidden" name="website" />
               <input type="hidden" name="referrer" ref={referrerRef} />
+              <input type="hidden" name="startedAt" ref={startedAtRef} />
               <div className={`cf-field${errors.name ? ' is-invalid' : ''}`}>
                 <label htmlFor="cf-name">Your name</label>
                 <input
