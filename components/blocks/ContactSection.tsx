@@ -4,6 +4,7 @@ import { useActionState, useEffect, useRef, useState } from 'react';
 import { useFormStatus } from 'react-dom';
 import { Section } from '@/components/ui/layout';
 import { H2, Text } from '@/components/ui/typography';
+import { Turnstile } from '@/components/ui/turnstile';
 import { submitContact, type ContactState } from '@/app/actions/contact';
 
 const industries = [
@@ -360,6 +361,10 @@ export function ContactSection() {
                   </span>
                 )}
               </div>
+              {/* A Turnstile token is single use, so a rejected submit leaves a
+                  spent one in the form. The action returns a fresh object every
+                  time, so its identity is the "you were sent back" signal. */}
+              <Turnstile className="cf-captcha" resetSignal={state} />
               {serverError && (
                 <div className="cf-banner cf-banner--error" role="alert">
                   <AlertIcon />

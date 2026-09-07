@@ -2191,6 +2191,13 @@ form.cf select[aria-invalid="true"] { border-color: #dc2626; box-shadow: 0 0 0 3
   border: 1px solid rgba(220, 38, 38, .25);
 }
 
+.cf-captcha {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-start;
+}
+.cf-captcha:empty { display: none; }
+
 .cf-spin { animation: cf-spin 0.9s linear infinite; }
 
 .cf-success-card {

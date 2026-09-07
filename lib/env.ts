@@ -27,10 +27,14 @@ export const env = createEnv({
     // Aleesa Website Form intake — files contact submissions in the Aleesa CRM.
     ALEESA_API_URL: z.string().url().optional(),
     ALEESA_WEBSITE_FORM_API_KEY: z.string().optional(),
+    // Cloudflare Turnstile — the secret half of the pair. Verification is
+    // skipped entirely unless both this and the site key below are set.
+    TURNSTILE_SECRET_KEY: z.string().optional(),
   },
   client: {
     NEXT_PUBLIC_SITE_URL: z.string().url().optional(),
     NEXT_PUBLIC_ANALYTICS_DOMAIN: z.string().optional(),
+    NEXT_PUBLIC_TURNSTILE_SITE_KEY: z.string().optional(),
   },
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
@@ -48,8 +52,10 @@ export const env = createEnv({
     ALEESA_WEBHOOK_BASE_URL: process.env.ALEESA_WEBHOOK_BASE_URL,
     ALEESA_API_URL: process.env.ALEESA_API_URL,
     ALEESA_WEBSITE_FORM_API_KEY: process.env.ALEESA_WEBSITE_FORM_API_KEY,
+    TURNSTILE_SECRET_KEY: process.env.TURNSTILE_SECRET_KEY,
     NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,
     NEXT_PUBLIC_ANALYTICS_DOMAIN: process.env.NEXT_PUBLIC_ANALYTICS_DOMAIN,
+    NEXT_PUBLIC_TURNSTILE_SITE_KEY: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY,
   },
   emptyStringAsUndefined: true,
 });

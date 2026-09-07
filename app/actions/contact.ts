@@ -1,6 +1,8 @@
 "use server";
 
+import { headers } from "next/headers";
 import { z } from "zod";
+import { verifyCaptcha } from "@/lib/captcha";
 import { deliverLead } from "@/lib/leads";
 import { logger } from "@/lib/logger";
 
@@ -18,6 +20,9 @@ const contactSchema = z.object({
   // Written after hydration, so an absent value means no JS ran rather than
   // a bot — not grounds to reject a genuine submission.
   startedAt: z.string().trim().max(20).catch(""),
+  // Shape is Cloudflare's business, not ours — an empty or malformed token is
+  // rejected by siteverify, so parsing it here would only duplicate that.
+  captchaToken: z.string().trim().max(4000).catch(""),
 });
 
 // No human reads the form and types a considered answer in under three
@@ -44,6 +49,7 @@ export async function submitContact(
     website: formData.get("website"),
     startedAt: formData.get("startedAt"),
     referrer: formData.get("referrer"),
+    captchaToken: formData.get("captchaToken"),
   };
 
   const parsed = contactSchema.safeParse(raw);
@@ -73,6 +79,22 @@ export async function submitContact(
     return { ok: true, message: "Thank you." };
   }
 
+  // Last of the three gates and the only one that costs a round trip, so it
+  // runs once the free checks have already had their say.
+  const captcha = await verifyCaptcha(
+    data.captchaToken || undefined,
+    await clientIp(),
+  );
+  if (!captcha.ok) {
+    return {
+      ok: false,
+      message:
+        captcha.reason === "missing"
+          ? "Please complete the verification check and try again."
+          : "That verification expired. Please try again.",
+    };
+  }
+
   try {
     await deliverLead({
       name: data.name,
@@ -91,6 +113,7 @@ export async function submitContact(
     logger.error("contact form delivery failed", error, {
       ...data,
       website: undefined,
+      captchaToken: undefined,
     });
     return {
       ok: false,
@@ -103,4 +126,15 @@ export async function submitContact(
     ok: true,
     message: "Thank you. We'll be in touch within one business day.",
   };
+}
+
+/**
+ * Behind Vercel's proxy the socket address is always the proxy, so the visitor
+ * is only ever in the forwarded header. Best effort: Turnstile treats remoteip
+ * as optional and simply scores without it.
+ */
+async function clientIp(): Promise<string | undefined> {
+  const headerList = await headers();
+  const forwarded = headerList.get("x-forwarded-for");
+  return forwarded?.split(",")[0]?.trim() || undefined;
 }
