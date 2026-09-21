@@ -272,7 +272,7 @@ export default function FormulynStoryPage() {
             {/* brief to brand: the practice's rigour, carried onto every surface */}
             <div className={styles.mock}>
               <svg
-                viewBox="0 0 460 330"
+                viewBox="0 0 460 264"
                 aria-label="The science of the practice carried across four brand surfaces: identity and wordmark, website, voice and content, and search and share"
               >
                 <defs>
