@@ -86,6 +86,81 @@ const SHARED_FAQ: StoryFaqItem[] = [
 ];
 
 const storyExtras: Record<string, Extra> = {
+  formulyn: {
+    category: 'professional',
+    categoryLabel: 'Formulyn · Nutraceutical & Cosmetic Formulation · Brisbane',
+    featured: true,
+    headline: {
+      pre: 'A science practice that needed the ',
+      em: 'world to see it.',
+    },
+    body: [
+      'Formulyn is a boutique nutraceutical and cosmetic formulation consultancy in Brisbane, working with supplement, skincare and wellness brands across Australia, the EU, the UK and the Gulf.',
+      'The science was already there. What the practice did not yet have was a name presented properly, a brand that carried its authority, or a website that let a founder anywhere in the world understand what it does and how to begin.',
+      'KEYOB worked through the practice itself before writing a word — how a client brief arrives, what gets delivered, where the value sits — then built the positioning, identity, content and website on top of it.',
+      'The site is live at formulyn.com.au. A founder in Dublin or Dubai can now find the practice, understand what it does, see the shape of the work, read what previous clients said, and book a call.',
+    ],
+    keyOutcomes: [
+      'A complete brand identity the practice owns and applies consistently',
+      'A website that explains four service mandates and a phased methodology without a preliminary call',
+      'Five case studies demonstrating range with every client kept unnamed',
+    ],
+    facts: [
+      { k: 'Industry', v: 'Nutraceutical & cosmetic formulation' },
+      { k: 'Scope', v: 'Brand, website, content' },
+      { k: 'Markets', v: 'AU · EU · UK · Gulf' },
+      { k: 'Status', v: '<em>Live</em> at formulyn.com.au' },
+    ],
+    challenges: [
+      'A strong practice with nothing a prospective client could look at.',
+      'Two very different audiences — first-time founders and experienced brand managers — reading the same pages.',
+      'Regulated language, where claims about therapeutic outcomes and market access carry legal weight.',
+      'The most persuasive proof, the actual client projects, sitting under NDA.',
+      'Buyers who are often overseas and will never visit Brisbane.',
+      'Credibility that had to be demonstrated rather than claimed.',
+    ],
+    approachIntro:
+      'We were not collecting copy points. We learned the business well enough to describe it accurately — then built positioning, identity, voice, site and launch on that understanding. <strong>Restraint does more work than persuasion here:</strong> in a field where claims are regulated and buyers are cautious, the most convincing thing a brand can do is be precise.',
+    pullquote:
+      '"The brief was never to make the practice look bigger than it is. It was to make it look exactly as capable as it already was, and then make that easy to find."',
+    outcomeCards: [
+      {
+        title: 'A brand that carries the science',
+        body: 'Wordmark, badge, palette, type and imagery direction built around laboratory materials rather than wellness stock imagery.',
+      },
+      {
+        title: 'A site that does the explaining',
+        body: 'Service pages, a published methodology and a clear first step, structured around how enquiries actually arrive.',
+      },
+      {
+        title: 'Findable from another time zone',
+        body: 'Structured data, social preview cards, analytics and search foundations, so a founder searching at 11pm overseas lands somewhere that answers them.',
+      },
+    ],
+    humanIntro:
+      'Technical practices are usually undersold by their own marketing, because the people doing the work find their expertise unremarkable. It is simply how they think.',
+    humanQuote:
+      '"The brief was never to make the practice look bigger than it is. It was to make it look exactly as capable as it already was, and then make that easy to find."',
+    humanRole: 'KEYOB — internal reflection on the engagement',
+    faq: [
+      {
+        q: 'What did KEYOB deliver for Formulyn?',
+        a: 'Positioning and messaging, a complete brand identity (wordmark, badge, palette, typography and imagery direction), the website design and build, all site content including five confidential case studies, and launch support covering structured data, social preview cards, analytics and search foundations.',
+      },
+      {
+        q: 'How do you write case studies for work that sits under NDA?',
+        a: 'By leading with the technical substance rather than the client. Each study describes the formulation problem, the constraints and the path to a result with enough specificity to demonstrate range — and no identifying detail at all.',
+      },
+      {
+        q: 'How was regulated language handled?',
+        a: 'Claims were kept inside what the evidence and the regulators allow. The site speaks accurately to TGA, ARTG, EU CPNP, UK SCPN and GCC pathways without promising therapeutic outcomes — marketing enthusiasm is a liability in this field, not an asset.',
+      },
+      {
+        q: 'Does KEYOB do branding as well as systems work?',
+        a: 'Yes. The same discovery-first method applies: understand how the business actually works, then build what carries it — whether that is an operating layer between systems or the brand and website a practice presents to the world.',
+      },
+    ],
+  },
   'investment-markets-australia': {
     category: 'financial',
     categoryLabel: 'Investment Markets Australia · Financial Services',
@@ -472,7 +547,6 @@ const storyExtras: Record<string, Extra> = {
   'aleesa-ai': {
     category: 'service',
     categoryLabel: 'Aleesa.ai · AI Receptionist & Automated Office',
-    featured: true,
     headline: {
       pre: 'From AI receptionist to a ',
       em: '24/7 automated office',

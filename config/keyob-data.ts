@@ -327,6 +327,23 @@ export const industries: Industry[] = [
 
 export const outcomes: Outcome[] = [
   {
+    industry: 'Formulyn · Formulation Consultancy',
+    tag: 'Branding · Web Design · Content',
+    stat: '4 markets',
+    statSub: 'AU, EU, UK and the Gulf reached from one site',
+    story:
+      'A Brisbane formulation consultancy had the science but no presence. KEYOB built the brand, the website and the content — so founders anywhere in the world can find the practice, understand it, and begin.',
+    storyLong: [
+      'Formulyn is a boutique nutraceutical and cosmetic formulation consultancy working with supplement, skincare and wellness brands across Australia, the EU, the UK and the Gulf. The expertise was real; the presence was not yet built.',
+      'KEYOB delivered the identity, the website, the voice and the launch — a site written to be understood by a first-time founder and an established brand manager alike, with every client kept unnamed.',
+    ],
+    paletteIndex: 5,
+    image: '/cases/formulyn.png',
+    imageAlt:
+      'Formulyn website shown on desktop and mobile — a dark, amber-accented brand with a laboratory flask as its hero visual',
+    slug: 'formulyn',
+  },
+  {
     industry: 'Aleesa.ai',
     tag: 'AI Receptionist · Automated Office',
     stat: '24/7',

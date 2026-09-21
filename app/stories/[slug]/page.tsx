@@ -13,6 +13,7 @@ export const viewport: Viewport = {
 export const dynamicParams = false;
 
 const BESPOKE_SLUGS = new Set([
+  'formulyn',
   'investment-markets-australia',
   'best-value-custom-erp',
   'automart-nationwide',
