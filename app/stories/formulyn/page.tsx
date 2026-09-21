@@ -204,6 +204,9 @@ const breadcrumbLd = {
 
 const cx = (...c: (string | false | undefined)[]) => c.filter(Boolean).join(' ');
 
+/** Reveal stagger, matching the .d1/.d2/.d3 delay classes in formulyn.html. */
+const delay = (i: number) => [undefined, styles.d1, styles.d2, styles.d3][i];
+
 const CheckIcon = (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
     <path d="M5 13l4 4L19 7" />
@@ -399,11 +402,11 @@ export default function FormulynStoryPage() {
         </header>
 
         {/* 2. SNAPSHOT */}
-        <section data-reveal className={styles.snapshot}>
+        <section className={styles.snapshot}>
           <div className={styles.wrap}>
             <div className={styles.snapGrid}>
-              {SNAPSHOT.map((s) => (
-                <div key={s.lab} className={styles.snap}>
+              {SNAPSHOT.map((s, i) => (
+                <div key={s.lab} data-reveal className={cx(styles.snap, delay(i))}>
                   <div className={styles.lab}>{s.lab}</div>
                   <div className={cx(styles.val, s.azure && styles.azure)}>{s.val}</div>
                   <p>{s.body}</p>
@@ -414,16 +417,16 @@ export default function FormulynStoryPage() {
         </section>
 
         {/* 3. THE SITUATION */}
-        <section data-reveal className={styles.sct}>
+        <section className={styles.sct}>
           <div className={styles.wrap}>
-            <div className={styles.sctHead}>
+            <div data-reveal className={styles.sctHead}>
               <div className={styles.eyebrow}>How it began</div>
               <h2 className={styles.h2}>
                 The expertise was real. The <em>presence</em> was not yet built.
               </h2>
             </div>
             <div className={styles.two}>
-              <div className={styles.bodyCopy}>
+              <div data-reveal className={styles.bodyCopy}>
                 <p>
                   Formulyn came to KEYOB in the position a lot of specialist consultancies find
                   themselves in. The work was strong, the clients were real, and the reputation was
@@ -448,7 +451,7 @@ export default function FormulynStoryPage() {
                 </p>
               </div>
 
-              <div className={styles.vis}>
+              <div data-reveal className={cx(styles.vis, styles.d1)}>
                 <svg
                   viewBox="0 0 420 300"
                   aria-label="A dense cluster of capability on one side, a market of prospective clients on the other, with nothing connecting them"
@@ -537,9 +540,9 @@ export default function FormulynStoryPage() {
         </section>
 
         {/* 4. THE CHALLENGE */}
-        <section data-reveal className={cx(styles.sct, styles.alt)}>
+        <section className={cx(styles.sct, styles.alt)}>
           <div className={styles.wrap}>
-            <div className={styles.sctHead}>
+            <div data-reveal className={styles.sctHead}>
               <div className={styles.eyebrow}>The challenge</div>
               <h2 className={styles.h2}>
                 Scientific credibility is easy to claim and <em>hard to demonstrate.</em>
@@ -550,8 +553,8 @@ export default function FormulynStoryPage() {
               </p>
             </div>
             <div className={styles.built}>
-              {CHALLENGES.map((c) => (
-                <div key={c.n} className={styles.bcard}>
+              {CHALLENGES.map((c, i) => (
+                <div key={c.n} data-reveal className={cx(styles.bcard, delay(i))}>
                   <div className={styles.n}>{c.n}</div>
                   <h3>{c.title}</h3>
                   <p>{c.body}</p>
@@ -562,9 +565,9 @@ export default function FormulynStoryPage() {
         </section>
 
         {/* 5. THE PROCESS */}
-        <section data-reveal className={cx(styles.sct, styles.dark)} id="process">
+        <section className={cx(styles.sct, styles.dark)} id="process">
           <div className={styles.wrap}>
-            <div className={styles.sctHead}>
+            <div data-reveal className={styles.sctHead}>
               <div className={styles.eyebrow}>How we worked</div>
               <h2 className={styles.h2}>
                 From first conversation <em>to launch.</em>
@@ -576,7 +579,7 @@ export default function FormulynStoryPage() {
             </div>
             <div className={styles.phaseRail}>
               {PHASES.map((p) => (
-                <div key={p.k} className={styles.ph}>
+                <div key={p.k} data-reveal className={styles.ph}>
                   <span className={styles.node} />
                   <span className={styles.k}>{p.k}</span>
                   <h3>{p.title}</h3>
@@ -588,16 +591,16 @@ export default function FormulynStoryPage() {
         </section>
 
         {/* 6. WHAT WE BUILT */}
-        <section data-reveal className={styles.sct}>
+        <section className={styles.sct}>
           <div className={styles.wrap}>
-            <div className={styles.sctHead}>
+            <div data-reveal className={styles.sctHead}>
               <div className={styles.eyebrow}>What we built</div>
               <h2 className={styles.h2}>
                 A brand and a site that <em>do the explaining.</em>
               </h2>
             </div>
             <div className={styles.two}>
-              <div className={styles.vis}>
+              <div data-reveal className={styles.vis}>
                 <svg
                   viewBox="0 0 420 320"
                   aria-label="Site architecture: a home page branching into services, process, industries, case studies, journal and about, with every path leading to a brief"
@@ -672,7 +675,7 @@ export default function FormulynStoryPage() {
                 </div>
               </div>
 
-              <div className={styles.bodyCopy}>
+              <div data-reveal className={cx(styles.bodyCopy, styles.d1)}>
                 <p>
                   <b>A complete brand identity.</b> Wordmark and badge, palette, typography and
                   imagery direction, with rules for how the mark behaves across the site, documents
@@ -706,15 +709,15 @@ export default function FormulynStoryPage() {
         </section>
 
         {/* 7. THE TURNING POINT */}
-        <section data-reveal className={cx(styles.sct, styles.alt)}>
+        <section className={cx(styles.sct, styles.alt)}>
           <div className={styles.wrap}>
-            <div className={cx(styles.sctHead, styles.center)}>
+            <div data-reveal className={cx(styles.sctHead, styles.center)}>
               <div className={cx(styles.eyebrow, styles.center)}>The turning point</div>
               <h2 className={styles.h2}>
                 Saying the quiet part <em>out loud.</em>
               </h2>
             </div>
-            <div className={cx(styles.bodyCopy, styles.center)}>
+            <div data-reveal className={cx(styles.bodyCopy, styles.center)}>
               <p>
                 The moment the project clicked was a conversation about what founders are really
                 afraid of. Not the science. They are afraid of sitting in a meeting with a
@@ -732,9 +735,9 @@ export default function FormulynStoryPage() {
         </section>
 
         {/* 8. OUTCOME */}
-        <section data-reveal className={styles.sct}>
+        <section className={styles.sct}>
           <div className={styles.wrap}>
-            <div className={styles.sctHead}>
+            <div data-reveal className={styles.sctHead}>
               <div className={styles.eyebrow}>Where it stands</div>
               <h2 className={styles.h2}>
                 Live, and <em>working for them.</em>
@@ -744,7 +747,7 @@ export default function FormulynStoryPage() {
                 not previously reach.
               </p>
             </div>
-            <div className={styles.bodyCopy} style={{ maxWidth: '82ch' }}>
+            <div data-reveal className={styles.bodyCopy} style={{ maxWidth: '82ch' }}>
               <ul className={styles.outList}>
                 {OUTCOMES.map((o) => (
                   <li key={o}>
@@ -763,15 +766,15 @@ export default function FormulynStoryPage() {
         </section>
 
         {/* 9. PHILOSOPHY */}
-        <section data-reveal className={cx(styles.sct, styles.dark)}>
+        <section className={cx(styles.sct, styles.dark)}>
           <div className={styles.wrap}>
-            <div className={cx(styles.sctHead, styles.center)}>
+            <div data-reveal className={cx(styles.sctHead, styles.center)}>
               <div className={cx(styles.eyebrow, styles.center)}>What this work taught us</div>
               <h2 className={styles.h2}>
                 Branding a specialist is mostly <em>an act of listening.</em>
               </h2>
             </div>
-            <div className={cx(styles.bodyCopy, styles.center)}>
+            <div data-reveal className={cx(styles.bodyCopy, styles.center)}>
               <p>
                 Technical practices are usually undersold by their own marketing, because the people
                 doing the work find their expertise unremarkable. It is simply how they think. The
@@ -787,9 +790,9 @@ export default function FormulynStoryPage() {
         </section>
 
         {/* 10. REFLECTION */}
-        <section data-reveal className={cx(styles.sct, styles.alt)}>
+        <section className={cx(styles.sct, styles.alt)}>
           <div className={styles.wrap}>
-            <div className={styles.reflect}>
+            <div data-reveal className={styles.reflect}>
               <blockquote>
                 &ldquo;The brief was never to make the practice look bigger than it is. It was to
                 make it look exactly as capable as it already was, and then make that easy to
@@ -801,15 +804,15 @@ export default function FormulynStoryPage() {
         </section>
 
         {/* 11. CAPABILITIES */}
-        <section data-reveal className={styles.sct} id="capabilities">
+        <section className={styles.sct} id="capabilities">
           <div className={styles.wrap}>
-            <div className={styles.sctHead}>
+            <div data-reveal className={styles.sctHead}>
               <div className={styles.eyebrow}>Capabilities involved</div>
               <h2 className={styles.h2}>
                 What went into <em>building the presence.</em>
               </h2>
             </div>
-            <div className={styles.caps}>
+            <div data-reveal className={styles.caps}>
               {CAP_TAGS.map((c) => (
                 <span key={c}>{c}</span>
               ))}
@@ -818,9 +821,9 @@ export default function FormulynStoryPage() {
         </section>
 
         {/* 12. FINAL CTA */}
-        <section data-reveal className={styles.final}>
+        <section className={styles.final}>
           <div className={styles.finalMesh} aria-hidden="true" />
-          <div className={cx(styles.wrap, styles.in)}>
+          <div data-reveal className={cx(styles.wrap, styles.in)}>
             <h2>
               Have the expertise, but not the <em>presence?</em>
             </h2>
