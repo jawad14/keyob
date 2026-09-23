@@ -327,6 +327,23 @@ export const industries: Industry[] = [
 
 export const outcomes: Outcome[] = [
   {
+    industry: 'East St Kilda Dental · Family Dental Practice',
+    tag: 'Website · Hosting · SEO, AEO & GEO',
+    stat: '45 years',
+    statSub: 'of local trust, now easy to find online',
+    story:
+      'A St Kilda East practice had grown on word of mouth since 1980. KEYOB rebuilt its website, hosts it, and built the search and AI visibility that lets a stranger find what long-term patients already knew.',
+    storyLong: [
+      'East St Kilda Dental has cared for families on the corner of Dandenong and Orrong Roads since around 1980. The reputation was built in the chair; the digital presence had not kept pace with it.',
+      'KEYOB built the site around real patient questions, then layered SEO, answer engine and generative engine optimisation over twenty suburb pages and twenty-two service pages — and still hosts and maintains it today.',
+    ],
+    paletteIndex: 3,
+    image: '/cases/east-st-kilda-dental.webp',
+    imageAlt:
+      'East St Kilda Dental website on desktop, alongside a local search result and an AI assistant citing the practice for nervous patients',
+    slug: 'east-st-kilda-dental',
+  },
+  {
     industry: 'Formulyn · Formulation Consultancy',
     tag: 'Branding · Web Design · Content',
     stat: '4 markets',

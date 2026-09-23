@@ -86,10 +86,84 @@ const SHARED_FAQ: StoryFaqItem[] = [
 ];
 
 const storyExtras: Record<string, Extra> = {
+  'east-st-kilda-dental': {
+    category: 'professional',
+    categoryLabel: 'East St Kilda Dental · Family Dental Practice · Melbourne',
+    featured: true,
+    headline: {
+      pre: 'Forty-five years of trust, now ',
+      em: 'easy to find.',
+    },
+    body: [
+      'East St Kilda Dental has looked after families on the corner of Dandenong and Orrong Roads since around 1980. Children it treated now bring their own children, and most new patients still arrive because someone told a friend.',
+      'That reputation was built in the chair. The practice wanted a digital presence that carried the same warmth and made it just as easy for a stranger to choose them.',
+      'KEYOB rebuilt the site around the questions patients actually ask — what a first visit involves, whether they will be judged, what it will cost — then built search, answer and generative engine visibility across twenty suburbs and twenty-two services.',
+      'KEYOB hosts and maintains the site today. Search engines change how they rank and AI assistants change how they answer, so the work continues after launch rather than stopping at it.',
+    ],
+    keyOutcomes: [
+      'Local visibility across twenty surrounding suburbs, each with its own genuinely useful page',
+      'Educational content and structured data prepared for search answers and AI assistants',
+      'Hosting, maintenance and search care handled by one accountable team',
+    ],
+    facts: [
+      { k: 'Industry', v: 'Family dental practice' },
+      { k: 'Scope', v: 'Build, host, grow, maintain' },
+      { k: 'Reach', v: '<em>20</em> suburb pages · 22 services' },
+      { k: 'Status', v: '<em>Live</em> and looked after' },
+    ],
+    challenges: [
+      'A four-decade reputation that existed offline and almost nowhere online.',
+      'Anxious patients who decide before they ever pick up the phone.',
+      'Health advertising rules that forbid the promises other industries take for granted.',
+      'Local search that works suburb by suburb, not city by city.',
+      'AI assistants answering first, before anyone clicks a link.',
+      'A site that would keep ageing unless somebody stayed close to it.',
+    ],
+    approachIntro:
+      'We started with the person most afraid to walk in — someone who stopped going years ago and now feels embarrassed about it. <strong>Designing for that person changed everything else:</strong> open talk about cost, the first visit explained step by step, and the same quiet message repeated in different ways — however long it has been, you are welcome here.',
+    pullquote:
+      '"We did not need to make this practice sound better than it is. Forty-five years had already done that. Our job was to make sure the next patient could find out for themselves."',
+    outcomeCards: [
+      {
+        title: 'A site that answers first',
+        body: 'Reassurance pages sit between discovery and the booking button — first visit, nervous patients, fees and health funds.',
+      },
+      {
+        title: 'Found three different ways',
+        body: 'SEO for suburb searches, AEO for question-led answers, and GEO so AI assistants can cite the practice accurately.',
+      },
+      {
+        title: 'Looked after, not launched',
+        body: 'KEYOB hosts the site and maintains content, technical health and search performance, so it keeps earning instead of ageing.',
+      },
+    ],
+    humanIntro:
+      'Established businesses do not need to be reinvented. They need their existing strengths made visible, and then someone who stays close enough to keep it that way.',
+    humanQuote:
+      '"We did not need to make this practice sound better than it is. Forty-five years had already done that. Our job was to make sure the next patient could find out for themselves."',
+    humanRole: 'KEYOB — internal reflection on the engagement',
+    faq: [
+      {
+        q: 'What did KEYOB deliver for East St Kilda Dental?',
+        a: 'A new digital look and website, the content written in the practice’s own voice, twenty-two service pages and twenty suburb pages, a dental education library, online booking, hosting, and SEO, AEO and GEO work — followed by ongoing maintenance and search care.',
+      },
+      {
+        q: 'What is the difference between SEO, AEO and GEO here?',
+        a: 'SEO earns the ranking when someone searches "dentist elwood". AEO structures question-led content so a search engine can lift a clear, accurate answer, such as why gums bleed. GEO makes the practice legible to generative assistants — plain facts stated consistently, so an AI recommending a gentle dentist near St Kilda has something reliable to draw on.',
+      },
+      {
+        q: 'Why twenty separate suburb pages?',
+        a: 'People search for a dentist in their own suburb, not in "Melbourne’s inner south-east". Each page carries genuine directions, transport and parking detail for that suburb rather than a swapped place name, which is what makes it useful to a patient and credible to a search engine.',
+      },
+      {
+        q: 'How is health advertising compliance handled?',
+        a: 'Dental practices sit under the national advertising guidelines for health practitioners, so copy has to be accurate, balanced and free of outcome promises. The warmth on this site comes from tone and clarity — explaining the first visit, being open about fees — rather than from claims.',
+      },
+    ],
+  },
   formulyn: {
     category: 'professional',
     categoryLabel: 'Formulyn · Nutraceutical & Cosmetic Formulation · Brisbane',
-    featured: true,
     headline: {
       pre: 'A science practice that needed the ',
       em: 'world to see it.',

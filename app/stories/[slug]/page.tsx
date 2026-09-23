@@ -13,6 +13,7 @@ export const viewport: Viewport = {
 export const dynamicParams = false;
 
 const BESPOKE_SLUGS = new Set([
+  'east-st-kilda-dental',
   'formulyn',
   'investment-markets-australia',
   'best-value-custom-erp',
