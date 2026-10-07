@@ -145,6 +145,39 @@ const PHASES: { k: string; title: string; body: string }[] = [
   },
 ];
 
+const MODULES: { k: string; title: string; body: string }[] = [
+  {
+    k: 'Module 01',
+    title: 'Enquiries and pipeline',
+    body: 'Every enquiry captured in one place, from first contact through discovery call and quote, so nothing depends on who happened to answer the phone.',
+  },
+  {
+    k: 'Module 02',
+    title: 'Projects and stages',
+    body: 'Each job as a single record moving through the real stages of a residential build, with the current position visible at a glance.',
+  },
+  {
+    k: 'Module 03',
+    title: 'Documents and approvals',
+    body: 'Plans, quotes, variations and approval paperwork held against the project they belong to rather than in an inbox.',
+  },
+  {
+    k: 'Module 04',
+    title: 'Scheduling and trades',
+    body: 'Who is on site and when, so the office and the supervisors are working from the same week rather than two versions of it.',
+  },
+  {
+    k: 'Module 05',
+    title: 'Site access on a phone',
+    body: 'The parts a supervisor needs, usable outdoors on a handset in the time between two conversations.',
+  },
+  {
+    k: 'Module 06',
+    title: 'Reporting for the owners',
+    body: 'A view across every active project, so leadership can see the whole business without asking six people for an update.',
+  },
+];
+
 const OUTCOMES = [
   'A custom construction platform, branded as Builtrax and owned by Esteem Constructions.',
   'One record per project, carrying the job from first enquiry through to handover.',
@@ -619,6 +652,16 @@ export default function EsteemConstructionsStoryPage() {
                 A platform named and branded for Esteem, covering the journey their own website
                 describes: dream, plan, design and construct.
               </p>
+            </div>
+
+            <div className={styles.mods}>
+              {MODULES.map((m, i) => (
+                <div key={m.k} data-reveal className={cx(styles.mod, delay(i % 3))}>
+                  <div className={styles.k}>{m.k}</div>
+                  <h3>{m.title}</h3>
+                  <p>{m.body}</p>
+                </div>
+              ))}
             </div>
 
             <div className={styles.two}>
