@@ -327,6 +327,23 @@ export const industries: Industry[] = [
 
 export const outcomes: Outcome[] = [
   {
+    industry: 'Esteem Constructions · Residential Builder',
+    tag: 'Custom Software · Construction CRM',
+    stat: '1,700+',
+    statSub: 'projects run through one custom platform',
+    story:
+      'A Sydney home extension builder was running a coordination business out of spreadsheets, email and WhatsApp. KEYOB designed and built Builtrax — a construction platform shaped around how Esteem actually runs a job.',
+    storyLong: [
+      'Esteem Constructions is a family-owned Sydney builder specialising in home extensions, renovations and bespoke homes, with more than 1,500 homes and 1,700 projects delivered across sixteen years.',
+      'KEYOB built them Builtrax: one record per project carrying the job from first enquiry to final handover, designed for the site team on a phone as seriously as the office on a desktop — software the business owns and can extend.',
+    ],
+    paletteIndex: 4,
+    image: '/cases/esteem-constructions.webp',
+    imageAlt:
+      'Builtrax construction platform sign-in screen branded for Esteem Constructions, with a project timeline running from enquiry to handover',
+    slug: 'esteem-constructions',
+  },
+  {
     industry: 'East St Kilda Dental · Family Dental Practice',
     tag: 'Website · Hosting · SEO, AEO & GEO',
     stat: '45 years',

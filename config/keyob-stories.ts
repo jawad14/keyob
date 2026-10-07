@@ -86,10 +86,84 @@ const SHARED_FAQ: StoryFaqItem[] = [
 ];
 
 const storyExtras: Record<string, Extra> = {
+  'esteem-constructions': {
+    category: 'multi',
+    categoryLabel: 'Esteem Constructions · Residential Building · Sydney',
+    featured: true,
+    headline: {
+      pre: "A builder's whole business, ",
+      em: 'on one screen.',
+    },
+    body: [
+      'Esteem Constructions is a family-owned Sydney builder specialising in home extensions, renovations and bespoke homes. Their own figures tell the story of scale: more than 1,500 homes and 1,700 projects delivered across sixteen years.',
+      'A home extension looks like a construction job. Run one properly and you discover it is mostly coordination — discovery call, site visit, quote, design, council approvals, construction and handover, each stage with different people, different documents and a client at home waiting for news.',
+      'KEYOB built them Builtrax, a construction project management platform made for the way they actually work, from the first discovery call to the final handover. One record per project, carrying everything that hangs off the job.',
+      'Builtrax is in daily use at dashboard.builtrax.com for office and site teams — custom software Esteem owns and can extend, not a subscription that reshapes their process to suit someone else’s roadmap.',
+    ],
+    keyOutcomes: [
+      'One record per project, carrying the job from first enquiry through to handover',
+      'A single operational picture for office and site teams instead of parallel versions',
+      'Software the business owns and can extend as the way it works keeps changing',
+    ],
+    facts: [
+      { k: 'Industry', v: 'Residential building' },
+      { k: 'Scope', v: 'Custom platform' },
+      { k: 'Scale behind it', v: '<em>1,700+</em> projects' },
+      { k: 'Status', v: '<em>In daily use</em>' },
+    ],
+    challenges: [
+      'Project information spread across spreadsheets, email, WhatsApp, PDFs and people’s heads.',
+      'Generic project tools that do not know what a first-floor addition is.',
+      'Two very different users — an office on a desktop and a supervisor on a phone, outdoors.',
+      'Long projects where approvals can sit still for weeks through no fault of the builder.',
+      'A client at home who notices when updates go quiet.',
+      'Adoption: a platform harder than the spreadsheet it replaces simply will not be used.',
+    ],
+    approachIntro:
+      'We learned the business before writing code — how an enquiry becomes a quote, what happens when a design changes, who needs to know when a trade cannot get on site. <strong>The data model came next and mattered most:</strong> deciding what a project is, what hangs off it, and how stages, documents, people and conversations relate.',
+    pullquote:
+      '"The best measure of an internal platform is whether anyone still keeps a private spreadsheet on the side. That is the real adoption metric, and everyone in the business knows the honest answer."',
+    outcomeCards: [
+      {
+        title: 'A product, not an internal tool',
+        body: 'Builtrax has its own name, identity and login at dashboard.builtrax.com, carrying Esteem’s branding — a team proud to log in uses the system.',
+      },
+      {
+        title: 'Their stages, not generic ones',
+        body: 'The platform speaks the language of a residential builder, so training is mostly a matter of showing people where things live.',
+      },
+      {
+        title: 'Built for the phone as well as the desk',
+        body: 'If the site team cannot use it in the field, the office picture goes stale by lunchtime.',
+      },
+    ],
+    humanIntro:
+      'Off-the-shelf tools are cheaper on day one and often the right answer. They stop being the right answer when a business has a genuine operating method of its own and spends real money bending a generic product around it.',
+    humanQuote:
+      '"A builder who has run 1,700 projects has learned how to run a project. Software should encode that knowledge, not override it."',
+    humanRole: 'KEYOB — internal reflection on the engagement',
+    faq: [
+      {
+        q: 'What is Builtrax?',
+        a: 'Builtrax is the custom construction project management platform KEYOB designed and built for Esteem Constructions. It carries each job as a single record through the real stages of a residential build — enquiry, quote, design, approvals, construction and handover — with documents, schedule, trades, updates and costs hanging off the project they belong to.',
+      },
+      {
+        q: 'Why build custom software instead of buying a construction tool?',
+        a: 'Generic project tools are built for generic projects. They do not know what a first-floor addition is, that approvals can stall for weeks, or that the same client will ask three times when the frame goes up. Spreadsheets fill those gaps and quietly become the system of record. Custom software earns its cost in the fit.',
+      },
+      {
+        q: 'How was adoption handled?',
+        a: 'Every screen had to be faster than the habit it was asking people to give up. The platform was designed for a supervisor on a phone outdoors as seriously as for the office, rolled out with onboarding shaped around roles, and given its own name and identity so it was treated as a product rather than tolerated as an IT project.',
+      },
+      {
+        q: 'Who owns the platform?',
+        a: 'Esteem Constructions owns it and can extend it. KEYOB stays close after launch, supporting and evolving Builtrax so it keeps matching how the business works rather than slowly drifting away from it.',
+      },
+    ],
+  },
   'east-st-kilda-dental': {
     category: 'professional',
     categoryLabel: 'East St Kilda Dental · Family Dental Practice · Melbourne',
-    featured: true,
     headline: {
       pre: 'Forty-five years of trust, now ',
       em: 'easy to find.',
