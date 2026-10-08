@@ -27,6 +27,10 @@ export const wwdStages: WwdStage[] = [
       'Founder/CEO positioning',
     ],
     outcome: 'Your business becomes easier to understand, trust, and remember.',
+    link: {
+      href: '/what-we-do/brand-positioning',
+      label: 'Explore Brand Positioning',
+    },
   },
   {
     title: 'Website & Digital Presence',
@@ -42,6 +46,10 @@ export const wwdStages: WwdStage[] = [
       'Performance & structure',
     ],
     outcome: 'Your website becomes a business asset, not just an online brochure.',
+    link: {
+      href: '/what-we-do/website-design-development',
+      label: 'Explore Website Design & Development',
+    },
   },
   {
     title: 'Search, Visibility & Authority',
@@ -59,6 +67,10 @@ export const wwdStages: WwdStage[] = [
     ],
     outcome:
       'Your business becomes discoverable across search engines, AI answer engines, and industry conversations.',
+    link: {
+      href: '/what-we-do/seo-aeo-geo',
+      label: 'Explore SEO, AEO & GEO',
+    },
   },
   {
     title: 'Social Media & Demand Generation',
@@ -76,6 +88,10 @@ export const wwdStages: WwdStage[] = [
     ],
     outcome:
       'Your digital presence starts attracting, educating, and converting the right audience.',
+    link: {
+      href: '/what-we-do/social-media-demand-generation',
+      label: 'Explore Social Media & Demand Generation',
+    },
   },
   {
     title: 'CRM, Sales & Customer Systems',
@@ -93,6 +109,10 @@ export const wwdStages: WwdStage[] = [
     ],
     outcome:
       'Every lead, customer, and opportunity becomes visible, trackable, and manageable.',
+    link: {
+      href: '/what-we-do/crm-development',
+      label: 'Explore CRM Development & Integration',
+    },
   },
   {
     title: 'ERP & Operational Systems',
@@ -133,6 +153,10 @@ export const wwdStages: WwdStage[] = [
     ],
     outcome:
       'Your team gets time back, processes become faster, and your systems start doing more of the work.',
+    link: {
+      href: '/what-we-do/ai-automation',
+      label: 'Explore AI Automation',
+    },
   },
   {
     title: 'Business Intelligence & Decision Systems',
@@ -150,6 +174,10 @@ export const wwdStages: WwdStage[] = [
     ],
     outcome:
       'Leadership can see what is happening, understand what matters, and act earlier.',
+    link: {
+      href: '/what-we-do/business-intelligence-dashboards',
+      label: 'Explore Business Intelligence & Dashboards',
+    },
   },
 ];
 

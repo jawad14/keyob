@@ -4,6 +4,7 @@ import { siteConfig } from '@/config/site.config';
 import { cms } from '@/lib/cms';
 import { newsArticles } from '@/config/keyob-news';
 import { stories } from '@/config/keyob-stories';
+import { services } from '@/config/keyob-services';
 import { leaderProfiles } from '@/config/keyob-leader-profiles';
 import { leaderArticleSlugs, leaderArticleParams } from '@/config/keyob-leader-articles';
 
@@ -59,6 +60,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
+  const servicePages: MetadataRoute.Sitemap = services.map((s) => ({
+    url: url(`/what-we-do/${s.slug}`),
+    lastModified: now,
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  }));
+
   const storyPages: MetadataRoute.Sitemap = stories.map((s) => ({
     url: url(`/stories/${s.slug}`),
     lastModified: now,
@@ -89,6 +97,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [
     ...staticPages,
+    ...servicePages,
     ...blogPages,
     ...newsPages,
     ...storyPages,

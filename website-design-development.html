@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0d1b2a">
+<title>Website Design &amp; Development Australia | Custom Business Websites | KEYOB</title>
+<meta name="description" content="Website design and development for Australian businesses. KEYOB designs, writes and builds custom websites that load fast, rank well and turn visitors into enquiries. Brisbane based, working nationally.">
+<link rel="canonical" href="https://www.keyob.com/what-we-do/website-design-development">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Website Design &amp; Development | KEYOB">
+<meta property="og:description" content="A website is not a brochure. It is the hardest working part of your sales process.">
+<meta property="og:url" content="https://www.keyob.com/what-we-do/website-design-development">
+<meta property="og:site_name" content="KEYOB">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "serviceType": "Website Design and Development", "name": "Website Design and Development", "provider": {"@type": "Organization", "name": "KEYOB", "url": "https://www.keyob.com"}, "areaServed": {"@type": "Country", "name": "Australia"}, "description": "Custom website design, UX design, copywriting and web development for Australian businesses, built for speed, search visibility and conversion.", "url": "https://www.keyob.com/what-we-do/website-design-development", "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Website Design and Development deliverables", "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Website design"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "UX and UI design"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Website development"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Landing pages"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Website copywriting"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Performance optimisation"}}]}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "What we do", "item": "https://www.keyob.com/what-we-do"}, {"@type": "ListItem", "position": 2, "name": "Website Design &amp; Development", "item": "https://www.keyob.com/what-we-do/website-design-development"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much does a business website cost in Australia?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on scope: the number of pages, whether content is written for you, how much custom design and development is involved, and what it needs to integrate with. A focused site for a single-service business sits well below a multi-service site with custom functionality. We scope properly and quote once we understand what the site has to do, rather than quoting a number before that."}}, {"@type": "Question", "name": "How long does a website take to build?", "acceptedAnswer": {"@type": "Answer", "text": "Typically it is governed by content rather than code. Projects move quickly when decisions and material arrive on time, and slowly when copy is still being written during the build. We write the content as part of the project precisely to avoid that stall."}}, {"@type": "Question", "name": "Do you write the content or do we?", "acceptedAnswer": {"@type": "Answer", "text": "We write it. Copy drafted against the page structure, in your voice, and reviewed with you. Websites built around placeholder text almost always launch late and read like a template."}}, {"@type": "Question", "name": "What platform do you build on?", "acceptedAnswer": {"@type": "Answer", "text": "We choose based on who will maintain the site and what it needs to connect to. The important thing is that you own it, your team can update ordinary content without a developer, and it performs well. We will tell you plainly when a simpler platform is the better answer."}}, {"@type": "Question", "name": "Will the website be good for SEO?", "acceptedAnswer": {"@type": "Answer", "text": "The foundations are built in: clean structure, fast loading, sensible URLs, metadata and structured data. That is the groundwork rather than the whole job. Ranking also needs content and authority over time, which is the search stage of our pathway."}}, {"@type": "Question", "name": "Can you redesign our existing website?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Sometimes a rebuild is the right answer and sometimes the issue is structure, content or performance rather than the design itself. We look at what is actually causing the problem before recommending a full rebuild."}}, {"@type": "Question", "name": "Do you provide ongoing support after launch?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Hosting, maintenance, content updates and performance monitoring. A site that is looked after keeps improving; one that is left alone starts falling behind the week after launch."}}]}</script>
+<style>
+  :root{
+    --navy:#031536;--navy-2:#14295A;--azure:#01b0f4;--azure-soft:#4fc8f8;
+    --paper:#ffffff;--ice:#f4f8fb;--ice-2:#e9f1f7;
+    --ink:#07162d;--mute:#5f6b7a;--border:#dde7ef;--faint:#9aa7b4;
+    /* practice accent — Clay, used sparingly. Azure still leads. */
+    --acc:#10655e;--acc-soft:#5ea79e;--acc-mist:#eaf4f2;
+    --serif:'Fraunces',Georgia,serif;--sans:'Space Grotesk',sans-serif;--mono:'JetBrains Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--acc-mist);color:var(--acc)}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+
+  /* nav */
+  nav.site{position:fixed;top:0;left:0;right:0;z-index:40;transition:background .4s,backdrop-filter .4s,box-shadow .4s}
+  nav.site.solid{background:rgba(3,21,54,.86);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(255,255,255,.06)}
+  .nav-in{max-width:1180px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
+  .logo{font-family:var(--serif);font-size:22px;font-weight:500;color:#fff;letter-spacing:.02em}
+  .logo b{color:var(--azure);font-weight:500}
+  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links a{font-family:var(--mono);font-size:12.5px;letter-spacing:.03em;color:rgba(255,255,255,.8);transition:color .3s}
+  .nav-links a:hover{color:#fff}
+  .nav-cta{color:var(--navy)!important;background:var(--azure);padding:9px 16px;border-radius:30px}
+  @media(max-width:760px){.nav-links a:not(.nav-cta){display:none}}
+
+  /* shared */
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--azure);display:flex;align-items:center;gap:12px}
+  .eyebrow.acc{color:var(--acc)}
+  .eyebrow::before{content:"";width:30px;height:1px;background:currentColor;opacity:.6}
+  .eyebrow.nobar::before{display:none}
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--azure);color:#022;font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.03em;padding:14px 24px;border-radius:44px;border:none;cursor:pointer;transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}
+  .btn:hover{transform:translateY(-3px);box-shadow:0 14px 30px -12px rgba(1,176,244,.6)}
+  .btn-ghost{display:inline-flex;align-items:center;gap:10px;background:transparent;color:#fff;border:1px solid rgba(255,255,255,.3);font-family:var(--mono);font-size:13px;letter-spacing:.03em;padding:13px 23px;border-radius:44px;cursor:pointer;transition:.35s}
+  .btn-ghost:hover{border-color:#fff;transform:translateY(-3px)}
+  .arr{transition:transform .3s}
+  .btn:hover .arr,.lnk:hover .arr{transform:translateX(4px)}
+  .lnk{font-family:var(--mono);font-size:12.5px;letter-spacing:.03em;color:var(--acc);display:inline-flex;align-items:center;gap:8px}
+  .lnk:hover{color:var(--ink)}
+
+  .sct{padding:104px 0}
+  .sct.ice{background:var(--ice)}
+  .sct.dark{background:linear-gradient(165deg,var(--navy-2),var(--navy));color:#fff}
+  .sct.dark p{color:rgba(255,255,255,.82)}
+  h2.sec{font-family:var(--serif);font-weight:300;line-height:1.12;letter-spacing:-.02em;color:var(--ink);font-size:clamp(28px,3.4vw,42px)}
+  h2.sec em{font-style:italic;color:var(--azure)}
+  .sct.dark h2.sec{color:#fff}
+  .sct.dark h2.sec em{color:var(--acc-soft)}
+  .sec-head{max-width:740px;margin-bottom:56px}
+  .sec-head .sub{margin-top:16px;font-size:16.5px;line-height:1.72;color:var(--mute)}
+  .sct.dark .sec-head .sub{color:rgba(255,255,255,.75)}
+
+  /* ============ HERO ============ */
+  .hero{background:linear-gradient(160deg,var(--navy-2),var(--navy));color:#fff;padding:156px 0 92px;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(56% 78% at 90% 2%,rgba(1,176,244,.18),transparent 60%),radial-gradient(50% 70% at -6% 104%,rgba(94,167,158,.20),transparent 62%);pointer-events:none}
+  .hero .wrap{position:relative;z-index:2}
+  .crumb{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:rgba(255,255,255,.55);margin-bottom:36px;display:flex;gap:9px;flex-wrap:wrap}
+  .crumb a{color:rgba(255,255,255,.7)}.crumb a:hover{color:#fff}.crumb .s{opacity:.4}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  .hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(34px,4.9vw,60px);line-height:1.06;letter-spacing:-.02em;margin:12px 0 20px;max-width:17ch}
+  .hero h1 em{font-style:italic;color:var(--azure-soft)}
+  .hero .intro{font-size:clamp(16px,1.7vw,18.5px);line-height:1.68;color:rgba(255,255,255,.78);max-width:54ch}
+  .hero .intro + .intro{margin-top:14px}
+  .hero-cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+  .hero-panel svg{width:100%;height:auto;display:block}
+  .hero-cap{margin-top:12px;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:rgba(255,255,255,.42);text-align:center}
+  .flow{stroke-dasharray:5 5;animation:flowmove 2.8s linear infinite}
+  @keyframes flowmove{to{stroke-dashoffset:-20}}
+  @media(max-width:920px){.hero-grid{grid-template-columns:1fr}.hero-panel{max-width:520px;margin:0 auto}}
+
+  /* ============ three doors (nav map) ============ */
+  .doors{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:-56px;position:relative;z-index:5}
+  .door{background:var(--paper);border:1px solid var(--border);border-radius:18px;padding:26px 24px;display:flex;flex-direction:column;gap:8px;box-shadow:0 30px 60px -45px rgba(3,21,54,.5);transition:.35s cubic-bezier(.16,1,.3,1)}
+  .door:hover{transform:translateY(-4px);border-color:var(--acc-soft);box-shadow:0 30px 60px -35px rgba(16,101,94,.42)}
+  .door .k{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+  .door .t{font-family:var(--serif);font-size:19px;line-height:1.25;color:var(--ink)}
+  .door .d{font-size:13px;line-height:1.6;color:var(--mute)}
+  .door .go{margin-top:6px;font-family:var(--mono);font-size:11.5px;color:var(--acc);display:inline-flex;gap:7px;align-items:center}
+  .door:hover .go .arr{transform:translateX(4px)}
+  @media(max-width:880px){.doors{grid-template-columns:1fr;margin-top:-40px}}
+
+  /* ============ why us ============ */
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .why{background:var(--paper);border:1px solid var(--border);border-radius:18px;padding:32px 28px;transition:.35s cubic-bezier(.16,1,.3,1)}
+  .why:hover{transform:translateY(-4px);border-color:var(--acc-soft);box-shadow:0 24px 48px -30px rgba(16,101,94,.38)}
+  .why .n{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--acc);margin-bottom:14px}
+  .why h3{font-family:var(--serif);font-weight:400;font-size:20px;line-height:1.28;color:var(--ink);margin-bottom:10px}
+  .why p{font-size:14px;line-height:1.68;color:var(--mute)}
+  @media(max-width:880px){.why-grid{grid-template-columns:1fr}}
+
+  /* ============ SECTION 1 — the lead ============ */
+  .lead-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+  .lead-photo{aspect-ratio:4/5;border-radius:18px 18px 50px 18px;background:linear-gradient(150deg,var(--acc-soft),var(--acc));position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+  .lead-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .lead-photo .ph-note{font-family:var(--mono);font-size:10.5px;line-height:1.7;color:rgba(255,255,255,.9);text-align:center;padding:26px}
+  .lead-name{font-family:var(--serif);font-weight:300;font-size:clamp(28px,3.2vw,40px);line-height:1.1;color:var(--ink);margin:14px 0 6px}
+  .lead-role{font-family:var(--mono);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);margin-bottom:24px}
+  .lead-wrap p{font-size:15.5px;line-height:1.74;color:var(--mute);margin-bottom:16px;max-width:60ch}
+  .lead-quote{font-family:var(--serif);font-weight:300;font-size:clamp(19px,2.1vw,24px);line-height:1.44;color:var(--ink);border-left:3px solid var(--acc-soft);padding-left:24px;margin:28px 0}
+  .lead-quote em{font-style:italic;color:var(--acc)}
+  .lead-cta{margin-top:26px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+  @media(max-width:880px){.lead-wrap{grid-template-columns:1fr}.lead-photo{max-width:380px}}
+
+  /* ============ SECTION 2/3 — platform cards ============ */
+  .plat{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .pcard{position:relative;border-radius:24px;overflow:hidden;border:1px solid var(--border);background:var(--paper);display:flex;flex-direction:column;transition:.4s cubic-bezier(.16,1,.3,1)}
+  .pcard:hover{transform:translateY(-6px);box-shadow:0 40px 80px -50px rgba(3,21,54,.55)}
+  .pcard .top{padding:36px 34px 30px;position:relative;overflow:hidden;background:linear-gradient(155deg,var(--navy-2),var(--navy));color:#fff}
+  .pcard.sap .top::after{content:"";position:absolute;inset:0;background:radial-gradient(70% 90% at 88% 6%,rgba(240,171,0,.22),transparent 62%);pointer-events:none}
+  .pcard.odoo .top::after{content:"";position:absolute;inset:0;background:radial-gradient(70% 90% at 88% 6%,rgba(168,122,181,.26),transparent 62%);pointer-events:none}
+  .pcard .top > *{position:relative;z-index:2}
+  .pcard .badge{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;padding:5px 13px;border-radius:20px;display:inline-block}
+  .pcard.sap .badge{color:var(--sap-gold);background:rgba(240,171,0,.12);border:1px solid rgba(240,171,0,.32)}
+  .pcard.odoo .badge{color:var(--odoo-soft);background:rgba(168,122,181,.14);border:1px solid rgba(168,122,181,.34)}
+  .pcard h3{font-family:var(--serif);font-weight:300;font-size:clamp(24px,2.7vw,32px);line-height:1.14;margin:16px 0 12px}
+  .pcard .tagline{font-size:14.5px;line-height:1.66;color:rgba(255,255,255,.74);max-width:40ch}
+  .pcard .mark{position:absolute;right:28px;bottom:24px;z-index:2;opacity:.9}
+  .pcard .body{padding:30px 34px 34px;display:flex;flex-direction:column;flex-grow:1}
+  .pcard .fitk{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:14px}
+  .pcard ul{list-style:none;margin-bottom:24px}
+  .pcard li{display:flex;gap:12px;align-items:flex-start;padding:9px 0;font-size:14px;line-height:1.6;color:var(--ink);border-bottom:1px solid var(--border)}
+  .pcard li:last-child{border-bottom:none}
+  .pcard.sap .tk{color:var(--sap-gold-deep)}
+  .pcard.odoo .tk{color:var(--odoo)}
+  .pcard .tk{font-family:var(--mono);font-size:12px;flex-shrink:0;line-height:1.5}
+  .pcard .foot{margin-top:auto;padding-top:20px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .pcard .go{font-family:var(--mono);font-size:12.5px;display:inline-flex;gap:8px;align-items:center}
+  .pcard.sap .go{color:var(--sap-gold-deep)}
+  .pcard.odoo .go{color:var(--odoo)}
+  .pcard:hover .go .arr{transform:translateX(4px)}
+  .pcard .note{font-family:var(--mono);font-size:10.5px;color:var(--faint)}
+  @media(max-width:900px){.plat{grid-template-columns:1fr}}
+
+  /* ============ how we deliver ============ */
+  .steps{position:relative;max-width:940px;margin:0 auto}
+  .steps::before{content:"";position:absolute;left:20px;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,var(--azure),var(--acc-soft))}
+  .stp{position:relative;padding:0 0 40px 66px}
+  .stp:last-child{padding-bottom:0}
+  .stp .node{position:absolute;left:9px;top:2px;width:24px;height:24px;border-radius:50%;background:var(--navy);border:2px solid var(--azure);display:flex;align-items:center;justify-content:center}
+  .stp:nth-child(n+4) .node{border-color:var(--acc-soft)}
+  .stp .k{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--acc-soft);margin-bottom:8px;display:block}
+  .stp h3{font-family:var(--serif);font-weight:400;font-size:20px;color:#fff;margin-bottom:8px}
+  .stp p{font-size:14.2px;line-height:1.68;color:rgba(255,255,255,.72);max-width:60ch}
+
+  /* ============ FAQ ============ */
+  .faq{max-width:840px;margin:0 auto}
+  .fq{border-bottom:1px solid var(--border)}
+  .fq button{width:100%;background:none;border:none;text-align:left;cursor:pointer;padding:24px 40px 24px 0;position:relative;font-family:var(--serif);font-size:19px;font-weight:400;color:var(--ink);line-height:1.35}
+  .fq button::after{content:"+";position:absolute;right:6px;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:20px;color:var(--acc);transition:transform .3s}
+  .fq.open button::after{content:"–"}
+  .fq .a{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.16,1,.3,1)}
+  .fq .a p{font-size:14.8px;line-height:1.74;color:var(--mute);padding:0 40px 24px 0}
+
+  /* ============ CTA ============ */
+  .cta{text-align:center;max-width:760px;margin:0 auto}
+  .cta h2{font-family:var(--serif);font-weight:300;font-size:clamp(28px,3.6vw,44px);line-height:1.12;color:#fff;letter-spacing:-.02em}
+  .cta h2 em{font-style:italic;color:var(--acc-soft)}
+  .cta p{margin-top:18px;font-size:16.5px;line-height:1.7;color:rgba(255,255,255,.78)}
+  .cta .row{margin-top:34px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+  /* footer */
+  footer{background:var(--navy);color:rgba(255,255,255,.7);padding:64px 0 34px;border-top:1px solid rgba(255,255,255,.08)}
+  footer .top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:34px}
+  footer .blurb{font-family:var(--serif);font-size:19px;font-weight:300;line-height:1.5;color:#fff;max-width:30ch}
+  footer .blurb span{color:var(--azure)}
+  footer h4{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:16px}
+  footer ul{list-style:none}footer li{margin-bottom:9px}
+  footer a{font-size:13.5px;color:rgba(255,255,255,.72)}footer a:hover{color:#fff}
+  footer .base{margin-top:44px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:rgba(255,255,255,.45)}
+  @media(max-width:760px){footer .top{grid-template-columns:1fr 1fr}}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none}
+    .flow{animation:none}
+    html{scroll-behavior:auto}
+  }
+
+  /* definition callout — the direct answer block for AI engines */
+  .def{max-width:860px;margin:0 auto;background:var(--paper);border:1px solid var(--border);border-left:4px solid var(--acc);border-radius:0 18px 18px 0;padding:34px 38px}
+  .def .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);margin-bottom:14px}
+  .def p{font-size:17.5px;line-height:1.72;color:var(--ink)}
+  .def p + p{margin-top:14px;font-size:15.5px;color:var(--mute)}
+
+  /* deliverables */
+  .dgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .dcard{background:var(--paper);border:1px solid var(--border);border-radius:18px;padding:30px 28px;display:flex;gap:20px;align-items:flex-start;transition:.35s cubic-bezier(.16,1,.3,1)}
+  .dcard:hover{transform:translateY(-3px);border-color:var(--acc-soft);box-shadow:0 22px 44px -30px rgba(16,101,94,.4)}
+  .dcard .num{font-family:var(--serif);font-weight:300;font-size:30px;line-height:1;color:var(--acc-soft);flex-shrink:0;min-width:34px}
+  .dcard h3{font-family:var(--serif);font-weight:400;font-size:18.5px;color:var(--ink);margin-bottom:8px}
+  .dcard p{font-size:13.8px;line-height:1.66;color:var(--mute)}
+  @media(max-width:820px){.dgrid{grid-template-columns:1fr}}
+
+  /* comparison table */
+  .ctable{width:100%;border-collapse:collapse;background:var(--paper);border:1px solid var(--border);border-radius:18px;overflow:hidden}
+  .ctable th,.ctable td{text-align:left;padding:18px 22px;border-bottom:1px solid var(--border);font-size:14.6px;line-height:1.6;vertical-align:top}
+  .ctable thead th{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);background:var(--acc-mist);border-bottom:1px solid var(--border)}
+  .ctable tbody th{font-family:var(--serif);font-weight:400;font-size:17px;color:var(--ink);width:26%}
+  .ctable td{color:var(--mute)}
+  .ctable tr:last-child th,.ctable tr:last-child td{border-bottom:none}
+  .tscroll{overflow-x:auto}
+  @media(max-width:760px){.ctable th,.ctable td{padding:14px 16px;font-size:13.6px}.ctable tbody th{width:32%;font-size:15px}}
+
+  /* signals list */
+  .sig{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0 40px;max-width:900px}
+  .sig li{display:flex;gap:14px;align-items:flex-start;padding:15px 0;border-bottom:1px solid var(--border);font-size:15.2px;line-height:1.6;color:var(--ink)}
+  .sig .tk{color:var(--acc);font-family:var(--mono);font-size:13px;flex-shrink:0;line-height:1.5}
+  @media(max-width:780px){.sig{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav class="site" id="siteNav"><div class="nav-in">
+  <a class="logo" href="/">KEY<b>OB</b></a>
+  <div class="nav-links">
+    <a href="what-we-do.html">What we do</a>
+    <a href="stories.html">Stories</a>
+    <a href="leadership-team.html">Leadership &amp; Team</a>
+    <a href="news.html">News</a>
+    <a class="nav-cta" href="https://keyob.com.au/contact#contact">Free AI assessment</a>
+  </div>
+</div></nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="crumb">
+      <a href="what-we-do.html">What we do</a><span class="s">/</span><span>Website Design &amp; Development</span>
+    </div>
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow nobar" style="color:var(--acc-soft)">Stage 02 &middot; Website &amp; Digital Presence</div>
+        <h1>Your website is the only salesperson that <em>never sleeps.</em></h1>
+        <p class="intro">Most business websites are built as online brochures, then quietly judged as sales tools. The gap between the two is where enquiries are lost, usually without anyone noticing.</p>
+        <p class="intro">KEYOB designs, writes and builds custom websites for Australian businesses: fast, clear, structured around how buyers actually decide, and built so search engines and AI assistants can understand them.</p>
+        <div class="hero-cta">
+          <a class="btn" href="https://keyob.com.au/contact#contact">Talk about your website <span class="arr">&rarr;</span></a>
+          <a class="btn-ghost" href="#what">What makes a website work?</a>
+        </div>
+      </div>
+      <div class="hero-panel" aria-hidden="true">
+        <svg viewBox="0 0 460 340" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4fc8f8"/><stop offset="1" stop-color="#5ea79e"/></linearGradient></defs>
+  <g font-family="JetBrains Mono,monospace" font-size="9" fill="rgba(255,255,255,.72)">
+    <text x="14" y="52">ARRIVES</text><text x="14" y="110">UNDERSTANDS</text>
+    <text x="14" y="168">TRUSTS</text><text x="14" y="226">ENQUIRES</text>
+  </g>
+  <g class="flow" stroke="rgba(1,176,244,.45)" stroke-width="1.3" fill="none">
+    <path d="M100 48 C 150 48 160 150 196 150"/><path d="M100 106 C 150 106 168 150 196 150"/>
+    <path d="M100 164 C 150 164 172 150 196 150"/><path d="M100 222 C 150 222 164 150 196 150"/>
+  </g>
+  <rect x="196" y="78" width="150" height="146" rx="12" fill="rgba(16,101,94,.16)" stroke="url(#g1)" stroke-width="1.8"/>
+  <rect x="196" y="78" width="150" height="22" rx="12" fill="rgba(255,255,255,.08)"/>
+  <circle cx="210" cy="89" r="3" fill="rgba(255,255,255,.4)"/><circle cx="220" cy="89" r="3" fill="rgba(255,255,255,.28)"/>
+  <rect x="210" y="116" width="76" height="8" rx="4" fill="rgba(255,255,255,.76)"/>
+  <rect x="210" y="132" width="110" height="6" rx="3" fill="rgba(255,255,255,.3)"/>
+  <rect x="210" y="146" width="92" height="6" rx="3" fill="rgba(255,255,255,.3)"/>
+  <rect x="210" y="168" width="64" height="18" rx="9" fill="#5ea79e"/>
+  <rect x="210" y="198" width="120" height="6" rx="3" fill="rgba(255,255,255,.18)"/>
+  <path class="flow" d="M346 150 H392" stroke="#5ea79e" stroke-width="1.6" fill="none"/>
+  <circle cx="416" cy="150" r="22" fill="rgba(94,167,158,.18)" stroke="#5ea79e" stroke-width="1.8"/>
+  <text x="416" y="154" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#9fd3cb">LEAD</text>
+  <text x="230" y="282" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9.5" fill="rgba(255,255,255,.5)">EVERY PAGE HAS A JOB TO DO</text>
+</svg>
+        <div class="hero-cap">DESIGN, CONTENT AND CODE SOLVING ONE PROBLEM TOGETHER</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="sct" id="what">
+  <div class="wrap">
+    <div class="sec-head reveal" style="margin:0 auto 44px;text-align:center;max-width:720px">
+      <div class="eyebrow acc" style="justify-content:center">The short answer</div>
+      <h2 class="sec" style="margin-top:16px">What makes a <em>business website</em> work?</h2>
+    </div>
+    <div class="def reveal">
+      <div class="k">Definition</div>
+      <p>A business website works when it answers, in order, the questions a buyer is actually asking: what do you do, is it for someone like me, can I trust you, what does it cost, and what happens next. Design, copy and page structure all exist to move someone through those questions without friction.</p>
+      <p>Everything else, the animation, the stock photography, the clever menu, is only useful if it helps that sequence. A site that looks impressive but answers the questions out of order will lose to a plain one that answers them properly.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sct ice">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow acc">Why it matters</div>
+      <h2 class="sec">A slow or unclear site is a <em>tax on everything else.</em></h2>
+      <p class="sub">Your website sits downstream of every marketing dollar you spend and upstream of every sales conversation you have.</p>
+    </div>
+    <div class="why-grid"><div class="why reveal"><div class="n">01</div><h3>Paid traffic lands on it</h3><p>Advertising spend is only as good as the page it points at. A weak landing page quietly raises the cost of every click you buy.</p></div><div class="why reveal d1"><div class="n">02</div><h3>Search depends on it</h3><p>Page speed, structure and content quality are ranking factors. A slow, thin site limits how far search and AI visibility work can take you.</p></div><div class="why reveal d2"><div class="n">03</div><h3>Buyers judge it in seconds</h3><p>People decide whether a business is credible long before they read a case study. That judgement is made on design, clarity and load time.</p></div></div>
+  </div>
+</section>
+
+<section class="sct">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow acc">How to tell</div>
+      <h2 class="sec">Signs your website is <em>working against you.</em></h2>
+      <p class="sub">These are the patterns we see most often when a business asks for a rebuild.</p>
+    </div>
+    <ul class="sig reveal"><li><span class="tk">&rarr;</span><span>Visitors arrive, look at one page, and leave without contacting you.</span></li><li><span class="tk">&rarr;</span><span>Your phone enquiries outnumber your website enquiries by a wide margin.</span></li><li><span class="tk">&rarr;</span><span>The site takes more than a few seconds to load on a phone.</span></li><li><span class="tk">&rarr;</span><span>Nobody internally can update a page without asking a developer.</span></li><li><span class="tk">&rarr;</span><span>The homepage explains who you are but never says who you are for.</span></li><li><span class="tk">&rarr;</span><span>Your best services are buried three clicks deep.</span></li><li><span class="tk">&rarr;</span><span>The contact page asks for everything and explains nothing.</span></li><li><span class="tk">&rarr;</span><span>It was built years ago for a business that has since changed.</span></li></ul>
+  </div>
+</section>
+
+<section class="sct ice">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow acc">What you get</div>
+      <h2 class="sec">What we actually <em>deliver.</em></h2>
+      <p class="sub">Design, content and build handled by one team, so nothing gets lost between them.</p>
+    </div>
+    <div class="dgrid"><div class="dcard reveal"><div class="num">01</div><div><h3>Information architecture</h3><p>What pages exist, how they relate, and in what order a visitor meets them. Decided before any design begins.</p></div></div><div class="dcard reveal d1"><div class="num">02</div><div><h3>UX and interface design</h3><p>Layouts designed around reading and deciding rather than around a template's available blocks.</p></div></div><div class="dcard reveal"><div class="num">03</div><div><h3>Website copywriting</h3><p>Every page written to answer a real question. Content written by the people who designed the structure, not retrofitted into it.</p></div></div><div class="dcard reveal d1"><div class="num">04</div><div><h3>Custom development</h3><p>A fast, secure, maintainable build. No page builder sprawl that becomes someone else's problem in two years.</p></div></div><div class="dcard reveal"><div class="num">05</div><div><h3>Mobile-first delivery</h3><p>Most of your visitors are on a phone. The phone layout is designed first, not squeezed down afterwards.</p></div></div><div class="dcard reveal d1"><div class="num">06</div><div><h3>Performance and Core Web Vitals</h3><p>Image handling, caching and code discipline so the site loads quickly on a real connection, not just on a developer's machine.</p></div></div><div class="dcard reveal"><div class="num">07</div><div><h3>Technical SEO foundations</h3><p>Clean markup, structured data, sensible URLs and metadata so the site is readable by search engines and AI assistants from day one.</p></div></div><div class="dcard reveal d1"><div class="num">08</div><div><h3>Conversion paths</h3><p>Clear next steps on every page, with forms, booking and click-to-call placed where the decision actually happens.</p></div></div></div>
+  </div>
+</section>
+
+<section class="sct dark">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow" style="color:var(--acc-soft)">How we work</div>
+      <h2 class="sec">Structure first, <em>pixels second.</em></h2>
+      <p class="sub">Most website projects stall because design starts before anyone decides what the site needs to say.</p>
+    </div>
+    <div class="steps"><div class="stp reveal"><span class="node"></span><span class="k">Stage 01</span><h3>Understand the business</h3><p>Who buys, what they ask, what objections come up, and which services actually matter commercially. The brief comes from the business, not from a questionnaire.</p></div><div class="stp reveal"><span class="node"></span><span class="k">Stage 02</span><h3>Plan the structure</h3><p>Page map and content outline. What each page must achieve and what a visitor should do next. Agreed before design starts.</p></div><div class="stp reveal"><span class="node"></span><span class="k">Stage 03</span><h3>Write the content</h3><p>Copy drafted against the structure, in your voice. Writing early means design fits real words rather than placeholder text.</p></div><div class="stp reveal"><span class="node"></span><span class="k">Stage 04</span><h3>Design the interface</h3><p>Visual design applied to real content, mobile layouts first, with a system that stays consistent as pages are added later.</p></div><div class="stp reveal"><span class="node"></span><span class="k">Stage 05</span><h3>Build and optimise</h3><p>Development, performance tuning, accessibility, structured data and testing across real devices.</p></div><div class="stp reveal"><span class="node"></span><span class="k">Stage 06</span><h3>Launch and improve</h3><p>Deployment, analytics, search setup, and the ongoing changes that keep a site earning rather than ageing.</p></div></div>
+  </div>
+</section>
+
+<section class="sct">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow acc">Often confused</div>
+      <h2 class="sec">Website builder, agency template, or <em>custom build?</em></h2>
+      <p class="sub">All three are valid in the right situation. The cost differences are obvious; the trade-offs are less so.</p>
+    </div>
+    <div class="tscroll reveal">
+      <table class="ctable">
+        <thead><tr><th>Approach</th><th>Best when</th><th>Strength</th><th>The catch</th></tr></thead>
+        <tbody><tr><th>DIY builder</th><td>You need presence quickly and budget is the binding constraint</td><td>Low cost, immediate, no dependency on anyone</td><td>Performance and structure limits appear exactly when you start spending on traffic</td></tr><tr><th>Agency template</th><td>Your requirements are standard and speed matters more than fit</td><td>Fast, predictable, visually polished</td><td>Your business gets shaped to the template, and so does everyone else using it</td></tr><tr><th>Custom build</th><td>The site is a commercial asset and needs to fit how you actually sell</td><td>Built around your content, your buyers and your systems</td><td>Costs more up front and needs a partner who will still be there later</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="sct dark">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow" style="color:var(--acc-soft)">How it connects</div>
+      <h2 class="sec">A website is where every other <em>stage becomes visible.</em></h2>
+    </div>
+    <div class="steps" style="max-width:860px"><div class="stp reveal"><span class="node"></span><span class="k">Needs</span><h3>Brand positioning</h3><p>A site cannot say something clear if the business has not decided what it stands for. Projects that stall at the homepage are usually stalled on positioning.</p></div><div class="stp reveal"><span class="node"></span><span class="k">Feeds</span><h3>Search, AEO and GEO</h3><p>Technical structure, page speed and content quality decide how far search and AI visibility work can go. The site is the foundation that work is built on.</p></div><div class="stp reveal"><span class="node"></span><span class="k">Feeds</span><h3>CRM and lead capture</h3><p>A form that posts into an inbox is a lost opportunity. Enquiries should arrive in a system that tracks and follows them.</p></div><div class="stp reveal"><span class="node"></span><span class="k">Feeds</span><h3>Reporting</h3><p>Properly instrumented, a website tells you which pages create enquiries and which ones quietly do nothing.</p></div></div>
+    <p class="sub reveal" style="max-width:760px;margin:44px auto 0;text-align:center">Website and Digital Presence is stage two of the KEYOB pathway, sitting between positioning and visibility. <a class="lnk" href="what-we-do.html" style="color:var(--acc-soft)">See the full pathway <span class="arr">&rarr;</span></a></p>
+  </div>
+</section>
+
+<section class="sct ice">
+  <div class="wrap">
+    <div class="sec-head reveal" style="margin:0 auto 48px;text-align:center">
+      <div class="eyebrow acc" style="justify-content:center">Common questions</div>
+      <h2 class="sec" style="margin-top:16px">Website design, <em>answered plainly.</em></h2>
+    </div>
+    <div class="faq reveal"><div class="fq"><button type="button">How much does a business website cost in Australia?</button><div class="a"><p>It depends on scope: the number of pages, whether content is written for you, how much custom design and development is involved, and what it needs to integrate with. A focused site for a single-service business sits well below a multi-service site with custom functionality. We scope properly and quote once we understand what the site has to do, rather than quoting a number before that.</p></div></div><div class="fq"><button type="button">How long does a website take to build?</button><div class="a"><p>Typically it is governed by content rather than code. Projects move quickly when decisions and material arrive on time, and slowly when copy is still being written during the build. We write the content as part of the project precisely to avoid that stall.</p></div></div><div class="fq"><button type="button">Do you write the content or do we?</button><div class="a"><p>We write it. Copy drafted against the page structure, in your voice, and reviewed with you. Websites built around placeholder text almost always launch late and read like a template.</p></div></div><div class="fq"><button type="button">What platform do you build on?</button><div class="a"><p>We choose based on who will maintain the site and what it needs to connect to. The important thing is that you own it, your team can update ordinary content without a developer, and it performs well. We will tell you plainly when a simpler platform is the better answer.</p></div></div><div class="fq"><button type="button">Will the website be good for SEO?</button><div class="a"><p>The foundations are built in: clean structure, fast loading, sensible URLs, metadata and structured data. That is the groundwork rather than the whole job. Ranking also needs content and authority over time, which is the search stage of our pathway.</p></div></div><div class="fq"><button type="button">Can you redesign our existing website?</button><div class="a"><p>Yes. Sometimes a rebuild is the right answer and sometimes the issue is structure, content or performance rather than the design itself. We look at what is actually causing the problem before recommending a full rebuild.</p></div></div><div class="fq"><button type="button">Do you provide ongoing support after launch?</button><div class="a"><p>Yes. Hosting, maintenance, content updates and performance monitoring. A site that is looked after keeps improving; one that is left alone starts falling behind the week after launch.</p></div></div></div>
+  </div>
+</section>
+
+<section class="sct dark">
+  <div class="wrap">
+    <div class="cta reveal">
+      <h2>Getting traffic but not <em>enquiries?</em></h2>
+      <p>If people are visiting and leaving, the problem is usually structure or clarity rather than design taste. It is worth finding out which.</p>
+      <div class="row">
+        <a class="btn" href="https://keyob.com.au/contact#contact">Start a conversation <span class="arr">&rarr;</span></a>
+        <a class="btn-ghost" href="what-we-do.html">See the full pathway</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <div class="blurb">KEYOB &mdash; <span>the operating layer.</span></div>
+      <div><h4>Company</h4><ul><li><a href="about-us.html">About</a></li><li><a href="what-we-do.html">What we do</a></li><li><a href="leadership-team.html">Leadership &amp; Team</a></li><li><a href="stories.html">Stories</a></li></ul></div>
+      <div><h4>Services</h4><ul><li><a href="brand-positioning.html">Brand Positioning</a></li><li><a href="website-design-development.html">Website Design</a></li><li><a href="seo-aeo-geo.html">SEO, AEO &amp; GEO</a></li><li><a href="crm-development.html">CRM Development</a></li><li><a href="ai-automation.html">AI Automation</a></li><li><a href="business-intelligence-dashboards.html">BI &amp; Dashboards</a></li><li><a href="erp-implementations.html">ERP Implementations</a></li></ul></div>
+      <div><h4>Get in touch</h4><ul><li><a href="mailto:info@keyob.com">info@keyob.com</a></li><li><a href="tel:+61433278992">+61 433 278 992</a></li><li><a href="https://keyob.com.au/contact#contact">Contact</a></li></ul></div>
+    </div>
+    <div class="base"><span>&copy; 2026 KEYOB</span><span>AUSTRALIAN-BUILT &middot; AI SINCE 2016</span></div>
+  </div>
+</footer>
+
+<script>
+var siteNav=document.getElementById('siteNav');
+addEventListener('scroll',function(){siteNav.classList.toggle('solid',scrollY>40);},{passive:true});
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+document.querySelectorAll('.fq button').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var item=btn.parentElement, panel=item.querySelector('.a'), isOpen=item.classList.contains('open');
+    document.querySelectorAll('.fq').forEach(function(f){f.classList.remove('open');f.querySelector('.a').style.maxHeight=null;});
+    if(!isOpen){item.classList.add('open');panel.style.maxHeight=panel.scrollHeight+'px';}
+  });
+});
+</script>
+</body>
+</html>
